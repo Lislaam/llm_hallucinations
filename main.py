@@ -35,9 +35,9 @@ def main(args):
                 f"Model: {model}, n_shots {num_ice}, dataset: {args.dataset}, focus_addition: {args.focus_addition}, prohibit_addition {args.prohibit_addition} inference routine started..."
             )
         
-            if args.dataset == "google-research-datasets/paws":
+            if args.dataset == "Lislaam/AggreFact":
                 # Loading dataset from huggingface
-                datasets = load_dataset(args.dataset , 'labeled_final', split=["train", test_split])
+                datasets = load_dataset(args.dataset , 'labelled_final', split=["test"])
             else:
                 datasets = load_dataset(args.dataset ,  split=["train", test_split])
 
@@ -55,12 +55,13 @@ def main(args):
 
             # Create a DatasetDict object
             dataset = DatasetDict(
-                {"train": reformatted_datasets[0], "test": reformatted_datasets[1]}
+                {"test": reformatted_datasets[0], "val": reformatted_datasets[1]}
             )
 
             # Define a DatasetReader, with specified column names where input and output are stored.
             data = DatasetReader(
-                dataset, input_columns=["input_text"], output_column="output"
+                # Give the model some writing and a summary. Want it to guess what type of error is present.
+                dataset, input_columns=["doc", "summ"], output_column="error_type"
             )
 
             # Load tokenizer to set chat template.

@@ -1,4 +1,10 @@
-from datasets import load_dataset
+from argparse import ArgumentParser
+import torch
+import random
+import os
+import numpy as np
+import json
+from accelerate import Accelerator
 from openicl import (
     DatasetReader,
     PPLInferencer,
@@ -7,20 +13,10 @@ from openicl import (
     VotekRetriever,
     TopkRetriever,
 )
-from datasets import DatasetDict
-from openicl import PromptTemplate
-from openicl import PPLInferencer
-from transformers import AutoTokenizer
-from argparse import ArgumentParser
-import torch
-import random
-import os
-import numpy as np
-import json
-from accelerate import Accelerator
+from datasets import load_dataset
 
-from llm_icl.constants import DATASET_PROMPTS, TEST_SPLIT, DATASET_LABELS
-from llm_icl.utils import reformat_data
+from constants import DATASET_PROMPTS, TEST_SPLIT, DATASET_LABELS
+from utils import reformat_data
 
 
 def parse_args():
@@ -39,7 +35,7 @@ def parse_args():
         help="Number of ICL examples",
     )
     parser.add_argument(
-        "--dataset", type=str, default="stanfordnlp/sst2", help="Name of dataset"
+        "--dataset", type=str, default="lytang/LLM-AggreFact", help="Name of dataset"
     )
     parser.add_argument(
         "--llms",
@@ -76,12 +72,12 @@ def parse_args():
         default=True,
         help="Whether to use instruction in the prompt",
     )
-    parser.add_argument(
+    """parser.add_argument(
         "--scratch_dir",
         type=str,
         default="/scratch/local/ssd/tomlamb/icl_uncertainty/",
         help="Scratch directory for storing larger files.",
-    )
+    )"""
     parser.add_argument(
         "--verbalised_labels",
         action="store_true",
