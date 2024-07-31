@@ -60,8 +60,7 @@ def main(args):
 
             # Define a DatasetReader, with specified column names where input and output are stored.
             data = DatasetReader(
-                # Give the model some writing and a summary. Want it to guess what type of error is present.
-                dataset, input_columns=["doc", "summ"], output_column="error_type"
+                dataset, input_columns=["input"], output_column="output"
             )
 
             # Load tokenizer to set chat template.

@@ -1,3 +1,6 @@
+ERROR_DETECTION_INSTRUCTION = "Determine if the given summary contains an error with respect to the given source text. If an error is present, categorise it using one or more of these options [intrinsic, extrinsic, NP, predicate]"
+
+### Mr Lamb stuff I don't need vvvvvvv
 SENTIMENT_ANALYSIS_INSTRUCTION = "Determine the sentiment of the given text. Choose the answer from the options [9Y, 3A]."
 BOOLQ_INSTRUCTION = "Answer the question. Choose the answer from the options [4I, 1O]."
 MNLI_INSTRUCTION = "Determine the relationship between the premise and hypothesis. Choose the answer from the options [5U, 3B, 6K]."
@@ -19,10 +22,15 @@ PROMPT_INSTRUCTIONS = {
     "ajaykarthick/imdb-movie-reviews": IMDB_INSTRUCTION,
     "jhu-cogsci/hans": HANS_INSTRUCTION,
     "DT4LM/qqp": QQP_INSTRUCTION,
-    "google-research-datasets/paws": PAWS_INSTRUCTION
+    "google-research-datasets/paws": PAWS_INSTRUCTION,
+    ##### ^^^^^^ Mr Lamb stuff I throw away
+
+    "Lislaam/AggreFact": ERROR_DETECTION_INSTRUCTION
 }
 
-# Propmts used when we don't have system prompts available for the model.
+ERROR_DETECTION_ASSISTANT_PROMPT = "You have asked me to identify and categorise errors in the given summary. I will categorise the errors using one or more of [intrinsic, extrinsic, NP, predicate]"
+
+# Mr Lamb stuff: Prompts used when we don't have system prompts available for the model.
 SENTIMENT_ANALYSIS_ASSISTANT_PROMPT = "You have asked me to determine the sentiment of the given text. I will choose the answer from the options [9Y, 3A]."
 BOOLQ_ASSISTANT_PROMPT = "You have asked me to answer the question. I will choose the answer from the options [4I, 1O]."
 MNLI_ASSISTANT_PROMPT = "You have asked me to determine the relationship between the premise and hypothesis. I will choose the answer from the options [5U, 3B, 6K]."
@@ -35,7 +43,7 @@ QQP_ASSISTANT_PROMPT = "You have asked me to determine if the two questions are 
 PAWS_ASSISTANT_PROMPT = "You have asked me to determine if the two sentences are paraphrases. I will choose the answer from the options [J7, O1]."
 
 
-
+# Mr Lamb stuff:
 NLI_ADDITION = """
 ### Pay attention to:
 - Ensuring that entities (people, places, things), their actions and events described in the hypothesis match those in the premise without overgeneralizing or misrepresenting.
@@ -226,6 +234,8 @@ DATASET_LABELS = {
         "jhu-cogsci/hans": {0: "E7", 1: "J2"},
         "DT4LM/qqp": {0: "Z0", 1: "D3"},
         "google-research-datasets/paws": {0: "J7", 1: "O1"},
+        # Mr Lamb ^
+        
     },
     False: {
         "stanfordnlp/sst2": {"negative": "9Y", "positive": "3A"},
@@ -319,6 +329,9 @@ TEST_SPLIT = {
     "jhu-cogsci/hans": "validation",
     "DT4LM/qqp": "test",
     "google-research-datasets/paws": "test",
+    # ^^^ Mr Lamb
+
+    "Lislaam/AggreFact": "val"
 }
 
 PRE_POST_LABEL_TOKENS = {
@@ -341,4 +354,7 @@ DATASET_PROMPTS = {
     "jhu-cogsci/hans": {"input": "Premise and Hypothesis", "output": "Relationship"},
     "DT4LM/qqp": {"input": "Question Pair", "output": "Paraphrase"},
     "google-research-datasets/paws": {"input": "Sentence Pair", "output": "Paraphrase"},
+
+    # Give the model some writing and a summary. Want it to guess what type of error is present.
+    "Lislaam/AggreFact": {"input": ["doc", "summ"], "output": "error_type"}
 }
