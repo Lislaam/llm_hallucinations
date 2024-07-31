@@ -1,12 +1,19 @@
-import random
-import numpy as np
-import torch
+from datasets import load_dataset
+from datasets import DatasetDict
+from openicl import PromptTemplate
+from transformers import AutoTokenizer
+from openicl import (
+    DatasetReader,
+    PPLInferencer,
+    RandomRetriever,
+    AccEvaluator,
+    VotekRetriever,
+    TopkRetriever,
+)
+from setup import *
+from llm_icl.constants import DATASET_PROMPTS, TEST_SPLIT, DATASET_LABELS
+from llm_icl.utils import reformat_data
 
-def set_seed(seed):
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
 
 def main(args):
     assert not ((args.focus_addition  or args.prohibit_addition) and not args.use_instruction), "Prompt additions can only be used with instruction."

@@ -98,7 +98,6 @@ def parse_args():
         help="Whether to use additional instructions within prompts for what the model should not do on defaults to not.",
     )
 
-
     return parser.parse_args()
 
 
@@ -157,3 +156,9 @@ def select_retriever(
         )
     else:
         raise ValueError(f"Retriever {retriever_name} not found.")
+    
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
