@@ -35,7 +35,7 @@ def parse_args():
         help="Number of ICL examples",
     )
     parser.add_argument(
-        "--dataset", type=str, default="lytang/LLM-AggreFact", help="Name of dataset"
+        "--dataset", type=str, default="Lislaam/AggreFact", help="Name of dataset"
     )
     parser.add_argument(
         "--llms",
@@ -65,12 +65,6 @@ def parse_args():
         type=str,
         default="random",
         help="Retriever to use for ice selection.",
-    )
-    parser.add_argument(
-        "--use_instruction",
-        type=str,
-        default=True,
-        help="Whether to use instruction in the prompt",
     )
     """parser.add_argument(
         "--scratch_dir",

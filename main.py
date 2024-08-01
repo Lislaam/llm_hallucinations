@@ -4,58 +4,45 @@ from openicl import PromptTemplate
 from transformers import AutoTokenizer
 from openicl import (
     DatasetReader,
-    PPLInferencer,
+    GenInferencer,
     RandomRetriever,
     AccEvaluator,
     VotekRetriever,
     TopkRetriever,
 )
 from setup import *
-from llm_icl.constants import DATASET_PROMPTS, TEST_SPLIT, DATASET_LABELS
-from llm_icl.utils import reformat_data
+from constants import DATASET_PROMPTS, TEST_SPLIT, DATASET_LABELS
+from utils import reformat_data
 
 
 def main(args):
-    assert not ((args.focus_addition  or args.prohibit_addition) and not args.use_instruction), "Prompt additions can only be used with instruction."
-    
     test_split = TEST_SPLIT[args.dataset]
-
-    if args.use_instruction == "True":
-        args.use_instruction = True
-    elif args.use_instruction == "False":
-        args.use_instruction = False
-    else:
-        raise ValueError("Use intruction not set properly.")
 
     scores = {}
     for model in args.llms:
         print(f"Starting inference routine on {model} on the dataset {args.dataset}...")
         for num_ice in args.num_icl_examples:
             print(
-                f"Model: {model}, n_shots {num_ice}, dataset: {args.dataset}, focus_addition: {args.focus_addition}, prohibit_addition {args.prohibit_addition} inference routine started..."
+                f"Model: {model}, n_shots {num_ice}, dataset: {args.dataset}, inference routine started..."
             )
         
             if args.dataset == "Lislaam/AggreFact":
                 # Loading dataset from huggingface
-                datasets = load_dataset(args.dataset , 'labelled_final', split=["test"])
+                datasets = load_dataset(args.dataset , 'labelled_final') #, split=["val"])
             else:
-                datasets = load_dataset(args.dataset ,  split=["train", test_split])
+                print("Must use Lislaam/AggreFact")
 
 
-            reformatted_datasets = [
+            """ reformatted_datasets = [
                 reformat_data(
-                    dataset, args.dataset, verbalised_labels=args.verbalised_labels
+                    dataset, args.dataset
                 )
                 for dataset in datasets
             ]
-
-            # Just extract the first 4000 examples for the test set. Fairer comparison.
-            if args.dataset in ["jhu-cogsci/hans", "DT4LM/qqp", "google-research-datasets/paws", "SetFit/mnli"]:
-                reformatted_datasets[1] = reformatted_datasets[1].shuffle(seed=42).select(range(1000))
-
+ """
             # Create a DatasetDict object
             dataset = DatasetDict(
-                {"test": reformatted_datasets[0], "val": reformatted_datasets[1]}
+                {"test": datasets[0], "val": datasets[1]} # Check this !!! Idk
             )
 
             # Define a DatasetReader, with specified column names where input and output are stored.
@@ -65,25 +52,26 @@ def main(args):
 
             # Load tokenizer to set chat template.
             tokenizer = AutoTokenizer.from_pretrained(model)
-
-            input_start = DATASET_PROMPTS[args.dataset]["input"]
-            output_start = DATASET_PROMPTS[args.dataset]["output"]
+            
+            doc_start = DATASET_PROMPTS[args.dataset]["doc"] # Source text
+            summary_start = DATASET_PROMPTS[args.dataset]["sum"] # Summary that may contain an error
+            output_start = DATASET_PROMPTS[args.dataset]["error_type"] 
 
             messages = []
             messages.append(
                 {
                     "role": "user",
-                    "content": f"{input_start}: " + "{/input_text}",
+                    "content": f"{doc_start}: " + "{/doc_text}" + f"{summary_start}" + "{/summary_text}",
                 }
             )
             messages.append(
                 {
                     "role": "assistant",
-                    "content": f"{output_start}: " + "{/output}",
+                    "content": f"{output_start}: " + "{/output}", # Write errors
                 }
             )
 
-            column_token_map = {"input_text": "{/input_text}"}
+            column_token_map = {"input_text": "{/input_text}"} # What is this?
 
             prompt = tokenizer.apply_chat_template(messages, tokenize=False)
             prompt = add_ic_token_and_remove_sos_token(prompt, model)
@@ -101,25 +89,25 @@ def main(args):
             )
 
             retriever = select_retriever(
-                args.retriever,
+                args.retriever, # Defaults to random
                 data,
                 num_ice,
-                "train",
+                "val",
                 "test",
                 "",
                 "",
             )
 
-            inferencer = PPLInferencer(
+            inferencer = GenInferencer(
                 model_name=model,
                 batch_size=args.batch_size,
                 device="cuda",
-                use_instruction=args.use_instruction,
-                dataset_name=args.dataset,
+                #use_instruction=args.use_instruction,
+                dataset_name=args.dataset, # Defaults to AggreFact
                 num_icl_examples=num_ice,
-                verbalised_labels=args.verbalised_labels,
-                focus_addition = args.focus_addition,
-                prohibit_addition = args.prohibit_addition
+                #verbalised_labels=args.verbalised_labels,
+                #focus_addition = args.focus_addition,
+                #prohibit_addition = args.prohibit_addition
             )
 
             # the inferencer requires retriever to collect in-context examples, as well as a template to wrap up these examples.
@@ -133,11 +121,11 @@ def main(args):
             dataset_name = args.dataset.split("/")[-1]
             model_name = model.split("/")[-1]
             retriever = args.retriever
-            if args.use_instruction:
-                ins_name = "instruction"
-            else:
-                ins_name = "no_instruction"
-            additional_prompt_instructions = f"focus_addition_{args.focus_addition}_prohibit_addition_{args.prohibit_addition}"
+            #if args.use_instruction:
+             #   ins_name = "instruction"
+            #else:
+             #   ins_name = "no_instruction"
+            #additional_prompt_instructions = f"focus_addition_{args.focus_addition}_prohibit_addition_{args.prohibit_addition}"
 
             # # Save the tensor containing the logits at context label positions.
             # save_dir = os.path.join(
@@ -156,12 +144,12 @@ def main(args):
             # Save the summary.
             save_dir = os.path.join(
                 "results",
-                additional_prompt_instructions,
-                dataset_name,
-                ins_name,
+                #additional_prompt_instructions,
+                #dataset_name,
+                #ins_name,
                 retriever,
                 model_name,
-                f"verbalised_labels_{args.verbalised_labels}",
+                #f"verbalised_labels_{args.verbalised_labels}",
             )
             os.makedirs(save_dir, exist_ok=True)
             with open(os.path.join(save_dir, f"summary_{num_ice}.json"), "w") as f:
@@ -197,15 +185,15 @@ def main(args):
         dataset_name = args.dataset.split("/")[-1]
         model_name = model.split("/")[-1]
         retriever = args.retriever
-        if args.use_instruction:
-            ins_name = "instruction"
-        else:
-            ins_name = "no_instruction"
+        #if args.use_instruction:
+         #   ins_name = "instruction"
+        #else:
+         #   ins_name = "no_instruction"
         save_dir = os.path.join(
             "results",
-            additional_prompt_instructions,
-            dataset_name,
-            ins_name,
+            #additional_prompt_instructions,
+            #dataset_name,
+            #ins_name,
             retriever,
             model_name,
             f"verbalised_labels_{args.verbalised_labels}",
