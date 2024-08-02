@@ -2,33 +2,59 @@ SYSTEM_INSTRUCTION = """
 You are a language model asked to determine if a given summary is valid with respect to some source text.
 If the summary is valid, please return "correct".
 
-If the summary is invalid, you must return "incorrect" and also categorise the error choosing from the below:
+If the summary is invalid, you must categorise and return the type of error choosing from the below:
 ### Categories
 1. Intrinsic: Summary text that directly conflicts with the source text.
 2. Extrinsic: Summary text that is not found in the source text.
-3. Noun-Phrase: Summary text contains new noun-phrases or incorrect use of noun-phrases.
+3. Noun-Phrase: Summary text contains new noun-phrases or incorrect use of noun-phrases. We will abbreviate the word Noun-Phrase to NP.
 4. Predicate: Summary text contains an incorrect use of predicates.
 
 The following errors can be combined:
 ### Rules
-1. Intrinsic and Noun-Phrase.
+1. Intrinsic and NP.
 2. Intrinsic and Predicate.
-3. Extrinsic and Noun-Phrase.
+3. Extrinsic and NP.
 4. Extrinsic and Predicate.
 
 The following errors MUST NOT be combined:
 1. Intrinsic and Extrinsic.
-2. Noun-Phrase and Predicate.
+2. NP and Predicate.
 
 Keep in mind that the given summary may contain more than one error. You must identify all errors.
-You should output the answer from the following: ["correct", "incorrect", "intrinsic noun-phrase", "intrinsic predicate", "extrinsic noun]
+You should output the answer from the following: ["correct", "intrinsic-NP", "intrinsic-predicate", "extrinsic-NP", "extrinsic-predicaate"].
 """
 
 PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": SYSTEM_INSTRUCTION }
 
-DATASET_PROMPTS = {"Lislaam/AggreFact": {"input": "Input", "output": "Sentiment"}}
+DATASET_LABELS = {"Lislaam/AggreFact": {
+                    0: "correct",
+                    1: "intrinsic-NP",
+                    2: "intrinsic-predicate",
+                    3: "extrinsic-NP",
+                    4: "extrinsic-predicate" 
+                    }
+                  }
 
+PRE_POST_LABEL_TOKENS = {
+    "mistralai/Mistral-7B-Instruct-v0.3": ["[/INST]", "</s>"],
+    "meta-llama/Meta-Llama-3-8B-Instruct": [
+        "assistant<|end_header_id|>\n\n",
+        "<|eot_id|>",
+    ],
+    "google/gemma-1.1-7b-it": ["<start_of_turn>model\n", "<end_of_turn>"],
+}
 
+UNCERTAINTY_DOMAINS = [
+    "log_token_neg_likelihoods",
+    "token_entropies",
+    "log_label_neg_likelihoods",
+    "label_entropies",
+]  # "embeddings",
+
+BASELINE_METRICS = [
+    "token_entropies_baseline",
+    "label_entropies_baseline",
+]
 
 ######################################
 # Mr Lamb's stuff

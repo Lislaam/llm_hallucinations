@@ -11,12 +11,15 @@ from openicl import (
     TopkRetriever,
 )
 from setup import *
-from constants import DATASET_PROMPTS, TEST_SPLIT, DATASET_LABELS
+from constants import DATASET_LABELS
 from utils import reformat_data
 
+from huggingface_hub import login
+# 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
+#login()
 
 def main(args):
-    test_split = TEST_SPLIT[args.dataset]
+    #test_split = TEST_SPLIT[args.dataset]
 
     scores = {}
     for model in args.llms:
@@ -42,7 +45,7 @@ def main(args):
  """
             # Create a DatasetDict object
             dataset = DatasetDict(
-                {"val": datasets[0], "test": datasets[1]} # Check this !!! Idk
+                {"val": datasets['validation'], "test": datasets['test']} # Check this !!! Idk
             )
 
             # Define a DatasetReader, with specified column names where input and output are stored.

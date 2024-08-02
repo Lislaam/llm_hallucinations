@@ -4,8 +4,6 @@ from constants import (
     UNCERTAINTY_DOMAINS,
     BASELINE_METRICS,
     DATASET_LABELS,
-    ASSISTANT_PROMPTS,
-    DATASET_PROMPTS,
 )
 import numpy as np
 from sklearn import metrics
@@ -321,29 +319,34 @@ def construct_icl_prompt_msgs(original_example, icl_examples, dataset, llm):
         messages = [
             {"role": "system", "content": PROMPT_INSTRUCTIONS[dataset]},
         ]
-    else:
+    #else:
         # Other models don't support system messages
-        messages = [
-            {"role": "user", "content": PROMPT_INSTRUCTIONS[dataset]},
-            {"role": "assistant", "content": ASSISTANT_PROMPTS[dataset]},
-        ]
+     #   messages = [
+      #      {"role": "user", "content": PROMPT_INSTRUCTIONS[dataset]},
+       #     {"role": "assistant", "content": ASSISTANT_PROMPTS[dataset]},
+        #]
 
     # Include the ICL examples.
     for icl_example in icl_examples:
-        dataset_input = DATASET_PROMPTS[dataset]["input"]
-        dataset_output = DATASET_PROMPTS[dataset]["output"]
+
+        doc_start = "doc"           #DATASET_PROMPTS[args.dataset]["doc"] # Source text
+        summary_start = "summ"      #DATASET_PROMPTS[args.dataset]["sum"] # Summary that may contain an error
+        output_start = "error_type" #DATASET_PROMPTS[args.dataset]["error_type"] 
+
+        messages = []
         messages.append(
             {
                 "role": "user",
-                "content": f"{dataset_input}: " + icl_example["input_text"],
+                "content": f"{doc_start}: " + "{/doc}" + "/n" + f"{summary_start}" + "{/summ}",
             }
         )
         messages.append(
             {
                 "role": "assistant",
-                "content": f"{dataset_output}: " + icl_example["output"],
+                "content": f"{output_start}: " + "{/error_type}", # Write errors
             }
         )
+
     # Include the test context.
     messages.append(
         {"role": "user", "content": original_example},

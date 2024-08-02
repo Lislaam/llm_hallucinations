@@ -15,7 +15,7 @@ from openicl import (
 )
 from datasets import load_dataset
 
-from constants import DATASET_PROMPTS, TEST_SPLIT, DATASET_LABELS
+from constants import DATASET_LABELS
 from utils import reformat_data
 
 
