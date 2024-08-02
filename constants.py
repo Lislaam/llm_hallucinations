@@ -2,27 +2,31 @@ SYSTEM_INSTRUCTION = """
 You are a language model asked to determine if a given summary is valid with respect to some source text.
 If the summary is valid, please return "correct".
 
-If the summary is invalid, you must categorise the error present in the summary:
-1. Intrinsic: Summary text that directly conflicts with the source text
-2. Extrinsic: Summary text that is not found in the source text
-3. Noun-Phrase: Summary text contains new noun-phrases or incorrect use of noun-phrases
-4. Predicate: Summary text contains an incorrect use of predicates
+If the summary is invalid, you must return "incorrect" and also categorise the error choosing from the below:
+### Categories
+1. Intrinsic: Summary text that directly conflicts with the source text.
+2. Extrinsic: Summary text that is not found in the source text.
+3. Noun-Phrase: Summary text contains new noun-phrases or incorrect use of noun-phrases.
+4. Predicate: Summary text contains an incorrect use of predicates.
 
 The following errors can be combined:
-1. Intrinsic and Noun-Phrase
-2. Intrinsic and Predicate
-3. Extrinsic and Noun-Phrase
-4. Extrinsic and Predicate
+### Rules
+1. Intrinsic and Noun-Phrase.
+2. Intrinsic and Predicate.
+3. Extrinsic and Noun-Phrase.
+4. Extrinsic and Predicate.
 
-The following errors must not be combined:
-1. Intrinsic and Extrinsic
-2. Noun-Phrase and Predicate
+The following errors MUST NOT be combined:
+1. Intrinsic and Extrinsic.
+2. Noun-Phrase and Predicate.
 
-Keep in mind that the given summary may contain more than one error. Please identify all errors.
+Keep in mind that the given summary may contain more than one error. You must identify all errors.
+You should output the answer from the following: ["correct", "incorrect", "intrinsic noun-phrase", "intrinsic predicate", "extrinsic noun]
 """
 
 PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": SYSTEM_INSTRUCTION }
 
+DATASET_PROMPTS = {"Lislaam/AggreFact": {"input": "Input", "output": "Sentiment"}}
 
 
 

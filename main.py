@@ -28,7 +28,7 @@ def main(args):
         
             if args.dataset == "Lislaam/AggreFact":
                 # Loading dataset from huggingface
-                datasets = load_dataset(args.dataset , 'labelled_final') #, split=["val"])
+                datasets = load_dataset(args.dataset) # Contains validation and test sets
             else:
                 print("Must use Lislaam/AggreFact")
 
@@ -42,32 +42,32 @@ def main(args):
  """
             # Create a DatasetDict object
             dataset = DatasetDict(
-                {"test": datasets[0], "val": datasets[1]} # Check this !!! Idk
+                {"val": datasets[0], "test": datasets[1]} # Check this !!! Idk
             )
 
             # Define a DatasetReader, with specified column names where input and output are stored.
             data = DatasetReader(
-                dataset, input_columns=["input"], output_column="output"
+                dataset, input_columns=["doc", "summ"], output_column="error_type"
             )
 
             # Load tokenizer to set chat template.
             tokenizer = AutoTokenizer.from_pretrained(model)
             
-            doc_start = DATASET_PROMPTS[args.dataset]["doc"] # Source text
-            summary_start = DATASET_PROMPTS[args.dataset]["sum"] # Summary that may contain an error
-            output_start = DATASET_PROMPTS[args.dataset]["error_type"] 
+            doc_start = "doc"           #DATASET_PROMPTS[args.dataset]["doc"] # Source text
+            summary_start = "summ"      #DATASET_PROMPTS[args.dataset]["sum"] # Summary that may contain an error
+            output_start = "error_type" #DATASET_PROMPTS[args.dataset]["error_type"] 
 
             messages = []
             messages.append(
                 {
                     "role": "user",
-                    "content": f"{doc_start}: " + "{/doc_text}" + f"{summary_start}" + "{/summary_text}",
+                    "content": f"{doc_start}: " + "{/doc}" + "/n" + f"{summary_start}" + "{/summ}",
                 }
             )
             messages.append(
                 {
                     "role": "assistant",
-                    "content": f"{output_start}: " + "{/output}", # Write errors
+                    "content": f"{output_start}: " + "{/error_type}", # Write errors
                 }
             )
 
@@ -102,12 +102,8 @@ def main(args):
                 model_name=model,
                 batch_size=args.batch_size,
                 device="cuda",
-                #use_instruction=args.use_instruction,
                 dataset_name=args.dataset, # Defaults to AggreFact
                 num_icl_examples=num_ice,
-                #verbalised_labels=args.verbalised_labels,
-                #focus_addition = args.focus_addition,
-                #prohibit_addition = args.prohibit_addition
             )
 
             # the inferencer requires retriever to collect in-context examples, as well as a template to wrap up these examples.
@@ -121,11 +117,6 @@ def main(args):
             dataset_name = args.dataset.split("/")[-1]
             model_name = model.split("/")[-1]
             retriever = args.retriever
-            #if args.use_instruction:
-             #   ins_name = "instruction"
-            #else:
-             #   ins_name = "no_instruction"
-            #additional_prompt_instructions = f"focus_addition_{args.focus_addition}_prohibit_addition_{args.prohibit_addition}"
 
             # # Save the tensor containing the logits at context label positions.
             # save_dir = os.path.join(
@@ -144,12 +135,8 @@ def main(args):
             # Save the summary.
             save_dir = os.path.join(
                 "results",
-                #additional_prompt_instructions,
-                #dataset_name,
-                #ins_name,
                 retriever,
                 model_name,
-                #f"verbalised_labels_{args.verbalised_labels}",
             )
             os.makedirs(save_dir, exist_ok=True)
             with open(os.path.join(save_dir, f"summary_{num_ice}.json"), "w") as f:
@@ -185,18 +172,11 @@ def main(args):
         dataset_name = args.dataset.split("/")[-1]
         model_name = model.split("/")[-1]
         retriever = args.retriever
-        #if args.use_instruction:
-         #   ins_name = "instruction"
-        #else:
-         #   ins_name = "no_instruction"
+
         save_dir = os.path.join(
             "results",
-            #additional_prompt_instructions,
-            #dataset_name,
-            #ins_name,
             retriever,
             model_name,
-            f"verbalised_labels_{args.verbalised_labels}",
         )
         os.makedirs(save_dir, exist_ok=True)
         with open(os.path.join(save_dir, "scores.json"), "w") as f:

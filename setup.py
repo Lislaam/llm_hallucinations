@@ -72,21 +72,6 @@ def parse_args():
         default="/scratch/local/ssd/tomlamb/icl_uncertainty/",
         help="Scratch directory for storing larger files.",
     )"""
-    parser.add_argument(
-        "--verbalised_labels",
-        action="store_true",
-        help="Whether to use verbalised labels. Defaults to not.",
-    )
-    parser.add_argument(
-        "--focus_addition",
-        action="store_true",
-        help="Whether to use additional instructions within prompts for what model should focus on defaults to not.",
-    )
-    parser.add_argument(
-        "--prohibit_addition",
-        action="store_true",
-        help="Whether to use additional instructions within prompts for what the model should not do on defaults to not.",
-    )
 
     return parser.parse_args()
 
