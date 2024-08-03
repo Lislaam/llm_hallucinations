@@ -56,37 +56,50 @@ def main(args):
         )
 
         # Load tokenizer to set chat template.
-        tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3.1-8B-Instruct")  # TEST!!!
+        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3.1-8B-Instruct') 
         
         messages = []
+        # messages.append(
+        #         {
+        #         "role": "system",
+        #         "content": "Cutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024"
+        #         },
+        # )
         messages.append(
             {
                 "role": "user",
-                "content": "Document: {/doc}\nSummary: {/summ}",
+                "content": r"Document: {/doc}\nSummary: {/summ}", # Added start token /E
             }
         )
         messages.append(
             {
                 "role": "assistant",
-                "content": "Error Type: {/error_type}"
+                "content": r"Error Type: {/error_type}"
             }
         )
 
         column_token_map = {
-                                "doc": "{/doc}",
-                                "summ": "{/summ}",
+                                "doc": r"{/doc}",
+                                "summ": r"{/summ}",
                             }
 
         prompt = tokenizer.apply_chat_template(messages, tokenize=False)
+        print("Initial Prompt:\n", prompt)
         prompt = add_ic_token_and_remove_sos_token(prompt, model)
+        print("Processed Prompt:\n", prompt)
 
-        # Create prompt template dictionary.
-        tp_dict = {
-            label: f"{prompt.replace('{/error_type}', label)}"
-            for label in DATASET_LABELS[
-                args.dataset
-            ].values()
-        }
+        def generate_tp_dict(prompt_template, labels):
+            return {
+                label: prompt_template.replace("</error_type>", label)
+                for label in labels.values()
+            }
+
+        # Generate the tp_dict
+        tp_dict = generate_tp_dict(prompt, DATASET_LABELS[args.dataset])
+
+        # Print the resulting dictionary to verify
+        for key, value in tp_dict.items():
+            print(f"'{key}':\n{value}\n")
 
         template = PromptTemplate(
             tp_dict, column_token_map=column_token_map, ice_token="</E>"

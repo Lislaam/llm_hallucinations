@@ -18,7 +18,7 @@ import re
 def extract_labels_from_prompt(prompt, model):
     pre_token, post_token = PRE_POST_LABEL_TOKENS[model]
     # Use a regular expression to find labels between the tokens
-    pattern = re.escape(pre_token) + r"(.*?)" + re.escape(post_token)
+    pattern = re.escaacpe(pre_token) + r"(.*?)" + re.escape(post_token)
     matches = re.findall(pattern, prompt)
     # Split each match on ": " and take the second half
     labels = [match.split(": ")[1] for match in matches]
