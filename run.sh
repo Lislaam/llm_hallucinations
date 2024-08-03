@@ -8,4 +8,4 @@ echo "Activated the virtual environment."
 export CUDA_VISIBLE_DEVICES=$1
 
 # Run main file which includes evaluation.
-python3 main.py --llms="meta-llama/Meta-Llama-3-8B-Instruct"
+python3 main.py --llms="meta-llama/Meta-Llama-3.1-8B-Instruct" --num_icl_examples=0

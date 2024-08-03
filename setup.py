@@ -41,17 +41,18 @@ def parse_args():
         "--llms",
         type=str,
         nargs="+",
-        default=[
-            "mistralai/Mistral-7B-Instruct-v0.3",
-            "meta-llama/Meta-Llama-3-8B-Instruct",
-            "google/gemma-1.1-7b-it",
-        ],
+        default="meta-llama/Meta-Llama-3.1-8B-Instruct",
+        #[
+         #   "mistralai/Mistral-7B-Instruct-v0.3",
+          #  "meta-llama/Meta-Llama-3-8B-Instruct",
+           # "google/gemma-1.1-7b-it",
+        #],
         help="Name of LLM",
-        choices=[
-            "mistralai/Mistral-7B-Instruct-v0.3",
-            "meta-llama/Meta-Llama-3-8B-Instruct",
-            "google/gemma-1.1-7b-it",
-        ],
+        #choices=[
+         #   "mistralai/Mistral-7B-Instruct-v0.3",
+          #  "meta-llama/Meta-Llama-3-8B-Instruct",
+           # "google/gemma-1.1-7b-it",
+        #],
     )
     parser.add_argument(
         "--llm_device", type=str, default="cuda:0", help="Device to run the code on"
