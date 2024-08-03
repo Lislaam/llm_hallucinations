@@ -11,7 +11,7 @@ from openicl import (
     TopkRetriever,
 )
 from setup import *
-from constants import DATASET_LABELS
+from constants import DATASET_LABELS, DATASET_PROMPTS
 from utils import reformat_data
 
 from huggingface_hub import login
@@ -52,50 +52,83 @@ def main(args):
 
         # Define a DatasetReader, with specified column names where input and output are stored.
         data = DatasetReader(
-            dataset, input_columns=["doc", "summ"], output_column="error_type" # Checked Correct
+            dataset, input_columns=["input_text"], output_column="error_type"
         )
 
         # Load tokenizer to set chat template.
-        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3.1-8B-Instruct') 
-        
+        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3.1-8B-Instruct')
+
+        input_start = DATASET_PROMPTS[args.dataset]["input"]
+        output_start = DATASET_PROMPTS[args.dataset]["output"]
+
         messages = []
-        # messages.append(
-        #         {
-        #         "role": "system",
-        #         "content": "Cutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024"
-        #         },
-        # )
         messages.append(
             {
                 "role": "user",
-                "content": r"Document: {/doc}\nSummary: {/summ}", # Added start token /E
+                "content": f"{input_start[0]}: " + "{/input_text}" + f"\n{input_start[1]}:" + "{/input_text}",
             }
         )
         messages.append(
             {
                 "role": "assistant",
-                "content": r"Error Type: {/error_type}"
+                "content": f"{output_start}: " + "{/output}",
             }
         )
 
-        column_token_map = {
-                                "doc": r"{/doc}",
-                                "summ": r"{/summ}",
-                            }
+        column_token_map = {"input_text": "{/input_text}"}
+
+        # # Define a DatasetReader, with specified column names where input and output are stored.
+        # data = DatasetReader(
+        #     dataset, input_columns=["doc", "summ"], output_column="error_type" # Checked Correct
+        # )
+
+        # # Load tokenizer to set chat template.
+        # tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3.1-8B-Instruct') 
+        
+        # messages = []
+        # # messages.append(
+        # #         {
+        # #         "role": "system",
+        # #         "content": "Cutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024"
+        # #         },
+        # # )
+        # messages.append(
+        #     {
+        #         "role": "user",
+        #         "content": r"Document: {/doc}\nSummary: {/summ}", # Added start token /E
+        #     }
+        # )
+        # messages.append(
+        #     {
+        #         "role": "assistant",
+        #         "content": r"Error Type: {/error_type}"
+        #     }
+        # )
+
+        # column_token_map = {
+        #                         "doc": r"{/doc}",
+        #                         "summ": r"{/summ}",
+        #                     }
 
         prompt = tokenizer.apply_chat_template(messages, tokenize=False)
-        print("Initial Prompt:\n", prompt)
+        #print("Initial Prompt:\n", prompt)
         prompt = add_ic_token_and_remove_sos_token(prompt, model)
-        print("Processed Prompt:\n", prompt)
+        #print("Processed Prompt:\n", prompt)
 
-        def generate_tp_dict(prompt_template, labels):
-            return {
-                label: prompt_template.replace("</error_type>", label)
-                for label in labels.values()
-            }
+        # Create prompt template dictionary.
+        tp_dict = {
+            label: f"{prompt.replace('{/error_type}', label)}"
+            for label in DATASET_LABELS[args.dataset].values()
+        }
 
-        # Generate the tp_dict
-        tp_dict = generate_tp_dict(prompt, DATASET_LABELS[args.dataset])
+        #def generate_tp_dict(prompt_template, labels):
+           # return {
+          #      label: prompt_template.replace("</error_type>", label)
+         #       for label in labels.values()
+        #    }
+
+        # Generate the tp_dict]
+        #tp_dict = generate_tp_dict(prompt, DATASET_LABELS[args.dataset])
 
         # Print the resulting dictionary to verify
         for key, value in tp_dict.items():

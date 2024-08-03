@@ -26,6 +26,8 @@ You should output the answer from the following: ["correct", "intrinsic-NP", "in
 
 PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": SYSTEM_INSTRUCTION }
 
+DATASET_PROMPTS = {"Lislaam/AggreFact": {"input": ["doc", "summ"], "output": "error_type"}}
+
 DATASET_LABELS = {"Lislaam/AggreFact": {
                     0: "correct",
                     1: "intrinsic-NP",
@@ -37,8 +39,8 @@ DATASET_LABELS = {"Lislaam/AggreFact": {
 
 PRE_POST_LABEL_TOKENS = {
     "mistralai/Mistral-7B-Instruct-v0.3": ["[/INST]", "</s>"],
-    "meta-llama/Meta-Llama-3-8B-Instruct": [
-        "assistant<|end_header_id|>\n\n",
+    "meta-llama/Meta-Llama-3.1-8B-Instruct": [
+        "<|start_header_id|>assistant<|end_header_id|>\n\n",
         "<|eot_id|>",
     ],
     "google/gemma-1.1-7b-it": ["<start_of_turn>model\n", "<end_of_turn>"],

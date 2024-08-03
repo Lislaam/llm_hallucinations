@@ -18,7 +18,7 @@ import re
 def extract_labels_from_prompt(prompt, model):
     pre_token, post_token = PRE_POST_LABEL_TOKENS[model]
     # Use a regular expression to find labels between the tokens
-    pattern = re.escaacpe(pre_token) + r"(.*?)" + re.escape(post_token)
+    pattern = re.escape(pre_token) + r"(.*?)" + re.escape(post_token)
     matches = re.findall(pattern, prompt)
     # Split each match on ": " and take the second half
     labels = [match.split(": ")[1] for match in matches]
@@ -328,22 +328,17 @@ def construct_icl_prompt_msgs(original_example, icl_examples, dataset, llm):
 
     # Include the ICL examples.
     for icl_example in icl_examples:
-
-        doc_start = "doc"           #DATASET_PROMPTS[args.dataset]["doc"] # Source text
-        summary_start = "summ"      #DATASET_PROMPTS[args.dataset]["sum"] # Summary that may contain an error
-        output_start = "error_type" #DATASET_PROMPTS[args.dataset]["error_type"] 
-
         messages = []
         messages.append(
             {
                 "role": "user",
-                "content": f"{doc_start}: " + "{/doc}" + "/n" + f"{summary_start}" + "{/summ}",
+                "content": r"Document: {/doc}\nSummary: {/summ}", # Added start token /E
             }
         )
         messages.append(
             {
                 "role": "assistant",
-                "content": f"{output_start}: " + "{/error_type}", # Write errors
+                "content": r"Error Type: {/error_type}"
             }
         )
 
