@@ -37,9 +37,9 @@ def main(args):
         else:
             print("Must use Lislaam/AggreFact")
 
-        import pdb; pdb.set_trace()
-        dataset = reformat_data(dataset, args.dataset) # Take away too long examples
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
+        #dataset = reformat_data(dataset, args.dataset) # Take away too long examples
+        #import pdb; pdb.set_trace()
 
         # Create a DatasetDict object
         dataset = DatasetDict(
@@ -52,7 +52,9 @@ def main(args):
         )
 
         # Load tokenizer to set chat template.
-        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3-8B-Instruct')
+        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3-8B-Instruct', 
+                                                  padding_side='left')
+        tokenizer.pad_token_id = tokenizer.eos_token_id # End of sequence token as pad token
 
         input_start = DATASET_PROMPTS[args.dataset]["input"]
         output_start = DATASET_PROMPTS[args.dataset]["output"]

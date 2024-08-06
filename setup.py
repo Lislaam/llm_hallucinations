@@ -86,9 +86,9 @@ def add_ic_token_and_remove_sos_token(prompt, llm):
         prompt = "</E>" + prompt[len("<s>") :]
     elif "llama" in llm:
         prompt = "</E>" + prompt[len("<|begin_of_text|>") :]
-        prompt = prompt.replace("<|start_header_id|>user<|end_header_id|>", 'user')
-        prompt = prompt.replace("<|start_header_id|>assistant<|end_header_id|>", 'assistant')
-        prompt = prompt.replace("<|eot_id|>", '')
+        #prompt = prompt.replace("<|start_header_id|>user<|end_header_id|>", 'user')
+        #prompt = prompt.replace("<|start_header_id|>assistant<|end_header_id|>", 'assistant')
+        #prompt = prompt.replace("<|eot_id|>", '')
     elif "gemma" in llm:
         prompt = "</E>" + prompt[len("<bos>") :]
 
