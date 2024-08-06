@@ -39,7 +39,7 @@ DATASET_LABELS = {"Lislaam/AggreFact": {
 
 PRE_POST_LABEL_TOKENS = {
     "mistralai/Mistral-7B-Instruct-v0.3": ["[/INST]", "</s>"],
-    "meta-llama/Meta-Llama-3.1-8B-Instruct": [
+    "meta-llama/Meta-Llama-3-8B-Instruct": [
         "<|start_header_id|>assistant<|end_header_id|>\n\n",
         "<|eot_id|>",
     ],

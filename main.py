@@ -23,7 +23,7 @@ def main(args):
 
     scores = {}
     #for model in args.llms:
-    model = args.llms
+    model = args.llms[0]
     print(f"Starting inference routine on {model} on the dataset {args.dataset}...")
     
     for num_ice in args.num_icl_examples:
@@ -56,7 +56,7 @@ def main(args):
         )
 
         # Load tokenizer to set chat template.
-        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3.1-8B-Instruct')
+        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3-8B-Instruct')
 
         input_start = DATASET_PROMPTS[args.dataset]["input"]
         output_start = DATASET_PROMPTS[args.dataset]["output"]
@@ -77,43 +77,8 @@ def main(args):
 
         column_token_map = {"input_text": "{/input_text}"}
 
-        # # Define a DatasetReader, with specified column names where input and output are stored.
-        # data = DatasetReader(
-        #     dataset, input_columns=["doc", "summ"], output_column="error_type" # Checked Correct
-        # )
-
-        # # Load tokenizer to set chat template.
-        # tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3.1-8B-Instruct') 
-        
-        # messages = []
-        # # messages.append(
-        # #         {
-        # #         "role": "system",
-        # #         "content": "Cutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024"
-        # #         },
-        # # )
-        # messages.append(
-        #     {
-        #         "role": "user",
-        #         "content": r"Document: {/doc}\nSummary: {/summ}", # Added start token /E
-        #     }
-        # )
-        # messages.append(
-        #     {
-        #         "role": "assistant",
-        #         "content": r"Error Type: {/error_type}"
-        #     }
-        # )
-
-        # column_token_map = {
-        #                         "doc": r"{/doc}",
-        #                         "summ": r"{/summ}",
-        #                     }
-
-        prompt = tokenizer.apply_chat_template(messages, tokenize=False)
-        #print("Initial Prompt:\n", prompt)
-        prompt = add_ic_token_and_remove_sos_token(prompt, model)
-        #print("Processed Prompt:\n", prompt)
+        prompt = add_ic_token_and_remove_sos_token(tokenizer.apply_chat_template(messages, tokenize=False), model)
+        print("Processed Prompt:\n", prompt)
 
         # Create prompt template dictionary.
         tp_dict = {

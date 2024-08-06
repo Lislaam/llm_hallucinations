@@ -41,7 +41,7 @@ def parse_args():
         "--llms",
         type=str,
         nargs="+",
-        default="meta-llama/Meta-Llama-3.1-8B-Instruct",
+        default="meta-llama/Meta-Llama-3-8B-Instruct",
         #[
          #   "mistralai/Mistral-7B-Instruct-v0.3",
           #  "meta-llama/Meta-Llama-3-8B-Instruct",
@@ -78,12 +78,17 @@ def parse_args():
 
 
 def add_ic_token_and_remove_sos_token(prompt, llm):
+    if type(llm) == list:
+        llm = llm[0]
     # Convert messsages to string using chat template.
     if "mistral" in llm:
         # Rplace the <s> at the start of the prompt with </E>
         prompt = "</E>" + prompt[len("<s>") :]
     elif "llama" in llm:
         prompt = "</E>" + prompt[len("<|begin_of_text|>") :]
+        prompt = prompt.replace("<|start_header_id|>user<|end_header_id|>", 'user')
+        prompt = prompt.replace("<|start_header_id|>assistant<|end_header_id|>", 'assistant')
+        prompt = prompt.replace("<|eot_id|>", '')
     elif "gemma" in llm:
         prompt = "</E>" + prompt[len("<bos>") :]
 
