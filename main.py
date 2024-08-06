@@ -33,21 +33,17 @@ def main(args):
     
         if args.dataset == "Lislaam/AggreFact":
             # Loading dataset from huggingface
-            datasets = load_dataset(args.dataset) # Contains validation and test sets
+            dataset = load_dataset(args.dataset) # Contains validation and test sets
         else:
             print("Must use Lislaam/AggreFact")
 
+        import pdb; pdb.set_trace()
+        dataset = reformat_data(dataset, args.dataset) # Take away too long examples
+        import pdb; pdb.set_trace()
 
-        """ reformatted_datasets = [
-            reformat_data(
-                dataset, args.dataset
-            )
-            for dataset in datasets
-        ]
-"""
         # Create a DatasetDict object
         dataset = DatasetDict(
-            {"val": datasets['validation'], "test": datasets['test']} # Checked Correct
+            {"val": dataset['validation'], "test": dataset['test']} # Checked Correct
         )
 
         # Define a DatasetReader, with specified column names where input and output are stored.
@@ -65,7 +61,7 @@ def main(args):
         messages.append(
             {
                 "role": "user",
-                "content": f"{input_start[0]}: " + "{/input_text}" + f"\n{input_start[1]}:" + "{/input_text}",
+                "content": f"{input_start[0]}: " + "{/doc}" + f"\n{input_start[1]}:" + "{/summ}",
             }
         )
         messages.append(
@@ -75,10 +71,10 @@ def main(args):
             }
         )
 
-        column_token_map = {"input_text": "{/input_text}"}
+        column_token_map = {"doc": "{/doc}", "summ": "{/summ}"}
 
         prompt = add_ic_token_and_remove_sos_token(tokenizer.apply_chat_template(messages, tokenize=False), model)
-        print("Processed Prompt:\n", prompt)
+        #print("Processed Prompt:\n", prompt)
 
         # Create prompt template dictionary.
         tp_dict = {
@@ -96,8 +92,8 @@ def main(args):
         #tp_dict = generate_tp_dict(prompt, DATASET_LABELS[args.dataset])
 
         # Print the resulting dictionary to verify
-        for key, value in tp_dict.items():
-            print(f"'{key}':\n{value}\n")
+        #for key, value in tp_dict.items():
+        #    print(f"'{key}':\n{value}\n")
 
         template = PromptTemplate(
             tp_dict, column_token_map=column_token_map, ice_token="</E>"

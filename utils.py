@@ -42,104 +42,26 @@ def reformat_data(
     Returns:
         dataset: dataset -- reformatted dataset
     """
-    if verbalised_labels:
-        if dataset_name == "google/boolq":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["question"],
-                    "output": DATASET_LABELS[True][dataset_name][int(x["answer"])],
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "stanfordnlp/sst2":
-            dataset = dataset.map(
-                lambda x: {
-                    "idx": x["idx"],
-                    "input_text": x["sentence"],
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                }
-            )
-        elif dataset_name == "ajaykarthick/imdb-movie-reviews":
-            dataset = dataset.filter(lambda x: len(x["review"]) < 500)
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["review"],
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "SetFit/mnli":
-            # Filter out excessively long examples to avoid memory issues and speed up evaluation.
-            dataset = dataset.filter(
-                lambda x: len(x["text1"]) < 300 or len(x["text2"]) < 300
-            )
+    if dataset_name == "Lislaam/AggreFact":
+        dataset = dataset.filter(lambda x: len(x["doc"]) < 500)
 
-            # Randomly shuffle the dataset and select a subset.
-            if train_set:
-                # Select subset.
-                dataset = dataset.shuffle(seed=42)
-                dataset = dataset.select(range(subset_size))
-                assert len(dataset) == subset_size
 
-            dataset = dataset.map(
-                lambda x: {
-                    "idx": x["idx"],
-                    "input_text": f"Premise: {x['text1']}\nHypothesis: {x['text2']}",
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                }
-            )
-        elif dataset_name == "SetFit/ag_news":
-            # Filter out excessively long examples.
-            dataset = dataset.filter(lambda x: len(x["text"]) < 300)
+    else:
+        raise ValueError(f"Dataset {dataset_name} not supported.")
+    return dataset
+        #dataset = dataset.map(
+         #   lambda x, idx: {
+          #      "idx": idx,
+           #     "input_text": x["review"],
+            #    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
+            #},
+            #with_indices=True,)
 
-            # Randomly shuffle the dataset and select a subset.
-            if train_set:
-                # Select subset.
-                dataset = dataset.shuffle()
-                dataset = dataset.select(range(subset_size))
-                assert len(dataset) == subset_size
+        #dataset = dataset.filter(
+         #   lambda x: len(x["text1"]) < 300 or len(x["text2"]) < 300
+        #)
 
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["text"],
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "linxinyuan/cola":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["text"],
-                    "output": DATASET_LABELS[True][dataset_name][x["label"]],
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "SetFit/sst5":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["text"],
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "jhu-cogsci/hans":
-            dataset = dataset.filter(
-                lambda x: len(x["premise"]) < 300 or len(x["hypothesis"]) < 300
-            )
-
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": f"Premise: {x['premise']}\nHypothesis: {x['hypothesis']}",
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                },
-                with_indices=True,
-            )
+    """
         elif dataset_name == "DT4LM/qqp":
             dataset = dataset.map(
                 lambda x, idx: {
@@ -277,9 +199,8 @@ def reformat_data(
                 },
                 with_indices=True,
             )
-        else:
-            raise ValueError(f"Dataset {dataset_name} not supported.")
-    return dataset
+    """
+
 
 
 def sample_icl_examples(train_data, num_icl_examples):
