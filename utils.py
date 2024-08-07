@@ -43,7 +43,13 @@ def reformat_data(
         dataset: dataset -- reformatted dataset
     """
     if dataset_name == "Lislaam/AggreFact":
-        dataset = dataset.filter(lambda x: len(x["doc"]) < 500)
+        dataset = dataset.filter(lambda x: x["error_type"] in ['correct',
+                                                                  '[intrinsic]',
+                                                                  '[extrinsic]',
+                                                                  '[intrinsic-NP]',
+                                                                  '[intrinsic-predicate]',
+                                                                  '[extrinsic-NP]',
+                                                                  '[extrinsic-predicate]'])
 
 
     else:

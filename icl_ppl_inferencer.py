@@ -165,7 +165,6 @@ class PPLInferencer(BaseInferencer):
             normalizing_prompt_list = []
             context_length_list = []
 
-
             # 6.1 Generate prompts of current label and truncate if needed
             for idx in range(len(ice_idx_list)):
                 prompt = retriever.generate_label_prompt(idx, ice[idx], label, ice_template=ice_template,

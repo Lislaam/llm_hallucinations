@@ -33,12 +33,13 @@ def main(args):
     
         if args.dataset == "Lislaam/AggreFact":
             # Loading dataset from huggingface
-            dataset = load_dataset(args.dataset) # Contains validation and test sets
+            dataset = load_dataset(args.dataset, split=['validation[:10]', 'test[:10]']) # Contains validation and test sets
+            dataset = DatasetDict({'validation': dataset[0], 'test': dataset[1]})
         else:
             print("Must use Lislaam/AggreFact")
 
         #import pdb; pdb.set_trace()
-        #dataset = reformat_data(dataset, args.dataset) # Take away too long examples
+        dataset = reformat_data(dataset, args.dataset) # Take away too long examples
         #import pdb; pdb.set_trace()
 
         # Create a DatasetDict object
@@ -84,19 +85,6 @@ def main(args):
             for label in DATASET_LABELS[args.dataset].values()
         }
 
-        #def generate_tp_dict(prompt_template, labels):
-           # return {
-          #      label: prompt_template.replace("</error_type>", label)
-         #       for label in labels.values()
-        #    }
-
-        # Generate the tp_dict]
-        #tp_dict = generate_tp_dict(prompt, DATASET_LABELS[args.dataset])
-
-        # Print the resulting dictionary to verify
-        #for key, value in tp_dict.items():
-        #    print(f"'{key}':\n{value}\n")
-
         template = PromptTemplate(
             tp_dict, column_token_map=column_token_map, ice_token="</E>"
         )
@@ -120,10 +108,11 @@ def main(args):
         )
 
         # the inferencer requires retriever to collect in-context examples, as well as a template to wrap up these examples.
-        predictions, summary = inferencer.inference(
+        outputs, summaries = inferencer.inference(
             retriever,
             ice_template=template,
         )
+        #import pdb; pdb.set_trace()
 
         # Save the label tensor.
         os.makedirs("results", exist_ok=True)
@@ -153,21 +142,22 @@ def main(args):
         )
         os.makedirs(save_dir, exist_ok=True)
         with open(os.path.join(save_dir, f"summary_{num_ice}.json"), "w") as f:
-            json.dump(summary, f, indent=4)
+            json.dump(outputs, f, indent=4)
 
         # Compute accuracy for the prediction
+        import pdb; pdb.set_trace()
         score = AccEvaluator().score(
-            predictions=predictions, references=data.references
+            predictions=outputs, references=data.references
         )
 
         print(f"Accuracy for {num_ice} ICL examples: {score}")
 
         results_file_path = os.path.join(save_dir, "scores.json")
 
-        # Check if results file exists and load it
+        #Check if results file exists and load it
         if os.path.exists(results_file_path):
-            with open(results_file_path, "r") as f:  # open the file in read mode
-                scores = json.load(f)
+           with open(results_file_path, "r") as f:  # open the file in read mode
+               scores = json.load(f)
 
         scores[num_ice] = score
 

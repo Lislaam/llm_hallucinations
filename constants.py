@@ -1,5 +1,6 @@
 SYSTEM_INSTRUCTION = """
 You are a language model asked to determine if a given summary is valid with respect to some source text.
+DO NOT summarise the source text yourself. You are only required to determine if the given summary is valid or not.
 If the summary is valid, please return "correct".
 
 If the summary is invalid, you must categorise and return the type of error choosing from the below:
@@ -21,7 +22,7 @@ The following errors MUST NOT be combined:
 2. NP and Predicate.
 
 Keep in mind that the given summary may contain more than one error. You must identify all errors.
-You should output the answer from the following: ["correct", "intrinsic-NP", "intrinsic-predicate", "extrinsic-NP", "extrinsic-predicaate"].
+You must output the answer from the following list only: ["correct", "intrinsic-NP", "intrinsic-predicate", "extrinsic-NP", "extrinsic-predicaate"].
 """
 
 PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": SYSTEM_INSTRUCTION }

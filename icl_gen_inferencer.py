@@ -14,6 +14,10 @@ from tqdm import tqdm
 from transformers import PretrainedConfig
 from accelerate import Accelerator
 
+from constants import PROMPT_INSTRUCTIONS, DATASET_LABELS, PRE_POST_LABEL_TOKENS
+from utils import find_ordered_label_positions, extract_logits, get_max_token_in_label_length, pad_logits, extract_labels_from_prompt, find_answer_label_positions
+
+
 logger = get_logger(__name__)
 
 
@@ -48,12 +52,73 @@ class GenInferencer(BaseInferencer):
                  output_json_filename: Optional[str] = "predictions",
                  api_name: Optional[str] = None,
                  model_parallel: Optional[bool] = False,
+
+                 labels: Optional[List] = None,
+                 dataset_name: Optional[str] = "Lislaam/AggreFact",
+                 num_icl_examples: Optional[int] = 0,
+
                  **kwargs
                  ) -> None:
         super().__init__(model_name, tokenizer_name, max_model_token_num, model_config, batch_size, accelerator,
                          output_json_filepath, output_json_filename, api_name, model_parallel, **kwargs)
         self.gen_field_replace_token = gen_field_replace_token
         self.generation_kwargs = generation_kwargs
+
+        self.labels = labels
+        self.dataset_name = dataset_name
+        self.num_icl_examples = num_icl_examples
+        self.model_name = model_name
+
+        dataset_labels = list(DATASET_LABELS[self.verbalised_labels][dataset_name].values())
+
+        # Add eos or eot token to get answer label tokens and to avoid any extra tokens within the context being considered as part of the label.
+        if "mistral" in model_name or "llama" in model_name:
+            extra_token = self.tokenizer.eos_token
+        elif "gemma" in model_name:
+            extra_token = '<end_of_turn>'
+        else:
+            raise ValueError("Model not supported...")
+
+        # Add a space as matters at least for the Gemma and LLama tokenizers.
+        self.tokenized_labels = [
+            self.tokenizer(' ' + label + extra_token, add_special_tokens=False, return_tensors="pt")[
+                "input_ids"
+            ].squeeze(0).to(self.model.device)
+            for label in dataset_labels
+        ]
+
+        #if not self.verbalised_labels:
+            # Tokens to ignore in matching labels
+        if "mistral" in model_name:
+            # Ignore " " and eos token, found through experimentation with the Mistral tokenizer.
+            self.ignore_tokens = [torch.tensor([29473]).to(self.model.device), torch.tensor([2]).to(self.model.device)]
+
+        elif "llama" in model_name:
+            self.ignore_tokens = [torch.tensor([220]).to(self.model.device), torch.tensor([128009]).to(self.model.device)]
+        else: 
+            raise ValueError("Model not supported...")
+        # else:
+        #     # Tokens to ignore in matching labels
+        #     if "mistral" in model_name:
+        #         # Ignore " " and eos token, found through experimentation with the Mistral tokenizer.
+        #         self.ignore_tokens = [torch.tensor([]).to(self.model.device), torch.tensor([2]).to(self.model.device)]
+        #     elif "llama" in model_name:
+        #         self.ignore_tokens = [torch.tensor([]).to(self.model.device), torch.tensor([128009]).to(self.model.device)]
+        #     else: 
+        #         raise ValueError("Model not supported...")
+
+        num_start_ignore_tokens = len(self.ignore_tokens[0])
+        num_end_ignore_tokens = len(self.ignore_tokens[1])
+
+        tokenised_raw_labels = [self.tokenizer(label, add_special_tokens=False, return_tensors="pt")[
+                "input_ids"
+            ].squeeze(0).to(self.model.device)
+            for label in dataset_labels
+        ]
+
+        # Find max_legnth 
+        self.max_tokenised_label_length = max(label.size(0) - num_start_ignore_tokens - num_end_ignore_tokens for label in self.tokenized_labels)
+
 
     def inference(self, retriever: BaseRetriever, ice_template: Optional[PromptTemplate] = None,
                   prompt_template: Optional[PromptTemplate] = None, output_json_filepath: Optional[str] = None,
@@ -63,6 +128,10 @@ class GenInferencer(BaseInferencer):
         output_handler = GenInferencerOutputHandler(num, self.accelerator)
         index = 0
 
+        logits_dict = {}  # Dictionary to store logits
+        log_likelihoods_dict = {}  # Dictionary to store log likelihoods
+        summary = {}  # Dictionary to store additional information
+
         if output_json_filepath is None:
             output_json_filepath = self.output_json_filepath
         if output_json_filename is None:
@@ -71,21 +140,27 @@ class GenInferencer(BaseInferencer):
         # 2. Get results of retrieval process
         ice_idx_list = retriever.retrieve()
 
-        # 3. Generate prompts for testing input 
-        prompt_list = get_generation_prompt_list_from_retriever_indices(ice_idx_list, retriever, self.tokenizer,
+        # 3. Get ground truth labels
+        ground_truth_labels = retriever.ground_truth_labels()
+
+        # 4. Generate prompts for testing input 
+        prompt_list_raw = get_generation_prompt_list_from_retriever_indices(ice_idx_list, retriever, self.tokenizer,
                                                                         self.gen_field_replace_token,
                                                                         max_model_token_num=self.max_model_token_num,
                                                                         ice_template=ice_template,
-                                                                        prompt_template=prompt_template)
+                                                                        prompt_template=prompt_template,
+                                                                        chat_template=chat_template)
+        
+        prompt_list = self.add_instruction_prompt_additions_and_sos_token(prompt_list_raw)
         output_handler.save_orgin_prompts(prompt_list)
 
-        # 4. Wrap prompts with Dataloader
+        # 5. Wrap prompts with Dataloader
         dataloader = get_dataloader(prompt_list, self.batch_size)
 
-        # 5. Inference for prompts in each batch 
+        # 6. Inference for prompts in each batch 
         logger.info("Starting inference process...")
         for entry in tqdm(dataloader, disable=not self.is_main_process):
-            # 5-1. Inference with local model
+            # 6-1. Inference with local model
             if not self.call_api:
                 with torch.no_grad():
                     tokenized_data = self.tokenizer.batch_encode_plus(entry, padding=True, return_tensors='pt').to(
@@ -129,4 +204,44 @@ class GenInferencer(BaseInferencer):
             self.accelerator.wait_for_everyone()
         output_handler.merge_to_main_process(output_json_filepath, output_json_filename)
         output_handler.write_to_json(output_json_filepath, output_json_filename)
-        return [sample['prediction'] for sample in output_handler.results_dict.values()]
+        return [sample['prediction'] for sample in output_handler.results_dict.values()], summary
+
+
+    def add_instruction_prompt_additions_and_sos_token(self, input_texts):
+        # Add on system prompts and special tokens if needed.
+        if "mistral" in self.model_name:
+            if self.use_instruction:
+                messages = [
+                    {"role": "user", "content": PROMPT_INSTRUCTIONS[self.dataset_name]},
+                    #{"role": "assistant", "content": ASSISTANT_PROMPTS[self.dataset_name]},
+                ]
+
+                instruction = self.tokenizer.apply_chat_template(messages, tokenize=False)
+                prompts = [instruction + text for text in input_texts]
+
+            else:
+                prompts = ["<s>" + text for text in input_texts]
+        elif "llama" in self.model_name:
+                messages = [
+                    {"role": "system", "content": PROMPT_INSTRUCTIONS[self.dataset_name]},
+                ]
+
+                instruction = self.tokenizer.apply_chat_template(messages, tokenize=False)
+                prompts = [instruction + text for text in input_texts]
+
+        elif "gemma" in self.model_name:
+            if self.use_instruction:
+                messages = [
+                    {"role": "user", "content": PROMPT_INSTRUCTIONS[self.dataset_name]},
+                    #{"role": "assistant", "content": ASSISTANT_PROMPTS[self.dataset_name]},
+                ]
+
+                instruction = self.tokenizer.apply_chat_template(messages, tokenize=False)
+                prompts = [instruction + text for text in input_texts]
+
+            else:
+                prompts = ["<bos>" + text for text in input_texts]
+        else:
+            raise ValueError("Model not supported...")
+
+        return prompts
