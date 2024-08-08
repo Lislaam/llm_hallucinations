@@ -12,6 +12,7 @@ import os
 import torch
 from constants import PRE_POST_LABEL_TOKENS
 import re
+import ast
 
 
 # Function to extract labels from prompt based on model-specific tokens
@@ -44,12 +45,12 @@ def reformat_data(
     """
     if dataset_name == "Lislaam/AggreFact":
         dataset = dataset.filter(lambda x: x["error_type"] in ['correct',
-                                                                  '[intrinsic]',
-                                                                  '[extrinsic]',
-                                                                  '[intrinsic-NP]',
-                                                                  '[intrinsic-predicate]',
-                                                                  '[extrinsic-NP]',
-                                                                  '[extrinsic-predicate]'])
+                                                                  'intrinsic',
+                                                                  'extrinsic',
+                                                                  'intrinsic-NP',
+                                                                  'intrinsic-predicate',
+                                                                  'extrinsic-NP',
+                                                                  'extrinsic-predicate'])
 
 
     else:
@@ -275,6 +276,103 @@ def construct_icl_prompt_msgs(original_example, icl_examples, dataset, llm):
     )
 
     return messages
+
+
+def preprocess(text):
+    # Convert to lowercase
+    try:
+        text = ast.literal_eval(text) # Deals with lists of errors in string form
+        #text = text.lower()
+        #text = text.split("\n")[-1]  # Only consider the last part
+        # Remove punctuation and replace underscores with spaces
+        #text = re.sub(r"[^\w\s]", "", text)  # Remove punctuation
+        #text = text.replace("_", " ")  # Replace underscores with spaces
+        #return text
+    except ValueError:
+        if text == 'correct':
+            return 'correct'
+    except AttributeError:
+        print("Error in preprocessing this:", text)
+        return ''
+
+
+def soft_match(pred_processed, ref_processed, multiple_references=False):
+    if multiple_references:
+        # Check if any ref is within pred
+        return (
+            1
+            if any(
+                [
+                    re.search(r"\b" + re.escape(r) + r"\b", pred_processed)
+                    for r in ref_processed
+                ]
+            )
+            else 0
+        )
+    else:
+        # Check if ref is within pred
+        return (
+            1
+            if re.search(r"\b" + re.escape(ref_processed) + r"\b", pred_processed)
+            else 0
+        )
+
+def get_score(predictions, references):
+    processed_preds = [preprocess(pred) for pred in predictions]
+    processed_refs = [preprocess(ref) for ref in references]
+
+    flatten = lambda lst: [x for xs in lst for x in xs]
+
+    def match(x):
+        # Dealing with more than one error_label per example
+        if type(processed_refs[x]) == list:
+            if len(processed_preds[x]) > 1 and len(processed_refs[x]) > 1:
+                return sum([1/len(processed_refs[x]) for i in range(len(processed_preds[x])) if processed_preds[x][i] in processed_refs[x]])
+            elif len(processed_preds[x]) > 1:
+                return sum([1/len(processed_refs[x]) for i in range(len(processed_preds[x])) if processed_preds[x][i] == processed_refs[x]])
+            else:
+                return 1 if processed_preds[x] == processed_refs[x] else 0
+        else:
+            return 1 if processed_preds[x] == processed_refs[x] else 0 # If label = 'correct'
+
+    total = 0
+    extrinsicnp = 0
+    extrinsicpredicate = 0
+    intrinsicnp = 0
+    intrinsicpredicate = 0
+    correct = 0
+
+    num_extrinsicnp = sum([1 for ref in flatten(processed_refs) if ref == 'extrinsicnp']) if 'extrinsicnp' in flatten(processed_refs) else 1
+    num_extrinsicpredicate = sum([1 for ref in flatten(processed_refs) if ref == 'extrinsicpredicate']) if 'extrinsicpredicate' in flatten(processed_refs) else 1
+    num_intrinsicnp = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsicnp']) if 'intrinsicnp' in flatten(processed_refs) else 1
+    num_intrinsicpredicate = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsicpredicate']) if 'intrinsicpredicate' in flatten(processed_refs) else 1
+    num_correct = sum([1 for ref in flatten(processed_refs) if ref == 'correct']) if 'correct' in flatten(processed_refs) else 1
+
+    for i in range(len(processed_preds)):
+        if processed_refs[i] == 'extrinsicnp':
+            extrinsicnp += match(i)
+            total += match(i)
+        elif processed_refs[i] == 'extrinsicpredicate':
+            extrinsicpredicate += match(i)
+            total += match(i)
+        elif processed_refs[i] == 'intrinsicnp':
+            intrinsicnp += match(i)
+            total += match(i)
+        elif processed_refs[i] == 'intrinsicpredicate': 
+            intrinsicpredicate += match(i)
+            total += match(i)
+        elif processed_refs[i] == 'correct':
+            correct += match(i)
+            total += match(i)
+
+    scores = {'total': total / len(processed_preds),
+              'extrinsic-NP': extrinsicnp / num_extrinsicnp if 'extrinsicnp' in processed_refs else None,
+              'extrinsic-predicate': extrinsicpredicate / num_extrinsicpredicate if 'extrinsicpredicate' in processed_refs else None,
+              'intrinsic-NP': intrinsicnp / num_intrinsicnp if 'intrinsicnp' in processed_refs else None,
+              'intrinsic-predicate': intrinsicpredicate / num_intrinsicpredicate if 'intrinsicpredicate' in processed_refs else None,
+              'correct': correct / num_correct if 'correct' in processed_refs else None}
+
+    return scores
 
 
 def compute_accuracy(results):

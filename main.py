@@ -12,7 +12,7 @@ from openicl import (
 )
 from setup import *
 from constants import DATASET_LABELS, DATASET_PROMPTS
-from utils import reformat_data
+from utils import reformat_data, get_score
 
 from huggingface_hub import login
 # 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
@@ -39,7 +39,7 @@ def main(args):
             print("Must use Lislaam/AggreFact")
 
         #import pdb; pdb.set_trace()
-        dataset = reformat_data(dataset, args.dataset) # Take away too long examples
+        #dataset = reformat_data(dataset, args.dataset)
         #import pdb; pdb.set_trace()
 
         # Create a DatasetDict object
@@ -53,7 +53,7 @@ def main(args):
         )
 
         # Load tokenizer to set chat template.
-        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3-8B-Instruct', 
+        tokenizer = AutoTokenizer.from_pretrained(model,
                                                   padding_side='left')
         tokenizer.pad_token_id = tokenizer.eos_token_id # End of sequence token as pad token
 
@@ -120,20 +120,6 @@ def main(args):
         model_name = model.split("/")[-1]
         retriever = args.retriever
 
-        # # Save the tensor containing the logits at context label positions.
-        # save_dir = os.path.join(
-        #     args.scratch_dir,
-        #     dataset_name,
-        #     ins_name,
-        #     retriever,
-        #     model_name,
-        #     f"verbalised_labels_{args.verbalised_labels}",
-        # )
-        # os.makedirs(save_dir, exist_ok=True)
-        # # torch.save(
-        # #     label_tensor, os.path.join(save_dir, f"label_tensor_{num_ice}.pt")
-        # # )
-
         # Save the summary.
         save_dir = os.path.join(
             "results",
@@ -145,12 +131,15 @@ def main(args):
             json.dump(outputs, f, indent=4)
 
         # Compute accuracy for the prediction
-        import pdb; pdb.set_trace()
-        score = AccEvaluator().score(
-            predictions=outputs, references=data.references
-        )
+        #import pdb; pdb.set_trace()
+        score = get_score(outputs, data.references) #AccEvaluator().score(
+            #predictions=outputs, references=data.references
+        #)
 
-        print(f"Accuracy for {num_ice} ICL examples: {score}")
+        print(f"Total accuracy for {num_ice} ICL examples: {score['total']}")
+        for error_type in DATASET_LABELS[args.dataset].values():
+            print(f"{error_type} class accuracy for {num_ice} ICL examples: {score[error_type]}")
+
 
         results_file_path = os.path.join(save_dir, "scores.json")
 

@@ -1,0 +1,10 @@
+{
+    "0": {
+        "total": 0.0,
+        "extrinsic-NP": 0.0,
+        "extrinsic-predicate": 0.0,
+        "intrinsic-NP": null,
+        "intrinsic-predicate": null,
+        "correct": 0.0
+    }
+}
