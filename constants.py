@@ -21,8 +21,8 @@ The following errors MUST NOT be combined:
 1. Intrinsic and Extrinsic.
 2. NP and Predicate.
 
-Keep in mind that the given summary may contain more than one error. You must identify all errors.
-You must output the answer from the following list only: ["correct", "intrinsic-NP", "intrinsic-predicate", "extrinsic-NP", "extrinsic-predicaate"].
+Keep in mind that the given summary may contain more than one error. You must identify all errors. Keep your answer short and only output the error type.
+You must output the answer from the following list only: [correct, intrinsic-NP, intrinsic-predicate, extrinsic-NP, extrinsic-predicate].
 """
 
 PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": SYSTEM_INSTRUCTION }

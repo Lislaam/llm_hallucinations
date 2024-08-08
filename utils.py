@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import os
 import torch
 from constants import PRE_POST_LABEL_TOKENS
-import re
+import regex as re
 import ast
 
 
@@ -43,31 +43,32 @@ def reformat_data(
     Returns:
         dataset: dataset -- reformatted dataset
     """
-    if dataset_name == "Lislaam/AggreFact":
-        dataset = dataset.filter(lambda x: x["error_type"] in ['correct',
-                                                                  'intrinsic',
-                                                                  'extrinsic',
-                                                                  'intrinsic-NP',
-                                                                  'intrinsic-predicate',
-                                                                  'extrinsic-NP',
-                                                                  'extrinsic-predicate'])
 
+    def output_map(label):
+        try:
+            # Deals with lists of error_types in string form, removing []
+            label = ast.literal_eval(label) # It is a list of strings now 
+        except ValueError:
+            pass
+        return label   
+
+    if dataset_name == "Lislaam/AggreFact":
+        error_types = ['correct', 'intrinsic', 'extrinsic', 'intrinsic-NP', 
+                'intrinsic-predicate', 'extrinsic-NP','extrinsic-predicate']
+        dataset = dataset.map(
+                lambda x, idx: {
+                    "idx": idx,
+                    "input_text": (x["doc"], x["summ"]), 
+                    "output": output_map(x["error_type"]),
+                },
+                with_indices=True,
+            )
+        
+        dataset = dataset.filter(lambda x: x["output"] in error_types)
 
     else:
         raise ValueError(f"Dataset {dataset_name} not supported.")
     return dataset
-        #dataset = dataset.map(
-         #   lambda x, idx: {
-          #      "idx": idx,
-           #     "input_text": x["review"],
-            #    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-            #},
-            #with_indices=True,)
-
-        #dataset = dataset.filter(
-         #   lambda x: len(x["text1"]) < 300 or len(x["text2"]) < 300
-        #)
-
     """
         elif dataset_name == "DT4LM/qqp":
             dataset = dataset.map(
@@ -209,7 +210,6 @@ def reformat_data(
     """
 
 
-
 def sample_icl_examples(train_data, num_icl_examples):
     """
     Sample ICL examples from the training data.
@@ -278,24 +278,6 @@ def construct_icl_prompt_msgs(original_example, icl_examples, dataset, llm):
     return messages
 
 
-def preprocess(text):
-    # Convert to lowercase
-    try:
-        text = ast.literal_eval(text) # Deals with lists of errors in string form
-        #text = text.lower()
-        #text = text.split("\n")[-1]  # Only consider the last part
-        # Remove punctuation and replace underscores with spaces
-        #text = re.sub(r"[^\w\s]", "", text)  # Remove punctuation
-        #text = text.replace("_", " ")  # Replace underscores with spaces
-        #return text
-    except ValueError:
-        if text == 'correct':
-            return 'correct'
-    except AttributeError:
-        print("Error in preprocessing this:", text)
-        return ''
-
-
 def soft_match(pred_processed, ref_processed, multiple_references=False):
     if multiple_references:
         # Check if any ref is within pred
@@ -316,9 +298,33 @@ def soft_match(pred_processed, ref_processed, multiple_references=False):
             if re.search(r"\b" + re.escape(ref_processed) + r"\b", pred_processed)
             else 0
         )
+    
 
-def get_score(predictions, references):
-    processed_preds = [preprocess(pred) for pred in predictions]
+def preprocess(text, model=None, error_types=['correct', 'intrinsic', 'extrinsic', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate']):
+    import pdb; pdb.set_trace()
+    if 'llama' in model:
+       text = text.split("\n")[-1]  # Only consider the last part
+       
+    try:
+       if 'llama' in model:
+           text = text.split("\n")[-1]  # Only consider the last part
+       text = ast.literal_eval(text) # Deals with lists of error_types in string form
+       import pdb; pdb.set_trace()
+       return text
+    except ValueError:
+       if 'llama' in model:
+           text = text.split("\n")[-1]  # Only consider the last part
+       text = re.sub(r"\p{P}(?<!-)", "", text)  # Remove punctuation except -
+       import pdb; pdb.set_trace()
+       return text
+    #except SyntaxError: # Most likely a large body of text. Pick out the label from it
+
+    except AttributeError:
+       print("Error in preprocessing this:", text)
+       return ''
+
+def get_score(predictions, references, model):
+    processed_preds = [preprocess(pred, model) for pred in predictions]
     processed_refs = [preprocess(ref) for ref in references]
 
     flatten = lambda lst: [x for xs in lst for x in xs]
@@ -347,6 +353,8 @@ def get_score(predictions, references):
     num_intrinsicnp = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsicnp']) if 'intrinsicnp' in flatten(processed_refs) else 1
     num_intrinsicpredicate = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsicpredicate']) if 'intrinsicpredicate' in flatten(processed_refs) else 1
     num_correct = sum([1 for ref in flatten(processed_refs) if ref == 'correct']) if 'correct' in flatten(processed_refs) else 1
+
+    import pdb; pdb.set_trace()
 
     for i in range(len(processed_preds)):
         if processed_refs[i] == 'extrinsicnp':

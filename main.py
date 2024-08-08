@@ -38,9 +38,9 @@ def main(args):
         else:
             print("Must use Lislaam/AggreFact")
 
-        #import pdb; pdb.set_trace()
-        #dataset = reformat_data(dataset, args.dataset)
-        #import pdb; pdb.set_trace()
+        import pdb; pdb.set_trace()
+        dataset = reformat_data(dataset, args.dataset)
+        import pdb; pdb.set_trace()
 
         # Create a DatasetDict object
         dataset = DatasetDict(
@@ -132,7 +132,7 @@ def main(args):
 
         # Compute accuracy for the prediction
         #import pdb; pdb.set_trace()
-        score = get_score(outputs, data.references) #AccEvaluator().score(
+        score = get_score(outputs, data.references, model=model) #AccEvaluator().score(
             #predictions=outputs, references=data.references
         #)
 
