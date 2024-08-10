@@ -25,16 +25,28 @@ Keep in mind that the given summary may contain more than one error. You must id
 You must output the answer from the following list only: [correct, intrinsic-NP, intrinsic-predicate, extrinsic-NP, extrinsic-predicate].
 """
 
+
 PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": SYSTEM_INSTRUCTION }
 
 DATASET_PROMPTS = {"Lislaam/AggreFact": {"input": ["doc", "summ"], "output": "error_type"}}
 
 DATASET_LABELS = {"Lislaam/AggreFact": {
                     0: "correct",
-                    1: "intrinsic-NP",
-                    2: "intrinsic-predicate",
-                    3: "extrinsic-NP",
-                    4: "extrinsic-predicate" 
+                    1: "['intrinsic-NP']",
+                    2: "['intrinsic-predicate']",
+                    3: "['extrinsic-NP']",
+                    4: "['extrinsic-predicate']",
+                    5: "['extrinsic-NP', 'intrinsic-NP']",
+                    6: "['extrinsic-NP', 'extrinsic-predicate']",
+                    7: "['intrinsic-predicate', 'extrinsic-NP']",
+                    8: "['extrinsic-predicate', 'intrinsic-NP']",
+                    9: "['extrinsic-predicate', 'intrinsic-predicate']",
+                    10: "['intrinsic-NP', 'intrinsic-predicate']",
+                    11: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+                    13: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+                    14: "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+                    15: "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+                    16: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']"
                     }
                   }
 

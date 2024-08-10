@@ -31,9 +31,74 @@ def extract_labels_from_prompt(prompt, model):
         return labels[:-1]  # Exclude the last label extracted from the prompt
 
 
-def reformat_data(
-    dataset, dataset_name, subset_size=67000, train_set=False, verbalised_labels=False
-):
+def error_type_map(example):
+    # Any combination of error types is mapped into the same order.
+    label_map = {
+        "['extrinsic-NP']" : "['extrinsic-NP']",
+        "['extrinsic-predicate']" : "['extrinsic-predicate']",
+        "['intrinsic-NP']" : "['intrinsic-NP']",
+        "['intrinsic-predicate']" : "['intrinsic-predicate']",
+        "correct" : "correct",
+        "['correct']" : "correct",
+
+        "['extrinsic-NP', 'intrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP']",
+        "['intrinsic-NP', 'extrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP']",
+        "['extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-predicate']", 
+        "['intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate']",
+        "['extrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate']",
+        "['intrinsic-predicate', 'extrinsic-NP']" : "['intrinsic-predicate', 'extrinsic-NP']",
+        "['extrinsic-NP', 'intrinsic-predicate']" : "['intrinsic-predicate', 'extrinsic-NP']",
+        "['extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-predicate', 'intrinsic-NP']",
+        "['intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP']",
+        "['intrinsic-NP', 'intrinsic-predicate']" : "['intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-predicate', 'intrinsic-NP']" : "['intrinsic-NP', 'intrinsic-predicate']",
+
+        "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+        "['extrinsic-NP', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+        "['intrinsic-NP', 'extrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+        "['intrinsic-NP', 'extrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+        "['extrinsic-predicate', 'intrinsic-NP', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+        "['extrinsic-predicate', 'extrinsic-NP', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+         
+        "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+        "['intrinsic-predicate', 'extrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+        "['intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+        "['extrinsic-predicate', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+        "['extrinsic-predicate', 'extrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+
+        "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'intrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-predicate', 'intrinsic-NP', 'extrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-predicate', 'extrinsic-NP', 'intrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-NP', 'extrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+
+        "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-predicate', 'intrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-predicate', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-predicate', 'extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+
+        "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'intrinsic-predicate', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'intrinsic-predicate', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-NP', 'intrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        "['intrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+        }
+    
+    example['error_type'] = label_map[example['error_type']]
+
+    return example
+
+
+def reformat_data(dataset, dataset_name):
     """Reformats the dataset to have the same format for all datasets for consitency.
 
     Args:
@@ -45,169 +110,27 @@ def reformat_data(
     """
 
     def output_map(label):
+        if label == '[]':
+            return ['null']
         try:
             # Deals with lists of error_types in string form, removing []
             label = ast.literal_eval(label) # It is a list of strings now 
         except ValueError:
-            pass
+            label = [label]
         return label   
 
     if dataset_name == "Lislaam/AggreFact":
         error_types = ['correct', 'intrinsic', 'extrinsic', 'intrinsic-NP', 
                 'intrinsic-predicate', 'extrinsic-NP','extrinsic-predicate']
-        dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": (x["doc"], x["summ"]), 
-                    "output": output_map(x["error_type"]),
-                },
-                with_indices=True,
-            )
-        
-        dataset = dataset.filter(lambda x: x["output"] in error_types)
+
+        dataset = dataset.filter(lambda x: all(x in error_types for x in output_map(x['error_type'])))
+
+        dataset = dataset.map(error_type_map)
+        #import pdb; pdb.set_trace()
 
     else:
         raise ValueError(f"Dataset {dataset_name} not supported.")
     return dataset
-    """
-        elif dataset_name == "DT4LM/qqp":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": f"Question 1: {x['question1']}\nQuestion 2: {x['question2']}",
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "google-research-datasets/paws":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": f"Sentence 1: {x['sentence1']}\nSentence 2: {x['sentence2']}",
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                },
-                with_indices=True,
-            )
-        else:
-            raise ValueError(f"Dataset {dataset_name} not supported.")
-
-    else:
-        if dataset_name == "google/boolq":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["question"],
-                    "output": str(int(x["answer"])),
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "stanfordnlp/sst2":
-            dataset = dataset.map(
-                lambda x: {
-                    "idx": x["idx"],
-                    "input_text": x["sentence"],
-                    "output": str(x["label"]),
-                }
-            )
-        elif dataset_name == "ajaykarthick/imdb-movie-reviews":
-            dataset = dataset.filter(lambda x: len(x["review"]) < 500)
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["review"],
-                    "output": str(x["label"]),
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "SetFit/mnli":
-            # Filter out excessively long examples to avoid memory issues and speed up evaluation.
-            dataset = dataset.filter(
-                lambda x: len(x["text1"]) < 400 or len(x["text2"]) < 400
-            )
-
-            # Randomly shuffle the dataset and select a subset.
-            if train_set:
-                # Select subset.
-                dataset = dataset.shuffle(seed=42)
-                dataset = dataset.select(range(subset_size))
-                assert len(dataset) == subset_size
-
-            dataset = dataset.map(
-                lambda x: {
-                    "idx": x["idx"],
-                    "input_text": f"Premise: {x['text1']}\nHypothesis: {x['text2']}",
-                    "output": str(x["label"]),
-                }
-            )
-        elif dataset_name == "SetFit/ag_news":
-            # Filter out excessively long examples.
-            dataset = dataset.filter(lambda x: len(x["text"]) < 300)
-
-            # Randomly shuffle the dataset and select a subset.
-            if train_set:
-                # Select subset.
-                dataset = dataset.shuffle()
-                dataset = dataset.select(range(subset_size))
-                assert len(dataset) == subset_size
-
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["text"],
-                    "output": str(x["label"]),
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "linxinyuan/cola":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["text"],
-                    "output": str(x["label"]),
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "SetFit/sst5":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": x["text"],
-                    "output": str(x["label"]),
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "jhu-cogsci/hans":
-            dataset = dataset.filter(
-                lambda x: len(x["premise"]) < 300 or len(x["hypothesis"]) < 300
-            )
-
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": f"Premise: {x['premise']}\nHypothesis: {x['hypothesis']}",
-                    "output": str(x["label"]),
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "DT4LM/qqp":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": f"Question 1: {x['question1']}\nQuestion 2: {x['question2']}",
-                    "output": str(x["label"]),
-                },
-                with_indices=True,
-            )
-        elif dataset_name == "google-research-datasets/paws":
-            dataset = dataset.map(
-                lambda x, idx: {
-                    "idx": idx,
-                    "input_text": f"Sentence 1: {x['sentence1']}\nSentence 2: {x['sentence2']}",
-                    "output": DATASET_LABELS[True][dataset_name][int(x["label"])],
-                },
-                with_indices=True,
-            )
-    """
 
 
 def sample_icl_examples(train_data, num_icl_examples):
@@ -301,84 +224,66 @@ def soft_match(pred_processed, ref_processed, multiple_references=False):
     
 
 def preprocess(text, model=None, error_types=['correct', 'intrinsic', 'extrinsic', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate']):
-    import pdb; pdb.set_trace()
-    if 'llama' in model:
+    if model!= None and 'llama' in model:
        text = text.split("\n")[-1]  # Only consider the last part
        
     try:
-       if 'llama' in model:
-           text = text.split("\n")[-1]  # Only consider the last part
        text = ast.literal_eval(text) # Deals with lists of error_types in string form
-       import pdb; pdb.set_trace()
-       return text
     except ValueError:
-       if 'llama' in model:
-           text = text.split("\n")[-1]  # Only consider the last part
        text = re.sub(r"\p{P}(?<!-)", "", text)  # Remove punctuation except -
-       import pdb; pdb.set_trace()
-       return text
-    #except SyntaxError: # Most likely a large body of text. Pick out the label from it
-
-    except AttributeError:
+    except AttributeError or SyntaxError: # A none or long piece of text we didn't want
        print("Error in preprocessing this:", text)
        return ''
+    return text
+
 
 def get_score(predictions, references, model):
-    processed_preds = [preprocess(pred, model) for pred in predictions]
-    processed_refs = [preprocess(ref) for ref in references]
+    #processed_preds = [preprocess(pred, model) for pred in predictions]
+    processed_refs = [preprocess(ref) for ref in references] # Should always be processable
 
-    flatten = lambda lst: [x for xs in lst for x in xs]
-
-    def match(x):
-        # Dealing with more than one error_label per example
-        if type(processed_refs[x]) == list:
-            if len(processed_preds[x]) > 1 and len(processed_refs[x]) > 1:
-                return sum([1/len(processed_refs[x]) for i in range(len(processed_preds[x])) if processed_preds[x][i] in processed_refs[x]])
-            elif len(processed_preds[x]) > 1:
-                return sum([1/len(processed_refs[x]) for i in range(len(processed_preds[x])) if processed_preds[x][i] == processed_refs[x]])
-            else:
-                return 1 if processed_preds[x] == processed_refs[x] else 0
-        else:
-            return 1 if processed_preds[x] == processed_refs[x] else 0 # If label = 'correct'
+    flatten = lambda lst: [item for sublist in lst for item in (sublist if isinstance(sublist, list) else [sublist])]
 
     total = 0
-    extrinsicnp = 0
-    extrinsicpredicate = 0
-    intrinsicnp = 0
-    intrinsicpredicate = 0
-    correct = 0
+    class_errors = {'extrinsic-NP': 0, 'extrinsic-predicate': 0, 'intrinsic-NP': 0,
+                    'intrinsic-predicate': 0, 'correct': 0}
 
-    num_extrinsicnp = sum([1 for ref in flatten(processed_refs) if ref == 'extrinsicnp']) if 'extrinsicnp' in flatten(processed_refs) else 1
-    num_extrinsicpredicate = sum([1 for ref in flatten(processed_refs) if ref == 'extrinsicpredicate']) if 'extrinsicpredicate' in flatten(processed_refs) else 1
-    num_intrinsicnp = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsicnp']) if 'intrinsicnp' in flatten(processed_refs) else 1
-    num_intrinsicpredicate = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsicpredicate']) if 'intrinsicpredicate' in flatten(processed_refs) else 1
+    num_extrinsicnp = sum([1 for ref in flatten(processed_refs) if ref == 'extrinsic-NP']) if 'extrinsic-NP' in flatten(processed_refs) else 1
+    num_extrinsicpredicate = sum([1 for ref in flatten(processed_refs) if ref == 'extrinsic-predicate']) if 'extrinsic-predicate' in flatten(processed_refs) else 1
+    num_intrinsicnp = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsic-NP']) if 'intrinsic-NP' in flatten(processed_refs) else 1
+    num_intrinsicpredicate = sum([1 for ref in flatten(processed_refs) if ref == 'intrinsic-predicate']) if 'intrinsic-predicate' in flatten(processed_refs) else 1
     num_correct = sum([1 for ref in flatten(processed_refs) if ref == 'correct']) if 'correct' in flatten(processed_refs) else 1
 
-    import pdb; pdb.set_trace()
+    # Check if any ref is within pred
+    for i in range(len(processed_refs)):
+        if type(processed_refs[i])==list:
+            for x in processed_refs[i]:
+                if soft_match(predictions[i], x):
+                    total += 1/len(processed_refs[i])
+                    class_errors[x] += 1
+        else:
+            if soft_match(predictions[i], processed_refs[i]):
+                total += 1
+                class_errors[processed_refs[i]] += 1
 
-    for i in range(len(processed_preds)):
-        if processed_refs[i] == 'extrinsicnp':
-            extrinsicnp += match(i)
-            total += match(i)
-        elif processed_refs[i] == 'extrinsicpredicate':
-            extrinsicpredicate += match(i)
-            total += match(i)
-        elif processed_refs[i] == 'intrinsicnp':
-            intrinsicnp += match(i)
-            total += match(i)
-        elif processed_refs[i] == 'intrinsicpredicate': 
-            intrinsicpredicate += match(i)
-            total += match(i)
-        elif processed_refs[i] == 'correct':
-            correct += match(i)
-            total += match(i)
+    # zipped = zip(processed_preds, processed_refs)
 
-    scores = {'total': total / len(processed_preds),
-              'extrinsic-NP': extrinsicnp / num_extrinsicnp if 'extrinsicnp' in processed_refs else None,
-              'extrinsic-predicate': extrinsicpredicate / num_extrinsicpredicate if 'extrinsicpredicate' in processed_refs else None,
-              'intrinsic-NP': intrinsicnp / num_intrinsicnp if 'intrinsicnp' in processed_refs else None,
-              'intrinsic-predicate': intrinsicpredicate / num_intrinsicpredicate if 'intrinsicpredicate' in processed_refs else None,
-              'correct': correct / num_correct if 'correct' in processed_refs else None}
+    # for pred, ref in zipped:
+    #     if type(ref)==list:
+    #         for i in ref:
+    #             if i in pred:
+    #                 total += 1/len(ref)
+    #                 class_errors[i] += 1
+    #     else:
+    #         if ref in pred:
+    #             total += 1
+    #             class_errors[ref] += 1
+
+    scores = {'total': total / len(processed_refs),
+              'extrinsic-NP': class_errors["extrinsic-NP"] / num_extrinsicnp if 'extrinsic-NP' in flatten(processed_refs) else None,
+              'extrinsic-predicate': class_errors["extrinsic-predicate"] / num_extrinsicpredicate if 'extrinsic-predicate' in flatten(processed_refs) else None,
+              'intrinsic-NP': class_errors["intrinsic-NP"] / num_intrinsicnp if 'intrinsic-NP' in flatten(processed_refs) else None,
+              'intrinsic-predicate': class_errors["intrinsic-predicate"] / num_intrinsicpredicate if 'intrinsic-predicate' in flatten(processed_refs) else None,
+              'correct': class_errors["correct"] / num_correct if 'correct' in flatten(processed_refs) else None}
 
     return scores
 

@@ -1,12 +1,12 @@
 [
-    "assistant\n\nextrinsic-NP",
-    "assistant\n\n\"extrinsic-NP\"",
-    "assistant\n\nextrinsic-NP",
-    "assistant\n\nextrinsic-NP",
-    "assistant\n\nextrinsic-NP",
-    "assistant\n\nextrinsic-NP",
-    "assistant\n\nThe given summary is invalid. The error type is \"extrinsic-NP\". The summary states that Ipswich Town ended a run of three straight Championship defeats with a comfortable victory, but the source text does not mention any run of three straight defeats.",
-    "assistant\n\nextrinsic-NP",
-    "assistant\n\n\"correct\"",
-    "assistant\n\nextrinsic-NP"
+    "assistant\n\nThe given summary accurately captures the main points from the source text, including the call for dialogue with reformists within the royal family, including Crown Prince Salman al-Khalifa, and the opposition's desire for peaceful demonstrations and the release of opposition leaders and human rights activists.",
+    "assistant\n\nThe given summary is accurate and does not contain any errors.",
+    "assistant\n\nThe given summary accurately reflects the content of the source text, without introducing any new information or distorting the original meaning.",
+    "assistant\n\nThe given summary is a correct summary of the source text.",
+    "assistant\n\nThe summary accurately captures the main information from the source text, including the fact that a man has been charged with a historical offence involving a boy under 16, the location of the alleged attack, and the court appearance.",
+    "assistant\n\nThe given summary is a correct summary of the source text.",
+    "assistant\n\nThe given summary accurately reflects the content of the source text, so the error type is \"correct\".",
+    "assistant\n\nThe given summary accurately reflects the content of the source text, without introducing any new information or altering the original meaning.",
+    "assistant\n\nThe given summary accurately captures the main idea of the source text without adding any new information or altering the original meaning.",
+    "assistant\n\nThe given summary is a valid summary of the source text."
 ]

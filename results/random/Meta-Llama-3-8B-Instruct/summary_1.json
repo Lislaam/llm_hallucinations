@@ -1,0 +1,20 @@
+[
+    "assistant\n\nThe given summary accurately captures the main points from the original text, including the call for dialogue with reformists within the royal family, the opposition's stance on peaceful demonstrations, and the leader's views on the US and UK governments' approach to the crisis in Bahrain.",
+    "assistant\n\nThe given summary accurately reflects the content of the source text, and there are no errors in terms of intrinsic, extrinsic, NP, or predicate errors.",
+    "assistant\n\nThe given summary is accurate and does not contain any errors.",
+    "assistant\n\nThe given summary is valid and accurately reflects the content of the source text.",
+    "assistant\n\nerror_type: extrinsic-NP",
+    "assistant\n\nThe summary accurately reflects the content of the source text, so it is classified as \"correct\".",
+    "assistant\n\nThe summary accurately reflects the content of the source text, without introducing any new information or changing the original meaning.",
+    "assistant\n\nThe given summary is valid with respect to the source text.",
+    "assistant\n\nThe summary accurately reflects the content of the source text.",
+    "assistant\n\nerror_type: extrinsic-NP",
+    "assistant\n\nerror_type: correct",
+    "assistant\n\nThe given summary accurately summarizes the main points from the source text.",
+    "assistant\n\nThe summary does not contain any information that is not found in the source text. It is a valid summary.",
+    "assistant\n\nThe summary accurately reflects the content of the source text, without adding or omitting any significant information.",
+    "assistant\n\nThe summary accurately conveys the main point of the source text, which is that poorer young people are more likely to end up in the juvenile justice system than their better-off counterparts.",
+    "assistant\n\nThe summary accurately reflects the content of the source text.",
+    "assistant\n\nThe summary accurately reflects the content of the source text, so the error type is \"correct\".",
+    "assistant\n\nThe summary is valid with respect to the source text."
+]

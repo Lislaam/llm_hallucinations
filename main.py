@@ -33,14 +33,14 @@ def main(args):
     
         if args.dataset == "Lislaam/AggreFact":
             # Loading dataset from huggingface
-            dataset = load_dataset(args.dataset, split=['validation[:10]', 'test[:10]']) # Contains validation and test sets
+            dataset = load_dataset(args.dataset, split=['validation', 'test']) # Contains validation and test sets
             dataset = DatasetDict({'validation': dataset[0], 'test': dataset[1]})
         else:
             print("Must use Lislaam/AggreFact")
 
-        import pdb; pdb.set_trace()
-        dataset = reformat_data(dataset, args.dataset)
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
+        dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples
+       # import pdb; pdb.set_trace()
 
         # Create a DatasetDict object
         dataset = DatasetDict(
@@ -81,7 +81,7 @@ def main(args):
 
         # Create prompt template dictionary.
         tp_dict = {
-            label: f"{prompt.replace('{/error_type}', label)}"
+            label: f"{prompt.replace('{/output}', label)}"
             for label in DATASET_LABELS[args.dataset].values()
         }
 
@@ -137,7 +137,7 @@ def main(args):
         #)
 
         print(f"Total accuracy for {num_ice} ICL examples: {score['total']}")
-        for error_type in DATASET_LABELS[args.dataset].values():
+        for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']: #DATASET_LABELS[args.dataset].values():
             print(f"{error_type} class accuracy for {num_ice} ICL examples: {score[error_type]}")
 
 
