@@ -61,6 +61,7 @@ def parse_args():
         "--batch_size", type=int, default=4, help="Batch size for the dataloader"
     )
     parser.add_argument("--seed", type=int, default=42, help="Seed for reproducibility")
+    parser.add_argument("--num_beams", type=int, default=None)
     parser.add_argument(
         "--retriever",
         type=str,

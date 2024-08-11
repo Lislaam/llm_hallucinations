@@ -124,7 +124,7 @@ def reformat_data(dataset, dataset_name):
                 'intrinsic-predicate', 'extrinsic-NP','extrinsic-predicate']
 
         dataset = dataset.filter(lambda x: all(x in error_types for x in output_map(x['error_type'])))
-
+        dataset = dataset.filter(lambda x: len(x['doc']) < 1000)
         dataset = dataset.map(error_type_map)
         #import pdb; pdb.set_trace()
 
@@ -208,7 +208,7 @@ def soft_match(pred_processed, ref_processed, multiple_references=False):
             1
             if any(
                 [
-                    re.search(r"\b" + re.escape(r) + r"\b", pred_processed)
+                    re.search(r"\b" + re.escape(r) + r"\b", pred_processed, re.IGNORECASE)
                     for r in ref_processed
                 ]
             )
@@ -218,7 +218,7 @@ def soft_match(pred_processed, ref_processed, multiple_references=False):
         # Check if ref is within pred
         return (
             1
-            if re.search(r"\b" + re.escape(ref_processed) + r"\b", pred_processed)
+            if re.search(r"\b" + re.escape(ref_processed) + r"\b", pred_processed, re.IGNORECASE)
             else 0
         )
     
@@ -257,10 +257,14 @@ def get_score(predictions, references, model):
     for i in range(len(processed_refs)):
         if type(processed_refs[i])==list:
             for x in processed_refs[i]:
-                if soft_match(predictions[i], x):
+                print(processed_refs[i], x, predictions[i], soft_match(predictions[i], x))
+                #import pdb; pdb.set_trace()
+                if soft_match(predictions[i], x): # Check if that ref is in the pred
                     total += 1/len(processed_refs[i])
                     class_errors[x] += 1
         else:
+            print(processed_refs[i], predictions[i], soft_match(predictions[i], x))
+            #import pdb; pdb.set_trace()
             if soft_match(predictions[i], processed_refs[i]):
                 total += 1
                 class_errors[processed_refs[i]] += 1
@@ -284,6 +288,8 @@ def get_score(predictions, references, model):
               'intrinsic-NP': class_errors["intrinsic-NP"] / num_intrinsicnp if 'intrinsic-NP' in flatten(processed_refs) else None,
               'intrinsic-predicate': class_errors["intrinsic-predicate"] / num_intrinsicpredicate if 'intrinsic-predicate' in flatten(processed_refs) else None,
               'correct': class_errors["correct"] / num_correct if 'correct' in flatten(processed_refs) else None}
+    
+    #print(processed_refs)
 
     return scores
 

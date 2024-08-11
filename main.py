@@ -33,7 +33,7 @@ def main(args):
     
         if args.dataset == "Lislaam/AggreFact":
             # Loading dataset from huggingface
-            dataset = load_dataset(args.dataset, split=['validation', 'test']) # Contains validation and test sets
+            dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]']) # Contains validation and test sets
             dataset = DatasetDict({'validation': dataset[0], 'test': dataset[1]})
         else:
             print("Must use Lislaam/AggreFact")
@@ -105,6 +105,8 @@ def main(args):
             device="cuda",
             dataset_name=args.dataset, # Defaults to AggreFact
             num_icl_examples=num_ice,
+            num_beams = args.num_beams, # Beam search decoding
+            early_stopping = True if args.num_beams != None else False
         )
 
         # the inferencer requires retriever to collect in-context examples, as well as a template to wrap up these examples.

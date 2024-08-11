@@ -1,10 +1,18 @@
 {
     "0": {
-        "total": 0.0,
-        "extrinsic-NP": 0.0,
-        "extrinsic-predicate": 0.0,
-        "intrinsic-NP": null,
-        "intrinsic-predicate": null,
-        "correct": 0.0
-    }
+        "total": 0.198522622345337,
+        "extrinsic-NP": 0.18253968253968253,
+        "extrinsic-predicate": 0.19540229885057472,
+        "intrinsic-NP": 0.2191780821917808,
+        "intrinsic-predicate": 0.10714285714285714,
+        "correct": 0.34285714285714286
+    },
+    "1": {
+        "total": 0.13388734995383197,
+        "extrinsic-NP": 0.12301587301587301,
+        "extrinsic-predicate": 0.08045977011494253,
+        "intrinsic-NP": 0.0821917808219178,
+        "intrinsic-predicate": 0.10714285714285714,
+        "correct": 0.4
+    },
 }
