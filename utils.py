@@ -124,9 +124,8 @@ def reformat_data(dataset, dataset_name):
                 'intrinsic-predicate', 'extrinsic-NP','extrinsic-predicate']
 
         dataset = dataset.filter(lambda x: all(x in error_types for x in output_map(x['error_type'])))
-        dataset = dataset.filter(lambda x: len(x['doc']) < 1000)
+        #dataset = dataset.filter(lambda x: len(x['doc']) < 1000)
         dataset = dataset.map(error_type_map)
-        #import pdb; pdb.set_trace()
 
     else:
         raise ValueError(f"Dataset {dataset_name} not supported.")
@@ -172,9 +171,9 @@ def construct_icl_prompt_msgs(original_example, icl_examples, dataset, llm):
         ]
     #else:
         # Other models don't support system messages
-     #   messages = [
-      #      {"role": "user", "content": PROMPT_INSTRUCTIONS[dataset]},
-       #     {"role": "assistant", "content": ASSISTANT_PROMPTS[dataset]},
+        #   messages = [
+        #      {"role": "user", "content": PROMPT_INSTRUCTIONS[dataset]},
+        #     {"role": "assistant", "content": ASSISTANT_PROMPTS[dataset]},
         #]
 
     # Include the ICL examples.
@@ -263,7 +262,7 @@ def get_score(predictions, references, model):
                     total += 1/len(processed_refs[i])
                     class_errors[x] += 1
         else:
-            print(processed_refs[i], predictions[i], soft_match(predictions[i], x))
+            print(processed_refs[i], predictions[i], soft_match(predictions[i], processed_refs[i]))
             #import pdb; pdb.set_trace()
             if soft_match(predictions[i], processed_refs[i]):
                 total += 1

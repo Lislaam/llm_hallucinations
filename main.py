@@ -33,14 +33,14 @@ def main(args):
     
         if args.dataset == "Lislaam/AggreFact":
             # Loading dataset from huggingface
-            dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]']) # Contains validation and test sets
+            dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]']) # Contains validation and test sets
             dataset = DatasetDict({'validation': dataset[0], 'test': dataset[1]})
         else:
             print("Must use Lislaam/AggreFact")
 
         #import pdb; pdb.set_trace()
         dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples
-       # import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
 
         # Create a DatasetDict object
         dataset = DatasetDict(
@@ -102,17 +102,17 @@ def main(args):
         inferencer = GenInferencer(
             model_name=model,
             batch_size=args.batch_size,
-            device="cuda",
             dataset_name=args.dataset, # Defaults to AggreFact
             num_icl_examples=num_ice,
             num_beams = args.num_beams, # Beam search decoding
-            early_stopping = True if args.num_beams != None else False
+            model_parallel=True,
         )
 
         # the inferencer requires retriever to collect in-context examples, as well as a template to wrap up these examples.
         outputs, summaries = inferencer.inference(
             retriever,
             ice_template=template,
+            force_words = list(DATASET_LABELS['Lislaam/AggreFact'].values()), # Beam search decoding
         )
         #import pdb; pdb.set_trace()
 
