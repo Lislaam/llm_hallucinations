@@ -14,4 +14,5 @@ echo "Using GPUs: $CUDA_VISIBLE_DEVICES"
 # "mistralai/Mistral-7B-Instruct-v0.3"
 # "meta-llama/Meta-Llama-3-8B-Instruct"
 # "google/gemma-1.1-7b-it"
-python3 main.py --llms="mistralai/Mistral-7B-Instruct-v0.3" --num_icl_examples=0 --num_beams=3 --llm_device='cuda'
+#python3 main.py --llms="mistralai/Mistral-7B-Instruct-v0.3" --num_icl_examples=0 --num_beams=3 --llm_device='cuda'
+python3 sft.py --llm="mistralai/Mistral-7B-Instruct-v0.3"

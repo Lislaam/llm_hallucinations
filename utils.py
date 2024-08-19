@@ -236,7 +236,7 @@ def preprocess(text, model=None, error_types=['correct', 'intrinsic', 'extrinsic
     return text
 
 
-def get_score(predictions, references, model):
+def get_score(predictions, references):
     #processed_preds = [preprocess(pred, model) for pred in predictions]
     processed_refs = [preprocess(ref) for ref in references] # Should always be processable
 
@@ -257,29 +257,14 @@ def get_score(predictions, references, model):
         if type(processed_refs[i])==list:
             for x in processed_refs[i]:
                 print(processed_refs[i], x, predictions[i], soft_match(predictions[i], x))
-                #import pdb; pdb.set_trace()
                 if soft_match(predictions[i], x): # Check if that ref is in the pred
                     total += 1/len(processed_refs[i])
                     class_errors[x] += 1
         else:
             print(processed_refs[i], predictions[i], soft_match(predictions[i], processed_refs[i]))
-            #import pdb; pdb.set_trace()
             if soft_match(predictions[i], processed_refs[i]):
                 total += 1
                 class_errors[processed_refs[i]] += 1
-
-    # zipped = zip(processed_preds, processed_refs)
-
-    # for pred, ref in zipped:
-    #     if type(ref)==list:
-    #         for i in ref:
-    #             if i in pred:
-    #                 total += 1/len(ref)
-    #                 class_errors[i] += 1
-    #     else:
-    #         if ref in pred:
-    #             total += 1
-    #             class_errors[ref] += 1
 
     scores = {'total': total / len(processed_refs),
               'extrinsic-NP': class_errors["extrinsic-NP"] / num_extrinsicnp if 'extrinsic-NP' in flatten(processed_refs) else None,

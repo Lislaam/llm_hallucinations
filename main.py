@@ -33,7 +33,7 @@ def main(args):
     
         if args.dataset == "Lislaam/AggreFact":
             # Loading dataset from huggingface
-            dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]']) # Contains validation and test sets
+            dataset = load_dataset(args.dataset, split=['validation[:15]', 'test[:15]']) # Contains validation and test sets
             dataset = DatasetDict({'validation': dataset[0], 'test': dataset[1]})
         else:
             print("Must use Lislaam/AggreFact")

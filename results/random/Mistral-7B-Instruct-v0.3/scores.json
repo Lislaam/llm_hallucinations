@@ -1,0 +1,18 @@
+{
+    "0": {
+        "total": 0.5555555555555556,
+        "extrinsic-NP": 0.0,
+        "extrinsic-predicate": 0.0,
+        "intrinsic-NP": 0.0,
+        "intrinsic-predicate": null,
+        "correct": 1.0
+    },
+    "0": {
+        "total": 0.46153846153846156,
+        "extrinsic-NP": 0.0,
+        "extrinsic-predicate": 0.0,
+        "intrinsic-NP": 0.0,
+        "intrinsic-predicate": null,
+        "correct": 1.0
+    }
+}

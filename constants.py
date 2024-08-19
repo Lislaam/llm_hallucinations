@@ -21,7 +21,7 @@ d. **Predicate**: The [SUMMARY] contains incorrect use of predicates, altering t
 - If multiple errors are present, list all of them, using the numbers corresponding to the categories.
 
 [OUTPUT FORMAT]
-Please output your answer as a list containing values corresponding to the error category numbers in [RULES].
+Please output your answer as a Python list ONLY containing values corresponding to the error categories in [RULES].
 """
 
 SYSTEM_INSTRUCTION_OLD = """
