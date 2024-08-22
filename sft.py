@@ -3,94 +3,45 @@ import os
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import SFTConfig, SFTTrainer, DataCollatorForCompletionOnlyLM
 import torch
 from peft import LoraConfig #, get_peft_model
-from datasets import load_dataset
+from datasets import load_dataset, dataset_dict, DatasetDict
 from tqdm import tqdm
 from torch.utils.data import DataLoader
-from utils import reformat_data, get_score
 
 OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 
 LABEL_CONVERSIONS = {
-                    0: "correct",
-                    1: "['intrinsic-NP']",
-                    2: "['intrinsic-predicate']",
-                    3: "['extrinsic-NP']",
-                    4: "['extrinsic-predicate']",
-                    5: "['extrinsic-NP', 'intrinsic-NP']",
-                    6: "['extrinsic-NP', 'extrinsic-predicate']",
-                    7: "['intrinsic-predicate', 'extrinsic-NP']",
-                    8: "['extrinsic-predicate', 'intrinsic-NP']",
-                    9: "['extrinsic-predicate', 'intrinsic-predicate']",
-                    10: "['intrinsic-NP', 'intrinsic-predicate']",
-                    11: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-                    13: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-                    14: "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-                    15: "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-                    16: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']"
+                    "correct": 0,
+                    "intrinsic-NP": 1,
+                    "intrinsic-predicate": 2,
+                    "extrinsic-NP": 3,
+                    "extrinsic-predicate": 4,
+                    # 5: "['extrinsic-NP', 'intrinsic-NP']",
+                    # 6: "['extrinsic-NP', 'extrinsic-predicate']",
+                    # 7: "['intrinsic-predicate', 'extrinsic-NP']",
+                    # 8: "['extrinsic-predicate', 'intrinsic-NP']",
+                    # 9: "['extrinsic-predicate', 'intrinsic-predicate']",
+                    # 10: "['intrinsic-NP', 'intrinsic-predicate']",
+                    # 11: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
+                    # 13: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
+                    # 14: "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
+                    # 15: "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
+                    # 16: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']"
                     }
 
+REVERSE_LABEL_CONVERSIONS = {v: k for k, v in LABEL_CONVERSIONS.items()}
+
 LABEL_MAP = { # Make all the labels consistent
-    "['extrinsic-NP']" : "['extrinsic-NP']",
-    "['extrinsic-predicate']" : "['extrinsic-predicate']",
-    "['intrinsic-NP']" : "['intrinsic-NP']",
-    "['intrinsic-predicate']" : "['intrinsic-predicate']",
+    "['extrinsic-NP']" : "extrinsic-NP",
+    "['extrinsic-predicate']" : "extrinsic-predicate",
+    "['intrinsic-NP']" : "intrinsic-NP",
+    "['intrinsic-predicate']" : "intrinsic-predicate",
     "correct" : "correct",
     "['correct']" : "correct",
-
-    "['extrinsic-NP', 'intrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP']",
-    "['intrinsic-NP', 'extrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP']",
-    "['extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-predicate']", 
-    "['intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate']",
-    "['extrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate']",
-    "['intrinsic-predicate', 'extrinsic-NP']" : "['intrinsic-predicate', 'extrinsic-NP']",
-    "['extrinsic-NP', 'intrinsic-predicate']" : "['intrinsic-predicate', 'extrinsic-NP']",
-    "['extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-predicate', 'intrinsic-NP']",
-    "['intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP']",
-    "['intrinsic-NP', 'intrinsic-predicate']" : "['intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-predicate', 'intrinsic-NP']" : "['intrinsic-NP', 'intrinsic-predicate']",
-
-    "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-    "['extrinsic-NP', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-    "['intrinsic-NP', 'extrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-    "['intrinsic-NP', 'extrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-    "['extrinsic-predicate', 'intrinsic-NP', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-    "['extrinsic-predicate', 'extrinsic-NP', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-        
-    "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-    "['intrinsic-predicate', 'extrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-    "['intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-    "['extrinsic-predicate', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-    "['extrinsic-predicate', 'extrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-
-    "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'intrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-predicate', 'intrinsic-NP', 'extrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-predicate', 'extrinsic-NP', 'intrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-NP', 'extrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-
-    "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-predicate', 'intrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-predicate', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-predicate', 'extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-
-    "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate', 'intrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'intrinsic-predicate', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'intrinsic-predicate', 'intrinsic-NP', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-NP', 'intrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-    "['intrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate', 'extrinsic-NP']" : "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
     }
 
 def plot_training_loss(log_history, output_dir):
@@ -120,7 +71,13 @@ def parse_args():
     parser.add_argument(
         "--batch_size",
         type=int,
-        default=8,
+        default=4,
         help="The batch size for data generation.",
+    )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="Lislaam/AggreFact",
+        help="The dataset to use for data generation.",
     )
     return parser.parse_args()

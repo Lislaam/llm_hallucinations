@@ -38,9 +38,7 @@ def main(args):
         else:
             print("Must use Lislaam/AggreFact")
 
-        #import pdb; pdb.set_trace()
         dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples
-        #import pdb; pdb.set_trace()
 
         # Create a DatasetDict object
         dataset = DatasetDict(

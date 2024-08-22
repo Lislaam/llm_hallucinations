@@ -6,6 +6,8 @@ from constants import (
     DATASET_LABELS,
 )
 import numpy as np
+import pyarrow as pa
+import pandas as pd
 from sklearn import metrics
 import matplotlib.pyplot as plt
 import os
@@ -13,6 +15,7 @@ import torch
 from constants import PRE_POST_LABEL_TOKENS
 import regex as re
 import ast
+from datasets import Dataset, concatenate_datasets
 
 
 # Function to extract labels from prompt based on model-specific tokens
@@ -34,10 +37,10 @@ def extract_labels_from_prompt(prompt, model):
 def error_type_map(example):
     # Any combination of error types is mapped into the same order.
     label_map = {
-        "['extrinsic-NP']" : "['extrinsic-NP']",
-        "['extrinsic-predicate']" : "['extrinsic-predicate']",
-        "['intrinsic-NP']" : "['intrinsic-NP']",
-        "['intrinsic-predicate']" : "['intrinsic-predicate']",
+        "['extrinsic-NP']" : "extrinsic-NP",
+        "['extrinsic-predicate']" : "extrinsic-predicate",
+        "['intrinsic-NP']" : "intrinsic-NP",
+        "['intrinsic-predicate']" : "intrinsic-predicate",
         "correct" : "correct",
         "['correct']" : "correct",
 
@@ -99,7 +102,7 @@ def error_type_map(example):
 
 
 def reformat_data(dataset, dataset_name):
-    """Reformats the dataset to have the same format for all datasets for consitency.
+    """Reformats the dataset to have the same format for all datasets for consistency.
 
     Args:
         dataset: dataset -- dataset to reformat
@@ -108,28 +111,86 @@ def reformat_data(dataset, dataset_name):
     Returns:
         dataset: dataset -- reformatted dataset
     """
+    def duplicate_and_label(example):
+        """Duplicates examples with multiple error types, assigning one label per duplicate."""
+        docs = []
+        summs = []
+        labels = []
+        
+        if example['errors'] is not None:
+            try:
+                lst = ast.literal_eval(example['errors'])
+                for label in lst:
+                    docs.append(example['doc'])
+                    summs.append(example['summ'])
+                    labels.append(label)
+            except ValueError:  # If 'errors' is not a list, e.g., it is 'correct'
+                docs.append(example['doc'])
+                summs.append(example['summ'])
+                labels.append(example['errors'])
 
-    def output_map(label):
-        if label == '[]':
-            return ['null']
-        try:
-            # Deals with lists of error_types in string form, removing []
-            label = ast.literal_eval(label) # It is a list of strings now 
-        except ValueError:
-            label = [label]
-        return label   
+        return [{'doc': doc, 'summ': summ, 'error_type': label} for doc, summ, label in zip(docs, summs, labels)]
+
+    def process_in_chunks(dataset, chunk_size=10000, map_function=duplicate_and_label):
+        chunked_tables = dataset.data.to_batches(max_chunksize=chunk_size)
+        processed_chunks = []
+        
+        for chunk in chunked_tables:
+            # Convert chunk to a PyArrow table
+            chunk_table = pa.Table.from_batches([chunk])
+            
+            # Convert the chunk table to a pandas DataFrame
+            chunk_df = chunk_table.to_pandas()
+            
+            if map_function:
+                # Rename the column before splitting lists of errors into separate examples
+                chunk_df = chunk_df.rename(columns={'error_type': 'errors'})
+                
+                # Apply the map function and flatten the result
+                flattened_rows = chunk_df.apply(lambda row: map_function(row.to_dict()), axis=1).sum()
+                
+                # Convert the flattened list of dictionaries to a DataFrame
+                chunk_df = pd.DataFrame(flattened_rows)
+            
+            processed_chunks.append(chunk_df)
+        
+        # Combine all processed chunks back into a single DataFrame
+        combined_df = pd.concat(processed_chunks, ignore_index=True)
+        
+        return Dataset.from_pandas(combined_df)
 
     if dataset_name == "Lislaam/AggreFact":
-        error_types = ['correct', 'intrinsic', 'extrinsic', 'intrinsic-NP', 
-                'intrinsic-predicate', 'extrinsic-NP','extrinsic-predicate']
-
-        dataset = dataset.filter(lambda x: all(x in error_types for x in output_map(x['error_type'])))
-        #dataset = dataset.filter(lambda x: len(x['doc']) < 1000)
-        dataset = dataset.map(error_type_map)
+        error_types = ['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate']
+        dataset = process_in_chunks(dataset)
+        dataset = dataset.filter(lambda x: x['error_type'] in error_types)
+        #dataset = dataset.map(error_type_map)
 
     else:
         raise ValueError(f"Dataset {dataset_name} not supported.")
     return dataset
+
+
+def naive_sampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
+                    n=400):
+    def sample_class(dataset, error_type, n=400):
+        filtered = dataset.filter(lambda x: x['error_type'] == error_type)
+        return filtered.shuffle(seed=42).select(range(min(n, len(filtered))))
+
+    # Sample 400 examples from each class
+    sampled_dataset = Dataset.from_dict({
+        'doc': [],
+        'summ': [],
+        'error_type': []
+    })
+
+    for error_type in error_types:
+        sampled = sample_class(dataset, error_type, n)
+        sampled_dataset = concatenate_datasets([sampled_dataset, sampled])
+
+    # Shuffle the final dataset
+    sampled_dataset = sampled_dataset.shuffle(seed=42)
+
+    return sampled_dataset
 
 
 def sample_icl_examples(train_data, num_icl_examples):
@@ -256,12 +317,12 @@ def get_score(predictions, references):
     for i in range(len(processed_refs)):
         if type(processed_refs[i])==list:
             for x in processed_refs[i]:
-                print(processed_refs[i], x, predictions[i], soft_match(predictions[i], x))
+                print(processed_refs[i], x, predictions[i], soft_match(predictions[i], x), '/n')
                 if soft_match(predictions[i], x): # Check if that ref is in the pred
                     total += 1/len(processed_refs[i])
                     class_errors[x] += 1
         else:
-            print(processed_refs[i], predictions[i], soft_match(predictions[i], processed_refs[i]))
+            print(processed_refs[i], predictions[i], soft_match(predictions[i], processed_refs[i]), '/n')
             if soft_match(predictions[i], processed_refs[i]):
                 total += 1
                 class_errors[processed_refs[i]] += 1

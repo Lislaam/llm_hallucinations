@@ -1,25 +1,41 @@
 from sft import *
+from constants import SYSTEM_INSTRUCTION
+from datasets import concatenate_datasets
+from utils import reformat_data, get_score, naive_sampling
 
 def main(args):
 
     def formatting_prompts_func(example, training=True):
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"### Text1: {example['doc'][i]}\n### Text2: {example['summ'][i]}\n ### Output: "
+            text = f"{SYSTEM_INSTRUCTION}\n ### Text1: {example['doc'][i]}\n ### Text2: {example['summ'][i]}\n ### Output: "
             if training:
                 text += (
-                    f"{LABEL_MAP[example['error_type'][i]]} ." + tokenizer.eos_token
+                    f"{LABEL_CONVERSIONS[example['error_type'][i]]} ." + tokenizer.eos_token
                 )
             output_texts.append(text)
         return output_texts
 
     # Load the dataset
-    dataset = load_dataset("Lislaam/AggreFact")
-    dataset = reformat_data(dataset, "Lislaam/AggreFact")
+    dataset = load_dataset(args.dataset, split=['validation[:40]', 'test[:40]'])
+    dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
+    dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
+    dataset = naive_sampling(dataset) # Balance dataset
 
-    train_set = dataset["validation"]
+    # Split the dataset into train and test sets (80% train, 20% test)
+    train_test = dataset.train_test_split(test_size=0.2)
 
-    model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16)
+    # Further split the train set into train and validation sets (75% train, 25% validation of the original 80%)
+    train_valid = train_test['train'].train_test_split(test_size=0.25)
+
+    # Combine the splits into a DatasetDict
+    dataset = DatasetDict({
+        'train': train_valid['train'],
+        'validation': train_valid['test'],
+        'test': train_test['test']
+    })
+
+    model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto')
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
 
     tokenizer.padding_side = "right"
@@ -41,14 +57,14 @@ def main(args):
         do_train=True,
         num_train_epochs=3,
         max_seq_length=2000,
-        logging_steps=200,
+        logging_steps=20,
         bf16=True,
         per_device_train_batch_size=args.batch_size,
     )
 
     trainer = SFTTrainer(
         model,
-        train_dataset=train_set,
+        train_dataset=dataset['train'],
         args=sft_config,
         formatting_func=formatting_prompts_func,
         data_collator=collator,
@@ -86,8 +102,9 @@ def main(args):
 
     # Tokenize the labels for contrained decoding
     force_token_ids = tokenizer(
-        list(LABEL_CONVERSIONS.values()), add_special_tokens=False
+        list(LABEL_CONVERSIONS.values()), add_special_tokens=False # These are numbers corresponding to the error types
     ).input_ids
+    import pdb; pdb.set_trace()
 
     # Place in evaluation mode
     model.eval()
@@ -96,13 +113,13 @@ def main(args):
             lambda x: {"formatted_text": formatting_prompts_func(x, False)},
             batched=True,
         )
-        dataloader = DataLoader(dataset, batch_size=16)
+        dataloader = DataLoader(dataset['test'], batch_size=4)
 
         # Make predictions
         predictions = []
         for batch in tqdm(dataloader):
             inputs = tokenizer(
-                batch["formatted_text"], return_tensors="pt", padding=True
+                batch["summ"], return_tensors="pt", padding=True
             ).to("cuda")
             outputs = model.generate(
                 **inputs,
@@ -115,27 +132,34 @@ def main(args):
             prediction = tokenizer.batch_decode(outputs, skip_special_tokens=True)
             predictions.extend(prediction)
 
+        os.makedirs(
+            os.path.join(OUTPUT_DIR, args.llm),
+            exist_ok=True,
+            )
+        with open(os.path.join(OUTPUT_DIR, args.llm, f"summary.json"), "w") as f:
+            json.dump(outputs, f, indent=4)
+
         # Use soft accuracy for evaluation
-        labels = [LABEL_CONVERSIONS[label] for label in dataset["label"]]
+        labels = dataset['test']["error_type"]
+        import pdb; pdb.set_trace()
         preds = [
             prediction.split("### Output:")[1].strip() for prediction in predictions
         ]
-
-        score = get_score(preds, labels)
+        score = get_score(REVERSE_LABEL_CONVERSIONS[preds], labels)
         print(f"Total accuracy: {score['total']}")
-        for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']: #DATASET_LABELS[args.dataset].values():
+        for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
             print(f"{error_type} class accuracy: {score[error_type]}")
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join("sft_results", args.llm),
+            os.path.join(OUTPUT_DIR, args.llm),
             exist_ok=True,
         )
 
         # Save results to a file
         with open(
             os.path.join(
-                "sft_results",
+                OUTPUT_DIR,
                 args.llm,
                 "evaluation_results.json",
             ),

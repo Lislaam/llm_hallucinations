@@ -17,11 +17,17 @@ d. **Predicate**: The [SUMMARY] contains incorrect use of predicates, altering t
   3. extrinsic-NP.
   4. extrinsic-predicate.
   5. correct
+
+  {
+                    "correct": 0,
+                    "intrinsic-NP": 1,
+                    "intrinsic-predicate": 2,
+                    "extrinsic-NP": 3,
+                    "extrinsic-predicate": 4,
 - Any other combination is forbidden
-- If multiple errors are present, list all of them, using the numbers corresponding to the categories.
 
 [OUTPUT FORMAT]
-Please output your answer as a Python list ONLY containing values corresponding to the error categories in [RULES].
+Please output your answer as an integer corresponding to the error categories in [RULES].
 """
 
 SYSTEM_INSTRUCTION_OLD = """
