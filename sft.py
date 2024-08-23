@@ -15,11 +15,11 @@ from torch.utils.data import DataLoader
 OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 
 LABEL_CONVERSIONS = {
-                    "correct": 0,
-                    "intrinsic-NP": 1,
-                    "intrinsic-predicate": 2,
-                    "extrinsic-NP": 3,
-                    "extrinsic-predicate": 4,
+                    "correct": '0',
+                    "intrinsic-NP": '1',
+                    "intrinsic-predicate": '2',
+                    "extrinsic-NP": '3',
+                    "extrinsic-predicate": '4',
                     # 5: "['extrinsic-NP', 'intrinsic-NP']",
                     # 6: "['extrinsic-NP', 'extrinsic-predicate']",
                     # 7: "['intrinsic-predicate', 'extrinsic-NP']",
@@ -58,6 +58,54 @@ def plot_training_loss(log_history, output_dir):
         plt.show()
     else:
         print("No loss information found in log history.")
+
+
+def plot_training_loss(log_history, output_dir):
+    df = pd.DataFrame(log_history)
+    if "loss" in df.columns:
+        plt.figure(figsize=(10, 5))
+        import pdb; pdb.set_trace()
+        plt.plot(df["step"], df["train_loss"], label="Training Loss")
+        plt.plot(df["step"], df["eval_loss"], label="Validation Loss")
+        plt.xlabel("Step")
+        plt.ylabel("Loss")
+        plt.title("Loss Over Time")
+        plt.legend()
+        plt.grid(True)
+        plt.savefig(os.path.join(output_dir, "training_and_validation_loss.png"))
+        plt.show()
+    else:
+        print("No loss information found in log history.")
+
+
+def get_sft_score(preds, refs):
+    # Predictions are numbers corresponding to an error type.
+    processed_refs = [LABEL_CONVERSIONS[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
+
+    class_errors = {'extrinsic-NP': 0, 'extrinsic-predicate': 0, 'intrinsic-NP': 0,
+                'intrinsic-predicate': 0, 'correct': 0}
+    
+    # Count the number of each error type in the references
+    num_extrinsicnp = sum([1 for ref in refs if ref == 'extrinsic-NP']) if 'extrinsic-NP' in refs else 1
+    num_extrinsicpredicate = sum([1 for ref in refs if ref == 'extrinsic-predicate']) if 'extrinsic-predicate' in refs else 1
+    num_intrinsicnp = sum([1 for ref in refs if ref == 'intrinsic-NP']) if 'intrinsic-NP' in refs else 1
+    num_intrinsicpredicate = sum([1 for ref in refs if ref == 'intrinsic-predicate']) if 'intrinsic-predicate' in refs else 1
+    num_correct = sum([1 for ref in refs if ref == 'correct']) if 'correct' in refs else 1
+
+    total = 0 # Overall accuracy
+    for i in range(len(preds)):
+        if preds[i] == processed_refs[i]:
+            total += 1
+            class_errors[refs[i]] += 1
+
+    scores = {'total': total / len(refs),
+              'extrinsic-NP': class_errors["extrinsic-NP"] / num_extrinsicnp if 'extrinsic-NP' in refs else None,
+              'extrinsic-predicate': class_errors["extrinsic-predicate"] / num_extrinsicpredicate if 'extrinsic-predicate' in refs else None,
+              'intrinsic-NP': class_errors["intrinsic-NP"] / num_intrinsicnp if 'intrinsic-NP' in refs else None,
+              'intrinsic-predicate': class_errors["intrinsic-predicate"] / num_intrinsicpredicate if 'intrinsic-predicate' in refs else None,
+              'correct': class_errors["correct"] / num_correct if 'correct' in refs else None}
+    
+    return scores
 
 
 def parse_args():

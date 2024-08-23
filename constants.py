@@ -12,19 +12,16 @@ d. **Predicate**: The [SUMMARY] contains incorrect use of predicates, altering t
 
 [RULES]
 - The following combinations of classes are allowed:
-  1. intrinsic-NP.
-  2. intrinsic-predicate.
-  3. extrinsic-NP.
-  4. extrinsic-predicate.
-  5. correct
+    - correct.
+    - intrinsic-NP.
+    - intrinsic-predicate.
+    - extrinsic-NP.
+    - extrinsic-predicate.
 
-  {
-                    "correct": 0,
-                    "intrinsic-NP": 1,
-                    "intrinsic-predicate": 2,
-                    "extrinsic-NP": 3,
-                    "extrinsic-predicate": 4,
-- Any other combination is forbidden
+- Any other combination is forbidden.
+
+- Denote each error class according to its value in the following dictionary:   
+{"correct": 0, "intrinsic-NP": 1, "intrinsic-predicate": 2, "extrinsic-NP": 3, "extrinsic-predicate": 4}
 
 [OUTPUT FORMAT]
 Please output your answer as an integer corresponding to the error categories in [RULES].

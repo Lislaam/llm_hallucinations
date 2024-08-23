@@ -17,7 +17,7 @@ def main(args):
         return output_texts
 
     # Load the dataset
-    dataset = load_dataset(args.dataset, split=['validation[:40]', 'test[:40]'])
+    dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]'])
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
     dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
     dataset = naive_sampling(dataset) # Balance dataset
@@ -58,13 +58,18 @@ def main(args):
         num_train_epochs=3,
         max_seq_length=2000,
         logging_steps=20,
+        eval_strategy="steps",
+        eval_steps=250,
+        save_steps=250,
         bf16=True,
+        metric_for_best_model="eval_loss",
         per_device_train_batch_size=args.batch_size,
     )
 
     trainer = SFTTrainer(
         model,
         train_dataset=dataset['train'],
+        eval_dataset=dataset['validation'],
         args=sft_config,
         formatting_func=formatting_prompts_func,
         data_collator=collator,
@@ -82,7 +87,7 @@ def main(args):
     )
 
     # Plot training loss
-    plot_training_loss(
+    plot_training_and_validation_loss(
         trainer.state.log_history,
         os.path.join("fine_tuning", str(args.llm)),
     )
@@ -104,7 +109,6 @@ def main(args):
     force_token_ids = tokenizer(
         list(LABEL_CONVERSIONS.values()), add_special_tokens=False # These are numbers corresponding to the error types
     ).input_ids
-    import pdb; pdb.set_trace()
 
     # Place in evaluation mode
     model.eval()
@@ -119,48 +123,44 @@ def main(args):
         predictions = []
         for batch in tqdm(dataloader):
             inputs = tokenizer(
-                batch["summ"], return_tensors="pt", padding=True
+                batch["formatted_text"], return_tensors="pt", padding=True
             ).to("cuda")
             outputs = model.generate(
                 **inputs,
                 do_sample=False,
                 num_beams=3,
                 num_return_sequences=1,
-                max_new_tokens=3,
+                max_new_tokens=1, # Force to only give the number corresponding to the error type
                 force_words_ids=force_token_ids,
             )
             prediction = tokenizer.batch_decode(outputs, skip_special_tokens=True)
             predictions.extend(prediction)
 
-        os.makedirs(
-            os.path.join(OUTPUT_DIR, args.llm),
-            exist_ok=True,
-            )
-        with open(os.path.join(OUTPUT_DIR, args.llm, f"summary.json"), "w") as f:
-            json.dump(outputs, f, indent=4)
-
         # Use soft accuracy for evaluation
         labels = dataset['test']["error_type"]
-        import pdb; pdb.set_trace()
         preds = [
             prediction.split("### Output:")[1].strip() for prediction in predictions
         ]
-        score = get_score(REVERSE_LABEL_CONVERSIONS[preds], labels)
+
+        # Save the predictions
+        with open(os.path.join("fine_tuning", str(args.llm), f"summary.json"), "w") as f:
+            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([REVERSE_LABEL_CONVERSIONS[i] for i in preds], labels)],
+                        f, indent=4)
+
+        score = get_sft_score(preds, labels)
         print(f"Total accuracy: {score['total']}")
         for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
             print(f"{error_type} class accuracy: {score[error_type]}")
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join(OUTPUT_DIR, args.llm),
+            os.path.join("fine_tuning", str(args.llm)),
             exist_ok=True,
         )
-
         # Save results to a file
         with open(
             os.path.join(
-                OUTPUT_DIR,
-                args.llm,
+                "fine_tuning", str(args.llm),
                 "evaluation_results.json",
             ),
             "w",
