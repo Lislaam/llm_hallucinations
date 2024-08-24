@@ -1,7 +1,7 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION
 from datasets import concatenate_datasets
-from utils import reformat_data, get_score, naive_sampling
+from utils import reformat_data, get_score, negative_sampling
 
 def main(args):
 
@@ -20,7 +20,24 @@ def main(args):
     dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]'])
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
     dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
-    dataset = naive_sampling(dataset) # Balance dataset
+
+    # Separate datasets based on class
+    correct = dataset.filter(lambda example: example['error_type'] == 'correct')
+    extrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'extrinsic-predicate')
+    intrinsic_np = dataset.filter(lambda example: example['error_type'] == 'intrinsic-NP')
+    intrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'intrinsic-predicate')
+    extrinsic_np = dataset.filter(lambda example: example['error_type'] == 'extrinsic-NP') # Overrepresented class
+
+    # Oversample the underrepresented class. Manually set the oversampling factor.
+    correct_class = concatenate_datasets([correct] * 2) 
+    ex_pred_class = concatenate_datasets([extrinsic_pred] * 3)
+    in_np_class = concatenate_datasets([intrinsic_np] * 3)
+    in_pred_class = concatenate_datasets([intrinsic_pred] * 6)
+
+    dataset = concatenate_datasets([extrinsic_np, correct_class, ex_pred_class, in_np_class, in_pred_class]) # Combine the evenly sampled classes
+    dataset = dataset.shuffle(seed=42)
+
+    #dataset = negative_sampling(dataset) # Balance dataset
 
     # Split the dataset into train and test sets (80% train, 20% test)
     train_test = dataset.train_test_split(test_size=0.2)
@@ -87,7 +104,7 @@ def main(args):
     )
 
     # Plot training loss
-    plot_training_and_validation_loss(
+    plot_training_loss(
         trainer.state.log_history,
         os.path.join("fine_tuning", str(args.llm)),
     )

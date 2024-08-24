@@ -60,7 +60,7 @@ def plot_training_loss(log_history, output_dir):
         print("No loss information found in log history.")
 
 
-def plot_training_loss(log_history, output_dir):
+def plot_training_and_validation_loss(log_history, output_dir):
     df = pd.DataFrame(log_history)
     if "loss" in df.columns:
         plt.figure(figsize=(10, 5))

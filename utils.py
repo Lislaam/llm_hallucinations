@@ -163,6 +163,7 @@ def reformat_data(dataset, dataset_name):
         error_types = ['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate']
         dataset = process_in_chunks(dataset)
         dataset = dataset.filter(lambda x: x['error_type'] in error_types)
+        #dataset = dataset.filter(lambda x: len(x['doc']) < 1800)
         #dataset = dataset.map(error_type_map)
 
     else:
@@ -170,7 +171,7 @@ def reformat_data(dataset, dataset_name):
     return dataset
 
 
-def naive_sampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
+def negative_sampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
                     n=400):
     def sample_class(dataset, error_type, n=400):
         filtered = dataset.filter(lambda x: x['error_type'] == error_type)
