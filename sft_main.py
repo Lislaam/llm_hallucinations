@@ -1,7 +1,8 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION
 from datasets import concatenate_datasets
-from utils import reformat_data, get_score, negative_sampling
+from utils import reformat_data, get_score, undersampling
+from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback
 
 def main(args):
 
@@ -21,23 +22,23 @@ def main(args):
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
     dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
 
-    # Separate datasets based on class
-    correct = dataset.filter(lambda example: example['error_type'] == 'correct')
-    extrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'extrinsic-predicate')
-    intrinsic_np = dataset.filter(lambda example: example['error_type'] == 'intrinsic-NP')
-    intrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'intrinsic-predicate')
-    extrinsic_np = dataset.filter(lambda example: example['error_type'] == 'extrinsic-NP') # Overrepresented class
+    # # Separate datasets based on class
+    # correct = dataset.filter(lambda example: example['error_type'] == 'correct')
+    # extrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'extrinsic-predicate')
+    # intrinsic_np = dataset.filter(lambda example: example['error_type'] == 'intrinsic-NP')
+    # intrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'intrinsic-predicate')
+    # extrinsic_np = dataset.filter(lambda example: example['error_type'] == 'extrinsic-NP') # Overrepresented class
 
-    # Oversample the underrepresented class. Manually set the oversampling factor.
-    correct_class = concatenate_datasets([correct] * 2) 
-    ex_pred_class = concatenate_datasets([extrinsic_pred] * 3)
-    in_np_class = concatenate_datasets([intrinsic_np] * 3)
-    in_pred_class = concatenate_datasets([intrinsic_pred] * 6)
+    # # Oversample the underrepresented class. Manually set the oversampling factor.
+    # correct_class = concatenate_datasets([correct] * 2) 
+    # ex_pred_class = concatenate_datasets([extrinsic_pred] * 3)
+    # in_np_class = concatenate_datasets([intrinsic_np] * 3)
+    # in_pred_class = concatenate_datasets([intrinsic_pred] * 6)
 
-    dataset = concatenate_datasets([extrinsic_np, correct_class, ex_pred_class, in_np_class, in_pred_class]) # Combine the evenly sampled classes
-    dataset = dataset.shuffle(seed=42)
+    # dataset = concatenate_datasets([extrinsic_np, correct_class, ex_pred_class, in_np_class, in_pred_class]) # Combine the evenly sampled classes
+    # dataset = dataset.shuffle(seed=42)
 
-    #dataset = negative_sampling(dataset) # Balance dataset
+    #dataset = undersampling(dataset) # Balance dataset
 
     # Split the dataset into train and test sets (80% train, 20% test)
     train_test = dataset.train_test_split(test_size=0.2)
@@ -72,8 +73,8 @@ def main(args):
     sft_config = SFTConfig(
         output_dir=OUTPUT_DIR,
         do_train=True,
-        num_train_epochs=3,
-        max_seq_length=2000,
+        num_train_epochs=args.num_train_epochs,
+        max_seq_length=2500,
         logging_steps=20,
         eval_strategy="steps",
         eval_steps=250,
@@ -81,6 +82,7 @@ def main(args):
         bf16=True,
         metric_for_best_model="eval_loss",
         per_device_train_batch_size=args.batch_size,
+        load_best_model_at_end = True,
     )
 
     trainer = SFTTrainer(
@@ -92,6 +94,12 @@ def main(args):
         data_collator=collator,
         peft_config=lora_config,
         tokenizer=tokenizer,
+        callbacks=[
+            EarlyStoppingCallback(
+                early_stopping_patience=args.patience,
+                early_stopping_threshold=args.early_stopping_threshold,
+            )
+        ],
     )
 
     # Train the model

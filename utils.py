@@ -171,7 +171,30 @@ def reformat_data(dataset, dataset_name):
     return dataset
 
 
-def negative_sampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
+def undersampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
+                    n=400):
+    def sample_class(dataset, error_type, n):
+        filtered = dataset.filter(lambda x: x['error_type'] == error_type)
+        return filtered.shuffle(seed=42).select(range(min(n, len(filtered))))
+
+    # Sample 400 examples from each class
+    sampled_dataset = Dataset.from_dict({
+        'doc': [],
+        'summ': [],
+        'error_type': []
+    })
+
+    for error_type in error_types:
+        sampled = sample_class(dataset, error_type, n)
+        sampled_dataset = concatenate_datasets([sampled_dataset, sampled])
+
+    # Shuffle the final dataset
+    sampled_dataset = sampled_dataset.shuffle(seed=42)
+
+    return sampled_dataset
+
+
+def oversampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
                     n=400):
     def sample_class(dataset, error_type, n=400):
         filtered = dataset.filter(lambda x: x['error_type'] == error_type)

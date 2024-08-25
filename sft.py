@@ -128,4 +128,23 @@ def parse_args():
         default="Lislaam/AggreFact",
         help="The dataset to use for data generation.",
     )
+    parser.add_argument(
+        "--patience",
+        type=int,
+        default=4,
+        help="Number of validation steps with no improvement after which training will be stopped.",
+    )
+    parser.add_argument(
+        "--early_stopping_threshold",
+        type=float,
+        default=0.0,
+        help="Minimum improvement to be considered as an improvement for early stopping.",
+    )
+    parser.add_argument(
+        "--num_train_epochs",
+        type=int,
+        default=6,
+        help="Number of training epochs.",
+    )
     return parser.parse_args()
+
