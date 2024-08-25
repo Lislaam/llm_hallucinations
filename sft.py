@@ -12,7 +12,7 @@ from datasets import load_dataset, dataset_dict, DatasetDict
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 
-OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
+OUTPUT_DIR = "/homes/53/fpinto/llm_hallucinations/saved_models" #"/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 
 LABEL_CONVERSIONS = {
                     "correct": '0',
@@ -145,6 +145,12 @@ def parse_args():
         type=int,
         default=6,
         help="Number of training epochs.",
+    )
+    parser.add_argument(
+        "--sampling",
+        type=str,
+        default=None,
+        help="'oversampling' or 'undersampling'.",
     )
     return parser.parse_args()
 

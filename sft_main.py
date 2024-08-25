@@ -1,7 +1,7 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION
 from datasets import concatenate_datasets
-from utils import reformat_data, get_score, undersampling
+from utils import reformat_data, get_score, undersampling, oversampling
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback
 
 def main(args):
@@ -22,23 +22,14 @@ def main(args):
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
     dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
 
-    # # Separate datasets based on class
-    # correct = dataset.filter(lambda example: example['error_type'] == 'correct')
-    # extrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'extrinsic-predicate')
-    # intrinsic_np = dataset.filter(lambda example: example['error_type'] == 'intrinsic-NP')
-    # intrinsic_pred = dataset.filter(lambda example: example['error_type'] == 'intrinsic-predicate')
-    # extrinsic_np = dataset.filter(lambda example: example['error_type'] == 'extrinsic-NP') # Overrepresented class
-
-    # # Oversample the underrepresented class. Manually set the oversampling factor.
-    # correct_class = concatenate_datasets([correct] * 2) 
-    # ex_pred_class = concatenate_datasets([extrinsic_pred] * 3)
-    # in_np_class = concatenate_datasets([intrinsic_np] * 3)
-    # in_pred_class = concatenate_datasets([intrinsic_pred] * 6)
-
-    # dataset = concatenate_datasets([extrinsic_np, correct_class, ex_pred_class, in_np_class, in_pred_class]) # Combine the evenly sampled classes
-    # dataset = dataset.shuffle(seed=42)
-
-    #dataset = undersampling(dataset) # Balance dataset
+    if args.sampling == None:
+        dir = "whole_dataset"
+    elif args.sampling == 'oversampling':
+        dataset = oversampling(dataset)
+        dir = "naive_oversampling"
+    elif args.sampling == 'undersampling':
+        dataset = undersampling(dataset)
+        dir = "naive_undersampling"
 
     # Split the dataset into train and test sets (80% train, 20% test)
     train_test = dataset.train_test_split(test_size=0.2)
@@ -114,7 +105,7 @@ def main(args):
     # Plot training loss
     plot_training_loss(
         trainer.state.log_history,
-        os.path.join("fine_tuning", str(args.llm)),
+        os.path.join("fine_tuning", str(args.llm), dir),
     )
 
     # Save model
@@ -167,11 +158,6 @@ def main(args):
             prediction.split("### Output:")[1].strip() for prediction in predictions
         ]
 
-        # Save the predictions
-        with open(os.path.join("fine_tuning", str(args.llm), f"summary.json"), "w") as f:
-            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([REVERSE_LABEL_CONVERSIONS[i] for i in preds], labels)],
-                        f, indent=4)
-
         score = get_sft_score(preds, labels)
         print(f"Total accuracy: {score['total']}")
         for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
@@ -179,13 +165,17 @@ def main(args):
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join("fine_tuning", str(args.llm)),
+            os.path.join("fine_tuning", str(args.llm), dir), 
             exist_ok=True,
         )
+        # Save the predictions
+        with open(os.path.join("fine_tuning", str(args.llm), dir, f"summary.json"), "w") as f:
+            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([REVERSE_LABEL_CONVERSIONS[i] for i in preds], labels)],
+                        f, indent=4)
         # Save results to a file
         with open(
             os.path.join(
-                "fine_tuning", str(args.llm),
+                "fine_tuning", str(args.llm), dir,
                 "evaluation_results.json",
             ),
             "w",

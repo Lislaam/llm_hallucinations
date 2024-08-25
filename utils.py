@@ -194,27 +194,40 @@ def undersampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-pr
     return sampled_dataset
 
 
-def oversampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
-                    n=400):
-    def sample_class(dataset, error_type, n=400):
+def oversampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'], n=2330):
+    def replicate_class(dataset, error_type, n):
         filtered = dataset.filter(lambda x: x['error_type'] == error_type)
-        return filtered.shuffle(seed=42).select(range(min(n, len(filtered))))
+        num_examples = len(filtered)
+        
+        if num_examples == 0:
+            return filtered  # Return empty dataset if no examples
+        
+        # Calculate how many times to replicate the dataset
+        num_repeats = n // num_examples
+        num_remaining = n % num_examples
+        
+        # Repeat the dataset and select the needed number of examples
+        replicated = concatenate_datasets([filtered] * num_repeats)
+        remaining = filtered.shuffle(seed=42).select(range(num_remaining))
+        
+        # Concatenate the replicated examples with the additional ones needed
+        return concatenate_datasets([replicated, remaining])
 
-    # Sample 400 examples from each class
-    sampled_dataset = Dataset.from_dict({
+    # Initialize an empty dataset for oversampling
+    oversampled_dataset = Dataset.from_dict({
         'doc': [],
         'summ': [],
         'error_type': []
     })
 
     for error_type in error_types:
-        sampled = sample_class(dataset, error_type, n)
-        sampled_dataset = concatenate_datasets([sampled_dataset, sampled])
+        oversampled = replicate_class(dataset, error_type, n)
+        oversampled_dataset = concatenate_datasets([oversampled_dataset, oversampled])
 
     # Shuffle the final dataset
-    sampled_dataset = sampled_dataset.shuffle(seed=42)
+    oversampled_dataset = oversampled_dataset.shuffle(seed=42)
 
-    return sampled_dataset
+    return oversampled_dataset
 
 
 def sample_icl_examples(train_data, num_icl_examples):
