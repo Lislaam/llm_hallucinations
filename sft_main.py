@@ -98,10 +98,9 @@ def main(args):
 
     # Make sure the results directory exists
     os.makedirs(
-        os.path.join("fine_tuning", str(args.llm)),
+        os.path.join("fine_tuning", str(args.llm), dir),
         exist_ok=True,
     )
-
     # Plot training loss
     plot_training_loss(
         trainer.state.log_history,
@@ -173,13 +172,7 @@ def main(args):
             json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([REVERSE_LABEL_CONVERSIONS[i] for i in preds], labels)],
                         f, indent=4)
         # Save results to a file
-        with open(
-            os.path.join(
-                "fine_tuning", str(args.llm), dir,
-                "evaluation_results.json",
-            ),
-            "w",
-        ) as f:
+        with open(os.path.join("fine_tuning", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
             json.dump(score, f, indent=4)
 
         print("_" * 80)
