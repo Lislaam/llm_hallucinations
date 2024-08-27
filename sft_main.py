@@ -44,7 +44,7 @@ def main(args):
         'test': train_test['test']
     })
 
-    # model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto')
+    model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto')
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
 
     tokenizer.padding_side = "right"
@@ -58,59 +58,59 @@ def main(args):
 
     tokenizer.pad_token_id = tokenizer.eos_token_id
 
-    # response_template = " ### Output:"
-    # collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
+    response_template = " ### Output:"
+    collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
-    # sft_config = SFTConfig(
-    #     output_dir=OUTPUT_DIR,
-    #     do_train=True,
-    #     num_train_epochs=args.num_train_epochs,
-    #     max_seq_length=2500,
-    #     logging_steps=20,
-    #     eval_strategy="steps",
-    #     eval_steps=250,
-    #     save_steps=250,
-    #     bf16=True,
-    #     metric_for_best_model="eval_loss",
-    #     per_device_train_batch_size=args.batch_size,
-    #     load_best_model_at_end = True,
-    # )
+    sft_config = SFTConfig(
+        output_dir=OUTPUT_DIR,
+        do_train=True,
+        num_train_epochs=args.num_train_epochs,
+        max_seq_length=2500,
+        logging_steps=20,
+        eval_strategy="steps",
+        eval_steps=250,
+        save_steps=250,
+        bf16=True,
+        metric_for_best_model="eval_loss",
+        per_device_train_batch_size=args.batch_size,
+        load_best_model_at_end = True,
+    )
 
-    # trainer = SFTTrainer(
-    #     model,
-    #     train_dataset=dataset['train'],
-    #     eval_dataset=dataset['validation'],
-    #     args=sft_config,
-    #     formatting_func=formatting_prompts_func,
-    #     data_collator=collator,
-    #     peft_config=lora_config,
-    #     tokenizer=tokenizer,
-    #     callbacks=[
-    #         EarlyStoppingCallback(
-    #             early_stopping_patience=args.patience,
-    #             early_stopping_threshold=args.early_stopping_threshold,
-    #         )
-    #     ],
-    # )
+    trainer = SFTTrainer(
+        model,
+        train_dataset=dataset['train'],
+        eval_dataset=dataset['validation'],
+        args=sft_config,
+        formatting_func=formatting_prompts_func,
+        data_collator=collator,
+        peft_config=lora_config,
+        tokenizer=tokenizer,
+        callbacks=[
+            EarlyStoppingCallback(
+                early_stopping_patience=args.patience,
+                early_stopping_threshold=args.early_stopping_threshold,
+            )
+        ],
+    )
 
-    # # Train the model
-    # trainer.train()
+    # Train the model
+    trainer.train()
 
-    # # Make sure the results directory exists
-    # os.makedirs(
-    #     os.path.join("fine_tuning", str(args.llm), dir),
-    #     exist_ok=True,
-    # )
-    # # Plot training loss
-    # plot_training_loss(
-    #     trainer.state.log_history,
-    #     os.path.join("fine_tuning", str(args.llm), dir),
-    # )
+    # Make sure the results directory exists
+    os.makedirs(
+        os.path.join("fine_tuning", str(args.llm), dir),
+        exist_ok=True,
+    )
+    # Plot training loss
+    plot_training_loss(
+        trainer.state.log_history,
+        os.path.join("fine_tuning", str(args.llm), dir),
+    )
 
-    # # Save model
-    # trainer.save_model(sft_config.output_dir)
-    # del trainer
-    # del model
+    # Save model
+    trainer.save_model(sft_config.output_dir)
+    del trainer
+    del model
 
     # Load the model
     model = AutoModelForCausalLM.from_pretrained(
