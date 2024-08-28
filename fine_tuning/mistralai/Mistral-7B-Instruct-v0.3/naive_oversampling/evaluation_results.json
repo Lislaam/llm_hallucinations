@@ -1,8 +1,8 @@
 {
-    "total": 0.8,
-    "extrinsic-NP": 0.6666666666666666,
-    "extrinsic-predicate": 1.0,
-    "intrinsic-NP": 1.0,
-    "intrinsic-predicate": 1.0,
-    "correct": 0.3333333333333333
+    "total": 0.572961373390558,
+    "extrinsic-NP": 0.3419354838709677,
+    "extrinsic-predicate": 0.5783898305084746,
+    "intrinsic-NP": 0.4457831325301205,
+    "intrinsic-predicate": 0.6781115879828327,
+    "correct": 0.8508158508158508
 }
