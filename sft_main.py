@@ -2,7 +2,7 @@ from sft import *
 from constants import SYSTEM_INSTRUCTION
 from datasets import concatenate_datasets
 from utils import reformat_data, get_score, undersampling, oversampling
-from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback
+from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 
 def main(args):
 
@@ -44,7 +44,8 @@ def main(args):
         'test': train_test['test']
     })
 
-    model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto')
+    quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+    model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
 
     tokenizer.padding_side = "right"
