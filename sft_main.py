@@ -23,13 +23,13 @@ def main(args):
     dataset = reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
 
     if args.sampling == None:
-        dir = "whole_dataset_baseline"
+        dir = "whole_dataset"
     elif args.sampling == 'oversampling':
         dataset = oversampling(dataset)
-        dir = "naive_oversampling_baseline"
+        dir = "naive_oversampling"
     elif args.sampling == 'undersampling':
         dataset = undersampling(dataset)
-        dir = "naive_undersampling_baseline"
+        dir = "naive_undersampling"
     elif args.sampling == 'binary':
         dataset = make_binary_dataset(dataset)
         dir = "binary_baseline"
@@ -54,7 +54,7 @@ def main(args):
     tokenizer.padding_side = "right"
 
     # lora_config = LoraConfig(
-    #     r=16,
+    #     r=8,  # Was 16 for mistral and llama trainings oversample/undersample. NOT during binary dataset
     #     lora_alpha=8,
     #     bias="none",
     #     task_type="CAUSAL_LM",
@@ -135,7 +135,7 @@ def main(args):
             lambda x: {"formatted_text": formatting_prompts_func(x, False)},
             batched=True,
         )
-        dataloader = DataLoader(dataset['test'], batch_size=4)
+        dataloader = DataLoader(dataset['test'], batch_size=args.batch_size)
 
         # Make predictions
         predictions = []
@@ -173,7 +173,7 @@ def main(args):
         )
         # Save the predictions
         with open(os.path.join("fine_tuning", str(args.llm), dir, f"summary.json"), "w") as f:
-            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([REVERSE_LABEL_CONVERSIONS[i] for i in preds], labels)],
+            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([reverse_labels(i) for i in preds], labels)],
                         f, indent=4)
         # Save results to a file
         with open(os.path.join("fine_tuning", str(args.llm), dir, "evaluation_results.json"), "w",) as f:

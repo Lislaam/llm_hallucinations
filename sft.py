@@ -16,10 +16,12 @@ OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning" #"/homes
 
 LABEL_CONVERSIONS = {
                     "correct": '0',
-                    "intrinsic-NP": '1',
-                    "intrinsic-predicate": '2',
-                    "extrinsic-NP": '3',
-                    "extrinsic-predicate": '4',
+                    "incorrect": '1',
+                    # "intrinsic-NP": '1',
+                    # "intrinsic-predicate": '2',
+                    # "extrinsic-NP": '3',
+                    # "extrinsic-predicate": '4',
+                    # ==========================================
                     # 5: "['extrinsic-NP', 'intrinsic-NP']",
                     # 6: "['extrinsic-NP', 'extrinsic-predicate']",
                     # 7: "['intrinsic-predicate', 'extrinsic-NP']",
@@ -43,6 +45,14 @@ LABEL_MAP = { # Make all the labels consistent
     "correct" : "correct",
     "['correct']" : "correct",
     }
+
+
+def reverse_labels(x):
+    try:
+        return REVERSE_LABEL_CONVERSIONS[x]
+    except KeyError:
+        return x
+    
 
 def plot_training_loss(log_history, output_dir):
     df = pd.DataFrame(log_history)
@@ -119,7 +129,7 @@ def parse_args():
     parser.add_argument(
         "--batch_size",
         type=int,
-        default=4,
+        default=2,
         help="The batch size for data generation.",
     )
     parser.add_argument(
