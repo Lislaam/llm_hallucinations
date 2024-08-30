@@ -1,7 +1,7 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION
 from datasets import concatenate_datasets
-from utils import reformat_data, get_score, undersampling, oversampling
+from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 
 def main(args):
@@ -20,16 +20,19 @@ def main(args):
     # Load the dataset
     dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]'])
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
-    dataset = reformat_data(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
+    dataset = reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
 
     if args.sampling == None:
-        dir = "whole_dataset"
+        dir = "whole_dataset_baseline"
     elif args.sampling == 'oversampling':
         dataset = oversampling(dataset)
-        dir = "naive_oversampling"
+        dir = "naive_oversampling_baseline"
     elif args.sampling == 'undersampling':
         dataset = undersampling(dataset)
-        dir = "naive_undersampling"
+        dir = "naive_undersampling_baseline"
+    elif args.sampling == 'binary':
+        dataset = make_binary_dataset(dataset)
+        dir = "binary_baseline"
 
     # Split the dataset into train and test sets (80% train, 20% test)
     train_test = dataset.train_test_split(test_size=0.2)
@@ -50,71 +53,72 @@ def main(args):
 
     tokenizer.padding_side = "right"
 
-    lora_config = LoraConfig(
-        r=16,
-        lora_alpha=8,
-        bias="none",
-        task_type="CAUSAL_LM",
-    )
+    # lora_config = LoraConfig(
+    #     r=16,
+    #     lora_alpha=8,
+    #     bias="none",
+    #     task_type="CAUSAL_LM",
+    # )
 
     tokenizer.pad_token_id = tokenizer.eos_token_id
 
-    response_template = " ### Output:"
-    collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
+    # response_template = " ### Output:"
+    # collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
-    sft_config = SFTConfig(
-        output_dir=OUTPUT_DIR,
-        do_train=True,
-        num_train_epochs=args.num_train_epochs,
-        max_seq_length=2500,
-        logging_steps=20,
-        eval_strategy="steps",
-        eval_steps=250,
-        save_steps=250,
-        bf16=True,
-        metric_for_best_model="eval_loss",
-        per_device_train_batch_size=args.batch_size,
-        load_best_model_at_end = True,
-    )
+    # sft_config = SFTConfig(
+    #     output_dir=OUTPUT_DIR,
+    #     do_train=True,
+    #     num_train_epochs=args.num_train_epochs,
+    #     max_seq_length=2500,
+    #     logging_steps=20,
+    #     eval_strategy="steps",
+    #     eval_steps=250,
+    #     save_steps=250,
+    #     bf16=True,
+    #     metric_for_best_model="eval_loss",
+    #     per_device_train_batch_size=args.batch_size,
+    #     load_best_model_at_end = True,
+    # )
 
-    trainer = SFTTrainer(
-        model,
-        train_dataset=dataset['train'],
-        eval_dataset=dataset['validation'],
-        args=sft_config,
-        formatting_func=formatting_prompts_func,
-        data_collator=collator,
-        peft_config=lora_config,
-        tokenizer=tokenizer,
-        callbacks=[
-            EarlyStoppingCallback(
-                early_stopping_patience=args.patience,
-                early_stopping_threshold=args.early_stopping_threshold,
-            )
-        ],
-    )
+    # trainer = SFTTrainer(
+    #     model,
+    #     train_dataset=dataset['train'],
+    #     eval_dataset=dataset['validation'],
+    #     args=sft_config,
+    #     formatting_func=formatting_prompts_func,
+    #     data_collator=collator,
+    #     peft_config=lora_config,
+    #     tokenizer=tokenizer,
+    #     callbacks=[
+    #         EarlyStoppingCallback(
+    #             early_stopping_patience=args.patience,
+    #             early_stopping_threshold=args.early_stopping_threshold,
+    #         )
+    #     ],
+    # )
 
-    # Train the model
-    trainer.train()
+    # # Train the model
+    # trainer.train()
 
-    # Make sure the results directory exists
-    os.makedirs(
-        os.path.join("fine_tuning", str(args.llm), dir),
-        exist_ok=True,
-    )
-    # Plot training loss
-    plot_training_loss(
-        trainer.state.log_history,
-        os.path.join("fine_tuning", str(args.llm), dir),
-    )
+    # # Make sure the results directory exists
+    # os.makedirs(
+    #     os.path.join("fine_tuning", str(args.llm), dir),
+    #     exist_ok=True,
+    # )
+    # # Plot training loss
+    # plot_training_loss(
+    #     trainer.state.log_history,
+    #     os.path.join("fine_tuning", str(args.llm), dir),
+    # )
 
-    # Save model
-    trainer.save_model(sft_config.output_dir)
-    del trainer
-    del model
+    # # Save model
+    # trainer.save_model(sft_config.output_dir)
+    # del trainer
+    # del model
 
     # Load the model
-    model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto')
+    # quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+    # model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
 
     model.generation_config.pad_token_id = tokenizer.pad_token_id
     tokenizer.padding_side = "left"
@@ -136,11 +140,12 @@ def main(args):
         # Make predictions
         predictions = []
         for batch in tqdm(dataloader):
-            inputs = tokenizer(
-                batch["formatted_text"], return_tensors="pt", padding=True
-            ).to("cuda")
+            inputs = tokenizer(batch["formatted_text"], return_tensors="pt", padding=True)
+
             outputs = model.generate(
-                **inputs,
+                #**inputs,
+                inputs=inputs["input_ids"].to("cuda"),
+                attention_mask=inputs["attention_mask"].to("cuda"),
                 do_sample=False,
                 num_beams=3,
                 num_return_sequences=1,

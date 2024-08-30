@@ -27,34 +27,6 @@ d. **Predicate**: The [SUMMARY] contains incorrect use of predicates, altering t
 Please output your answer as an integer corresponding to the error categories in [RULES].
 """
 
-SYSTEM_INSTRUCTION_OLD = """
-You are a language model asked to determine if a given summary is valid with respect to some source text.
-DO NOT summarise the source text yourself. You are only required to determine if the given summary is valid or not.
-If the summary is valid, please return "correct".
-
-If the summary is invalid, you must categorise and return the type of error choosing from the below:
-### Categories
-1. Intrinsic: Summary text that directly conflicts with the source text.
-2. Extrinsic: Summary text that is not found in the source text.
-3. Noun-Phrase: Summary text contains new noun-phrases or incorrect use of noun-phrases. We will abbreviate the word Noun-Phrase to NP.
-4. Predicate: Summary text contains an incorrect use of predicates.
-
-The following errors can be combined:
-### Rules
-1. Intrinsic and NP.
-2. Intrinsic and Predicate.
-3. Extrinsic and NP.
-4. Extrinsic and Predicate.
-
-The following errors MUST NOT be combined:
-1. Intrinsic and Extrinsic.
-2. NP and Predicate.
-
-Keep in mind that the given summary may contain more than one error. You must identify all errors. Keep your answer short and only output the error type.
-You must output the answer from the following list only: [correct, intrinsic-NP, intrinsic-predicate, extrinsic-NP, extrinsic-predicate].
-"""
-
-
 PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": SYSTEM_INSTRUCTION }
 
 DATASET_PROMPTS = {"Lislaam/AggreFact": {"input": ["doc", "summ"], "output": "error_type"}}
