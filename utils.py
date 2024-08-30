@@ -109,18 +109,29 @@ def reformat_data_split_labels(dataset, dataset_name):
         error_types = ['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate']
         dataset = process_in_chunks(dataset)
         dataset = dataset.filter(lambda x: x['error_type'] in error_types)
-        #dataset = dataset.filter(lambda x: len(x['doc']) < 1800)
-        #dataset = dataset.map(error_type_map)
 
     else:
         raise ValueError(f"Dataset {dataset_name} not supported.")
     return dataset
 
 
-def make_binary_dataset(dataset, error_type):
-    # Map dataset into error / not_error. Choose one error type only. Requires reformatted_dataset
-     binary_dataset = dataset.map(lambda x: True if x != error_type else False)
-     return binary_dataset
+def make_binary_dataset(dataset, error_type='correct'):
+    # Map dataset into error / not_error
+    def map_to_binary(x):
+        # Assume error_type is a list, convert to single string if needed
+        x['error_type'] = 'correct' if error_type in x['error_type'] else 'incorrect'
+        return x
+
+    # Apply the binary mapping
+    binary_dataset = dataset.map(map_to_binary)
+
+    # Count the number of 'correct' samples
+    num_correct = binary_dataset.filter(lambda x: x['error_type'] == 'correct').num_rows
+
+    # Undersample to ensure balanced classes
+    binary_dataset = undersampling(binary_dataset, error_types=['correct', 'incorrect'], n=num_correct)
+
+    return binary_dataset
 
 
 def undersampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'],
