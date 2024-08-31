@@ -1,3 +1,14 @@
+BINARY_INSTRUCTION = """
+You are a fair and impartial judge whose task is to carefully assess a [TEXT] and determine whether a given [SUMMARY] contains errors according to specific categories.
+
+You must evaluate the [SUMMARY] based on the [TEXT]. If the [SUMMARY] is valid, respond with 'correct'.
+If the [SUMMARY] contains errors, respond with 'incorrect'.
+
+[OUTPUT FORMAT]
+Please output your answer as an integer corresponding to the dictionary {'correct': 0, 'incorrect': 1}.
+"""
+
+
 SYSTEM_INSTRUCTION = """
 You are a fair and impartial judge whose task is to carefully assess a [TEXT] and determine whether a given [SUMMARY] contains errors according to specific categories.
 
