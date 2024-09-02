@@ -1,6 +1,6 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION
-from datasets import concatenate_datasets
+from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict
 from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 
@@ -19,7 +19,7 @@ def main(args):
         return output_texts
 
     # Load the dataset
-    dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]'])
+    dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
     dataset = reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
 
@@ -103,13 +103,13 @@ def main(args):
 
     # Make sure the results directory exists
     os.makedirs(
-        os.path.join("fine_tuning", str(args.llm), dir),
+        os.path.join("count_errors_sft", str(args.llm), dir),
         exist_ok=True,
     )
     # Plot training loss
     plot_training_loss(
         trainer.state.log_history,
-        os.path.join("fine_tuning", str(args.llm), dir),
+        os.path.join("count_errors_sft", str(args.llm), dir),
     )
 
     # Save model
@@ -175,15 +175,15 @@ def main(args):
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join("fine_tuning", str(args.llm), dir), 
+            os.path.join("count_errors_sft", str(args.llm), dir), 
             exist_ok=True,
         )
         # Save the predictions
-        with open(os.path.join("fine_tuning", str(args.llm), dir, f"summary.json"), "w") as f:
+        with open(os.path.join("count_errors_sft", str(args.llm), dir, f"summary.json"), "w") as f:
             json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([reverse_labels(i) for i in preds], labels)],
                         f, indent=4)
         # Save results to a file
-        with open(os.path.join("fine_tuning", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
+        with open(os.path.join("count_errors_sft", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
             json.dump(score, f, indent=4)
 
         print("_" * 80)

@@ -1,10 +1,5 @@
 import random
-from constants import (
-    PROMPT_INSTRUCTIONS,
-    UNCERTAINTY_DOMAINS,
-    BASELINE_METRICS,
-    DATASET_LABELS,
-)
+from constants import DATASET_LABELS, PROMPT_INSTRUCTIONS
 import numpy as np
 import pyarrow as pa
 import pandas as pd

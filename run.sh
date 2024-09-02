@@ -38,8 +38,7 @@ run_with_retries() {
 
 # List of commands to run
 commands=(
-    "python3 sft_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --sampling='binary'"
-    "python3 sft_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --sampling='binary'"
+    "python3 sft_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --sampling='oversampling'"
 )
 
 # Iterate over each command in the list
