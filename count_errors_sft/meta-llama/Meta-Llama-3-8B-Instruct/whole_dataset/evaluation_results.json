@@ -1,0 +1,9 @@
+{
+    "accuracy detecting # errors": 1.0,
+    "total class accuracy": 0.38461538461538464,
+    "extrinsic-NP": 0.375,
+    "extrinsic-predicate": 1.0,
+    "intrinsic-NP": 0.0,
+    "intrinsic-predicate": 0.0,
+    "correct": null
+}

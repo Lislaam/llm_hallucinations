@@ -11,6 +11,7 @@ from constants import PRE_POST_LABEL_TOKENS
 import regex as re
 import ast
 from datasets import Dataset, concatenate_datasets
+from sft import LABEL_CONVERSIONS
 
 
 # Function to extract labels from prompt based on model-specific tokens
@@ -27,19 +28,6 @@ def extract_labels_from_prompt(prompt, model):
         return labels[1:-1]
     else:
         return labels[:-1]  # Exclude the last label extracted from the prompt
-
-
-def reformat_data_full_labels(dataset):
-    """Reformats the dataset to have the same format for all datasets for consistency.
-
-    Args:
-        dataset: dataset -- dataset to reformat
-        dataset_name: str -- name of the dataset
-
-    Returns:
-        dataset: dataset -- reformatted dataset
-    """
-    return dataset.filter(lambda x: error_type_map(x) is not None)
 
 
 def reformat_data_split_labels(dataset, dataset_name):
@@ -152,7 +140,7 @@ def undersampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-pr
     return sampled_dataset
 
 
-def oversampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'], n=2330):
+def oversampling(dataset, error_types=DATASET_LABELS["Lislaam/AggreFact"].values(), n=1452): #error_types=['correct', 'intrinsic-NP', 'intrinsic-predicate', 'extrinsic-NP', 'extrinsic-predicate'], n=2330):
     def replicate_class(dataset, error_type, n):
         filtered = dataset.filter(lambda x: x['error_type'] == error_type)
         num_examples = len(filtered)
@@ -184,7 +172,7 @@ def oversampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-pre
 
     # Shuffle the final dataset
     oversampled_dataset = oversampled_dataset.shuffle(seed=42)
-
+    
     return oversampled_dataset
 
 
@@ -292,12 +280,13 @@ def preprocess(text, model=None, error_types=['correct', 'intrinsic', 'extrinsic
     return text
 
 
-def get_score(predictions, references):
+def get_score(predictions, references, reverse_labels=None):
     #processed_preds = [preprocess(pred, model) for pred in predictions]
     processed_refs = [preprocess(ref) for ref in references] # Should always be processable
 
     flatten = lambda lst: [item for sublist in lst for item in (sublist if isinstance(sublist, list) else [sublist])]
 
+    total_nums = 0
     total = 0
     class_errors = {'extrinsic-NP': 0, 'extrinsic-predicate': 0, 'intrinsic-NP': 0,
                     'intrinsic-predicate': 0, 'correct': 0}
@@ -311,26 +300,75 @@ def get_score(predictions, references):
     # Check if any ref is within pred
     for i in range(len(processed_refs)):
         if type(processed_refs[i])==list:
+            # First check if number of errors is the same as the length of the ref
+            if soft_match(predictions[i], str(len(processed_refs[i]))):
+                total_nums += 1
             for x in processed_refs[i]:
-                print(processed_refs[i], x, predictions[i], soft_match(predictions[i], x), '/n')
-                if soft_match(predictions[i], x): # Check if that ref is in the pred
+                if soft_match(predictions[i], reverse_labels[x] if reverse_labels!= None else x): # Check if that ref is in the pred
                     total += 1/len(processed_refs[i])
                     class_errors[x] += 1
         else:
-            print(processed_refs[i], predictions[i], soft_match(predictions[i], processed_refs[i]), '/n')
-            if soft_match(predictions[i], processed_refs[i]):
+            if soft_match(processed_refs[i], '1'):
+                total_nums += 1
+            if soft_match(predictions[i], reverse_labels[processed_refs[i]] if reverse_labels!= None else processed_refs[i]):
                 total += 1
                 class_errors[processed_refs[i]] += 1
 
-    scores = {'total': total / len(processed_refs),
+    scores = {'accuracy detecting # errors': total_nums / len(processed_refs),
+              'total class accuracy': total / len(processed_refs),
               'extrinsic-NP': class_errors["extrinsic-NP"] / num_extrinsicnp if 'extrinsic-NP' in flatten(processed_refs) else None,
               'extrinsic-predicate': class_errors["extrinsic-predicate"] / num_extrinsicpredicate if 'extrinsic-predicate' in flatten(processed_refs) else None,
               'intrinsic-NP': class_errors["intrinsic-NP"] / num_intrinsicnp if 'intrinsic-NP' in flatten(processed_refs) else None,
               'intrinsic-predicate': class_errors["intrinsic-predicate"] / num_intrinsicpredicate if 'intrinsic-predicate' in flatten(processed_refs) else None,
               'correct': class_errors["correct"] / num_correct if 'correct' in flatten(processed_refs) else None}
     
-    #print(processed_refs)
+    return scores
 
+
+def get_single_label_score(preds, refs, binary=False):
+    # Predictions are numbers corresponding to an error type.
+    processed_refs = [LABEL_CONVERSIONS[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
+
+    if binary:
+        class_errors = {'correct': 0, 'incorrect': 0}
+
+        num_correct = sum([1 for ref in refs if ref == 'correct']) if 'correct' in refs else 1
+        num_incorrect = sum([1 for ref in refs if ref == 'incorrect']) if 'incorrect' in refs else 1
+
+        total = 0 # Overall accuracy
+        for i in range(len(preds)):
+            if preds[i] == processed_refs[i]:
+                total += 1
+                class_errors[refs[i]] += 1
+
+        scores = {'total': total / len(refs),
+                'correct': class_errors["correct"] / num_correct if 'correct' in refs else None,
+                'incorrect': class_errors["incorrect"] / num_incorrect if 'incorrect' in refs else None}
+
+    else:
+        class_errors = {'extrinsic-NP': 0, 'extrinsic-predicate': 0, 'intrinsic-NP': 0,
+                    'intrinsic-predicate': 0, 'correct': 0}
+        
+        # Count the number of each error type in the references
+        num_extrinsicnp = sum([1 for ref in refs if ref == 'extrinsic-NP']) if 'extrinsic-NP' in refs else 1
+        num_extrinsicpredicate = sum([1 for ref in refs if ref == 'extrinsic-predicate']) if 'extrinsic-predicate' in refs else 1
+        num_intrinsicnp = sum([1 for ref in refs if ref == 'intrinsic-NP']) if 'intrinsic-NP' in refs else 1
+        num_intrinsicpredicate = sum([1 for ref in refs if ref == 'intrinsic-predicate']) if 'intrinsic-predicate' in refs else 1
+        num_correct = sum([1 for ref in refs if ref == 'correct']) if 'correct' in refs else 1
+
+        total = 0 # Overall accuracy
+        for i in range(len(preds)):
+            if preds[i] == processed_refs[i]:
+                total += 1
+                class_errors[refs[i]] += 1
+
+        scores = {'total': total / len(refs),
+                'extrinsic-NP': class_errors["extrinsic-NP"] / num_extrinsicnp if 'extrinsic-NP' in refs else None,
+                'extrinsic-predicate': class_errors["extrinsic-predicate"] / num_extrinsicpredicate if 'extrinsic-predicate' in refs else None,
+                'intrinsic-NP': class_errors["intrinsic-NP"] / num_intrinsicnp if 'intrinsic-NP' in refs else None,
+                'intrinsic-predicate': class_errors["intrinsic-predicate"] / num_intrinsicpredicate if 'intrinsic-predicate' in refs else None,
+                'correct': class_errors["correct"] / num_correct if 'correct' in refs else None}
+    
     return scores
 
 

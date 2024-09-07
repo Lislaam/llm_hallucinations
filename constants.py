@@ -6,22 +6,22 @@ If the [SUMMARY] contains errors, count the number of errors and categorize them
 
 
 [LABELS]
-C: **correct**; The [SUMMARY] is a correct representation of the [TEXT].
-INP: **intrinsic-NP**; A model misrepresents word(s) from the source text that function(s) in a summary as subject, object, or prepositional object.
-IPRED: **intrinsic-predicate**; A model misrepresents word(s) from the source text that function(s) in a summary as the main content verb or content like adverbs that closely relate to the verb.
-EXNP: **extrinsic-NP**; A model introduces word(s) NOT from the source text that function(s) in a summary as subject, object, or prepositional object but cannot be verified from the source.
-EXPRED: **extrinsic-predicate**; A model introduces word(s) NOT from the source text that function(s) in a summary as the main content verb or content like adverbs that closely relate to the verb, but which cannot be verified from the source.
+- **correct**: The [SUMMARY] is a correct representation of the [TEXT].
+- **intrinsic-NP**: A [SUMMARY] misrepresents words from the [TEXT] that functions in the [SUMMARY] as subject, object, or prepositional object.
+- **intrinsic-predicate**: A [SUMMARY] misrepresents words from the [TEXT] that functions in the [SUMMARY] as the main content verb or content like adverbs that closely relate to the verb.
+- **extrinsic-NP**: A [SUMMARY] introduces words NOT from the [TEXT] that functions in the [SUMMARY] as subject, object, or prepositional object but cannot be verified from the [TEXT].
+- **extrinsic-predicate**: A [SUMMARY] introduces words NOT from the [TEXT] that function(s) in a [SUMMARY] as the main content verb or content like adverbs that closely relate to the verb, but which cannot be verified from the [TEXT].
 
 
 [RULES]
 - Denote each label according to its value in the following dictionary:   
-{"correct": 'C', "intrinsic-NP": 'INP', "intrinsic-predicate": 'IPRED, "extrinsic-NP": 'EXNP', "extrinsic-predicate": 'EXPRED'}
+{"correct": 'C', "intrinsic-NP": 'INP', "intrinsic-predicate": 'IPRED', "extrinsic-NP": 'EXNP', "extrinsic-predicate": 'EXPRED'}
 
-- Do not use any other labels. Return the number of errors in the summary, followed by either 'C' if the summary is correct, or the error labels in the order they appear in the summary.
+- Do not use any other labels. Return the number of errors in the summary, followed by the label values in the order they appear in the [SUMMARY].
 
 [OUTPUT FORMAT]
-Please output your answer as an integer number of errors, followed by symbols corresponding to the labelled categories in [RULES].
-Example output: '2 INP EXPRED'
+Please output your answer as an integer total number of errors, followed by symbols corresponding to the labelled categories in [RULES].
+Example output: '2 INP EXPRED' if there are 2 errors in the summary, and they are intrinsic-NP and extrinsic-predicate.
 """
 
 
@@ -70,7 +70,7 @@ PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": OLD_SYSTEM_INSTRUCTION }
 DATASET_PROMPTS = {"Lislaam/AggreFact": {"input": ["doc", "summ"], "output": "error_type"}}
 
 DATASET_LABELS = {"Lislaam/AggreFact": {
-                    0: "correct",
+                    0: "['correct']",
                     1: "['intrinsic-NP']",
                     2: "['intrinsic-predicate']",
                     3: "['extrinsic-NP']",

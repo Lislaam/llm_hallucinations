@@ -1,0 +1,54 @@
+[
+    {
+        "prediction": "1 EXNP 1 EXPRED 03",
+        "label": "['extrinsic-predicate']"
+    },
+    {
+        "prediction": "1 EXNP 1 EXPRED 03",
+        "label": "['intrinsic-NP']"
+    },
+    {
+        "prediction": "1 EXNP 1 EXPRED 04",
+        "label": "['extrinsic-NP']"
+    },
+    {
+        "prediction": "1 EX3 1 EXPRED 04",
+        "label": "['intrinsic-NP']"
+    },
+    {
+        "prediction": "1 EX3 1 INP 04",
+        "label": "['extrinsic-NP']"
+    },
+    {
+        "prediction": "1 EX3 1 EXPRED 04",
+        "label": "['extrinsic-predicate']"
+    },
+    {
+        "prediction": "1 EXNP 1 EXPRED 04",
+        "label": "['extrinsic-NP']"
+    },
+    {
+        "prediction": "1 EX3 1 EXPRED 04",
+        "label": "['intrinsic-predicate']"
+    },
+    {
+        "prediction": "1 EX3 1 IN4 10",
+        "label": "['extrinsic-NP']"
+    },
+    {
+        "prediction": "1 EX3 1 INP 04",
+        "label": "['extrinsic-NP']"
+    },
+    {
+        "prediction": "1 EXNP 1 EXPRED 03",
+        "label": "['extrinsic-NP']"
+    },
+    {
+        "prediction": "1 EX3 1 INP 04",
+        "label": "['extrinsic-NP']"
+    },
+    {
+        "prediction": "1 EX3 1 INP 04",
+        "label": "['extrinsic-NP']"
+    }
+]

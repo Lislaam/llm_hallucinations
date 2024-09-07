@@ -1,5 +1,5 @@
 from sft import *
-from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION
+from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, OLD_SYSTEM_INSTRUCTION
 from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict
 from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
@@ -12,16 +12,28 @@ def main(args):
         for i in range(len(example["error_type"])):
             text = f"{instruction}\n ### Text1: {example['doc'][i]}\n ### Text2: {example['summ'][i]}\n ### Output: "
             if training:
-                text += (
-                    f"{LABEL_CONVERSIONS[example['error_type'][i]]} ." + tokenizer.eos_token
-                )
+                if instruction != SYSTEM_INSTRUCTION:
+                    text += (
+                        f"{LABEL_CONVERSIONS[example['error_type'][i]]}." + tokenizer.eos_token
+                    )
+                else:
+                    label = ast.literal_eval(example["error_type"][i])
+                    text += f"{str(len(label))}, "
+                    for l in label:
+                        text += f"{LABEL_CONVERSIONS[l]}, "
+                    text -= ', '
+                    text += '.'
+                    text += tokenizer.eos_token
+
             output_texts.append(text)
         return output_texts
 
     # Load the dataset
-    dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
+    dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]'])
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
-    dataset = reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
+    dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
+    dataset = dataset.map(error_type_map)
+    # dataset = dataset.filter(lambda x: x is not None and None not in x.values())
 
     if args.sampling == None:
         dir = "whole_dataset"
@@ -34,6 +46,9 @@ def main(args):
     elif args.sampling == 'binary':
         dataset = make_binary_dataset(dataset)
         dir = "binary"
+    else:
+        print("Sampling not supported. Choose oversampling, undersampling or binary")
+        exit
 
     # Split the dataset into train and test sets (80% train, 20% test)
     train_test = dataset.train_test_split(test_size=0.2)
@@ -48,8 +63,11 @@ def main(args):
         'test': train_test['test']
     })
 
-    quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-    model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
+    # Test formatting for 1st example:
+    print(formatting_prompts_func(dataset['train'][0], True))
+
+    # quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+    # model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
 
     tokenizer.padding_side = "right"
@@ -66,56 +84,56 @@ def main(args):
     response_template = " ### Output:"
     collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
-    sft_config = SFTConfig(
-        output_dir=OUTPUT_DIR,
-        do_train=True,
-        num_train_epochs=args.num_train_epochs,
-        max_seq_length=2500,
-        logging_steps=20,
-        eval_strategy="steps",
-        eval_steps=250,
-        save_steps=250,
-        bf16=True,
-        metric_for_best_model="eval_loss",
-        per_device_train_batch_size=args.batch_size,
-        load_best_model_at_end = True,
-    )
+    # sft_config = SFTConfig(
+    #     output_dir=OUTPUT_DIR,
+    #     do_train=True,
+    #     num_train_epochs=args.num_train_epochs,
+    #     max_seq_length=2500,
+    #     logging_steps=20,
+    #     eval_strategy="steps",
+    #     eval_steps=250,
+    #     save_steps=250,
+    #     bf16=True,
+    #     metric_for_best_model="eval_loss",
+    #     per_device_train_batch_size=args.batch_size,
+    #     load_best_model_at_end = True,
+    # )
 
-    trainer = SFTTrainer(
-        model,
-        train_dataset=dataset['train'],
-        eval_dataset=dataset['validation'],
-        args=sft_config,
-        formatting_func=formatting_prompts_func,
-        data_collator=collator,
-        peft_config=lora_config,
-        tokenizer=tokenizer,
-        callbacks=[
-            EarlyStoppingCallback(
-                early_stopping_patience=args.patience,
-                early_stopping_threshold=args.early_stopping_threshold,
-            )
-        ],
-    )
+    # trainer = SFTTrainer(
+    #     model,
+    #     train_dataset=dataset['train'],
+    #     eval_dataset=dataset['validation'],
+    #     args=sft_config,
+    #     formatting_func=formatting_prompts_func,
+    #     data_collator=collator,
+    #     peft_config=lora_config,
+    #     tokenizer=tokenizer,
+    #     callbacks=[
+    #         EarlyStoppingCallback(
+    #             early_stopping_patience=args.patience,
+    #             early_stopping_threshold=args.early_stopping_threshold,
+    #         )
+    #     ],
+    # )
 
-    # Train the model
-    trainer.train()
+    # # Train the model
+    # trainer.train()
 
-    # Make sure the results directory exists
-    os.makedirs(
-        os.path.join("count_errors_sft", str(args.llm), dir),
-        exist_ok=True,
-    )
-    # Plot training loss
-    plot_training_loss(
-        trainer.state.log_history,
-        os.path.join("count_errors_sft", str(args.llm), dir),
-    )
+    # # Make sure the results directory exists
+    # os.makedirs(
+    #     os.path.join("count_errors_sft", str(args.llm), dir),
+    #     exist_ok=True,
+    # )
+    # # Plot training loss
+    # plot_training_loss(
+    #     trainer.state.log_history,
+    #     os.path.join("count_errors_sft", str(args.llm), dir),
+    # )
 
-    # Save model
-    trainer.save_model(sft_config.output_dir)
-    del trainer
-    del model
+    # # Save model
+    # trainer.save_model(sft_config.output_dir)
+    # del trainer
+    # del model
 
     # Load the model
     quantization_config = BitsAndBytesConfig(load_in_8bit=True)
@@ -124,10 +142,13 @@ def main(args):
     model.generation_config.pad_token_id = tokenizer.pad_token_id
     tokenizer.padding_side = "left"
 
-    # Tokenize the labels for contrained decoding
-    force_token_ids = tokenizer(
-        list(LABEL_CONVERSIONS.values()), add_special_tokens=False # These are numbers corresponding to the error types
-    ).input_ids
+    # Tokenize the labels for constrained decoding
+    if args.verbalised_labels:
+        force_tokens = list(LABEL_CONVERSIONS.values())
+        force_tokens = [f" {token}" for token in force_tokens]
+        force_token_ids = tokenizer(
+            force_tokens, add_special_tokens=False
+        ).input_ids
 
     # Place in evaluation mode
     model.eval()
@@ -150,7 +171,7 @@ def main(args):
                 do_sample=False,
                 num_beams=3,
                 num_return_sequences=1,
-                max_new_tokens=1, # Force to only give the number corresponding to the error type
+                max_new_tokens=10,
                 force_words_ids=force_token_ids,
             )
             prediction = tokenizer.batch_decode(outputs, skip_special_tokens=True)
@@ -163,13 +184,14 @@ def main(args):
         ]
         
         if args.sampling == 'binary':
-            score = get_sft_score(preds, labels, binary=True)
+            score = get_single_label_score(preds, labels, binary=True)
             print(f"Total accuracy: {score['total']}")
             for error_type in ['correct', 'incorrect']:
                 print(f"{error_type} class accuracy: {score[error_type]}")
         else:
-            score = get_sft_score(preds, labels)
-            print(f"Total accuracy: {score['total']}")
+            score = get_score(preds, labels, reverse_labels=LABEL_CONVERSIONS)
+            print(f"Detecting # errors accuracy: {score['accuracy detecting # errors']}")
+            print(f"Total accuracy: {score['total class accuracy']}")
             for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
                 print(f"{error_type} class accuracy: {score[error_type]}")
 
@@ -180,7 +202,7 @@ def main(args):
         )
         # Save the predictions
         with open(os.path.join("count_errors_sft", str(args.llm), dir, f"summary.json"), "w") as f:
-            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([reverse_labels(i) for i in preds], labels)],
+            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip(preds, labels)],
                         f, indent=4)
         # Save results to a file
         with open(os.path.join("count_errors_sft", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
