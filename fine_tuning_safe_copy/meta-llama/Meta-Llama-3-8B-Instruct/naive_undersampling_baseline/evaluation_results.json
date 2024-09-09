@@ -1,0 +1,8 @@
+{
+    "total": 0.25,
+    "extrinsic-NP": 0.1323529411764706,
+    "extrinsic-predicate": 0.15384615384615385,
+    "intrinsic-NP": 0.11904761904761904,
+    "intrinsic-predicate": 0.17073170731707318,
+    "correct": 0.625
+}

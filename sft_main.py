@@ -1,6 +1,6 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION
-from datasets import concatenate_datasets
+from datasets import concatenate_datasets, load_from_disk
 from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 
@@ -53,72 +53,72 @@ def main(args):
 
     tokenizer.padding_side = "right"
 
-    # lora_config = LoraConfig(
-    #     r=8,  # Was 16 for mistral and llama trainings oversample/undersample. NOT during binary dataset
-    #     lora_alpha=8,
-    #     bias="none",
-    #     task_type="CAUSAL_LM",
-    # )
+    lora_config = LoraConfig(
+        r=8,  # Was 16 for mistral and llama trainings oversample/undersample. NOT during binary dataset
+        lora_alpha=8,
+        bias="none",
+        task_type="CAUSAL_LM",
+    )
 
     tokenizer.pad_token_id = tokenizer.eos_token_id
 
-    # response_template = " ### Output:"
-    # collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
+    response_template = " ### Output:"
+    collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
-    # sft_config = SFTConfig(
-    #     output_dir=OUTPUT_DIR,
-    #     do_train=True,
-    #     num_train_epochs=args.num_train_epochs,
-    #     max_seq_length=2500,
-    #     logging_steps=20,
-    #     eval_strategy="steps",
-    #     eval_steps=250,
-    #     save_steps=250,
-    #     bf16=True,
-    #     metric_for_best_model="eval_loss",
-    #     per_device_train_batch_size=args.batch_size,
-    #     load_best_model_at_end = True,
-    # )
+    sft_config = SFTConfig(
+        output_dir=OUTPUT_DIR,
+        do_train=True,
+        num_train_epochs=args.num_train_epochs,
+        max_seq_length=2500,
+        logging_steps=20,
+        eval_strategy="steps",
+        eval_steps=250,
+        save_steps=250,
+        bf16=True,
+        metric_for_best_model="eval_loss",
+        per_device_train_batch_size=args.batch_size,
+        load_best_model_at_end = True,
+    )
 
-    # trainer = SFTTrainer(
-    #     model,
-    #     train_dataset=dataset['train'],
-    #     eval_dataset=dataset['validation'],
-    #     args=sft_config,
-    #     formatting_func=formatting_prompts_func,
-    #     data_collator=collator,
-    #     peft_config=lora_config,
-    #     tokenizer=tokenizer,
-    #     callbacks=[
-    #         EarlyStoppingCallback(
-    #             early_stopping_patience=args.patience,
-    #             early_stopping_threshold=args.early_stopping_threshold,
-    #         )
-    #     ],
-    # )
+    trainer = SFTTrainer(
+        model,
+        train_dataset=dataset['train'],
+        eval_dataset=dataset['validation'],
+        args=sft_config,
+        formatting_func=formatting_prompts_func,
+        data_collator=collator,
+        peft_config=lora_config,
+        tokenizer=tokenizer,
+        callbacks=[
+            EarlyStoppingCallback(
+                early_stopping_patience=args.patience,
+                early_stopping_threshold=args.early_stopping_threshold,
+            )
+        ],
+    )
 
-    # # Train the model
-    # trainer.train()
+    # Train the model
+    trainer.train()
 
-    # # Make sure the results directory exists
-    # os.makedirs(
-    #     os.path.join("fine_tuning", str(args.llm), dir),
-    #     exist_ok=True,
-    # )
-    # # Plot training loss
-    # plot_training_loss(
-    #     trainer.state.log_history,
-    #     os.path.join("fine_tuning", str(args.llm), dir),
-    # )
+    # Make sure the results directory exists
+    os.makedirs(
+        os.path.join("fine_tuning", str(args.llm), dir),
+        exist_ok=True,
+    )
+    # Plot training loss
+    plot_training_loss(
+        trainer.state.log_history,
+        os.path.join("fine_tuning", str(args.llm), dir),
+    )
 
-    # # Save model
-    # trainer.save_model(sft_config.output_dir)
-    # del trainer
-    # del model
+    # Save model
+    trainer.save_model(sft_config.output_dir)
+    del trainer
+    del model
 
     # Load the model
-    # quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-    # model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
+    quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+    model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
 
     model.generation_config.pad_token_id = tokenizer.pad_token_id
     tokenizer.padding_side = "left"
@@ -131,11 +131,12 @@ def main(args):
     # Place in evaluation mode
     model.eval()
     with torch.no_grad():
+        dataset = load_from_disk('data/eval/data-00000-of-00001.arrow') 
         dataset = dataset.map(
             lambda x: {"formatted_text": formatting_prompts_func(x, False)},
             batched=True,
         )
-        dataloader = DataLoader(dataset['test'], batch_size=args.batch_size)
+        dataloader = DataLoader(dataset, batch_size=args.batch_size)
 
         # Make predictions
         predictions = []
@@ -156,7 +157,7 @@ def main(args):
             predictions.extend(prediction)
 
         # Use soft accuracy for evaluation
-        labels = dataset['test']["error_type"]
+        labels = dataset["error_type"]
         preds = [
             prediction.split("### Output:")[1].strip() for prediction in predictions
         ]
@@ -173,7 +174,7 @@ def main(args):
         )
         # Save the predictions
         with open(os.path.join("fine_tuning", str(args.llm), dir, f"summary.json"), "w") as f:
-            json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip([reverse_labels(i) for i in preds], labels)],
+            json.dump([{'id':id, "prediction": col1, "label": col2} for col1, col2 in zip(dataset['id'], [reverse_labels(i) for i in preds], labels)],
                         f, indent=4)
         # Save results to a file
         with open(os.path.join("fine_tuning", str(args.llm), dir, "evaluation_results.json"), "w",) as f:

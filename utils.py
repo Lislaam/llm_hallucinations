@@ -131,6 +131,7 @@ def undersampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-pr
 
     # Sample 400 examples from each class
     sampled_dataset = Dataset.from_dict({
+        'id': [],
         'doc': [],
         'summ': [],
         'error_type': []
@@ -167,6 +168,7 @@ def oversampling(dataset, error_types=['correct', 'intrinsic-NP', 'intrinsic-pre
 
     # Initialize an empty dataset for oversampling
     oversampled_dataset = Dataset.from_dict({
+        'id': [],
         'doc': [],
         'summ': [],
         'error_type': []

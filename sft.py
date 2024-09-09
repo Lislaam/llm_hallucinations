@@ -16,11 +16,11 @@ OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning" #"/homes
 
 LABEL_CONVERSIONS = {
                     "correct": '0',
-                    "incorrect": '1',
-                    # "intrinsic-NP": '1',
-                    # "intrinsic-predicate": '2',
-                    # "extrinsic-NP": '3',
-                    # "extrinsic-predicate": '4',
+                    # "incorrect": '1',
+                    "intrinsic-NP": '1',
+                    "intrinsic-predicate": '2',
+                    "extrinsic-NP": '3',
+                    "extrinsic-predicate": '4',
                     # ==========================================
                     # 5: "['extrinsic-NP', 'intrinsic-NP']",
                     # 6: "['extrinsic-NP', 'extrinsic-predicate']",
