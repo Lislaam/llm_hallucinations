@@ -1,6 +1,6 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION
-from datasets import concatenate_datasets, load_from_disk
+from datasets import concatenate_datasets, load_dataset, DatasetDict, dataset_dict, Dataset
 from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 
