@@ -16,32 +16,23 @@ def main(args):
             self.loss_fn = nn.CrossEntropyLoss(weight=class_weights)
 
         def compute_loss(self, model, inputs):
-            # Extract labels for both tasks
             labels = inputs.pop("labels")
-            error_type_labels = torch.Tensor([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]).to('cuda')
-            
-            # Forward pass through the model
             outputs = model(**inputs)
-            print("Model outputs keys:", outputs.keys())
-
-            # Get the logits for token-level (language modeling) task
             logits = outputs.logits  # shape: [batch_size, seq_len, vocab_size]
+            
+            # Assuming logits has size [batch_size, seq_len, vocab_size]
+            batch_size, seq_len, vocab_size = logits.size()
+            import pdb; pdb.set_trace()
+            constrained_logits = torch.index_select(logits, dim=2, index=torch.tensor(force_token_ids).to(logits.device))
 
-            # Flatten logits and labels for token-level cross-entropy
-            logits_flat = logits.view(-1, logits.size(-1))  # [batch_size * seq_len, vocab_size]
+            # Flatten the logits and labels for token-level cross-entropy
+            logits_flat = constrained_logits.view(-1, constrained_logits.size(-1))  # [batch_size * seq_len, num_error_types]
             labels_flat = labels.view(-1)  # [batch_size * seq_len]
 
-            # Token-level cross-entropy loss without weights
-            token_loss = F.cross_entropy(logits_flat, labels_flat, ignore_index=tokenizer.pad_token_id)
-        
-            # Error type classification task
-            error_type_logits = outputs["logits"]  # logits for error type classification
-            error_type_loss = F.cross_entropy(error_type_logits, error_type_labels, weight=self.class_weights)
-            
-            # Combine the two losses
-            total_loss = token_loss + error_type_loss  # Adjust the weighting of each loss if needed
+            # Apply class weights for error type tokens
+            token_loss = F.cross_entropy(logits_flat, labels_flat, weight=self.class_weights, ignore_index=tokenizer.pad_token_id)
 
-            return total_loss
+            return token_loss
 
     def formatting_prompts_func(example, training=True):
         instruction = BINARY_INSTRUCTION if args.sampling=='binary' else SYSTEM_INSTRUCTION
@@ -66,7 +57,7 @@ def main(args):
         return output_texts
 
     # Load the dataset
-    dataset = load_dataset(args.dataset, split=['validation[:]', 'test[:]'])
+    dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
     dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
     dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
     dataset = dataset.map(error_type_map)
@@ -117,6 +108,13 @@ def main(args):
 
     # Test formatting for 1st and 2nd example:
     print(formatting_prompts_func(dataset['train'][:1], True))
+
+    # Tokenize the labels for constrained decoding
+    force_tokens = list(LABEL_CONVERSIONS.values())
+    force_tokens = [f" {token}" for token in force_tokens]
+    force_token_ids = tokenizer(
+        force_tokens, add_special_tokens=False
+    ).input_ids
 
     response_template = " ### Output:"
     collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
@@ -190,14 +188,6 @@ def main(args):
 
     model.generation_config.pad_token_id = tokenizer.pad_token_id
     tokenizer.padding_side = "left"
-
-    # Tokenize the labels for constrained decoding
-    if args.verbalised_labels:
-        force_tokens = list(LABEL_CONVERSIONS.values())
-        force_tokens = [f" {token}" for token in force_tokens]
-        force_token_ids = tokenizer(
-            force_tokens, add_special_tokens=False
-        ).input_ids
 
     # Place in evaluation mode
     model.eval()
