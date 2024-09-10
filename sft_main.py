@@ -52,6 +52,7 @@ def main(args):
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
 
     tokenizer.padding_side = "right"
+    tokenizer.pad_token_id = tokenizer.eos_token_id
 
     lora_config = LoraConfig(
         r=8,  # Was 16 for mistral and llama trainings oversample/undersample. NOT during binary dataset
@@ -59,8 +60,6 @@ def main(args):
         bias="none",
         task_type="CAUSAL_LM",
     )
-
-    tokenizer.pad_token_id = tokenizer.eos_token_id
 
     response_template = " ### Output:"
     collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
@@ -131,7 +130,7 @@ def main(args):
     # Place in evaluation mode
     model.eval()
     with torch.no_grad():
-        dataset = load_from_disk('data/eval/data-00000-of-00001.arrow') 
+        dataset = Dataset.from_file('data/eval/data-00000-of-00001.arrow')
         dataset = dataset.map(
             lambda x: {"formatted_text": formatting_prompts_func(x, False)},
             batched=True,
@@ -174,7 +173,7 @@ def main(args):
         )
         # Save the predictions
         with open(os.path.join("fine_tuning", str(args.llm), dir, f"summary.json"), "w") as f:
-            json.dump([{'id':id, "prediction": col1, "label": col2} for col1, col2 in zip(dataset['id'], [reverse_labels(i) for i in preds], labels)],
+            json.dump([{'id':id, "prediction": col1, "label": col2} for id, col1, col2 in zip(dataset['id'], [reverse_labels(i) for i in preds], labels)],
                         f, indent=4)
         # Save results to a file
         with open(os.path.join("fine_tuning", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
