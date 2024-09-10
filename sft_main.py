@@ -3,8 +3,45 @@ from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, OLD_SYSTEM_INSTRUC
 from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict
 from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
+from collections import Counter
 
 def main(args):
+
+    # Define a custom Trainer class to implement weighted loss
+    class WeightedSFTTrainer(SFTTrainer):
+        def __init__(self, *args, class_weights, **kwargs):
+            super().__init__(*args, **kwargs)
+            # Set up CrossEntropyLoss with class weights
+            self.class_weights = class_weights
+            self.loss_fn = nn.CrossEntropyLoss(weight=class_weights)
+
+        def compute_loss(self, model, inputs):
+            # Extract labels for both tasks
+            labels = inputs.pop("labels")
+            error_type_labels = torch.Tensor([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]).to('cuda')
+            
+            # Forward pass through the model
+            outputs = model(**inputs)
+            print("Model outputs keys:", outputs.keys())
+
+            # Get the logits for token-level (language modeling) task
+            logits = outputs.logits  # shape: [batch_size, seq_len, vocab_size]
+
+            # Flatten logits and labels for token-level cross-entropy
+            logits_flat = logits.view(-1, logits.size(-1))  # [batch_size * seq_len, vocab_size]
+            labels_flat = labels.view(-1)  # [batch_size * seq_len]
+
+            # Token-level cross-entropy loss without weights
+            token_loss = F.cross_entropy(logits_flat, labels_flat, ignore_index=tokenizer.pad_token_id)
+        
+            # Error type classification task
+            error_type_logits = outputs["logits"]  # logits for error type classification
+            error_type_loss = F.cross_entropy(error_type_logits, error_type_labels, weight=self.class_weights)
+            
+            # Combine the two losses
+            total_loss = token_loss + error_type_loss  # Adjust the weighting of each loss if needed
+
+            return total_loss
 
     def formatting_prompts_func(example, training=True):
         instruction = BINARY_INSTRUCTION if args.sampling=='binary' else SYSTEM_INSTRUCTION
@@ -21,11 +58,11 @@ def main(args):
                     text += f"{str(len(label))}, "
                     for l in label:
                         text += f"{LABEL_CONVERSIONS[l]}, "
-                    text -= ', '
+                    text.removesuffix(', ')
                     text += '.'
                     text += tokenizer.eos_token
 
-            output_texts.append(text)
+                output_texts.append(text)
         return output_texts
 
     # Load the dataset
@@ -63,14 +100,13 @@ def main(args):
         'test': train_test['test']
     })
 
-    # Test formatting for 1st example:
-    print(formatting_prompts_func(dataset['train'][0], True))
 
-    # quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-    # model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
+    quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+    model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
 
     tokenizer.padding_side = "right"
+    tokenizer.pad_token_id = tokenizer.eos_token_id
 
     lora_config = LoraConfig(
         r=8,  # Was 16 for mistral and llama trainings oversample/undersample. NOT during binary dataset
@@ -79,61 +115,74 @@ def main(args):
         task_type="CAUSAL_LM",
     )
 
-    tokenizer.pad_token_id = tokenizer.eos_token_id
+    # Test formatting for 1st and 2nd example:
+    print(formatting_prompts_func(dataset['train'][:1], True))
 
     response_template = " ### Output:"
     collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
-    # sft_config = SFTConfig(
-    #     output_dir=OUTPUT_DIR,
-    #     do_train=True,
-    #     num_train_epochs=args.num_train_epochs,
-    #     max_seq_length=2500,
-    #     logging_steps=20,
-    #     eval_strategy="steps",
-    #     eval_steps=250,
-    #     save_steps=250,
-    #     bf16=True,
-    #     metric_for_best_model="eval_loss",
-    #     per_device_train_batch_size=args.batch_size,
-    #     load_best_model_at_end = True,
-    # )
+    sft_config = SFTConfig(
+        output_dir=OUTPUT_DIR,
+        do_train=True,
+        num_train_epochs=args.num_train_epochs,
+        max_seq_length=2500,
+        logging_steps=20,
+        eval_strategy="steps",
+        eval_steps=250,
+        save_steps=250,
+        bf16=True,
+        metric_for_best_model="eval_loss",
+        per_device_train_batch_size=args.batch_size,
+        load_best_model_at_end = True,
+    )
 
-    # trainer = SFTTrainer(
-    #     model,
-    #     train_dataset=dataset['train'],
-    #     eval_dataset=dataset['validation'],
-    #     args=sft_config,
-    #     formatting_func=formatting_prompts_func,
-    #     data_collator=collator,
-    #     peft_config=lora_config,
-    #     tokenizer=tokenizer,
-    #     callbacks=[
-    #         EarlyStoppingCallback(
-    #             early_stopping_patience=args.patience,
-    #             early_stopping_threshold=args.early_stopping_threshold,
-    #         )
-    #     ],
-    # )
+    # Assuming `dataset` contains the `error_type` labels
+    error_type_counts = Counter(dataset['train']['error_type'])
 
-    # # Train the model
-    # trainer.train()
+    # Calculate total samples and class weights
+    total_samples = sum(error_type_counts.values())
+    class_weights = {label: total_samples / count for label, count in error_type_counts.items()}
 
-    # # Make sure the results directory exists
-    # os.makedirs(
-    #     os.path.join("count_errors_sft", str(args.llm), dir),
-    #     exist_ok=True,
-    # )
-    # # Plot training loss
-    # plot_training_loss(
-    #     trainer.state.log_history,
-    #     os.path.join("count_errors_sft", str(args.llm), dir),
-    # )
+    # Convert the class weights to a tensor
+    class_weights_tensor = torch.tensor([class_weights[label] for label in sorted(class_weights.keys())], dtype=torch.float32).to('cuda')  # Ensure to match the label indices
 
-    # # Save model
-    # trainer.save_model(sft_config.output_dir)
-    # del trainer
-    # del model
+    # Initialize the WeightedSFTTrainer
+    trainer = WeightedSFTTrainer(
+        model=model,
+        train_dataset=dataset['train'],
+        eval_dataset=dataset['validation'],
+        args=sft_config,
+        formatting_func=formatting_prompts_func,
+        data_collator=collator,
+        peft_config=lora_config,
+        tokenizer=tokenizer,
+        callbacks=[
+            EarlyStoppingCallback(
+                early_stopping_patience=args.patience,
+                early_stopping_threshold=args.early_stopping_threshold,
+            )
+        ],
+        class_weights=class_weights_tensor  # Pass class weights here
+    )
+
+    # Train the model
+    trainer.train()
+
+    # Make sure the results directory exists
+    os.makedirs(
+        os.path.join("count_errors_sft", str(args.llm), dir),
+        exist_ok=True,
+    )
+    # Plot training loss
+    plot_training_loss(
+        trainer.state.log_history,
+        os.path.join("count_errors_sft", str(args.llm), dir),
+    )
+
+    # Save model
+    trainer.save_model(sft_config.output_dir)
+    del trainer
+    del model
 
     # Load the model
     quantization_config = BitsAndBytesConfig(load_in_8bit=True)
@@ -153,6 +202,7 @@ def main(args):
     # Place in evaluation mode
     model.eval()
     with torch.no_grad():
+        dataset = Dataset.from_file('data/eval/data-00000-of-00001.arrow')
         dataset = dataset.map(
             lambda x: {"formatted_text": formatting_prompts_func(x, False)},
             batched=True,

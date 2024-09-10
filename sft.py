@@ -10,6 +10,8 @@ import torch
 from peft import LoraConfig #, get_peft_model
 from tqdm import tqdm
 from torch.utils.data import DataLoader
+import torch.nn as nn
+import torch.nn.functional as F
 
 OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 
