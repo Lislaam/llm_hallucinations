@@ -1,4 +1,14 @@
 SYSTEM_INSTRUCTION = """
+You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
+Given the [ERROR LOCATIONS] you must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the error type.
+
+[OUTPUT FORMAT]
+Return 0 if a [SUMMARY] adds details not found in the [ORIGINAL TEXT].
+Else return 1 if the [SUMMARY] mischaracterises [ORIGINAL TEXT] information.
+"""
+
+
+OLD_SYSTEM_INSTRUCTION = """
 You are a fair and impartial judge whose task is to carefully assess a [TEXT] and determine whether a given [SUMMARY] contains errors according to specific categories.
 
 You must evaluate the [SUMMARY] based on the [TEXT] and identify the errors if any are present. If the [SUMMARY] is valid, respond with 'correct'.

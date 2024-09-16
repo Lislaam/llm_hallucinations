@@ -5,42 +5,64 @@ from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 from collections import Counter
 
+def get_score(preds, refs):
+    # Predictions are numbers corresponding to an error type.
+    processed_refs = [LABEL_CONVERSIONS[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
+
+    class_errors = {'extrinsic': 0, 'intrinsic': 0}
+
+    num_correct = sum([1 for ref in refs if ref == 'extrinsic']) if 'extrinsic' in refs else 1
+    num_incorrect = sum([1 for ref in refs if ref == 'intrinsic']) if 'intrinsic' in refs else 1
+
+    total = 0 # Overall accuracy
+    for i in range(len(preds)):
+        if soft_match(preds[i], processed_refs[i]):
+            total += 1
+            class_errors[refs[i]] += 1
+
+    scores = {'total': total / len(refs),
+            'extrinsic': class_errors["extrinsic"] / num_correct if 'extrinsic' in refs else None,
+            'intrinsic': class_errors["intrinsic"] / num_incorrect if 'intrinsic' in refs else None}
+    
+    return scores
+
+
 def main(args):
 
-    # Define a custom Trainer class to implement weighted loss
-    class WeightedSFTTrainer(SFTTrainer):
-        def __init__(self, *args, class_weights, **kwargs):
-            super().__init__(*args, **kwargs)
-            # Set up CrossEntropyLoss with class weights
-            self.class_weights = class_weights
-            self.loss_fn = nn.CrossEntropyLoss(weight=class_weights)
+    # # Define a custom Trainer class to implement weighted loss
+    # class WeightedSFTTrainer(SFTTrainer):
+    #     def __init__(self, *args, class_weights, **kwargs):
+    #         super().__init__(*args, **kwargs)
+    #         # Set up CrossEntropyLoss with class weights
+    #         self.class_weights = class_weights
+    #         self.loss_fn = nn.CrossEntropyLoss(weight=class_weights)
 
-        def compute_loss(self, model, inputs):
-            labels = inputs.pop("labels")
-            outputs = model(**inputs)
-            logits = outputs.logits  # shape: [batch_size, seq_len, vocab_size]
+    #     def compute_loss(self, model, inputs):
+    #         labels = inputs.pop("labels")
+    #         outputs = model(**inputs)
+    #         logits = outputs.logits  # shape: [batch_size, seq_len, vocab_size]
             
-            # Assuming logits has size [batch_size, seq_len, vocab_size]
-            batch_size, seq_len, vocab_size = logits.size()
-            import pdb; pdb.set_trace()
-            constrained_logits = torch.index_select(logits, dim=2, index=torch.tensor(force_token_ids).to(logits.device))
+    #         # Assuming logits has size [batch_size, seq_len, vocab_size]
+    #         batch_size, seq_len, vocab_size = logits.size()
+    #         import pdb; pdb.set_trace()
+    #         constrained_logits = torch.index_select(logits, dim=2, index=torch.tensor(force_token_ids).to(logits.device))
 
-            # Flatten the logits and labels for token-level cross-entropy
-            logits_flat = constrained_logits.view(-1, constrained_logits.size(-1))  # [batch_size * seq_len, num_error_types]
-            labels_flat = labels.view(-1)  # [batch_size * seq_len]
+    #         # Flatten the logits and labels for token-level cross-entropy
+    #         logits_flat = constrained_logits.view(-1, constrained_logits.size(-1))  # [batch_size * seq_len, num_error_types]
+    #         labels_flat = labels.view(-1)  # [batch_size * seq_len]
 
-            # Apply class weights for error type tokens
-            token_loss = F.cross_entropy(logits_flat, labels_flat, weight=self.class_weights, ignore_index=tokenizer.pad_token_id)
+    #         # Apply class weights for error type tokens
+    #         token_loss = F.cross_entropy(logits_flat, labels_flat, weight=self.class_weights, ignore_index=tokenizer.pad_token_id)
 
-            return token_loss
+    #         return token_loss
 
     def formatting_prompts_func(example, training=True):
-        instruction = BINARY_INSTRUCTION if args.sampling=='binary' else SYSTEM_INSTRUCTION
+        instruction = SYSTEM_INSTRUCTION
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"{instruction}\n ### Text1: {example['doc'][i]}\n ### Text2: {example['summ'][i]}\n ### Output: "
+            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### Output: "
             if training:
-                if instruction != SYSTEM_INSTRUCTION:
+                if instruction == SYSTEM_INSTRUCTION:
                     text += (
                         f"{LABEL_CONVERSIONS[example['error_type'][i]]}." + tokenizer.eos_token
                     )
@@ -53,44 +75,63 @@ def main(args):
                     text += '.'
                     text += tokenizer.eos_token
 
-                output_texts.append(text)
+            output_texts.append(text)
+        
         return output_texts
 
-    # Load the dataset
-    dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
-    dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
-    dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
-    dataset = dataset.map(error_type_map)
-    # dataset = dataset.filter(lambda x: x is not None and None not in x.values())
+    # # Load the dataset
+    dataset = Dataset.from_file('rag_data/train/data-00000-of-00001.arrow')
+    # Define the split index
+    split_index = 275  # Number of examples for training
 
-    if args.sampling == None:
-        dir = "whole_dataset"
-    elif args.sampling == 'oversampling':
-        dataset = oversampling(dataset)
-        dir = "naive_oversampling"
-    elif args.sampling == 'undersampling':
-        dataset = undersampling(dataset)
-        dir = "naive_undersampling"
-    elif args.sampling == 'binary':
-        dataset = make_binary_dataset(dataset)
-        dir = "binary"
-    else:
-        print("Sampling not supported. Choose oversampling, undersampling or binary")
-        exit
+    # Manually split the dataset
+    train_dataset = dataset.select(range(split_index))  # First 80 examples for training
+    test_dataset = dataset.select(range(split_index, len(dataset)))  # Remaining examples for testing
 
-    # Split the dataset into train and test sets (80% train, 20% test)
-    train_test = dataset.train_test_split(test_size=0.2)
+    # # Apply your formatting function to the train and test datasets
+    # train_dataset = train_dataset.map(
+    #     lambda x: {"formatted_text": formatting_prompts_func(x, False)},
+    #     batched=True,
+    # )
 
-    # Further split the train set into train and validation sets (75% train, 25% validation of the original 80%)
-    train_valid = train_test['train'].train_test_split(test_size=0.25)
+    # test_dataset = test_dataset.map(
+    #     lambda x: {"formatted_text": formatting_prompts_func(x, False)},
+    #     batched=True,
+    # )
+    # dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
+    # dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
+    # dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
+    # dataset = dataset.map(error_type_map)
+    # # dataset = dataset.filter(lambda x: x is not None and None not in x.values())
 
-    # Combine the splits into a DatasetDict
-    dataset = DatasetDict({
-        'train': train_valid['train'],
-        'validation': train_valid['test'],
-        'test': train_test['test']
-    })
+    dir = 'tuned'
+    # if args.sampling == None:
+    #     dir = "whole_dataset"
+    # elif args.sampling == 'oversampling':
+    #     dataset = oversampling(dataset)
+    #     dir = "naive_oversampling"
+    # elif args.sampling == 'undersampling':
+    #     dataset = undersampling(dataset)
+    #     dir = "naive_undersampling"
+    # elif args.sampling == 'binary':
+    #     dataset = make_binary_dataset(dataset)
+    #     dir = "binary"
+    # else:
+    #     print("Sampling not supported. Choose oversampling, undersampling or binary")
+    #     exit
 
+    # # Split the dataset into train and test sets (80% train, 20% test)
+    # train_test = dataset.train_test_split(test_size=0.2)
+
+    # # Further split the train set into train and validation sets (75% train, 25% validation of the original 80%)
+    # train_valid = train_test['train'].train_test_split(test_size=0.25)
+
+    # # Combine the splits into a DatasetDict
+    # dataset = DatasetDict({
+    #     'train': train_valid['train'],
+    #     'validation': train_valid['test'],
+    #     'test': train_test['test']
+    # })
 
     quantization_config = BitsAndBytesConfig(load_in_8bit=True)
     model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
@@ -107,7 +148,7 @@ def main(args):
     )
 
     # Test formatting for 1st and 2nd example:
-    print(formatting_prompts_func(dataset['train'][:1], True))
+    # print(formatting_prompts_func(dataset['train'][:1], True))
 
     # Tokenize the labels for constrained decoding
     force_tokens = list(LABEL_CONVERSIONS.values())
@@ -116,75 +157,75 @@ def main(args):
         force_tokens, add_special_tokens=False
     ).input_ids
 
-    response_template = " ### Output:"
-    collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
+    # response_template = " ### Output:"
+    # collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
-    sft_config = SFTConfig(
-        output_dir=OUTPUT_DIR,
-        do_train=True,
-        num_train_epochs=args.num_train_epochs,
-        max_seq_length=2500,
-        logging_steps=20,
-        eval_strategy="steps",
-        eval_steps=250,
-        save_steps=250,
-        bf16=True,
-        metric_for_best_model="eval_loss",
-        per_device_train_batch_size=args.batch_size,
-        load_best_model_at_end = True,
-    )
+    # sft_config = SFTConfig(
+    #     output_dir=OUTPUT_DIR,
+    #     do_train=True,
+    #     num_train_epochs=args.num_train_epochs,
+    #     max_seq_length=2500,
+    #     logging_steps=20,
+    #     eval_strategy="steps",
+    #     eval_steps=250,
+    #     save_steps=250,
+    #     bf16=True,
+    #     metric_for_best_model="eval_loss",
+    #     per_device_train_batch_size=args.batch_size,
+    #     load_best_model_at_end = True,
+    # )
 
-    # Assuming `dataset` contains the `error_type` labels
-    error_type_counts = Counter(dataset['train']['error_type'])
+    # # # Assuming `dataset` contains the `error_type` labels
+    # # error_type_counts = Counter(dataset['train']['error_type'])
 
-    # Calculate total samples and class weights
-    total_samples = sum(error_type_counts.values())
-    class_weights = {label: total_samples / count for label, count in error_type_counts.items()}
+    # # # Calculate total samples and class weights
+    # # total_samples = sum(error_type_counts.values())
+    # # class_weights = {label: total_samples / count for label, count in error_type_counts.items()}
 
-    # Convert the class weights to a tensor
-    class_weights_tensor = torch.tensor([class_weights[label] for label in sorted(class_weights.keys())], dtype=torch.float32).to('cuda')  # Ensure to match the label indices
+    # # # Convert the class weights to a tensor
+    # # class_weights_tensor = torch.tensor([class_weights[label] for label in sorted(class_weights.keys())], dtype=torch.float32).to('cuda')  # Ensure to match the label indices
 
-    # Initialize the WeightedSFTTrainer
-    trainer = WeightedSFTTrainer(
-        model=model,
-        train_dataset=dataset['train'],
-        eval_dataset=dataset['validation'],
-        args=sft_config,
-        formatting_func=formatting_prompts_func,
-        data_collator=collator,
-        peft_config=lora_config,
-        tokenizer=tokenizer,
-        callbacks=[
-            EarlyStoppingCallback(
-                early_stopping_patience=args.patience,
-                early_stopping_threshold=args.early_stopping_threshold,
-            )
-        ],
-        class_weights=class_weights_tensor  # Pass class weights here
-    )
+    # # Initialize the WeightedSFTTrainer
+    # trainer = SFTTrainer( #WeightedSFTTrainer(
+    #     model=model,
+    #     train_dataset= train_dataset, #dataset['train'],
+    #     # eval_dataset=dataset['validation'],
+    #     args=sft_config,
+    #     formatting_func=formatting_prompts_func,
+    #     data_collator=collator,
+    #     peft_config=lora_config,
+    #     tokenizer=tokenizer,
+    #     callbacks=[
+    #         EarlyStoppingCallback(
+    #             early_stopping_patience=args.patience,
+    #             early_stopping_threshold=args.early_stopping_threshold,
+    #         )
+    #     ],
+    #    # class_weights=class_weights_tensor  # Pass class weights here
+    # )
 
-    # Train the model
-    trainer.train()
+    # # Train the model
+    # trainer.train()
 
-    # Make sure the results directory exists
-    os.makedirs(
-        os.path.join("count_errors_sft", str(args.llm), dir),
-        exist_ok=True,
-    )
-    # Plot training loss
-    plot_training_loss(
-        trainer.state.log_history,
-        os.path.join("count_errors_sft", str(args.llm), dir),
-    )
+    # # Make sure the results directory exists
+    # os.makedirs(
+    #     os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir),
+    #     exist_ok=True,
+    # )
+    # # Plot training loss
+    # plot_training_loss(
+    #     trainer.state.log_history,
+    #     os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir),
+    # )
 
-    # Save model
-    trainer.save_model(sft_config.output_dir)
-    del trainer
-    del model
+    # # Save model
+    # trainer.save_model(sft_config.output_dir)
+    # del trainer
+    # del model
 
-    # Load the model
-    quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-    model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
+    # # Load the model
+    # quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+    # model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
 
     model.generation_config.pad_token_id = tokenizer.pad_token_id
     tokenizer.padding_side = "left"
@@ -192,12 +233,12 @@ def main(args):
     # Place in evaluation mode
     model.eval()
     with torch.no_grad():
-        dataset = Dataset.from_file('data/eval/data-00000-of-00001.arrow')
+        dataset = test_dataset
         dataset = dataset.map(
             lambda x: {"formatted_text": formatting_prompts_func(x, False)},
             batched=True,
         )
-        dataloader = DataLoader(dataset['test'], batch_size=args.batch_size)
+        dataloader = DataLoader(dataset, batch_size=args.batch_size)
 
         # Make predictions
         predictions = []
@@ -211,41 +252,47 @@ def main(args):
                 do_sample=False,
                 num_beams=3,
                 num_return_sequences=1,
-                max_new_tokens=10,
+                max_new_tokens=15,
                 force_words_ids=force_token_ids,
             )
             prediction = tokenizer.batch_decode(outputs, skip_special_tokens=True)
             predictions.extend(prediction)
 
         # Use soft accuracy for evaluation
-        labels = dataset['test']["error_type"]
+        labels = dataset["error_type"]
         preds = [
             prediction.split("### Output:")[1].strip() for prediction in predictions
         ]
         
-        if args.sampling == 'binary':
-            score = get_single_label_score(preds, labels, binary=True)
-            print(f"Total accuracy: {score['total']}")
-            for error_type in ['correct', 'incorrect']:
-                print(f"{error_type} class accuracy: {score[error_type]}")
-        else:
-            score = get_score(preds, labels, reverse_labels=LABEL_CONVERSIONS)
-            print(f"Detecting # errors accuracy: {score['accuracy detecting # errors']}")
-            print(f"Total accuracy: {score['total class accuracy']}")
-            for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
-                print(f"{error_type} class accuracy: {score[error_type]}")
+
+        score = get_score(preds, labels)
+        print(f"Total accuracy: {score['total']}")
+        for error_type in ['extrinsic', 'intrinsic']:
+            print(f"{error_type} class accuracy: {score[error_type]}")
+
+        # if args.sampling == 'binary':
+        #     score = get_single_label_score(preds, labels, binary=True)
+        #     print(f"Total accuracy: {score['total']}")
+        #     for error_type in ['correct', 'incorrect']:
+        #         print(f"{error_type} class accuracy: {score[error_type]}")
+        # else:
+        #     score = get_score(preds, labels, reverse_labels=LABEL_CONVERSIONS)
+        #     print(f"Detecting # errors accuracy: {score['accuracy detecting # errors']}")
+        #     print(f"Total accuracy: {score['total class accuracy']}")
+        #     for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
+        #         print(f"{error_type} class accuracy: {score[error_type]}")
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join("count_errors_sft", str(args.llm), dir), 
+            os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir), 
             exist_ok=True,
         )
         # Save the predictions
-        with open(os.path.join("count_errors_sft", str(args.llm), dir, f"summary.json"), "w") as f:
+        with open(os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir, f"summary.json"), "w") as f:
             json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip(preds, labels)],
                         f, indent=4)
         # Save results to a file
-        with open(os.path.join("count_errors_sft", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
+        with open(os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
             json.dump(score, f, indent=4)
 
         print("_" * 80)

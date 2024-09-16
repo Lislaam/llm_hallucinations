@@ -1,0 +1,82 @@
+[
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Washington blamed Russia and the Syrian government for intens",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe error in the summary is type 0, as it directly",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0, 1\n\n### ORIGINAL_TEXT: British Transport Police said the man",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe output is 0 because the [SUMMARY] contains information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe error in the summary is a type 1 error, as",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe output is 1 because the [SUMMARY] has details",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe [SUMMARY] contains information that directly contradicts the [",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0, 1\n\n### Explanation:\nThe error in the [SUMMARY",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The firm said it had signed a Letter of",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe error in the summary is a type 1 error, as",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe class of error in the [SUMMARY] is 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe output should be 1, because the [SUMMARY]",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: London 2012 Olympian Andrew Lawrence scored",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary contains information that directly contradicts the original text information.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe output is 0 because the [SUMMARY] contains information",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The poverty rate was 15% in",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe output is 0 because the [SUMMARY] contains information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The venture's backers include Tesla Motors and SpaceX",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1, 0, 1\n\nThe output should be 1,",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe output should be 0 because the summary directly contradicts the",
+        "label": "intrinsic"
+    }
+]

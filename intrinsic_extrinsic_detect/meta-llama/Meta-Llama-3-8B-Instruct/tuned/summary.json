@@ -1,0 +1,82 @@
+[
+    {
+        "prediction": "0. The summary contains information that directly contradicts the original text information.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary contains information that directly contradicts the original text information.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The SUMMARY contains information that directly contradicts the ORIGINAL TEXT information.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] contains information that directly contradicts the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The SUMMARY contains information that directly contradicts the ORIGINAL TEXT information.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] contains information that directly contradicts the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The SUMMARY contains information that directly contradicts the ORIGINAL TEXT information.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The summary contains information that directly contradicts the original text information.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. A [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] contains information that directly contradicts the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] has details not found in its [ORIGINAL",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] contains information that directly contradicts the [",
+        "label": "intrinsic"
+    }
+]
