@@ -1,0 +1,110 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "csv",
+  "dataset_size": 812595,
+  "description": "",
+  "download_checksums": {
+    "/homes/53/fpinto/llm_hallucinations/rag_test_data.csv": {
+      "num_bytes": 788101,
+      "checksum": null
+    }
+  },
+  "download_size": 788101,
+  "features": {
+    "dataset": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "origin": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "doc": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "summ": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "model_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "cut": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "error_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "full_error": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "annotated_span": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Unnamed: 10": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 11": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 12": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 13": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 14": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 15": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 16": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 17": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 18": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1600696,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 812595,
+      "num_examples": 300,
+      "dataset_name": "csv"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

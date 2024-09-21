@@ -1,82 +1,122 @@
 [
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: Washington blamed Russia and the Syrian government for intens",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0\n\nThe error in the summary is type 0, as it directly",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0, 1\n\n### ORIGINAL_TEXT: British Transport Police said the man",
+        "prediction": "1\n\n### ORIGINAL_TEXT: Police said that someone opened fire from a passing",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe output is 0 because the [SUMMARY] contains information",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The move is part of national fire service reforms",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nThe error in the summary is a type 1 error, as",
+        "prediction": "1\n\nThe output is 1 because the [SUMMARY] mischaracter",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nThe output is 1 because the [SUMMARY] has details",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1\n\nThe [SUMMARY] contains information that directly contradicts the [",
+        "prediction": "1\n\n### ORIGINAL_TEXT: PC Keith Palmer's murder, in an attack",
         "label": "intrinsic"
     },
     {
-        "prediction": "0, 1\n\n### Explanation:\nThe error in the [SUMMARY",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The firm said it had signed a Letter of",
+        "prediction": "1\n\n### ORIGINAL_TEXT: Myra Forde's ex-lawyer says",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nThe error in the summary is a type 1 error, as",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The regulator, NHS Improvement, said it wanted",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: PC Keith Palmer's murder, in an attack",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nThe class of error in the [SUMMARY] is 1",
+        "prediction": "1\n\nSolution:\n```\ndef judge_summary(summary, original_text, error",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe output should be 1, because the [SUMMARY]",
+        "prediction": "1\n\nIn this case, the [SUMMARY] mischaracterises [",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: London 2012 Olympian Andrew Lawrence scored",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0\n\nThe summary contains information that directly contradicts the original text information.",
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text by stating",
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\nThe output is 0 because the [SUMMARY] contains information",
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The poverty rate was 15% in",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Friesians were found in Dolwen",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe output is 0 because the [SUMMARY] contains information",
+        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The venture's backers include Tesla Motors and SpaceX",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1, 0, 1\n\nThe output should be 1,",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0\n\nThe output should be 0 because the summary directly contradicts the",
+        "prediction": "0\n\nThe summary does not add any details not found in the original text",
         "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe output should be 1 because the [SUMMARY] mis",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: It will be available to 1.7",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nIn this case, the summary adds details not found in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 39-year-old, from Amman",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text. The",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Queen's Park Rangers player made his NI",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe output should be 0 because the summary adds details not found",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe output should be 1 because the [SUMMARY] mis",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: A 25-year-old man has been arrested",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe output should be 0 because the summary adds details not found",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "label": "extrinsic"
     }
 ]

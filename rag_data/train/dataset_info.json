@@ -3,15 +3,15 @@
   "citation": "",
   "config_name": "default",
   "dataset_name": "csv",
-  "dataset_size": 812595,
+  "dataset_size": 826733,
   "description": "",
   "download_checksums": {
     "/homes/53/fpinto/llm_hallucinations/rag_test_data.csv": {
-      "num_bytes": 788101,
+      "num_bytes": 807089,
       "checksum": null
     }
   },
-  "download_size": 788101,
+  "download_size": 807089,
   "features": {
     "dataset": {
       "dtype": "string",
@@ -53,12 +53,12 @@
       "dtype": "string",
       "_type": "Value"
     },
-    "Unnamed: 10": {
-      "dtype": "float64",
+    "annotated_corrections": {
+      "dtype": "string",
       "_type": "Value"
     },
-    "Unnamed: 11": {
-      "dtype": "float64",
+    "reasoning": {
+      "dtype": "string",
       "_type": "Value"
     },
     "Unnamed: 12": {
@@ -81,22 +81,18 @@
       "dtype": "float64",
       "_type": "Value"
     },
-    "Unnamed: 17": {
-      "dtype": "float64",
-      "_type": "Value"
-    },
-    "Unnamed: 18": {
+    "301": {
       "dtype": "float64",
       "_type": "Value"
     }
   },
   "homepage": "",
   "license": "",
-  "size_in_bytes": 1600696,
+  "size_in_bytes": 1633822,
   "splits": {
     "train": {
       "name": "train",
-      "num_bytes": 812595,
+      "num_bytes": 826733,
       "num_examples": 300,
       "dataset_name": "csv"
     }

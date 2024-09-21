@@ -1,0 +1,122 @@
+[
+    {
+        "prediction": "1\n  ### Explanation: The [SUMMARY] mischaracterises [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises [ORIGINAL",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n  ### Explanation: The summary mischaracterises the original text information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text. The",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text. The",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n  Explanation: The summary mischaracterizes the information in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n  ### Explanation: The [SUMMARY] mischaracterises [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n  Explanation: The summary does not add any details not found in",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n  ### Explanation: The summary does not add any details not found",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text. The",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n  Explanation: The summary mischaracterizes the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n  ### Reason: The summary adds details not found in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n  ### Reason: The summary mischaracterises the information in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nExplanation: The summary mischaracterizes the information in the original text",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 39-year-old, from Amman",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n  ### Reason: The summary adds details not found in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n  Explanation: The summary mischaracterises the information in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Queen's Park Rangers player made his NI",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n  ### Explanation: The [SUMMARY] mischaracterises [",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n  ### Explanation: The summary mischaracterizes the information in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n  ### Explanation: The summary does not add any details not found",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "extrinsic"
+    }
+]
