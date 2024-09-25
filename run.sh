@@ -38,8 +38,13 @@ run_with_retries() {
 
 # List of commands to run
 commands=(
-    #"python3 sft_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --sampling='oversampling'"
-    "python3 sft_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct'"
+    "python3 sft_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --train=False --dir='baseline'"
+    "python3 sft_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --train=False --dir='baseline'"
+    "python3 sft_main.py --llm='google/gemma-1.1-7b-it' --train=False --dir='baseline'"
+
+    "python3 sft_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --dir='tuned'"
+    "python3 sft_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --dir='tuned'"
+    "python3 sft_main.py --llm='google/gemma-1.1-7b-it' --dir='tuned'"
 )
 
 # Iterate over each command in the list

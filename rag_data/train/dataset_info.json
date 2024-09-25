@@ -3,15 +3,15 @@
   "citation": "",
   "config_name": "default",
   "dataset_name": "csv",
-  "dataset_size": 826733,
+  "dataset_size": 826812,
   "description": "",
   "download_checksums": {
     "/homes/53/fpinto/llm_hallucinations/rag_test_data.csv": {
-      "num_bytes": 807089,
+      "num_bytes": 807210,
       "checksum": null
     }
   },
-  "download_size": 807089,
+  "download_size": 807210,
   "features": {
     "dataset": {
       "dtype": "string",
@@ -88,11 +88,11 @@
   },
   "homepage": "",
   "license": "",
-  "size_in_bytes": 1633822,
+  "size_in_bytes": 1634022,
   "splits": {
     "train": {
       "name": "train",
-      "num_bytes": 826733,
+      "num_bytes": 826812,
       "num_examples": 300,
       "dataset_name": "csv"
     }

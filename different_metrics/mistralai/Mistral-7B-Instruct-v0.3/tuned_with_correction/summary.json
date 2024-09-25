@@ -1,0 +1,122 @@
+[
+    {
+        "prediction": "0. The [SUMMARY] adds details not found in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises the [OR",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] incorrectly identifies the location",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] adds details not found in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] adds details not found in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] adds a detail not found in",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises the [OR",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises the number of",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] adds details not found in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information that Fenerbahce",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIG",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The summary adds the detail that a single cow was killed instead of",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIG",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIG",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises the gender of",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text by stating that the testim",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIG",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] adds details not found in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIG",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The [SUMMARY] adds details not found in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises the [OR",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIG",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIG",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text by stating",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary adds the detail that the UN's special envoy",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text by stating that the individual",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises the [OR",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary incorrectly states that Bueno has been linked with a",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises the [OR",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary incorrectly states that the incident occurred in the \"us",
+        "label": "extrinsic"
+    }
+]

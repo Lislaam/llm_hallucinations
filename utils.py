@@ -280,7 +280,7 @@ def preprocess(text, model=None, error_types=['correct', 'intrinsic', 'extrinsic
     return text
 
 
-def get_score(predictions, references, reverse_labels=None):
+def get_score_seperate_labels(predictions, references, reverse_labels=None):
     #processed_preds = [preprocess(pred, model) for pred in predictions]
     processed_refs = [preprocess(ref) for ref in references] # Should always be processable
 

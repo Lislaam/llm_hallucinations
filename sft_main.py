@@ -4,63 +4,22 @@ from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDi
 from utils import *
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 from collections import Counter
-
-def get_score(preds, refs):
-    # Predictions are numbers corresponding to an error type.
-    processed_refs = [LABEL_CONVERSIONS[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
-
-    class_errors = {'extrinsic': 0, 'intrinsic': 0}
-
-    num_correct = sum([1 for ref in refs if ref == 'extrinsic']) if 'extrinsic' in refs else 1
-    num_incorrect = sum([1 for ref in refs if ref == 'intrinsic']) if 'intrinsic' in refs else 1
-
-    total = 0 # Overall accuracy
-    for i in range(len(preds)):
-        if soft_match(preds[i], processed_refs[i]):
-            total += 1
-            class_errors[refs[i]] += 1
-
-    scores = {'total': total / len(refs),
-            'extrinsic': class_errors["extrinsic"] / num_correct if 'extrinsic' in refs else None,
-            'intrinsic': class_errors["intrinsic"] / num_incorrect if 'intrinsic' in refs else None}
-    
-    return scores
-
+from transformers import DataCollatorForCompletionOnlyLM
+from transformers import SFTTrainer, SFTConfig, LoraConfig
+import os
+import json
+import ast
+from datasets import Dataset
+from torch.utils.data import DataLoader
+from tqdm import tqdm
 
 def main(args):
-
-    # # Define a custom Trainer class to implement weighted loss
-    # class WeightedSFTTrainer(SFTTrainer):
-    #     def __init__(self, *args, class_weights, **kwargs):
-    #         super().__init__(*args, **kwargs)
-    #         # Set up CrossEntropyLoss with class weights
-    #         self.class_weights = class_weights
-    #         self.loss_fn = nn.CrossEntropyLoss(weight=class_weights)
-
-    #     def compute_loss(self, model, inputs):
-    #         labels = inputs.pop("labels")
-    #         outputs = model(**inputs)
-    #         logits = outputs.logits  # shape: [batch_size, seq_len, vocab_size]
-            
-    #         # Assuming logits has size [batch_size, seq_len, vocab_size]
-    #         batch_size, seq_len, vocab_size = logits.size()
-    #         import pdb; pdb.set_trace()
-    #         constrained_logits = torch.index_select(logits, dim=2, index=torch.tensor(force_token_ids).to(logits.device))
-
-    #         # Flatten the logits and labels for token-level cross-entropy
-    #         logits_flat = constrained_logits.view(-1, constrained_logits.size(-1))  # [batch_size * seq_len, num_error_types]
-    #         labels_flat = labels.view(-1)  # [batch_size * seq_len]
-
-    #         # Apply class weights for error type tokens
-    #         token_loss = F.cross_entropy(logits_flat, labels_flat, weight=self.class_weights, ignore_index=tokenizer.pad_token_id)
-
-    #         return token_loss
 
     def formatting_prompts_func(example, training=True):
         instruction = SYSTEM_INSTRUCTION
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### Output: " #
+            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n ### Output: " #
             if training:
                 if instruction == SYSTEM_INSTRUCTION:
                     text += (
@@ -91,13 +50,14 @@ def main(args):
     val_dataset = dataset.select(range(train_size, train_size + val_size))
     test_dataset = dataset.select(range(train_size + val_size, train_size + val_size + test_size))
 
+    dir = args.dir
+
     # dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
     # dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
     # dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
     # dataset = dataset.map(error_type_map)
     # # dataset = dataset.filter(lambda x: x is not None and None not in x.values())
 
-    dir = 'tuned'
     # if args.sampling == None:
     #     dir = "whole_dataset"
     # elif args.sampling == 'oversampling':
@@ -168,18 +128,7 @@ def main(args):
         load_best_model_at_end = True,
     )
 
-    # # Assuming `dataset` contains the `error_type` labels
-    # error_type_counts = Counter(dataset['train']['error_type'])
-
-    # # Calculate total samples and class weights
-    # total_samples = sum(error_type_counts.values())
-    # class_weights = {label: total_samples / count for label, count in error_type_counts.items()}
-
-    # # Convert the class weights to a tensor
-    # class_weights_tensor = torch.tensor([class_weights[label] for label in sorted(class_weights.keys())], dtype=torch.float32).to('cuda')  # Ensure to match the label indices
-
-    # Initialize the WeightedSFTTrainer
-    trainer = SFTTrainer( #WeightedSFTTrainer(
+    trainer = SFTTrainer( 
         model=model,
         train_dataset= train_dataset, #dataset['train'],
         eval_dataset= val_dataset, #dataset['validation'],
@@ -194,31 +143,31 @@ def main(args):
                 early_stopping_threshold=args.early_stopping_threshold,
             )
         ],
-       # class_weights=class_weights_tensor  # Pass class weights here
     )
 
-    # Train the model
-    trainer.train()
+    if args.train:
+        # Train the model
+        trainer.train()
 
-    # Make sure the results directory exists
-    os.makedirs(
-        os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir),
-        exist_ok=True,
-    )
-    # Plot training loss
-    plot_training_loss(
-        trainer.state.log_history,
-        os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir),
-    )
+        # Make sure the results directory exists
+        os.makedirs(
+            os.path.join("different_metrics", str(args.llm), dir),
+            exist_ok=True,
+        )
+        # Plot training loss
+        plot_training_loss(
+            trainer.state.log_history,
+            os.path.join("different_metrics", str(args.llm), dir),
+        )
 
-    # Save model
-    trainer.save_model(sft_config.output_dir)
-    del trainer
-    del model
+        # Save model
+        trainer.save_model(sft_config.output_dir)
+        del trainer
+        del model
 
-    # Load the model
-    quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-    model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
+        # Load the model
+        quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+        model = AutoModelForCausalLM.from_pretrained(OUTPUT_DIR, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
 
     model.generation_config.pad_token_id = tokenizer.pad_token_id
     tokenizer.padding_side = "left"
@@ -248,6 +197,8 @@ def main(args):
                 max_new_tokens=15,
                 force_words_ids=force_token_ids,
             )
+            logits = outputs.logit
+            pred_probs = torch.softmax(logits, dim=-1).detach().cpu().numpy()
             prediction = tokenizer.batch_decode(outputs, skip_special_tokens=True)
             predictions.extend(prediction)
 
@@ -258,7 +209,14 @@ def main(args):
         ]
         
         score = get_score(preds, labels)
+        entropy = get_average_entropy(pred_probs)
+        ece = get_ece(pred_probs, labels)
+        brier = get_brier(pred_probs, labels)
+
         print(f"Total accuracy: {score['total']}")
+        print(f"Entropy: {entropy}")
+        print(f"ECE: {ece}")
+        print(f"Brier: {brier}")
         for error_type in ['extrinsic', 'intrinsic']:
             print(f"{error_type} class accuracy: {score[error_type]}")
 
@@ -276,16 +234,19 @@ def main(args):
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir), 
+            os.path.join("different_metrics", str(args.llm), dir), 
             exist_ok=True,
         )
         # Save the predictions
-        with open(os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir, f"summary.json"), "w") as f:
+        with open(os.path.join("different_metrics", str(args.llm), dir, f"summary.json"), "w") as f:
             json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip(preds, labels)],
                         f, indent=4)
         # Save results to a file
-        with open(os.path.join("intrinsic_extrinsic_detect", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
+        with open(os.path.join("different_metrics", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
             json.dump(score, f, indent=4)
+            json.dump(entropy, f, indent=4)
+            json.dump(ece, f, indent=4)
+            json.dump(brier, f, indent=4)
 
         print("_" * 80)
 

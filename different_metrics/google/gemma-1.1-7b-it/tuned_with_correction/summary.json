@@ -1,0 +1,122 @@
+[
+    {
+        "prediction": "1. The summary mischaracterises the original text information as it 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information by omitting 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately reflects the original text without adding any new 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately adds details not found in the original text, such",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information by implying 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately reflects the original text information. The summary 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately reflects the original text without adding any new information.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information as it 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The summary adds details not found in the original text. 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.\n\n**Explanation:**\n- The summary accurately conveys the essential information",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information as it 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately summarises the original text without adding any 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.\n\n**Explanation:**\n- The summary accurately conveys the information in",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately adds details not found in the original text, such",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.\n\n**Explanation:**\n- The summary accurately reflects the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately reflects the original text, adding no new details.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately conveys the information in the original text without adding any",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information as it 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately adds details not found in the original text 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately reflects the original text, adding no new information.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information as it 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately reflects the original text without adding any new 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information as it 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. The summary accurately adds the location of the incident to the 1",
+        "label": "extrinsic"
+    }
+]
