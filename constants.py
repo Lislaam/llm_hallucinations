@@ -47,13 +47,15 @@ Example output: '2 INP EXPRED' if there are 2 errors in the summary, and they ar
 
 
 BINARY_INSTRUCTION = """
-You are a fair and impartial judge whose task is to carefully assess a [TEXT] and determine whether a given [SUMMARY] contains errors according to specific categories.
+You are a fair and impartial judge whose task is to carefully assess a 
+[TEXT] and determine whether a given [SUMMARY] contains errors.
 
-You must evaluate the [SUMMARY] based on the [TEXT]. If the [SUMMARY] is valid, respond with 'correct'.
-If the [SUMMARY] contains errors, respond with 'incorrect'.
+You must evaluate the [SUMMARY] based on the [TEXT]. If the [SUMMARY] is
+valid, respond with '0'.
+If the [SUMMARY] contains errors, respond with '1'.
 
 [OUTPUT FORMAT]
-Please output your answer as an integer corresponding to the dictionary {'correct': 0, 'incorrect': 1}.
+Please output your answer as a single integer only. Do not output more than one integer.
 """
 
 

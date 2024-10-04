@@ -1,19 +1,17 @@
-from argparse import ArgumentParser
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-import torch
-from torchmetrics import CalibrationError
-from scipy.stats import entropy
-from sklearn.metrics import brier_score_loss
-from utils import *
+from argparse import ArgumentParser
+from utils import soft_match
+from sklearn.metrics import f1_score, log_loss
 
 OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 
 LABEL_CONVERSIONS = {
-                      'extrinsic': '0',
-                      'intrinsic': '1',
+                         'correct': '0',
+                     'incorrect': '1',
+                    #   'extrinsic': '0',
+                    #   'intrinsic': '1',
                     # 0:'0',
                     # 1:'1',
                     # 2:'2',
@@ -63,88 +61,30 @@ def reverse_labels(x):
         return x
 
 
-def compute_shannon_entropy(pred_probs):
-    """
-    Compute the Shannon entropy of the predicted probabilities.
-    
-    Args:
-        pred_probs (np.array): Array of shape [num_classes] representing
-                               the predicted probabilities for each class.
-                               
-    Returns:
-        entropy_value (float): Shannon entropy value.
-    """
-    pred_probs = np.array(pred_probs)
-    pred_probs = pred_probs / np.sum(pred_probs)  # Ensure probabilities sum to 1
-    return entropy(pred_probs)
+def f1_score_binary(y_true, y_pred):
+    processed_refs = [LABEL_CONVERSIONS[ref] for ref in y_true] # Convert labels to numbers (same conversion as predictions)
+    trues = []
+    preds = []
+    for true, pred in zip(processed_refs, y_pred):
+        if soft_match(pred, true) == 1:
+            trues.append(true)
+            preds.append('0') if true == '0' else preds.append('1')
 
-def get_average_entropy(pred_probs_list):
-    """
-    Compute the average Shannon entropy for multiple samples.
-    
-    Args:
-        pred_probs_list (list of lists): List of predicted probabilities for each sample.
-                                         Each inner list contains the predicted probabilities for a sample.
-                                         
-    Returns:
-        avg_entropy (float): The average entropy across all samples.
-    """
-    # Calculate entropy for each sample
-    entropies = [compute_shannon_entropy(pred_probs) for pred_probs in pred_probs_list]
-    
-    # Calculate and return average entropy
-    avg_entropy = np.mean(entropies)
-    return avg_entropy
+        else:
+            trues.append(true)
+            preds.append('1') if true == '0' else preds.append('0')
 
-
-def get_ece(pred_probs, labels):
-    """
-    Compute the Expected Calibration Error (ECE).
-    
-    Args:
-        pred_probs (torch.Tensor): Tensor of predicted probabilities of shape [num_samples, num_classes].
-        labels (torch.Tensor): Tensor of true labels of shape [num_samples].
-    
-    Returns:
-        ece_value (float): Expected Calibration Error.
-    """
-    # Convert to torch tensors if not already
-    pred_probs = torch.tensor(pred_probs)
-    labels = torch.tensor(labels)
-
-    # Instantiate CalibrationError metric (use 'max_prob' strategy for ECE)
-    ece_metric = CalibrationError(n_bins=10, norm='l1')
-    
-    # Calculate ECE
-    ece_value = ece_metric(pred_probs, labels)
-    return ece_value.item()
-
-
-def get_brier(pred_probs, labels):
-    """
-    Compute the Brier Score, which is used to measure the accuracy of probabilistic predictions.
-    
-    Args:
-        pred_probs (list): List of predicted probabilities for the positive class.
-        labels (list): List of true binary labels.
-    
-    Returns:
-        brier_score (float): Brier Score value.
-    """
-    # Select the probability of the positive class
-    pos_class_probs = [prob[1] for prob in pred_probs]  # Assuming binary classification
-    brier_score = brier_score_loss(labels, pos_class_probs)
-    return brier_score
+    return f1_score(trues, preds, average='macro')
 
 
 def get_score(preds, refs):
     # Predictions are numbers corresponding to an error type.
     processed_refs = [LABEL_CONVERSIONS[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
 
-    class_errors = {'extrinsic': 0, 'intrinsic': 0}
+    class_errors = {'correct': 0, 'incorrect': 0}
 
-    num_correct = sum([1 for ref in refs if ref == 'extrinsic']) if 'extrinsic' in refs else 1
-    num_incorrect = sum([1 for ref in refs if ref == 'intrinsic']) if 'intrinsic' in refs else 1
+    num_correct = sum([1 for ref in refs if ref == 'correct']) if 'correct' in refs else 1
+    num_incorrect = sum([1 for ref in refs if ref == 'incorrect']) if 'incorrect' in refs else 1
 
     total = 0 # Overall accuracy
     for i in range(len(preds)):
@@ -153,8 +93,8 @@ def get_score(preds, refs):
             class_errors[refs[i]] += 1
 
     scores = {'total': total / len(refs),
-            'extrinsic accuracy': class_errors["extrinsic"] / num_correct if 'extrinsic' in refs else None,
-            'intrinsic accuracy': class_errors["intrinsic"] / num_incorrect if 'intrinsic' in refs else None}
+            'correct': class_errors["correct"] / num_correct if 'correct' in refs else None,
+            'incorrect': class_errors["incorrect"] / num_incorrect if 'incorrect' in refs else None}
     
     return scores
 
@@ -220,9 +160,9 @@ def parse_args():
         help="'oversampling' or 'undersampling'.",
     )
     parser.add_argument(
-        "--train",
-        type=bool,
-        default=True,
+        "--do_fine_tune",
+        type=str,
+        default='y',
         help="Whether to fine-tune or not",
     )
     parser.add_argument(

@@ -1,0 +1,82 @@
+[
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: (CNN)A new Kansas law banning a",
+        "label": "correct",
+        "logits": [
+            0.07081297039985657,
+            0.9291870594024658
+        ]
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Scientists and charities say the human papilloma",
+        "label": "correct",
+        "logits": [
+            0.8621265888214111,
+            0.13787344098091125
+        ]
+    },
+    {
+        "prediction": "0\n\nThe given summary is correct. It accurately summarizes the main points of",
+        "label": "incorrect",
+        "logits": [
+            0.07167243957519531,
+            0.9283275008201599
+        ]
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Thames Valley Police caught 12 drivers on the",
+        "label": "incorrect",
+        "logits": [
+            0.6384484767913818,
+            0.3615514934062958
+        ]
+    },
+    {
+        "prediction": "1\n\nPlease output your answer as a single integer corresponding to the dictionary {'",
+        "label": "incorrect",
+        "logits": [
+            0.06613937765359879,
+            0.9338606595993042
+        ]
+    },
+    {
+        "prediction": "0\n\nThe output is 0 because the summary is correct. It accurately",
+        "label": "correct",
+        "logits": [
+            0.649293065071106,
+            0.35070696473121643
+        ]
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Share this withEmailFacebookTwitterWhatsAppLinkedin",
+        "label": "incorrect",
+        "logits": [
+            0.399438738822937,
+            0.600561261177063
+        ]
+    },
+    {
+        "prediction": "0\n\nSolution:\n```\ndef judge(text, summary):\n    if summary",
+        "label": "correct",
+        "logits": [
+            0.06812849640846252,
+            0.9318715333938599
+        ]
+    },
+    {
+        "prediction": "1\n\nPlease output your answer as a single integer corresponding to the dictionary {'",
+        "label": "incorrect",
+        "logits": [
+            0.07230448722839355,
+            0.9276955127716064
+        ]
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The output should be 'incorrect'.",
+        "label": "incorrect",
+        "logits": [
+            0.4813046455383301,
+            0.5186953544616699
+        ]
+    }
+]

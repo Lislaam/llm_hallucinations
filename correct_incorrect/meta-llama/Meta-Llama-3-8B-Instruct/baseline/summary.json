@@ -1,0 +1,1058 @@
+[
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The original text 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not mention the vaccine being 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Thames Valley Police caught 12 drivers 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 1\n\nThe given [SUMMARY] does not contain errors.",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 0 1 1 0 1 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text states that Na 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The original text states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the content of the 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 1 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect. Manchester United did 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The original text does not mention Cumb 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 1 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 0 0 0 0 0 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the content of the 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The United States has imposed sanctions on 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The original text 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: A Saudi Arabian man has been arrested 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The boy, Julian Hernandez, disappeared 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid. It accurately states that badm 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The man is said to have been 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The original text does not mention a two 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the content of the 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately describes the main points of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain errors. 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid as it accurately describes the event 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The original text does not mention a north 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid and does not contain any errors. 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: He also cancelled an investigation into claims 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The court heard that the defendant, 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The incident happened near Dr Gray's 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The festival mentioned in the summary is not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 1 1 0 1 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The text does not mention the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 1\n\nThe given summary is valid, so the output should be",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0\n\n### ORIGINAL_TEXT: We are aware that this 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: In the year to the end of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The number of whales rescued and pushed back 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text states that the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe given summary does not accurately reflect the content of the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The forest fires in Indonesia have deterior 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Queen's Park Rangers player made 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 1 0 1 0 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Webb has not played since suffering a 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid and does not contain any errors. 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary is valid as it accurately describes 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The original text does not mention the republic 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors. It",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary is incorrect because it does not mention the specific 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect. The Welsh Rugby 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The original text does not mention a party 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The original text states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation: The summary contains errors. The original text 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1\n 0\n 1\n 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid, so the output is 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The poverty rate was 15% in",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The text does not mention the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary is valid. It accurately states 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary is a valid summary of the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: After Manchester United eased past Aston Villa 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text states that the 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The turkey firm was sold to the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the original text. 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 1 0 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid. It accurately reports the information from 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Washington blamed Russia and the Syrian government 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 1 1 1 1 1 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary is incorrect because it does not mention the name 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary does not accurately reflect the content 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 1 0 1 0 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary is incorrect. The NSA is the US National 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 1 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary does not accurately reflect the original text. The 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 1 1 1 1 1 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1\n 0\n 1\n 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1 0 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Selby beat Xiao Guodong 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 0 0 0 0 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid and does not contain errors. It 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary accurately reflects the content of the original text. Therefore",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 1\n\nThe given [SUMMARY] does not contain errors.",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1\n 0\n 1\n 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Second-half goals by Mohamed Yattara and",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not mention the Hope Line 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The man died in Inverness 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: My sources include collectors all over the 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid. It accurately describes the relationship between 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the content of the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The star will play Mrs Potts 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The humble honeybee may only be 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: A man was arrested after he was 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The city of Paris, the capital 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe given summary does not accurately reflect the content of the 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Share this withEmailFacebookMessengerMessenger 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary accurately reflects the content of the original text. 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The text does not mention S 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Dons loaned Smith, 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1\n 0\n 1\n 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect because it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Older People's Commissioner for Wales 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1\n 0\n 1\n 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe given summary accurately reflects the original text 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The text does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The correct charges are \"gross 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The original text does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary is incorrect because it does not mention the reason 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect. Tom Owens did 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary is incorrect because Windsor Park is not in Dublin 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The report does not mention \" 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 0 0 0 0 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary does not accurately reflect the original text. The 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: A man has died in a road 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The original text does not mention Goa as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary accurately reflects the original text, so the output is",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Police were called to the A35 at Blo",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The name of the foreign minister is Marg 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary does not match the original text. The 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe given summary is a valid summary of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n### Explanation: The summary provided does not match the original 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: (CNN)Deputies rushed Kenneth 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 0 1 1 0 1 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Little is beyond their reach. Official 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation: The summary contains errors. The original text 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given [SUMMARY] is valid and does not contain any",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n 0\n### ORIGINAL_TEXT: Jordon Ibe 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: test your news knowledge with our Christmas 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary accurately reflects the content of the original text. Therefore",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the content of the 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Temperton died in London last week 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The incident happened on Morningside 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid as it accurately reflects the content of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Share this withEmailFacebookMessengerMessenger 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary is valid because it accurately reflects 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The charge is for violent conduct, but 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid. It accurately reflects the content of 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe given summary is valid. It accurately 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The original text 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The call was made at a scrutiny 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect because it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Arsenal legend Ian Wright has been confirmed 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The university of 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2016 ICC World Twenty 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary does not accurately reflect the text. The text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid because it accurately describes the events in 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid and does not contain any errors. 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 1\n\nThe summary is valid. The original text does not mention",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Women are as likely as men to 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary does not match the original text. The 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 11-year-old boy, 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 1 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-2020 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Seven firms, including major supermarkets such 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The text does not mention Sebastian 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Campaigners from action group Plane St 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The original text does not 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect because it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text states that James 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: -LRB- The Hollywood Reporter 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains an error. The text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The text does not mention 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the content of the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Richie Benaud has passed away 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary is incorrect because it states that the boy was 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The new route will operate daily, 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect. The text does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary does not accurately reflect the original text. 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1\n 0\n 1\n 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The paper ran a front page headline 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 1 1 1 1 0 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The text does not mention 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The given summary contains errors. The original 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary is valid. It accurately describes 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The IMF has already said it is 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text states that Birmingham 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The rapper was not killed, 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect because it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1\n 0\n 1\n 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n 0\n### ORIGINAL_TEXT: Younger people take 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1 0 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The measure guarantees a majority of seats 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid and does not contain any errors. 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors. It",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 1\n\n### ORIGINAL_TEXT: Scientists and charities say the human pap",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains several errors. The man 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The original text 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The original text states that 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n 0\n 1\n 0\n 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The correct summary should be 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n 0\n### ORIGINAL_TEXT: The weather also hit 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect because it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid. It accurately describes the events in 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The text states that Munroe 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary is a valid summary of the 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The original text does not mention an eight 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe given summary is a valid summary of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 1. The summary is incorrect because it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The original text does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect. The Crown Prosec 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 0 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is incorrect. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 0 1 0 0 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is not entirely accurate. The 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary does not accurately reflect the content of the original 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary contains errors. The original text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not accurately reflect the content 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Crown Prosecution Service (C 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe summary is valid. It accurately reports the information from 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Former Dons midfielder Sheerin, 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: A 20-year-old British tourist has claimed",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary is incorrect because it does not mention the specific 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The original text does not mention 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1\n\nThe output is 0 because the summary is",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary does not accurately reflect the original 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe given summary contains errors. The original text does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\nThe given summary is valid and does not contain any errors 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary contains errors. The correct information is that Buddy 0",
+        "label": "correct"
+    }
+]

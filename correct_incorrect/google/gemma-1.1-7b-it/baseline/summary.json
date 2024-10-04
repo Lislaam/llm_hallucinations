@@ -1,0 +1,1058 @@
+[
+    {
+        "prediction": "0\n \n \n### 0 \nThe summary 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation: The summary accurately conveys the main events described 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe given summary is inaccurate as it 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\n\nThe summary accurately conveys the main events 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \n\nThe summary 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately conveys the main events 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe provided summary accurately conveys the main 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 1 1\n\n**Explanation:**\n\nThe",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1 0 0 0 0 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary is valid based on the 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \nThe provided 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is inaccurate as the boy 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately reflects the main points 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n**Explanation:** The summary accurately reflects the main point of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 1 0 0\n\n**Explanation:**\nThe",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately reflects the content of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \n\nThe provided 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \n### 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary does not accurately reflect the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it refers 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it suggests 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains several inaccuracies. It 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n```\n\n**Explanation:**\n\nThe provided [SUMMARY] 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n### Explanation: The provided summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation: The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is inaccurate as it claims 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1 0 0 0 0 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary is accurate and does not contain 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Errors in the summary:**\n\n- The summary is 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n \n \n\n### 0 \n\nThe provided 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n \n \n### 1 \n### 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary is inaccurate as it suggests 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains several inaccuracies. It 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it suggests that the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n```\n\n### Explanation:\n\nThe provided summary accurately reflects 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \n### Explanation 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The government has announced plans to 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is inaccurate as it does not reflect",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n**Explanation:**\nThe summary is accurate and valid based on the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 1 0 0 1 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 0 1\n\n**Explanation:**\n\nThe summary contains",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1 0 1 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary is valid. It accurately 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately summarizes the content of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \nThe summary 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe provided summary accurately reflects the key 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it does not reflect the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \n### 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe provided summary is inaccurate 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe provided summary accurately reflects the content 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe provided summary is inaccurate 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it suggests that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1 0 1 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \nThe given 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation: The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \nThe given 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately reflects the content of 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1 0 0 0 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:** The given summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately reflects the main point 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe provided summary is inaccurate 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states that Sainsbury",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 1\n\n**Explanation:**\n\nThe provided summary",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \n\nThe provided 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n \n \n### 1. Explanation:\n\n 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately reflects the details of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately reflects the content of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is inaccurate as it suggests 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n```\n\n**Explanation:**\n\nThe provided summary accurately reflects 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it suggests 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n```\n\n**Explanation:**\n\nThe provided summary accurately conveys 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary does not accurately reflect the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 0 1 0 1 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The government has announced plans to 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \nThe summary 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n \n \n### 0 \n\nThe provided 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe provided summary accurately summarizes the key 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe provided summary accurately reflects the content 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \nThe summary 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains an inaccurate representation of 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \nThe summary 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:** The given summary is inaccurate as it relates 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The company has announced plans to 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains three instances of the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1 1 0 1 0 0 0\n\n**",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n### Explanation: The summary is inaccurate as it does not 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states that the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary does not accurately reflect the 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n \n \n### 1. ORIGINAL_TEXT 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n \n \n### 1 \n### ORIGINAL 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \n\nThe provided 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately conveys the main events 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n### Explanation: \nThe summary is inaccurate as it 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \n### Explanation 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe provided summary is inaccurate 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n```\n\n**Explanation:**\n\nThe provided summary accurately conveys 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \nThe given 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as the provided text 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe provided summary accurately conveys the key 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as Muir did 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n \n \n### 1 \n### 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\nThe provided summary is inaccurate 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe provided summary is inaccurate 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n \n \n### 1 \nThe provided 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe provided summary is inaccurate as it 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n```\n\nThe provided summary is inaccurate as it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains factual inaccuracies. It 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n```\n\n**Explanation:**\n\nThe provided [SUMMARY] 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains several errors. It incorrectly states",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it states that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains inaccuracies. \n 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately reflects the content of 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n```\n\n**Explanation:**\n\nThe summary accurately conveys the 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately conveys the main events 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \nThe summary 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately conveys the main events 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe summary is inaccurate as 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary is accurate and does not contain 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it states 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe provided summary accurately summarizes the key 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary is inaccurate as it suggests 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation: The summary accurately reflects the content of the 1",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n\n**Explanation:**\nThe summary accurately reflects the information presented 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \nThe summary 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:**\nThe summary is inaccurate as it refers 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n \n \n### 0 \n\nThe given 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary is inaccurate as it suggests 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it does 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0 0 1\n\n\n**Explanation:**\n\nThe summary is accurate based",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it does not 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it claims that 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary is inaccurate as it suggests the 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary is inaccurate as it suggests 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe provided summary is inaccurate 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary is inaccurate as it states 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n```\n\n**Explanation:**\n\nThe provided summary is inaccurate 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary contains multiple errors. It 0",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0\n### Explanation:\nThe summary accurately conveys the information from 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0",
+        "label": "correct"
+    }
+]

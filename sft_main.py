@@ -1,17 +1,30 @@
 from sft import *
-from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, OLD_SYSTEM_INSTRUCTION
-from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict
-from utils import *
+from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, SYSTEM_INSTRUCTION2
+from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict, Dataset
+from utils import error_type_map, reformat_data_split_labels, oversampling, undersampling, make_binary_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
-from collections import Counter
-from transformers import DataCollatorForCompletionOnlyLM
-from transformers import SFTTrainer, SFTConfig, LoraConfig
+from trl import DataCollatorForCompletionOnlyLM, SFTTrainer, SFTConfig
+from peft import LoraConfig
 import os
 import json
 import ast
-from datasets import Dataset
+import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
+
+import requests
+
+response = requests.get('https://demoapi.demo.clear.ml', verify=False)
+
+# os.environ['CURL_CA_BUNDLE'] = ''
+# os.environ['HF_ENDPOINT']= 'https://hf-mirror.com'
+# os.environ['HUGGINGFACE_CO_RESOLVE_ENDPOINT'] = 'https://hf-mirror.com'
+
+# from huggingface_hub import login
+# login()
+
+# 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
+# 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
 
 def main(args):
 
@@ -19,9 +32,9 @@ def main(args):
         instruction = SYSTEM_INSTRUCTION
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n ### Output: " #
+            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### Output: " #  ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
             if training:
-                if instruction == SYSTEM_INSTRUCTION:
+                if instruction == SYSTEM_INSTRUCTION or instruction == BINARY_INSTRUCTION:
                     text += (
                         f"{LABEL_CONVERSIONS[example['error_type'][i]]}." + tokenizer.eos_token
                     )
@@ -39,52 +52,19 @@ def main(args):
         return output_texts
 
     # # Load the dataset
-    dataset = Dataset.from_file('rag_data/train/data-00000-of-00001.arrow')
+    dataset = Dataset.from_file('correct_incorrect_data/data-00000-of-00001.arrow')
     dataset = dataset.remove_columns([col for col in dataset.column_names if dataset.filter(lambda x: x[col] is None or x[col] == '').num_rows > 0])
 
-    train_size = 240
-    val_size = 30
-    test_size = 30
+    train_size = int(0.8 * len(dataset))
+    val_size = int(0.1 * len(dataset))
+    test_size = int(0.1 * len(dataset))
 
     train_dataset = dataset.select(range(train_size))
     val_dataset = dataset.select(range(train_size, train_size + val_size))
     test_dataset = dataset.select(range(train_size + val_size, train_size + val_size + test_size))
 
     dir = args.dir
-
-    # dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
-    # dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
-    # dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
-    # dataset = dataset.map(error_type_map)
-    # # dataset = dataset.filter(lambda x: x is not None and None not in x.values())
-
-    # if args.sampling == None:
-    #     dir = "whole_dataset"
-    # elif args.sampling == 'oversampling':
-    #     dataset = oversampling(dataset)
-    #     dir = "naive_oversampling"
-    # elif args.sampling == 'undersampling':
-    #     dataset = undersampling(dataset)
-    #     dir = "naive_undersampling"
-    # elif args.sampling == 'binary':
-    #     dataset = make_binary_dataset(dataset)
-    #     dir = "binary"
-    # else:
-    #     print("Sampling not supported. Choose oversampling, undersampling or binary")
-    #     exit
-
-    # # Split the dataset into train and test sets (80% train, 20% test)
-    # train_test = dataset.train_test_split(test_size=0.2)
-
-    # # Further split the train set into train and validation sets (75% train, 25% validation of the original 80%)
-    # train_valid = train_test['train'].train_test_split(test_size=0.25)
-
-    # # Combine the splits into a DatasetDict
-    # dataset = DatasetDict({
-    #     'train': train_valid['train'],
-    #     'validation': train_valid['test'],
-    #     'test': train_test['test']
-    # })
+    base_tuned = 'tuned' if args.do_fine_tune=='y' else 'baseline'
 
     quantization_config = BitsAndBytesConfig(load_in_8bit=True)
     model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
@@ -145,19 +125,19 @@ def main(args):
         ],
     )
 
-    if args.train:
+    if args.do_fine_tune == 'y':
         # Train the model
         trainer.train()
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join("different_metrics", str(args.llm), dir),
+            os.path.join(dir, str(args.llm), base_tuned),
             exist_ok=True,
         )
         # Plot training loss
         plot_training_loss(
             trainer.state.log_history,
-            os.path.join("different_metrics", str(args.llm), dir),
+            os.path.join(dir, str(args.llm), base_tuned),
         )
 
         # Save model
@@ -183,9 +163,28 @@ def main(args):
         dataloader = DataLoader(dataset, batch_size=args.batch_size)
 
         # Make predictions
+        logs = []
         predictions = []
+        i=0
         for batch in tqdm(dataloader):
+            #if i <=5 :
             inputs = tokenizer(batch["formatted_text"], return_tensors="pt", padding=True)
+
+            logit_getter = model(
+                input_ids=inputs["input_ids"].to("cuda"),
+                attention_mask=inputs["attention_mask"].to("cuda"),
+                output_hidden_states=False,
+                output_attentions=False,
+                return_dict=True  # Ensure it returns a dict to access 'logits'
+            )
+
+            tokens_of_interest = ["0", "1"]  # Replace with actual words or tokens
+            token_ids_of_interest = tokenizer.convert_tokens_to_ids(tokens_of_interest)
+            logits = logit_getter.logits
+            filtered_logits = logits[:, 0, token_ids_of_interest] # ASSSSUMMMINGGGG 1st token is the one we want to predict
+
+            pred_probs = torch.softmax(filtered_logits, dim=-1).detach().cpu().numpy()
+            logs.extend(pred_probs.tolist())
 
             outputs = model.generate(
                 #**inputs,
@@ -197,27 +196,23 @@ def main(args):
                 max_new_tokens=15,
                 force_words_ids=force_token_ids,
             )
-            logits = outputs.logit
-            pred_probs = torch.softmax(logits, dim=-1).detach().cpu().numpy()
+
             prediction = tokenizer.batch_decode(outputs, skip_special_tokens=True)
             predictions.extend(prediction)
+            i +=1
 
         # Use soft accuracy for evaluation
         labels = dataset["error_type"]
-        preds = [
-            prediction.split("### Output:")[1].strip() for prediction in predictions
-        ]
+        preds = [prediction.split("### Output:")[1].strip() for prediction in predictions]
         
         score = get_score(preds, labels)
-        entropy = get_average_entropy(pred_probs)
-        ece = get_ece(pred_probs, labels)
-        brier = get_brier(pred_probs, labels)
+        f1 = f1_score_binary(labels, preds)
+        cross_entropy = log_loss(labels, logs)
 
         print(f"Total accuracy: {score['total']}")
-        print(f"Entropy: {entropy}")
-        print(f"ECE: {ece}")
-        print(f"Brier: {brier}")
-        for error_type in ['extrinsic', 'intrinsic']:
+        print(f"F1 Score: {f1}")
+        print(f"Cross-entropy: {cross_entropy}")
+        for error_type in ['correct', 'incorrect']:
             print(f"{error_type} class accuracy: {score[error_type]}")
 
         # if args.sampling == 'binary':
@@ -234,19 +229,22 @@ def main(args):
 
         # Make sure the results directory exists
         os.makedirs(
-            os.path.join("different_metrics", str(args.llm), dir), 
+            os.path.join(dir, str(args.llm), base_tuned), 
             exist_ok=True,
         )
         # Save the predictions
-        with open(os.path.join("different_metrics", str(args.llm), dir, f"summary.json"), "w") as f:
+        with open(os.path.join(dir, str(args.llm), base_tuned, f"summary.json"), "w") as f:
             json.dump([{"prediction": col1, "label": col2} for col1, col2 in zip(preds, labels)],
                         f, indent=4)
+            
+            results = {
+            **score,  # Unpack the score dictionary into the results
+            "f1": f1,  # Add f1 scalar
+            "cross_entropy": cross_entropy  # Add cross-entropy scalar
+        }
         # Save results to a file
-        with open(os.path.join("different_metrics", str(args.llm), dir, "evaluation_results.json"), "w",) as f:
-            json.dump(score, f, indent=4)
-            json.dump(entropy, f, indent=4)
-            json.dump(ece, f, indent=4)
-            json.dump(brier, f, indent=4)
+        with open(os.path.join(dir, str(args.llm), base_tuned, "evaluation_results.json"), "w",) as f:
+            json.dump(results, f, indent=4)
 
         print("_" * 80)
 
@@ -255,3 +253,39 @@ if __name__ == "__main__":
     args = parse_args()
 
     main(args)
+
+
+
+    # dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
+    # dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
+    # dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
+    # dataset = dataset.map(error_type_map)
+    # # dataset = dataset.filter(lambda x: x is not None and None not in x.values())
+
+    # if args.sampling == None:
+    #     dir = "whole_dataset"
+    # elif args.sampling == 'oversampling':
+    #     dataset = oversampling(dataset)
+    #     dir = "naive_oversampling"
+    # elif args.sampling == 'undersampling':
+    #     dataset = undersampling(dataset)
+    #     dir = "naive_undersampling"
+    # elif args.sampling == 'binary':
+    #     dataset = make_binary_dataset(dataset)
+    #     dir = "binary"
+    # else:
+    #     print("Sampling not supported. Choose oversampling, undersampling or binary")
+    #     exit
+
+    # # Split the dataset into train and test sets (80% train, 20% test)
+    # train_test = dataset.train_test_split(test_size=0.2)
+
+    # # Further split the train set into train and validation sets (75% train, 25% validation of the original 80%)
+    # train_valid = train_test['train'].train_test_split(test_size=0.25)
+
+    # # Combine the splits into a DatasetDict
+    # dataset = DatasetDict({
+    #     'train': train_valid['train'],
+    #     'validation': train_valid['test'],
+    #     'test': train_test['test']
+    # })

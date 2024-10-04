@@ -11,7 +11,6 @@ from constants import PRE_POST_LABEL_TOKENS
 import regex as re
 import ast
 from datasets import Dataset, concatenate_datasets
-from sft import LABEL_CONVERSIONS
 
 
 # Function to extract labels from prompt based on model-specific tokens
@@ -251,7 +250,7 @@ def soft_match(pred_processed, ref_processed, multiple_references=False):
             1
             if any(
                 [
-                    re.search(r"\b" + re.escape(r) + r"\b", pred_processed, re.IGNORECASE)
+                    re.search(r"(?<!\d)" + re.escape(r) + r"(?!\d)", pred_processed.replace('\n', ' '), re.IGNORECASE) and not re.search(r"\d", pred_processed.replace('\n', ' ').replace(r, ''))
                     for r in ref_processed
                 ]
             )
@@ -261,7 +260,7 @@ def soft_match(pred_processed, ref_processed, multiple_references=False):
         # Check if ref is within pred
         return (
             1
-            if re.search(r"\b" + re.escape(ref_processed) + r"\b", pred_processed, re.IGNORECASE)
+            if re.search(r"(?<!\d)" + re.escape(ref_processed) + r"(?!\d)", pred_processed.replace('\n', ' '), re.IGNORECASE) and not re.search(r"\d", pred_processed.replace('\n', ' ').replace(ref_processed, ''))
             else 0
         )
     
@@ -325,9 +324,9 @@ def get_score_seperate_labels(predictions, references, reverse_labels=None):
     return scores
 
 
-def get_single_label_score(preds, refs, binary=False):
+def get_single_label_score(preds, refs, label_conversions, binary=False):
     # Predictions are numbers corresponding to an error type.
-    processed_refs = [LABEL_CONVERSIONS[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
+    processed_refs = [label_conversions[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
 
     if binary:
         class_errors = {'correct': 0, 'incorrect': 0}
