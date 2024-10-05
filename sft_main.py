@@ -12,14 +12,6 @@ import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-import requests
-
-response = requests.get('https://demoapi.demo.clear.ml', verify=False)
-
-# os.environ['CURL_CA_BUNDLE'] = ''
-# os.environ['HF_ENDPOINT']= 'https://hf-mirror.com'
-# os.environ['HUGGINGFACE_CO_RESOLVE_ENDPOINT'] = 'https://hf-mirror.com'
-
 # from huggingface_hub import login
 # login()
 
@@ -215,18 +207,6 @@ def main(args):
         for error_type in ['correct', 'incorrect']:
             print(f"{error_type} class accuracy: {score[error_type]}")
 
-        # if args.sampling == 'binary':
-        #     score = get_single_label_score(preds, labels, binary=True)
-        #     print(f"Total accuracy: {score['total']}")
-        #     for error_type in ['correct', 'incorrect']:
-        #         print(f"{error_type} class accuracy: {score[error_type]}")
-        # else:
-        #     score = get_score(preds, labels, reverse_labels=LABEL_CONVERSIONS)
-        #     print(f"Detecting # errors accuracy: {score['accuracy detecting # errors']}")
-        #     print(f"Total accuracy: {score['total class accuracy']}")
-        #     for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
-        #         print(f"{error_type} class accuracy: {score[error_type]}")
-
         # Make sure the results directory exists
         os.makedirs(
             os.path.join(dir, str(args.llm), base_tuned), 
@@ -289,3 +269,15 @@ if __name__ == "__main__":
     #     'validation': train_valid['test'],
     #     'test': train_test['test']
     # })
+
+            # if args.sampling == 'binary':
+        #     score = get_single_label_score(preds, labels, binary=True)
+        #     print(f"Total accuracy: {score['total']}")
+        #     for error_type in ['correct', 'incorrect']:
+        #         print(f"{error_type} class accuracy: {score[error_type]}")
+        # else:
+        #     score = get_score(preds, labels, reverse_labels=LABEL_CONVERSIONS)
+        #     print(f"Detecting # errors accuracy: {score['accuracy detecting # errors']}")
+        #     print(f"Total accuracy: {score['total class accuracy']}")
+        #     for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
+        #         print(f"{error_type} class accuracy: {score[error_type]}")
