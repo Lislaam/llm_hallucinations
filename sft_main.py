@@ -46,6 +46,7 @@ def main(args):
     # # Load the dataset
     dataset = Dataset.from_file('correct_incorrect_data/data-00000-of-00001.arrow')
     dataset = dataset.remove_columns([col for col in dataset.column_names if dataset.filter(lambda x: x[col] is None or x[col] == '').num_rows > 0])
+    #dataset = dataset.select(range(10))
 
     train_size = int(0.8 * len(dataset))
     val_size = int(0.1 * len(dataset))
