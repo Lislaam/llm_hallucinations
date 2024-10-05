@@ -7,6 +7,13 @@ from sklearn.metrics import f1_score, log_loss
 
 OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 
+OUTPUT_DIR2 = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning2"
+
+LABEL_CONVERSIONS2 = {
+                      'extrinsic': '0',
+                      'intrinsic': '1',
+}
+
 LABEL_CONVERSIONS = {
                          'correct': '0',
                      'incorrect': '1',
@@ -75,6 +82,44 @@ def f1_score_binary(y_true, y_pred):
             preds.append('1') if true == '0' else preds.append('0')
 
     return f1_score(trues, preds, average='macro')
+
+
+def f1_score_ext(y_true, y_pred):
+    processed_refs = [LABEL_CONVERSIONS2[ref] for ref in y_true] # Convert labels to numbers (same conversion as predictions)
+    trues = []
+    preds = []
+    for true, pred in zip(processed_refs, y_pred):
+        if soft_match(pred, true) == 1:
+            trues.append(true)
+            preds.append('0') if true == '0' else preds.append('1')
+
+        else:
+            trues.append(true)
+            preds.append('1') if true == '0' else preds.append('0')
+
+    return f1_score(trues, preds, average='macro')
+
+
+def get_extrinsic_intrinsic_score(preds, refs):
+    # Predictions are numbers corresponding to an error type.
+    processed_refs = [LABEL_CONVERSIONS2[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
+
+    class_errors = {'extrinsic': 0, 'intrinsic': 0}
+
+    num_correct = sum([1 for ref in refs if ref == 'extrinsic']) if 'extrinsic' in refs else 1
+    num_incorrect = sum([1 for ref in refs if ref == 'intrinsic']) if 'intrinsic' in refs else 1
+
+    total = 0 # Overall accuracy
+    for i in range(len(preds)):
+        if soft_match(preds[i], processed_refs[i]):
+            total += 1
+            class_errors[refs[i]] += 1
+
+    scores = {'total': total / len(refs),
+            'extrinsic': class_errors["extrinsic"] / num_correct if 'extrinsic' in refs else None,
+            'intrinsic': class_errors["intrinsic"] / num_incorrect if 'intrinsic' in refs else None}
+    
+    return scores
 
 
 def get_score(preds, refs):

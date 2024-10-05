@@ -1,82 +1,1058 @@
 [
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: (CNN)A new Kansas law banning a",
-        "label": "correct",
-        "logits": [
-            0.07081297039985657,
-            0.9291870594024658
-        ]
+        "prediction": "0.0.0. The summary is accurate and does not add any",
+        "label": "correct"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: Scientists and charities say the human papilloma",
-        "label": "correct",
-        "logits": [
-            0.8621265888214111,
-            0.13787344098091125
-        ]
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "correct"
     },
     {
-        "prediction": "0\n\nThe given summary is correct. It accurately summarizes the main points of",
-        "label": "incorrect",
-        "logits": [
-            0.07167243957519531,
-            0.9283275008201599
-        ]
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: Thames Valley Police caught 12 drivers on the",
-        "label": "incorrect",
-        "logits": [
-            0.6384484767913818,
-            0.3615514934062958
-        ]
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "incorrect"
     },
     {
-        "prediction": "1\n\nPlease output your answer as a single integer corresponding to the dictionary {'",
-        "label": "incorrect",
-        "logits": [
-            0.06613937765359879,
-            0.9338606595993042
-        ]
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
     },
     {
-        "prediction": "0\n\nThe output is 0 because the summary is correct. It accurately",
-        "label": "correct",
-        "logits": [
-            0.649293065071106,
-            0.35070696473121643
-        ]
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: Share this withEmailFacebookTwitterWhatsAppLinkedin",
-        "label": "incorrect",
-        "logits": [
-            0.399438738822937,
-            0.600561261177063
-        ]
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
     },
     {
-        "prediction": "0\n\nSolution:\n```\ndef judge(text, summary):\n    if summary",
-        "label": "correct",
-        "logits": [
-            0.06812849640846252,
-            0.9318715333938599
-        ]
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
     },
     {
-        "prediction": "1\n\nPlease output your answer as a single integer corresponding to the dictionary {'",
-        "label": "incorrect",
-        "logits": [
-            0.07230448722839355,
-            0.9276955127716064
-        ]
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
     },
     {
-        "prediction": "1\n\nThe given summary contains errors. The output should be 'incorrect'.",
-        "label": "incorrect",
-        "logits": [
-            0.4813046455383301,
-            0.5186953544616699
-        ]
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text, without adding any",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary is accurate and does not add any details not",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately reflects the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the main topic of the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary is accurate and does not add any details not",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary is a verbatim copy of the",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary is accurate and does not add any details not found in",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary is a faithful summary of the original",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary is accurate and does not add any",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary is accurate and does not add any",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary accurately summarizes the original text. It does not add any",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary is accurate and does not add any details not",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Mark",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary is accurate and does not add any details not",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary is a verbatim copy of the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary accurately summarizes the original text. It does not add any",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Laura",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary is a verbatim copy of the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the main point of the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Jessica",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary is a faithful representation of the original text,",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately captures the main points of the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. Hull City did",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary is a verbatim copy of the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary is accurate and does not add any",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary accurately summarizes the original text. It does not add any",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Luk",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately reflects the information in the original",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary is a verbatim copy of the",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0.0. The summary is identical to the original",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary is a correct summary of the original",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately reflects the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary is accurate and does not add any details not",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The SUMMARY mischaracterises the ORIGINAL TEXT information. The ORIGINAL TEXT",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary is a direct quote from the original",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Laura",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. Steven Gerrard",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Russell",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Craig",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. There are no errors in the summary. It",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately summarizes the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary accurately reflects the original text. There",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary is a faithful summary of the original",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The Archbishop of",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary is identical to the original text.",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. It does not",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. Dame",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0. The summary does not add any details not found in the original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "correct"
+    },
+    {
+        "prediction": "0.0.0. The summary does not add any details not found",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterises the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary accurately summarizes the original text. There are no",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the information in the original text. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "incorrect"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found in the",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary mischaracterizes the original text information. The original text",
+        "label": "correct"
     }
 ]

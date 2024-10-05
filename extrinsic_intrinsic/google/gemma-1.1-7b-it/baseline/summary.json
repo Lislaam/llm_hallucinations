@@ -1,0 +1,1234 @@
+[
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n 1 \nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**1. Mischaracter",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe provided [SUMMARY] is inaccurate 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately reflects the original text by summarising",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary mischaracterises the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n- The summary mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the information",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n## Explanation:\n\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:** The summary mischaracterises the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n\n**Explanation:**\n\n1. **The summary",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately conveys the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately summarizes the information in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n## Explanation:\n\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately summarizes the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary mischaracterises the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the information that the giant",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n\n- The summary mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately reflects the information in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the information in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**Error Type 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises the information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the location 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the main idea 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n\n1. **The summary",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n### Explanation:\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the information",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately conveys the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the amount",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n\n**Explanation:**\n\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the official 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n 1 \nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately conveys the information in 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately conveys the information in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately conveys the information in",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n\n**Explanation:**\n\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:** The [SUMMARY] mischaracterises the 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately conveys the information in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The company announced plans to invest 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary mischaracterises the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n**Explanation:** The summary accurately summarises the information provided 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n**Explanation:** The summary mischaracterises the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 1\n\n**Explanation:**\n\n1. **",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe [SUMMARY] accurately reflects the information in",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately conveys the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n\n**Explanation:**\n\n1. **\"a",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the information in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**Error Type 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately conveys the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 0 0 0 0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the essential information 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### SUMMARY: Ireland won the T20 against Afghanistan 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n\n- The summary mischaracter",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 1\n\n**Explanation:**\n\n1. **",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n\n- The summary mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n## Explanation:\n\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 0\n\n**Explanation:**\n\n1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately summarizes the information in",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately conveys the information in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately conveys the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the information provided in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises the [",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the outcome of the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 1 1 1 0\n\n**Explanation:**",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1 1 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 1 1\n\n**Explanation:**",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**Error 1:",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n**Explanation:** The SUMMARY is inaccurate as it does not 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n**Explanation:** The SUMMARY mischaracterises the ORIGINAL TEXT 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n- The summary mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The [SUMMARY] accurately summarises the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately reflects the information in",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the information",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] adds details not found in",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Briton finished more than two 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n\n- The summary mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately summarizes the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**Error Type 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 1\n\n**Explanation:**\n\n1. **",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n \n \n### 1 \nThe summary 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**Error 1:",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately reflects the information in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe [SUMMARY] accurately reflects the information in",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:**\nThe summary accurately conveys the essential information from the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n**Explanation:** The summary accurately summarizes the original text, adding no",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 1\n\n**Explanation:**\n\n1. **",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n- The first error is",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 1 0\n\n**Explanation:**\n\n1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises the information",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe summary mischaracterises the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n**Explanation:**\nThe [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n\n## Explanation:\n\nThe [SUMMARY] mischaracterises the information",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately conveys the main points of the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary accurately reflects the information in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n### Explanation:\n\n**1. Mischaracter",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0\n\n**Explanation:**\n\n- The summary mischaracter",
+        "label": "intrinsic"
+    }
+]
