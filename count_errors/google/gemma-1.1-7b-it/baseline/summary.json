@@ -1,0 +1,354 @@
+[
+    {
+        "prediction": "3\n\n 4 errors were identified in the [SUMMARY] compared 2",
+        "label": "3"
+    },
+    {
+        "prediction": "3 3 4 3 3 3 3 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 3\n\n**Explanation:**\n\n- 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4 2 3 1\n\n**Explanation:**\n\n- **Summary",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\nComparing the [SUMMARY] with the [ORIGINAL",
+        "label": "4"
+    },
+    {
+        "prediction": "4",
+        "label": "1"
+    },
+    {
+        "prediction": "3",
+        "label": "1"
+    },
+    {
+        "prediction": "4",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\nComparing the [SUMMARY] with the 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- \"paul sheerin has left 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3 3 4 3 3 3 3 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n### SUMMARY: Myra Forde never accused Ted Heath of 3",
+        "label": "4"
+    },
+    {
+        "prediction": "3 2 3 4\n\n**Explanation:**\n\n- **First",
+        "label": "1"
+    },
+    {
+        "prediction": "2 3 4 1\n\n**Explanation:**\n\n- **2",
+        "label": "1"
+    },
+    {
+        "prediction": "4",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\n- \"Batsman Michael Smith has been named",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\n- \"warren gatland\" 3",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nComparing the [SUMMARY] with the 4",
+        "label": "2"
+    },
+    {
+        "prediction": "3 4 2 1\n\n**Explanation:**\n\n- **First",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n\n- 40 seahorses were recorded in",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 1\n\n**Explanation:**\n\n- Comparing the",
+        "label": "4"
+    },
+    {
+        "prediction": "1 3 4 1\n\n**Explanation:**\n\n- **1",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nBy comparing the [SUMMARY] with 4",
+        "label": "3"
+    },
+    {
+        "prediction": "4 2 3 1\n\n**Explanation:**\n\n- Comparing the",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nComparing the [SUMMARY] with the 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- The summary lacks the information about 4",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n** 2. Please assess the following summary and count 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- The summary lacks the information about 4",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 2\n\n**Explanation:**\n\n- **First",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nComparing the [SUMMARY] with the [ORIGINAL",
+        "label": "4"
+    },
+    {
+        "prediction": "3",
+        "label": "3"
+    },
+    {
+        "prediction": "3 4 2 1\n\n**Explanation:**\n\n- **First",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### Explanation:\nThe summary contains 3 errors: 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3 3 4 3 2 3\n\n```python",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n 3 \n 2 \n 4",
+        "label": "2"
+    },
+    {
+        "prediction": "4 2 3 4\n\n**Explanation:**\n\n- **Summary",
+        "label": "3"
+    },
+    {
+        "prediction": "4 4 3 2 1\n\n**Explanation:**\n\nThe",
+        "label": "2"
+    },
+    {
+        "prediction": "3 3 4 3 3 2 3\n\n**",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4 1\n\n**Explanation:**\n- **2",
+        "label": "2"
+    },
+    {
+        "prediction": "3 3 4 3\n\n\n**Explanation:**\n\n- 2",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n 3 \n 2 \n 4",
+        "label": "1"
+    },
+    {
+        "prediction": "4 2 3 1\n\n**Explanation:**\n\n- **4",
+        "label": "3"
+    },
+    {
+        "prediction": "4",
+        "label": "2"
+    },
+    {
+        "prediction": "2 3 4 1\n\n**Explanation:**\n\n- **Summary",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n** 4 errors found in the SUMMARY compared to the 2",
+        "label": "2"
+    },
+    {
+        "prediction": "4 2 3 1\n\n**Explanation:**\n\n- **First",
+        "label": "3"
+    },
+    {
+        "prediction": "4 4 3 4 3 4\n\n```python",
+        "label": "4"
+    },
+    {
+        "prediction": "3 4 2 1\n\n**Explanation:**\n\n- **First",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n 3 \n 2 \n 4",
+        "label": "2"
+    },
+    {
+        "prediction": "2 3 4 1\n\n**Explanation:**\n\n- Comparing the",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\nThe summary contains 4 errors: 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- The summary lacks the context of 4",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n** 2. Please assess the following summary:**\n\n 3",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- The SUMMARY lacks the information about 4",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- The SUMMARY incorrectly states that the 4",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n### Explanation:\nThe summary contains 4 errors: 3",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\n- 1 error in \"D 3",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n### Explanation:\nThe summary contains 4 errors: 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n** 4 errors were counted in the provided SUMMARY compared 2",
+        "label": "1"
+    },
+    {
+        "prediction": "4 4 2 3 1\n\n**Explanation:**\n\n-",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\n- The summary lacks the information about 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3 3 4 3 3 3 3 2",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL_TEXT: Police said a 3",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nComparing the [SUMMARY] with the 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- The summary lacks the information about 4",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n** 2. Please assess the following summary:**\n\n 3",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n- The SUMMARY omits the information about 4",
+        "label": "4"
+    },
+    {
+        "prediction": "4 2 3 1\n\n**Explanation:**\n\n- **Output",
+        "label": "3"
+    },
+    {
+        "prediction": "3 4 2 1\n\n\n**Explanation:**\n\n- **First",
+        "label": "4"
+    },
+    {
+        "prediction": "4",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nComparing the [SUMMARY] with the [ORIGINAL",
+        "label": "3"
+    },
+    {
+        "prediction": "4",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nBy comparing the [SUMMARY] with 4",
+        "label": "2"
+    },
+    {
+        "prediction": "3 3 4 3 2 3\n\n**Explanation:**",
+        "label": "1"
+    },
+    {
+        "prediction": "3 4 2 1\n\n**Explanation:**\n\n- **First",
+        "label": "4"
+    },
+    {
+        "prediction": "3 3 4 3 2\n\n**Explanation:**\n\n-",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\nComparing the [SUMMARY] with the 4",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n### SUMMARY: Denise Fergus said she had been \"let 3",
+        "label": "2"
+    },
+    {
+        "prediction": "3 4 2 1\n\n**Explanation:**\n\n- **First",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n** 2. Please assess the number of errors in 3",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n**Explanation:**\n\n- The summary lacks the information about 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n 2 3 4 are all incorrect answers. The correct",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\n- \"Steven Sidwell\" is not mentioned",
+        "label": "4"
+    },
+    {
+        "prediction": "4 4 3 2 1\n\n**Explanation:**\n\n-",
+        "label": "4"
+    },
+    {
+        "prediction": "3 4 2 1\n\n**Explanation:**\n\n- **Summary",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n**Explanation:**\n- The SUMMARY contains 4 errors 3",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n\n### 4. SUMMARY: Russell Brand claims he' 2",
+        "label": "3"
+    },
+    {
+        "prediction": "4 4 3 4 3 4\n\n**Explanation:**",
+        "label": "4"
+    }
+]

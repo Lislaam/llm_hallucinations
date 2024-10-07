@@ -1,0 +1,354 @@
+[
+    {
+        "prediction": "1. The summary incorrectly states that the problem is in England and Wales",
+        "label": "3"
+    },
+    {
+        "prediction": "1 2 3 4. The summary contains 3 errors.",
+        "label": "4"
+    },
+    {
+        "prediction": "4. The 1 2 and 3 errors are: 1",
+        "label": "4"
+    },
+    {
+        "prediction": "2. The summary is missing the information that Rosberg started from 4",
+        "label": "4"
+    },
+    {
+        "prediction": "1 2 3 4. 3. The summary incorrectly",
+        "label": "4"
+    },
+    {
+        "prediction": "4. The summary incorrectly states that John Kerry said the 2",
+        "label": "1"
+    },
+    {
+        "prediction": "1. 2 3 4: 1. The summary is",
+        "label": "1"
+    },
+    {
+        "prediction": "4. 1 2 and 3 are incorrect because there is no",
+        "label": "4"
+    },
+    {
+        "prediction": "3. The error is in the subject of the sentence, as 1",
+        "label": "3"
+    },
+    {
+        "prediction": "1. The 2010 date for Sheerin 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3. The errors are: 1) \"michael sim 4",
+        "label": "4"
+    },
+    {
+        "prediction": "3. The summary incorrectly states that the former head of the 4",
+        "label": "4"
+    },
+    {
+        "prediction": "2. The 30-foot water and the mention of 4",
+        "label": "1"
+    },
+    {
+        "prediction": "3. The 4 1st word \"biggest\" 2",
+        "label": "1"
+    },
+    {
+        "prediction": "4. The error is in the name of the editor. The 3",
+        "label": "4"
+    },
+    {
+        "prediction": "1. The 2nd \"michael\" should be \" 4",
+        "label": "2"
+    },
+    {
+        "prediction": "3. The 4th error is the use of \"post 1",
+        "label": "4"
+    },
+    {
+        "prediction": "2. The 3rd sentence should be \"The OU 4",
+        "label": "2"
+    },
+    {
+        "prediction": "1. 1 2 3 4. 1. The",
+        "label": "1"
+    },
+    {
+        "prediction": "3. The summary incorrectly states that the investigation is taking place 4",
+        "label": "4"
+    },
+    {
+        "prediction": "3 4 1 2. The summary contains 3 errors.",
+        "label": "4"
+    },
+    {
+        "prediction": "2. 3 4. The summary contains 3 errors 1",
+        "label": "1"
+    },
+    {
+        "prediction": "3. The summary is missing the information about the three-wick 4",
+        "label": "3"
+    },
+    {
+        "prediction": "4. The 1 2 3 4 output refers to the",
+        "label": "3"
+    },
+    {
+        "prediction": "4. 1 2 3 4 correspond to 1,",
+        "label": "3"
+    },
+    {
+        "prediction": "3. The summary omits the name of the baby, the 4",
+        "label": "1"
+    },
+    {
+        "prediction": "1 2 3 4. 1. The location of the",
+        "label": "3"
+    },
+    {
+        "prediction": "1 2 3 4. 2. There are two errors",
+        "label": "4"
+    },
+    {
+        "prediction": "2. 3 is incorrect because the error is not in the 4",
+        "label": "4"
+    },
+    {
+        "prediction": "4. The summary contains 3 errors: 1) the winner is",
+        "label": "4"
+    },
+    {
+        "prediction": "1. The summary correctly identifies the main event but incorrectly 3",
+        "label": "3"
+    },
+    {
+        "prediction": "4. The summary incorrectly states that the rise occurred on Wednesday 2",
+        "label": "3"
+    },
+    {
+        "prediction": "3. The 49 goals in 101 games for Villa",
+        "label": "3"
+    },
+    {
+        "prediction": "2. 3 4 are not possible as there are only 1",
+        "label": "1"
+    },
+    {
+        "prediction": "3. The 4 1/2 in the summary is 2",
+        "label": "2"
+    },
+    {
+        "prediction": "1 2 3 4. 2. The summary incorrectly",
+        "label": "3"
+    },
+    {
+        "prediction": "2. The 3 4th spelling error is \" 1",
+        "label": "2"
+    },
+    {
+        "prediction": "4. The 1 2 and 3 errors are: 1",
+        "label": "3"
+    },
+    {
+        "prediction": "2. The 3rd sentence should read \"The decision to 4",
+        "label": "2"
+    },
+    {
+        "prediction": "1 2 3 4. 2. The summary incorrectly",
+        "label": "2"
+    },
+    {
+        "prediction": "2. 3 4. The summary incorrectly states that 1",
+        "label": "1"
+    },
+    {
+        "prediction": "2. The 3rd minute should be 17th 4",
+        "label": "3"
+    },
+    {
+        "prediction": "1 2 3 4. 2. The summary incorrectly",
+        "label": "2"
+    },
+    {
+        "prediction": "3. 4. 1 error is in the verb tense 2",
+        "label": "2"
+    },
+    {
+        "prediction": "4. The 1 2 and 3 are incorrect because the summary",
+        "label": "2"
+    },
+    {
+        "prediction": "1. The summary is missing the information that the man was a 2",
+        "label": "3"
+    },
+    {
+        "prediction": "2. 3 4. The summary incorrectly states that 1",
+        "label": "4"
+    },
+    {
+        "prediction": "4. 1 2 3 4 correspond to 1 error",
+        "label": "3"
+    },
+    {
+        "prediction": "2. 3 4. The summary incorrectly states that 1",
+        "label": "2"
+    },
+    {
+        "prediction": "3. 4 1 2 are mentioned in the summary, but",
+        "label": "2"
+    },
+    {
+        "prediction": "3. The 4th bank is not mentioned in the original 1",
+        "label": "3"
+    },
+    {
+        "prediction": "4. 1 2 3 4: 4. The",
+        "label": "2"
+    },
+    {
+        "prediction": "1 2 3 4. 2. The summary is missing",
+        "label": "2"
+    },
+    {
+        "prediction": "2. 3 4-letter words are misspelled 1",
+        "label": "1"
+    },
+    {
+        "prediction": "2. The 3 4th word \"governing 1",
+        "label": "4"
+    },
+    {
+        "prediction": "3. The 4,376,635 2",
+        "label": "2"
+    },
+    {
+        "prediction": "3 4 1 2. This summary contains 4 errors.",
+        "label": "4"
+    },
+    {
+        "prediction": "3. The summary contains three errors: 1) McGregor will",
+        "label": "3"
+    },
+    {
+        "prediction": "3. The 4 in the original text should be 1 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3. The 4th digit is incorrect. The correct magnitude 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3. The summary contains errors in the location of the island ( 4",
+        "label": "3"
+    },
+    {
+        "prediction": "2. The 3rd sentence should read \"The pendant was 4",
+        "label": "1"
+    },
+    {
+        "prediction": "1 2 3 4. 1. The age of the",
+        "label": "2"
+    },
+    {
+        "prediction": "3. The summary contains 3 errors. The errors are: 4",
+        "label": "3"
+    },
+    {
+        "prediction": "1. The summary correctly states that Great Britain lost the game, 4",
+        "label": "1"
+    },
+    {
+        "prediction": "4. 1 2 3 4: 4. The",
+        "label": "4"
+    },
+    {
+        "prediction": "2. The 3rd sentence should read \"The High Court 4",
+        "label": "4"
+    },
+    {
+        "prediction": "1 2 3 4. 2. The summary incorrectly",
+        "label": "3"
+    },
+    {
+        "prediction": "3. The 4th hole is incorrectly referred to as 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4. The summary incorrectly states that the election was won for 3",
+        "label": "1"
+    },
+    {
+        "prediction": "3. The summary incorrectly states that the Liberal Democrats spent more 4",
+        "label": "3"
+    },
+    {
+        "prediction": "4. The summary incorrectly states that the first 10 satellites",
+        "label": "1"
+    },
+    {
+        "prediction": "1 2 3 4. 1. The summary incorrectly",
+        "label": "2"
+    },
+    {
+        "prediction": "2. 35 4:30 GMT is 1",
+        "label": "1"
+    },
+    {
+        "prediction": "3. 4 18-year-old Gaut 2",
+        "label": "4"
+    },
+    {
+        "prediction": "2. The 3rd sentence should read \"Davis' 4",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 1. The summary contains errors in the tense",
+        "label": "1"
+    },
+    {
+        "prediction": "4. The mother said that Venables, not Thompson, is 3",
+        "label": "2"
+    },
+    {
+        "prediction": "4. 1) 2 girls instead of 3, 2",
+        "label": "4"
+    },
+    {
+        "prediction": "1 2 3 4. 2. The [SUM",
+        "label": "4"
+    },
+    {
+        "prediction": "2. 3 4ins is incorrectly written as \" 1",
+        "label": "3"
+    },
+    {
+        "prediction": "4. The summary incorrectly states that defence policy is \"not 3",
+        "label": "1"
+    },
+    {
+        "prediction": "2. The 4th sentence should read \"Brighton 1",
+        "label": "4"
+    },
+    {
+        "prediction": "2. 3. 4. The summary incorrectly ident 1",
+        "label": "4"
+    },
+    {
+        "prediction": "4. The summary incorrectly states that Lewis Hamilton crashed out of 2",
+        "label": "3"
+    },
+    {
+        "prediction": "2. 3 4. The summary contains two errors: 1",
+        "label": "2"
+    },
+    {
+        "prediction": "4. 1 error 2 omissions. The summary does 3",
+        "label": "3"
+    },
+    {
+        "prediction": "2. The 3rd sentence should read \"a new bur 4",
+        "label": "4"
+    }
+]

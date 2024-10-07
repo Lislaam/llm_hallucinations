@@ -10,8 +10,12 @@ OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 OUTPUT_DIR2 = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning2"
 
 LABEL_CONVERSIONS2 = {
-                      'extrinsic': '0',
-                      'intrinsic': '1',
+                    '1' : '1',
+                    '2' : '2',
+                    '3' : '3',
+                    '4' : '4',
+                    #   'extrinsic': '0',
+                    #   'intrinsic': '1',
 }
 
 LABEL_CONVERSIONS = {
@@ -84,7 +88,7 @@ def f1_score_binary(y_true, y_pred):
     return f1_score(trues, preds, average='macro')
 
 
-def f1_score_ext(y_true, y_pred):
+def f1_score2(y_true, y_pred):
     processed_refs = [LABEL_CONVERSIONS2[ref] for ref in y_true] # Convert labels to numbers (same conversion as predictions)
     trues = []
     preds = []
@@ -98,6 +102,33 @@ def f1_score_ext(y_true, y_pred):
             preds.append('1') if true == '0' else preds.append('0')
 
     return f1_score(trues, preds, average='macro')
+
+
+def get_score2(preds, refs):
+    # Predictions are numbers corresponding to an error type.
+    processed_refs = [LABEL_CONVERSIONS2[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
+
+    class_errors = {'1': 0, '2': 0, '3': 0, '4': 0}
+
+    num_1 = sum([1 for ref in refs if ref == '1']) if '1' in refs else 1
+    num_2 = sum([1 for ref in refs if ref == '2']) if '2' in refs else 1
+    num_3 = sum([1 for ref in refs if ref == '3']) if '3' in refs else 1
+    num_4 = sum([1 for ref in refs if ref == '4']) if '4' in refs else 1
+
+    total = 0 # Overall accuracy
+    for i in range(len(preds)):
+        if soft_match(preds[i], processed_refs[i]):
+            total += 1
+            class_errors[refs[i]] += 1
+
+    scores = {'total': total / len(refs),
+            '1': class_errors["1"] / num_1 if '1' in refs else None,
+            '2': class_errors["2"] / num_2 if '2' in refs else None,
+            '3': class_errors["3"] / num_3 if '3' in refs else None,
+            '4': class_errors["4"] / num_4 if '4' in refs else None
+            }
+    
+    return scores
 
 
 def get_extrinsic_intrinsic_score(preds, refs):

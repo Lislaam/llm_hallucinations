@@ -1,0 +1,354 @@
+[
+    {
+        "prediction": "3\n\n### ORIGINAL_TEXT: For many people with severe disabilities, their families",
+        "label": "3"
+    },
+    {
+        "prediction": "2\n\n### 3rd Test Case\n### ORIGINAL_TEXT: 4",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 5 6 7 8 9",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n### 2nd Test Case\n### ORIGINAL_TEXT: 3",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n 3 4 2 1 5 6",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\nThe 2nd and 3rd sentences of the summary are",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\nThe 2nd and 3rd sentences of the SUMMARY are",
+        "label": "1"
+    },
+    {
+        "prediction": "2 3 4 1 2 3 4 1",
+        "label": "4"
+    },
+    {
+        "prediction": "3 4 2 1 3 4 2 1",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The 2014 2",
+        "label": "3"
+    },
+    {
+        "prediction": "2\n\n### 3rd Test Case\n### ORIGINAL_TEXT: 4",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4\n\n### ORIGINAL_TEXT: Myra Forde's",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n 2 3 4 5 6 7",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\nThe 4 errors in the summary are:\n1. 2",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL TEXT: The columnist told the 3",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n### ORIGINAL_TEXT: The 2015 Rugby World Cup 4",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n### 4.1.1.1.1 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n 3 4 2 1 3 4",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\nThe 4 errors in the summary are:\n1. 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3 3 4 3\n\n### ORIGINAL_TEXT: The 2",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4\n\n### ORIGINAL_TEXT: Police said that someone opened",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 1 2 3 4 1",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\nThe 4 errors in the summary are:\n1. 2",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL_TEXT: The UK's largest 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The \"black box 2",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: -LRB- 2",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL TEXT: The victim was fatally 3",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL_TEXT: The 2019 3",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 3 2 3 4 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 3 4 3 4 2",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\nThe 4 errors in the summary are:\n1. 2",
+        "label": "3"
+    },
+    {
+        "prediction": "2\n\n### ORIGINAL_TEXT: The US Federal Reserve has cut interest 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL TEXT: The 2015 2",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4 1 2 3 4 1",
+        "label": "1"
+    },
+    {
+        "prediction": "2 3 4 5 6 7 8 9",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL TEXT: The 2019 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### 4.1.1.1.1 2",
+        "label": "2"
+    },
+    {
+        "prediction": "2\n\n### 3rd Test Case\n### ORIGINAL_TEXT: 4",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4\n\n### ORIGINAL_TEXT: The move apparently follows a",
+        "label": "2"
+    },
+    {
+        "prediction": "2 3 4 1 2 3 4 1",
+        "label": "2"
+    },
+    {
+        "prediction": "3 3 4 3 3 3 2 3",
+        "label": "1"
+    },
+    {
+        "prediction": "2 3 4 1 2 3 4 1",
+        "label": "3"
+    },
+    {
+        "prediction": "4 3 4 3 2 3 4 3",
+        "label": "2"
+    },
+    {
+        "prediction": "4 3 4 3 4 3 4 2",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The UK's biggest 2",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL TEXT: The European Union's 3",
+        "label": "3"
+    },
+    {
+        "prediction": "4 3 4 2 3 4 2 3",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The incident happened on 2",
+        "label": "3"
+    },
+    {
+        "prediction": "4 3 4 3 2 3 4 2",
+        "label": "2"
+    },
+    {
+        "prediction": "2 3 4 5 6 7 8 9",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\nThe 2nd and 3rd sentences of the summary are",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### ORIGINAL_TEXT: Mr Abbott told Australian media that the 4",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL_TEXT: The 2019 3",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\nThe output is 3 because there are 3 errors 4",
+        "label": "1"
+    },
+    {
+        "prediction": "2 3 4 5 6 7 8 9",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 3 4 3 4 2",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The 2019 2",
+        "label": "4"
+    },
+    {
+        "prediction": "3 3 4 3 3 2 3 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### 4.1.1.1.1 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n### 4.1.1.2.3 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The bodies of 2 British",
+        "label": "3"
+    },
+    {
+        "prediction": "2\n\n### 3rd Test Case\n### ORIGINAL_TEXT: 4",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL_TEXT: The 17-year 3",
+        "label": "2"
+    },
+    {
+        "prediction": "2\n\n### 3rd Test\n### ORIGINAL_TEXT: The 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n 2 3 4 5 6 7",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL TEXT: The 2014 3",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 1 2 3 4 1",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL_TEXT: The new policy, 3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The United States has 2",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 1\n\n### ORIGINAL_TEXT: The All Progress",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n 3 4 5 6 7\n 2",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\nThe 4 errors in the summary are:\n1. 2",
+        "label": "1"
+    },
+    {
+        "prediction": "2\n\n### 3rd Test: India vs England 4th Day",
+        "label": "2"
+    },
+    {
+        "prediction": "2 3 4 1 2 3 4 1",
+        "label": "1"
+    },
+    {
+        "prediction": "3 4 2 1 3 4 2 1",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 3 4 3 4 2",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n### 4. ORIGINAL_TEXT: The 2016 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\nThe 4th error is that the summary does not 2",
+        "label": "2"
+    },
+    {
+        "prediction": "3 4 2 1 3 4 2 1",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 3 4 3 4 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4 3 4 2 3 4 2 3",
+        "label": "3"
+    },
+    {
+        "prediction": "2\n\nThe 3 errors in the summary are:\n1. 4",
+        "label": "1"
+    },
+    {
+        "prediction": "3 3 4 3 2 3 3 3",
+        "label": "4"
+    },
+    {
+        "prediction": "4 4 2 3 4 2 3 4",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n### 4.1.1.2.3 2",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n### 2nd ORIGINAL_TEXT: The 2011 3",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n### 4.1.1.1.1 2",
+        "label": "3"
+    },
+    {
+        "prediction": "4 3 4 3 4 3 4 2",
+        "label": "4"
+    }
+]

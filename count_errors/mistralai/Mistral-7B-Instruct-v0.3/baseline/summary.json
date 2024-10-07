@@ -1,0 +1,354 @@
+[
+    {
+        "prediction": "3\n\n The summary contains 3 errors:\n\n 1.",
+        "label": "3"
+    },
+    {
+        "prediction": "1 2 3 4\n\n The summary contains 4 errors",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n\n---",
+        "label": "4"
+    },
+    {
+        "prediction": "2\n\n ### ORIGINAL_TEXT: Media play 4",
+        "label": "4"
+    },
+    {
+        "prediction": "1 2 3 4",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\nThe summary contains 4 errors:\n\n1 2",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n 2 errors were found in the summary:\n 3",
+        "label": "1"
+    },
+    {
+        "prediction": "4 1 2 3\n\n The summary contains 4 errors",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n[OUTPUT FORMAT]\nPlease output the number 1",
+        "label": "3"
+    },
+    {
+        "prediction": "1\n\n 2022-03-2 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n[OUTPUT FORMAT]\nPlease output the number 4",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n The summary contains 3 errors:\n 1 4",
+        "label": "4"
+    },
+    {
+        "prediction": "2\n\n 3\n\n The summary is missing the information 4",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3 4\n[",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n The summary contains 4 errors:\n\n1 3",
+        "label": "4"
+    },
+    {
+        "prediction": "1\n\n 26, Steve is a fine young man 4",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n 4 errors found in the summary:\n\n 1",
+        "label": "4"
+    },
+    {
+        "prediction": "2\n\n 3 errors found in the summary:\n\n 4",
+        "label": "2"
+    },
+    {
+        "prediction": "4 1 2 3\n\n The summary contains 4 errors",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n ### ORIGINAL_TEXT: 2 4",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3 4",
+        "label": "4"
+    },
+    {
+        "prediction": "2\n\n 3 4 1 2\n[1,",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n The summary contains three errors:\n\n 1 4",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n\n 4",
+        "label": "3"
+    },
+    {
+        "prediction": "4 1 2 3\n\n The [SUMMARY",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n### ORIGINAL_TEXT: -L 4",
+        "label": "1"
+    },
+    {
+        "prediction": "1 2 3, or 4\n\n 3",
+        "label": "3"
+    },
+    {
+        "prediction": "1 2 3 4\n\n ### ORIGINAL_",
+        "label": "4"
+    },
+    {
+        "prediction": "2\n\n 3\n\n 4\n\n 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\nThe summary has 4 errors:\n1. 3",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n The summary is missing the information that the Nevada Athletic Commission",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n ### ORIGINAL_TEXT: A b 2",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n 4 errors found in the summary:\n\n 1",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4\n\n 1 error: \"rape\"",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3 4",
+        "label": "2"
+    },
+    {
+        "prediction": "1 2 3 4\n\n 1\n\n The summary",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4 5 are not valid outputs. The 1",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n\n 4",
+        "label": "3"
+    },
+    {
+        "prediction": "2\n\n 3 errors found in the summary:\n\n 4",
+        "label": "2"
+    },
+    {
+        "prediction": "1 2 3 4\n\n The [SUMMARY",
+        "label": "2"
+    },
+    {
+        "prediction": "2 3 4 4\n\nThe summary contains four 1",
+        "label": "1"
+    },
+    {
+        "prediction": "2 3 4\n The summary contains 4 errors:\n1",
+        "label": "3"
+    },
+    {
+        "prediction": "1 2 3 4\n\n The [SUMMARY",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3 4",
+        "label": "2"
+    },
+    {
+        "prediction": "4 1 2 3\n The summary contains four errors:",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n 2 errors in the summary:\n 1. The summary",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4 5 are incorrect. The correct answer 1",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n -- ----",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4 5\n\n The summary contains several 1",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3 4",
+        "label": "2"
+    },
+    {
+        "prediction": "3 4 1\n\nThere are 3 errors in the summary",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n--- ----",
+        "label": "2"
+    },
+    {
+        "prediction": "1 2 3 4\n\n ### ORIGINAL_",
+        "label": "2"
+    },
+    {
+        "prediction": "2\n\n 3 4 1 2\n[1,",
+        "label": "1"
+    },
+    {
+        "prediction": "2 3 4\n\n 1 error: \"jersey'",
+        "label": "4"
+    },
+    {
+        "prediction": "3\n\n 4\n\n 2\n\n 1",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3 4",
+        "label": "4"
+    },
+    {
+        "prediction": "3",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n 4 out of 5 children in England who 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n 4 errors in the summary:\n\n1 2",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n ### ORIGINAL_TEXT: The bodies 4",
+        "label": "3"
+    },
+    {
+        "prediction": "2\n\n 3\n\n 4\n\n 1",
+        "label": "1"
+    },
+    {
+        "prediction": "1 2 3 4\n\n 1\n\n In the",
+        "label": "2"
+    },
+    {
+        "prediction": "3\n\n ### ORIGINAL_TEXT: The G 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n ### ORIGINAL_TEXT: The 49",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n\n---",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4\n\n The [SUMMARY] contains",
+        "label": "4"
+    },
+    {
+        "prediction": "1 2 3 4\n\n 1\n\n The summary",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n 4 errors found in the summary:\n\n 2",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n The summary contains 4 errors:\n\n1 3",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n ### ORIGINAL_TEXT: The Liberal 4",
+        "label": "3"
+    },
+    {
+        "prediction": "3\n\n The summary contains 3 errors:\n\n1 4",
+        "label": "1"
+    },
+    {
+        "prediction": "1 2 3 4\n 1\n\n ### SUM",
+        "label": "2"
+    },
+    {
+        "prediction": "2 3 4\n\n 2 errors found in the 1",
+        "label": "1"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3 4",
+        "label": "4"
+    },
+    {
+        "prediction": "2\n\n 3\n 4\n 2\n 1",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4\n\n The summary contains 3 errors 1",
+        "label": "1"
+    },
+    {
+        "prediction": "4\n\n The summary contains 4 errors:\n\n1 3",
+        "label": "2"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n\n 1",
+        "label": "4"
+    },
+    {
+        "prediction": "1 2 3 4 are incorrect.",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 1\n\n 1 error: \"tr",
+        "label": "3"
+    },
+    {
+        "prediction": "4\n\nThe summary contains 4 errors:\n1. 3",
+        "label": "1"
+    },
+    {
+        "prediction": "2\n\n 4 errors found:\n1. \"st 1",
+        "label": "4"
+    },
+    {
+        "prediction": "2 3 4 5 are not valid outputs. 1 or",
+        "label": "4"
+    },
+    {
+        "prediction": "4\n\n The summary contains 4 errors:\n\n1 2",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4 1\n\n The summary contains 4 errors",
+        "label": "2"
+    },
+    {
+        "prediction": "4 1 2 3\n\n The [SUMMARY",
+        "label": "3"
+    },
+    {
+        "prediction": "2 3 4\n\nThe [SUMMARY] states",
+        "label": "4"
+    }
+]

@@ -1,3 +1,12 @@
+COUNT_ERRORS = """
+You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors.
+You must refer to differences between a [SUMMARY] and [ORIGINAL TEXT] to count the number of errors in the [SUMMARY].
+Each [SUMMARY] contains 1-4 errors in total.
+
+[OUTPUT FORMAT]
+Please output the number of errors as a single integer in the range [1,2,3,4] only. Do not output more than one integer.
+"""
+
 SYSTEM_INSTRUCTION = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
 Given the [ERROR LOCATIONS] you must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the error type.

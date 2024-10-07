@@ -43,7 +43,7 @@ commands=(
     # "python3 sft_main.py --llm='google/gemma-1.1-7b-it' --do_fine_tune='n' --dir='correct_incorrect'"
 
     #"python3 sft_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='y' --dir='correct_incorrect'"
-    "python3 sft_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='y' --dir='correct_incorrect'"
+    # "python3 sft_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='y' --dir='correct_incorrect'"
     "python3 sft_main.py --llm='google/gemma-1.1-7b-it' --do_fine_tune='y' --dir='correct_incorrect'"
 )
 

@@ -1,0 +1,1234 @@
+[
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. False. The original text does not mention Peggy 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 1. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. The summary adds details not found in the original text.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 0. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. There are no errors in the summary. It 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The summary adds details not found in the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. There are errors in the summary. 0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The landfill is not located in Haiti, Venezuela 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The summary is a direct copy of the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 1. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. There are no errors in the summary. It 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. I did not find this information in the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. The summary is a good summary of the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 1. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 0.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1. 0. 0. 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0. 0.0. 1.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. The summary adds details not found in the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. There is no mention of a \"change in 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0 0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. #### 0. I think there is an error in",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 1. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 0. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0 0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0. 0.0. 1.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. There are no added details in the summary. 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The summary does not add any details not found 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 1. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. There is no mention of Theresa May slipping on 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. The summary does not match the original text. 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. The summary mischaracterizes the original text information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. False. The summary adds details not found in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The summary does not match the original text. The original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0 0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0 1.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0. 0.0. 1.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0 0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The summary adds details not found in the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0 1.0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 0. 0. 0. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 0.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. 1. 0. 1. 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. 1.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "intrinsic"
+    }
+]

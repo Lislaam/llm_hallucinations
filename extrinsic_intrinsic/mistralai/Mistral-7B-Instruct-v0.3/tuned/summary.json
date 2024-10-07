@@ -1,0 +1,1234 @@
+[
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.99999999999 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is accurate in its description of 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### SUMMARY: alec st 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary mentions a glass chimney, but",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n Paul Sheerin is the new manager 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The author did not express shock about comments 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary states that Prime Minister Narendra",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that LP 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect as it does not 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not accurately reflect the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n ### ORIGINAL_TEXT: 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n ### SUMMARY: the story of katherine",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary suggests that the housing and housing associations are",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The [SUMMARY] states 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that James 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information about 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The landfill is not located in H 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### SUMMARY: jilted 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n ### SUMMARY: voters in holyro",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary correctly states that Monsour Al 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect as the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### SUMMARY: the giant ar 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00\n ### Explanation: The error is 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The [SUMMARY] does 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.99999999999 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### SUMMARY: russia 0-",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect as it states that 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not accurately reflect the information in the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary correctly states that B.B. King",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.99999999999 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that Steve 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary correctly states that Shay Given 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that Oxford 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n ### SUMMARY: the kite , dub",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that an 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not accurately represent the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect as it suggests that 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The [SUMMARY] does not match",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n### ORIGINAL_TEXT: 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that H 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is mostly correct, but it 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not mention any suspicion of terrorism",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The error in the summary is that the 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary states that there was a major quake",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect as it does not specify that",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that a 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that Michelle 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.99999999999 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary incorrectly states that Theresa 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect as it states that 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect. Hereford United were exp",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n ### ORIGINAL_TEXT: Media play",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n ### Explanation: The original text does not mention",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The [SUMMARY] states 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not accurately reflect the information in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### SUMMARY: Glasgow Warriors 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect as it states that 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not mention the specific nature 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.99999999999 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect. The match was not played",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\nThe summary correctly states that Dr Bav 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary correctly states that Michelle Manh 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The [SUMMARY] states that the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary states that a whisky dist 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The error type is 0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The 19-year-old 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary correctly states 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n ### SUMMARY: if your name 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that 0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The [SUMMARY] does not accurately",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary accurately reflects the information in the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that Mac 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that an 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is accurate in stating that the 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that India 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect as HMRC did not",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect as it mischaracter 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary correctly states that Riddick 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary accurately describes the events in the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary states that 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is accurate in stating that eight 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary states that Adam Voges 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not accurately reflect the information 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is correct as it accurately states 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The [SUMMARY] does not accurately",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary does not mention the details about 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect as the original text 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect as it states that 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not mention that the movie is a",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary mentions 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\nThe summary is mostly correct, but it 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.99999999999 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary does not mention the Garfield 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n### SUMMARY: Britt 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n ### Explanation: The summary is correct 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary correctly identifies the event as 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that more 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n ### ORIGINAL_TEXT: Media play",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary correctly states that Mike Tind 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary correctly states that Dr Ram Man 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n Angela Moore is a publicist for Claud 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect as it states that the UK",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n ### SUMMARY: the Gavers 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is correct in stating that the 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mentions that Manchester City face 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary is incorrect as it states that 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The original text does not mention the UK 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect because it refers to 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The [SUMMARY] states 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\nThe summary is accurate in stating that Lloyd 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary is incorrect because it attributes the 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    }
+]
