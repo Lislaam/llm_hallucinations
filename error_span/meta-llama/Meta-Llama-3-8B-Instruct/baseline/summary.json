@@ -1,0 +1,2252 @@
+[
+    {
+        "prediction": [
+            "eastenders actress mitchell mitchell is to return to eastenders",
+            "after the death of eastenders actress mitchell mitchell.",
+            ""
+        ],
+        "label": [
+            "eastenders after the death of eastenders actress mitchell mitchell",
+            "actress",
+            "after the death of eastenders actress mitchell"
+        ]
+    },
+    {
+        "prediction": [
+            "mclaren arrived at this weekend's monaco grand prix, on which they mark the 50th anniversary of their first entry in formula 1, hoping the race would be their best chance of a decent result so far this year-and",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "50th",
+            "formula ",
+            "arrived at this weekend\\'s monaco",
+            "formula",
+            "first entry ",
+            "first entry"
+        ]
+    },
+    {
+        "prediction": [
+            "Four decommissioned Royal Navy frigates are set to be sold as scrap after no bids were received for them, the BBC has learned."
+        ],
+        "label": [
+            "are set to be sold as scrap after no bids were received for them"
+        ]
+    },
+    {
+        "prediction": [
+            "Police said that someone opened fire from a passing car and witnesses spoke of up to a dozen shots being fired close to the main police station.",
+            "The shots were fired in Friedrich-Stoltze Square, a busy area of bars and cafes, as",
+            "",
+            ""
+        ],
+        "label": [
+            "two",
+            "two shots have been fired at",
+            "city of duesseldorf",
+            "german city of duesseldorf"
+        ]
+    },
+    {
+        "prediction": [
+            "leeds rhinos have been given # 1m to help save the grade ii-listed lido in leeds.",
+            ""
+        ],
+        "label": [
+            "grade ii-listed lido",
+            "given"
+        ]
+    },
+    {
+        "prediction": [
+            "a kuwaiti inmate at guantanamo bay has been arrested by the us supreme court on suspicion of involvement in the us supreme court.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "by the us supreme court",
+            "us supreme court",
+            "involvement in the us supreme court",
+            "arrested by the us supreme court",
+            "bay"
+        ]
+    },
+    {
+        "prediction": [
+            "tesco has agreed to sell 4,000 of its fresh & easy stores to the investment company yucaipa companies.",
+            "tesco has agreed to sell 150 of its fresh & easy stores to the investment company yucaipa companies.",
+            "",
+            ""
+        ],
+        "label": [
+            "companies",
+            "tesco has agreed to sell 150 of its fresh & easy stores to the investment company yucaipa companies",
+            "agreed to sell 150 of its fresh & easy",
+            "150"
+        ]
+    },
+    {
+        "prediction": [
+            "the wife of one of the world's most famous competitors athletes has said she is ``shocked''by the lack of success in the sport.",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "she is ``shocked\\'\\'",
+            "wife",
+            "world\\'s most famous",
+            "the wife",
+            "lack of success ",
+            "lack of success"
+        ]
+    },
+    {
+        "prediction": [
+            "A force spokesman said detectives were \"keeping an open mind\" as to whether it was linked to two similar incidents in the city.",
+            "The same officers are looking into the latest discoveries and will look to confirm beyond all reasonable doubt that they are linked"
+        ],
+        "label": [
+            "woman\\'s body",
+            "in somerset"
+        ]
+    },
+    {
+        "prediction": [
+            "Roy Oliver, 37, fired a rifle into a car that was driving away from a party in the Dallas suburb of Balch Springs in April, killing Jordan Edwards, 15.",
+            "He was also charged with four counts of aggravated assault with",
+            ""
+        ],
+        "label": [
+            "us state of texas",
+            "unarmed black teenager in the head",
+            "us state"
+        ]
+    },
+    {
+        "prediction": [
+            "the 39-year-old, who goes by the name Mick Fett, was born the year the first film in the series came out.",
+            "Since the 1990s, Fett has amassed a vast collection of action figures, costumes and"
+        ],
+        "label": [
+            "movie",
+            "australian"
+        ]
+    },
+    {
+        "prediction": [
+            "youtube has become the first country in pakistan to introduce a ban on youtube on youtube.",
+            "",
+            ""
+        ],
+        "label": [
+            "first country",
+            "in pakistan",
+            "youtube"
+        ]
+    },
+    {
+        "prediction": [
+            "properties in north kensington should be ``requisitioned if necessary''for people left homeless after the grenfell tower fire, jeremy corbyn says."
+        ],
+        "label": [
+            "jeremy"
+        ]
+    },
+    {
+        "prediction": [
+            "The boy, Julian Hernandez, disappeared when he was five and is now 18, living with his father in Cleveland.",
+            "His father is also charged with tampering with records in Ohio so he could obtain a driver's licence in 201"
+        ],
+        "label": [
+            "12-year-old",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Warrington remain fifth in the Super League table, while eighth-placed Widnes are three points clear of Hull KR, in ninth, who have a game in hand.",
+            ""
+        ],
+        "label": [
+            "third",
+            "win over"
+        ]
+    },
+    {
+        "prediction": [
+            "The university said the move at Singleton Park was \"precautionary\". South Wales Police received a call at about 13:30 BST after concerns about the safe storage of chemicals before a controlled explosion took place. Nobody was injured and a police"
+        ],
+        "label": [
+            "Swansea"
+        ]
+    },
+    {
+        "prediction": [
+            "the scottish government has been accused of unfairly unfair by a watchdog after a report found that a council tax system was not stored.",
+            ""
+        ],
+        "label": [
+            "not stored",
+            "scottish government has been accused"
+        ]
+    },
+    {
+        "prediction": [
+            "world number one rory mcilroy missed the cut at the us pga championship as he took a two-shot lead after two rounds of the honda classic",
+            "",
+            ""
+        ],
+        "label": [
+            "rory",
+            "the cut at the us pga championship as he took a two-shot lead after two rounds of the honda classic",
+            "missed the cut at the us pga championship as he took a two-shot lead after two rounds of the honda classic"
+        ]
+    },
+    {
+        "prediction": [
+            "the mayor of skegness has called for a debate on animal cruelty in a public debate about animal cruelty.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "in a public debate",
+            "has called for a debate",
+            "called for a debate",
+            "public debate"
+        ]
+    },
+    {
+        "prediction": [
+            "syrian president bashar al-assad has urged the syrian government to end a ``humanitarian pause''in aleppo.",
+            "",
+            ""
+        ],
+        "label": [
+            "syrian",
+            "end a ``humanitarian pause",
+            "syrian government"
+        ]
+    },
+    {
+        "prediction": [
+            "Crews were called to a building site in Bloomery Circle, Llanwern, at 21:15 BST on Wednesday.",
+            "The blaze burned for more than 10 hours before it was extinguished.",
+            "It is understood the"
+        ],
+        "label": [
+            "derelict building in newport",
+            "derelict",
+            "newport"
+        ]
+    },
+    {
+        "prediction": [
+            "The poverty rate was 15% in 2011, meaning 46.2 million Americans were in poverty, staying flat after three previous years of increases.",
+            "Poverty in the US reached a record high in 2010, at",
+            ""
+        ],
+        "label": [
+            "fallen to its lowest level since 2011",
+            "office for national statistics ( ons )",
+            "has fallen to its lowest level"
+        ]
+    },
+    {
+        "prediction": [
+            "Many women have questioned the safety of the implants, which are used to treat incontinence, after suffering debilitating side effects.",
+            "Two patients sitting on the original review group quit in protest at what they said was a watered-down report.",
+            ""
+        ],
+        "label": [
+            "published by msps",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "the scheme will see a preservation plan drawn up for the river skerne. it will include initiatives to protect natural habitats as well as industrial and agricultural sites.",
+            "the project, called the bright water landscape partnership, covers 200sq km - l"
+        ],
+        "label": [
+            "east yorkshire",
+            "east yorkshire"
+        ]
+    },
+    {
+        "prediction": [
+            "The men are believed to have been working in a paint-spraying area.",
+            "A forensic search has been carried out at the company, which makes buckets for diggers.",
+            "Evidence gathered so far suggests there has been a flashover explosion,"
+        ],
+        "label": [
+            "field in county durham",
+            "in a field in county durham",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Benteke becomes the Reds' second most expensive signing, on what the club describe as a long-term contract.",
+            "Liverpool, who last week sold forward Raheem Sterling to Manchester City for \u00c2\u00a349m, triggered a release"
+        ],
+        "label": [
+            "five-year deal",
+            "liverpool"
+        ]
+    },
+    {
+        "prediction": [
+            "The event included readings from",
+            "The service saw wreaths laid at the war memorial, including one on behalf of the city placed by the Lord Mayor of Portsmouth, councillor Frank Jonas.",
+            "A special VJ Day Choral Evensong was"
+        ],
+        "label": [
+            "soldiers",
+            "mark the 70th anniversary",
+            "to mark the 70th anniversary"
+        ]
+    },
+    {
+        "prediction": [
+            "The stone got past the elephant's fence and a ditch separating the animal and visitors, the zoo said in a statement.",
+            "an elephant has been hit by a stone at a zoo in western france after it was hit by a tree.",
+            "",
+            ""
+        ],
+        "label": [
+            "elephant has been hit by a stone",
+            "western france after it was hit by a tree",
+            "an elephant",
+            "an elephant has been hit by a stone at a zoo in western france after it was hit by a tree"
+        ]
+    },
+    {
+        "prediction": [
+            "a haul of alcohol seized in china's guangxi province has been arrested in china, a court in china has ruled.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "has been arrested in china, a court in china has ruled",
+            "guangxi province",
+            "arrested",
+            "a court in china has ruled",
+            "has been arrested"
+        ]
+    },
+    {
+        "prediction": [
+            "Tony Fernandes spoke of his despair after his Queens Park Rangers team twice threw away a lead against Aston Villa, with the Rangers chairman watching the scenes at Villa Park from afar on his iPhone.",
+            "Taking all three points wasn't to be for"
+        ],
+        "label": [
+            "Saturday",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Officers believe the local man, who was working at Fruehauf on Houghton Road, fell from a cherry picker at about 13:45 GMT on Thursday.",
+            "Lincolnshire Police said it was carrying out a joint inquiry with",
+            ""
+        ],
+        "label": [
+            "tree",
+            "died",
+            "lincolnshire"
+        ]
+    },
+    {
+        "prediction": [
+            "an inquest into the death of a man who was struck by a train at a somerset hospital has found a number of mental health patients died."
+        ],
+        "label": [
+            "mental health patients died"
+        ]
+    },
+    {
+        "prediction": [
+            "John Lahiff, 75, told local media that he disturbed the crocodile while looking for a ball in water at the course in Port Douglas, Queensland.",
+            "He was taken to hospital with a deep laceration to his shin and punct",
+            "",
+            ""
+        ],
+        "label": [
+            "surfer",
+            "australia",
+            "a australian australian surfer has said he is ``lucky to be alive",
+            "lucky to be alive"
+        ]
+    },
+    {
+        "prediction": [
+            "It was due for release in Malaysia on Thursday, but Disney said it was being held for a \"review\" of its content.",
+            "The Malaysian Censorship Board (LPF) said on Tuesday it had approved the screening but with \"a",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "film\\'s release",
+            "lpga film",
+            "lpga",
+            "the beast",
+            "removed"
+        ]
+    },
+    {
+        "prediction": [
+            "The SNP defended MP and MSP Mr Salmond saying he was on constituency business.",
+            "A spokesman stated that Mr Salmond attended a \"full briefing\" on Wednesday from the security services and the joint chiefs about the Syria situation and there was \"nothing"
+        ],
+        "label": [
+            "first minister",
+            "former first minister"
+        ]
+    },
+    {
+        "prediction": [
+            "Barca paid \u00c2\u00a348.6m for Santos striker Neymar, 22, in the summer with his parents receiving \u00c2\u00a334m of the fee.",
+            "Between the initial fee paid in the summer, signing-on fee, wages during"
+        ],
+        "label": [
+            "from barcelona for # [UNK] m (# [UNK] m",
+            "rejected a bid from barcelona"
+        ]
+    },
+    {
+        "prediction": [
+            "The Warriors were down by 13 points during the first half but fought back in the third quarter.",
+            "The defending champions will now face a title rematch with the Cleveland Cavaliers and star player LeBron James.",
+            "Warriors host the Cavaliers in the first",
+            ""
+        ],
+        "label": [
+            "beaten 7-0 by golden state warriors in the nba finals",
+            "nba finals",
+            "golden state warriors",
+            "7-0"
+        ]
+    },
+    {
+        "prediction": [
+            "He spent last season in charge of the Under-20 development squad, but will not return for the start of pre-season training.",
+            "Rangers manager Mark Warburton wants to alter the coaching personnel, leaving Durrant without a position at"
+        ],
+        "label": [
+            "defender Alan",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Pulido, who plays for the Greek club, Olympiakos, cut his wrist when he punched a glass pane on a door as he tried to escape before police arrived.",
+            "Pulido, 25, was abducted at gun",
+            ""
+        ],
+        "label": [
+            "freed",
+            "claudio",
+            "mexico football player and international footballer claudio"
+        ]
+    },
+    {
+        "prediction": [
+            "a suspect in the murder of russian spy alexander litvinenko may have been linked to the murder of russian spy alexander litvinenko, a court has heard.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "alexander",
+            "may have been linked to the murder of russian spy alexander litvinenko, a court has heard",
+            "may have been linked to the murder of russian spy alexander litvinenko, a court has heard.",
+            "russian spy alexander"
+        ]
+    },
+    {
+        "prediction": [
+            "The accuseds name was given to Coleraine Magistrates Court as John Malachy McGurk of Oakland Crescent in Knockloughrim, Magherafelt, County Londonderry.",
+            "He was charged with stealing \u00c2\u00a3572"
+        ],
+        "label": [
+            "county antrim",
+            "county antrim football team"
+        ]
+    },
+    {
+        "prediction": [
+            "The renowned writer was born and educated in Kilmarnock.",
+            "He gained immediate recognition with the publication of his first novel - Remedy Is None - and through other works he earned the title of \"Godfather of Tartan Noir\"."
+        ],
+        "label": [
+            "given the freedom",
+            "the freedom of"
+        ]
+    },
+    {
+        "prediction": [
+            "A 25 - year - old man has died after being shot in the chest in Sheffield."
+        ],
+        "label": [
+            "25 - year"
+        ]
+    },
+    {
+        "prediction": [
+            "With Jordan Tansey having returned to Wakefield, the opportunity for another outside back to come into the squad was there,",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "championship side",
+            "on loan until the end of the season",
+            "hull kr centre",
+            "loan until the end of the season"
+        ]
+    },
+    {
+        "prediction": [
+            "Brightons recent win over Wigan confirmed their promotion, and with a four-point lead over second-placed Newcastle, Chris Hughtons side are now hoping to wrap up the league title in the final two matches.",
+            "Sidwell made"
+        ],
+        "label": [
+            "Jack",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "the ministry of defence has announced it will close its barracks in brecon, south wales, as part of a nationwide closure.",
+            ""
+        ],
+        "label": [
+            "south wales, as part of a nationwide ",
+            "south wales, as part of a nationwide"
+        ]
+    },
+    {
+        "prediction": [
+            "Sean Murray (Colchester United) is shown the red card for violent conduct.",
+            "Sean Murray (Colchester United) right footed shot from the centre of the box is blocked.",
+            "Sean Murray (Colchester United) wins a free kick"
+        ],
+        "label": [
+            "long\\'s",
+            "equaliser",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Widnes moved above Wakefield into seventh, while Castleford remain in sixth, one point above the Vikings.",
+            "",
+            ""
+        ],
+        "label": [
+            "victory",
+            "super league leaders castleford tigers",
+            "moved level on points with super league leaders"
+        ]
+    },
+    {
+        "prediction": [
+            "a farmer has been jailed for six years for causing the death of a boy by careless driving.",
+            "",
+            ""
+        ],
+        "label": [
+            "farmer",
+            "a farmer has been jailed for six years for causing the death of a boy by careless driving",
+            "six years"
+        ]
+    },
+    {
+        "prediction": [
+            "the latest threats bring the number of incidents to 69 in 27 states in the past month, according to the JCC Association of North America.",
+            "Since the beginning of the year, there have been reports of threats to centres in New York"
+        ],
+        "label": [
+            "after 11 sites were evacuated on monday",
+            "another wave of bomb threats to jewish facilities in the us after 11 sites were evacuated on monday"
+        ]
+    },
+    {
+        "prediction": [
+            "the number of people using plastic carrier bags in england has reached a record high."
+        ],
+        "label": [
+            "record high"
+        ]
+    },
+    {
+        "prediction": [
+            "I remember the day I stopped praying. It was the day after my little brother, Jimmy, died of cancer. He was 25. I was so angry at God. I was 27 at the time, and, like most young people"
+        ],
+        "label": [
+            "cardinal francis"
+        ]
+    },
+    {
+        "prediction": [
+            "the death of a russian whistleblower who died in russia last month was ``involved in the murder'', an inquiry has heard.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "involved in the murder",
+            "in russia",
+            "was ``involved in the murder\\'",
+            "russia",
+            "russian whistleblower"
+        ]
+    },
+    {
+        "prediction": [
+            "He died at his home in Cambridge following an illness lasting several months, a statement on his website said.",
+            "Among his most famous recordings include the 1980 version of Handel's Messiah with Emma Kirkby and Carolyn Watkinson, which",
+            ""
+        ],
+        "label": [
+            "british",
+            "73",
+            "aged 73"
+        ]
+    },
+    {
+        "prediction": [
+            "The man, allegedly a Bangladeshi citizen, was arrested at a railway station in Kolkata (Calcutta). The incident caused outrage in India and led to street protests in many cities across the country. This marks the sixth arrest in the"
+        ],
+        "label": [
+            "West Bengal"
+        ]
+    },
+    {
+        "prediction": [
+            "the death of a londonderry schoolboy police officer has prompted a plea from the government to establish the ``fabric of our national life''.",
+            ""
+        ],
+        "label": [
+            "londonderry schoolboy police officer",
+            "the death of a londonderry schoolboy police officer has prompted a plea from the government to establish the ``fabric of our national life"
+        ]
+    },
+    {
+        "prediction": [
+            "ben parkinson's disease is ``absolutely bouncing and buoyed''and ``bouncing''and ``bouncing and buoyed''by the brain, according to a charity."
+        ],
+        "label": [
+            "brain, according to a charity"
+        ]
+    },
+    {
+        "prediction": [
+            "the uks brexit minister david davis has hailed his latest talks with devolved ministers",
+            "but holyroods mike russell has called for greater clarity on the ``strategic objectives",
+            ""
+        ],
+        "label": [
+            "david",
+            "brexit",
+            "holyrood\\'s mike"
+        ]
+    },
+    {
+        "prediction": [
+            "a new flight to the highlands and islands airports has been launched by the scottish government.",
+            ""
+        ],
+        "label": [
+            "scottish government",
+            "highlands and islands airports"
+        ]
+    },
+    {
+        "prediction": [
+            "The SNP won 56 of the 59 Westminster constituencies at the general election two weeks ago.",
+            "That resulted in the party being the third largest, behind the Conservatives and Labour.",
+            "Parliamentary convention dictates that the official third largest party"
+        ],
+        "label": [
+            "first time",
+            "snp has taken control of the scottish parliament",
+            "snp has taken control of the scottish"
+        ]
+    },
+    {
+        "prediction": [
+            "a woman who was jailed for three years for conspiring to steal more than \u00c2\u00a3110, 000 from a dumfries castle has had her"
+        ],
+        "label": [
+            "more than \u00c2\u00a3110, 000 from a dumfries castle"
+        ]
+    },
+    {
+        "prediction": [
+            "I hope to be able to come in and make an impact,",
+            "I have heard nothing but good things about the club and can't wait to get started.",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "loan until the end of the season",
+            "everton midfielder",
+            "everton",
+            "midfielder",
+            "on loan until the end of the season",
+            "everton have signed",
+            "on loan until"
+        ]
+    },
+    {
+        "prediction": [
+            "The campaign was launched on 19 July by the Iraq War Families Campaign Group, which is made up of relatives of British troops killed in the conflict.",
+            "It aimed to reach that amount to \"bring to justice those responsible for the war and the"
+        ],
+        "label": [
+            "uk government",
+            "iraq war"
+        ]
+    },
+    {
+        "prediction": [
+            "the football association will meet uefa to discuss its bid to join the island of kosovo."
+        ],
+        "label": [
+            "island of kosovo"
+        ]
+    },
+    {
+        "prediction": [
+            "Even so, a picture of the man allegedly behind the attack has started to emerge: someone who had failed in his bid to get residency, lost his job and was hiding from police who wanted to deport him.",
+            "A few months earlier, it",
+            ""
+        ],
+        "label": [
+            "uzbekistan",
+            "terror attack on a man",
+            "a man in uzbekistan has been arrested on suspicion of carrying out a terror attack on a man in stockholm"
+        ]
+    },
+    {
+        "prediction": [
+            "the former chief executive of the san francisco court, charney charney, has been cleared by a court in california.",
+            "",
+            ""
+        ],
+        "label": [
+            "california",
+            "cleared",
+            "san francisco court"
+        ]
+    },
+    {
+        "prediction": [
+            "a computer model of one of the world's tallest three-sided obelisks is being made to find out why it is falling apart."
+        ],
+        "label": [
+            "world\\'s tallest three-sided"
+        ]
+    },
+    {
+        "prediction": [
+            "McManus netted from close range on the quarter-hour mark to open the scoring and Ross Forbes' deflected strike quickly doubled Morton's lead.",
+            "But another McManus finish and one by Denny Johnstone late on ensured a",
+            ""
+        ],
+        "label": [
+            "greenock",
+            "montrose",
+            "second in the scottish championship"
+        ]
+    },
+    {
+        "prediction": [
+            "The shooting occurred at a hostel attached to the private Pragati Residential School in Bangalore city.",
+            "Police say the alleged gunman, identified as Mahesh, was working as an office assistant in the school.",
+            "Mahesh is alleged to have barg"
+        ],
+        "label": [
+            "man",
+            "police in the southern indian state of kerala",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "As a teenager he tried three times, unsuccessfully, to defect from Cuba, once spending a month in Cuban jail. He finally escaped to Mexico on his fourth attempt, saving his mother from drowning on their boat trip over.",
+            "former cuban president",
+            "",
+            ""
+        ],
+        "label": [
+            "cristina",
+            "former",
+            "de kiliman has died at the age of 72",
+            "de kiliman has died at the age of 72."
+        ]
+    },
+    {
+        "prediction": [
+            "Manchester United have won 50 of a possible 54 points in their last 18 Premier League games.",
+            "Man Utd have eight matches remaining to better Chelsea's record 95-point haul in 2005.",
+            "Manchester United have won"
+        ],
+        "label": [
+            "manchester united manager sir alex",
+            "manager sir alex",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "forty-eight people are feared dead after a passenger ferry caught fire off the coast of spain."
+        ],
+        "label": [
+            "forty-eight people are feared dead"
+        ]
+    },
+    {
+        "prediction": [
+            "inverness caledonian thistle ended a run of three straight scottish premiership defeats with a win over hamilton academical."
+        ],
+        "label": [
+            "ended a run of three straight scottish premiership defeats with a win"
+        ]
+    },
+    {
+        "prediction": [
+            "The trial heard Mrs Mitchell and Mr Dickie had been in a relationship for several years and were going through a \"down phase\" when Mr Mitchell visited his mother at the park on 7 May.",
+            "In the evening, Mr Mitchell accompanied his"
+        ],
+        "label": [
+            "who died",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "There was no medal success for Enniskillen's Holly Nixon in the women's quadruple sculls.",
+            "Nixon and her GB team mates Bethany Bryan, Alice Baatz and Mathilda Hodgkins-Byrne,"
+        ],
+        "label": [
+            "european rowing championships",
+            "two-time olympic champion adam donaldson won gold"
+        ]
+    },
+    {
+        "prediction": [
+            "a knitwear knitwear firm has been bought by a private equity firm in a bid to save its production of garments."
+        ],
+        "label": [
+            "equity firm in a bid to save"
+        ]
+    },
+    {
+        "prediction": [
+            "inverness caley thistle earned their first win of the season as they beat st johnstone in the scottish premiership.",
+            "",
+            ""
+        ],
+        "label": [
+            "first win",
+            "they beat",
+            "scottish premiership"
+        ]
+    },
+    {
+        "prediction": [
+            "Now a woman in Stranraer has lost money to a caller who said he was contacting her about problems with her internet.",
+            "The Sandyhills incident happened on 15 September with the Stranraer con taking place seven days later"
+        ],
+        "label": [
+            "treatment after being rescued from a computer fault",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Voters were initially turned away from all 155 polling stations in the borough because their names were missing from the poll list.",
+            "On election day, staff at one station said just three of the first 30 voters to show up were on the"
+        ],
+        "label": [
+            "of the barnet borough council following a vote of no confidence",
+            "vote of no confidence"
+        ]
+    },
+    {
+        "prediction": [
+            "england's joe root and joe root both scored centuries as australia took control on the second day of the second test at edgbaston.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "both scored centuries",
+            "edgbaston",
+            "second day",
+            "centuries",
+            "joe root"
+        ]
+    },
+    {
+        "prediction": [
+            "This is the level we need to be playing at to make sure were 100% ready for EuroBasket this year.",
+            "The game will be Britains only home game before they compete at FIBA EuroBasket 2017,",
+            ""
+        ],
+        "label": [
+            "saturday 19 august",
+            "on saturday 19 august",
+            "live"
+        ]
+    },
+    {
+        "prediction": [
+            "supermarket giant fairprice has said it is removing the haze of the haze caused by fires in indonesia and indonesia.",
+            ""
+        ],
+        "label": [
+            "removing the haze",
+            "haze of the haze caused by fires"
+        ]
+    },
+    {
+        "prediction": [
+            "the partner of a woman whose body was found at her home in greenock has said she is ``working with limited information''.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "greenock",
+            "she is ``working",
+            "partner",
+            "body was found"
+        ]
+    },
+    {
+        "prediction": [
+            "Shanghai have signed the Argentina forward, 32, from Boca Juniors but no details were given over the contract.",
+            "Shanghai, coached by ex-Brighton boss Gus Poyet, are reported to have agreed a deal worth \u00c2",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "chinese super league side",
+            "carl",
+            "united midfielder carl",
+            "former manchester united midfielder",
+            "tevez is set to join"
+        ]
+    },
+    {
+        "prediction": [
+            "A 25 - year - old woman has appeared in court charged with causing serious injury by dangerous driving after a crash in Fife.",
+            "",
+            ""
+        ],
+        "label": [
+            "25 - year - old",
+            "causing serious injury by dangerous driving",
+            "in Fife"
+        ]
+    },
+    {
+        "prediction": [
+            "a gin distillery in the scottish borders has been given the go-ahead by the scottish borders to create a gin distillery."
+        ],
+        "label": [
+            "go-ahead"
+        ]
+    },
+    {
+        "prediction": [
+            "the met office has issued a warning of gales and winds of up to 90mph in parts of wales.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "gales",
+            "met office",
+            "90mph",
+            "wales"
+        ]
+    },
+    {
+        "prediction": [
+            "It's hard to fathom how much human-level AI could benefit society, and it's equally hard to imagine how much it could damage society if built or used incorrectly.",
+            "The statement said AI should be an extension of individual human wills",
+            ""
+        ],
+        "label": [
+            "non-profit",
+            "prominent tech executives",
+            "prominent tech executives have pledged $ 1bn (# 659m) for openai, a non-profit venture"
+        ]
+    },
+    {
+        "prediction": [
+            "Earlier this week, he refused to answer the question of whether he believed homosexual sex was a sin.",
+            "Appearing on Channel 4 News on Friday, Mr Farron, who beat Norman Lamb to the leadership, was asked three times if he"
+        ],
+        "label": [
+            "tim",
+            "over his christian faith and politics"
+        ]
+    },
+    {
+        "prediction": [
+            "Craig Hughes, 33, of Flint, was arrested by North Wales Police in August after he chatted online with the Hope Line Crisis Centre in Tennessee.",
+            "Fears were raised over a planned murder bid involving police being ambushed after reports of"
+        ],
+        "label": [
+            "pleaded not guilty",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "The men entered the Post Office in Quarrywood Avenue, in the Barmulloch area, at 07:55 on Friday.",
+            "They threatened a member of staff with a knife and demanded money before escaping with the cash.",
+            ""
+        ],
+        "label": [
+            "glasgow",
+            "two",
+            "two men"
+        ]
+    },
+    {
+        "prediction": [
+            "Sadio Mane scored twice in the space of 138 seconds as second-placed Spurs disappointed at Anfield.",
+            "Chelsea can extend their lead at the top if they beat Burnley at Turf Moor on Sunday, and Pochettino added",
+            "",
+            ""
+        ],
+        "label": [
+            "boss mauricio",
+            "side need to be ready",
+            "2-1 draw at tottenham",
+            "after a 2-1 draw at tottenham"
+        ]
+    },
+    {
+        "prediction": [
+            "The network will comprise at least 600 spacecraft in the first instance, but could eventually encompass more than 2,000.",
+            "The aim is to deliver broadband links from orbit to every corner of the globe.",
+            "In particular, the project wants"
+        ],
+        "label": [
+            "world\\'s most powerful",
+            "world\\'s most powerful rocket-powered",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "hull city moved back to the top of the premier league as they were held to a draw at home to hull city.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "premier league as they were held to a draw at home",
+            "hull city",
+            "held to a draw",
+            "moved back to the top of the premier league",
+            "to hull city"
+        ]
+    },
+    {
+        "prediction": [
+            "There is some unfinished business with Mitch, director of cricket Steve Rhodes told Worcestershires website. Last summer he was very unlucky. Losing Mitch was a massive blow to our hopes of qualifying. Wed had a good start and him playing",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "all-rounder mitch santner for the 2016 season",
+            "re-signed",
+            "all-rounder",
+            "2016"
+        ]
+    },
+    {
+        "prediction": [
+            "a campaign group is calling for the jolly fisherman to be replaced by the jolly fisherman."
+        ],
+        "label": [
+            "jolly fisherman to be replaced by the jolly fisherman"
+        ]
+    },
+    {
+        "prediction": [
+            "Justus Howell, 17, was shot twice in the back by police in Zion, Illinois. Officers were called to reports of an argument between Howell and Tramond Peet, 18. Chief Steve Dumyahn said Howell had just"
+        ],
+        "label": [
+            "Chief Steve Dumyahn"
+        ]
+    },
+    {
+        "prediction": [
+            "snp leader alex salmond has defended his party's appearance at holyrood following a row with snp leader alex salmond.",
+            ""
+        ],
+        "label": [
+            "snp leader alex salmond",
+            "snp leader"
+        ]
+    },
+    {
+        "prediction": [
+            "a byzantine gold coin found on a norwich gold coin has been discovered by a coroner's challenge. said.",
+            "",
+            ""
+        ],
+        "label": [
+            "gold coin",
+            "coroner\\'s challenge. said",
+            "byzantine gold coin found on a norwich"
+        ]
+    },
+    {
+        "prediction": [
+            "tenants in southampton may face eviction because landlords are holding incorrect paperwork, shelter claims."
+        ],
+        "label": [
+            "landlords are holding incorrect paperwork"
+        ]
+    },
+    {
+        "prediction": [
+            "world number one mark selby says he is not good enough to beat mark selby and win the uk championship for the first time.",
+            "",
+            ""
+        ],
+        "label": [
+            "world number one mark",
+            "uk championship for the first time",
+            "beat mark selby"
+        ]
+    },
+    {
+        "prediction": [
+            "In the canvas expanse of the Shariya refugee camp, thousands of Yazidis live within hearing distance of one of Iraqi Kurdistan's frontlines with ISIS. The vast majority of the camp's occupants are from the town of Sinjar"
+        ],
+        "label": [
+            "should be lived instead of live"
+        ]
+    },
+    {
+        "prediction": [
+            "Until now, any man who had ever had sex with another man was barred for life from donation.",
+            "By contrast, in the US, Canada, France and many other countries there is a complete ban on donations from men who have ever had sex",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "donating to gay men",
+            "world health organization (who)",
+            "to gay men",
+            "gay men",
+            "the world health organization (who)",
+            "world health organization (who"
+        ]
+    },
+    {
+        "prediction": [
+            "Google paid \u00c3\u201a\u00c2\u00a310m in UK corporate taxes between 2006 and 2011.",
+            "Google, most of whose UK sales are routed through Ireland, is one of the multinationals strongly criticised for organising their tax affairs in"
+        ],
+        "label": [
+            "new committee of mps",
+            "ken"
+        ]
+    },
+    {
+        "prediction": [
+            "pakistan's telecoms regulator said the ban was no longer necessary because Google, which owns YouTube, had now launched a Pakistan-specific version.",
+            "Pakistan's ministry of information technology said: Google has provided an online web process through which requests for"
+        ],
+        "label": [
+            "banned the sale of the prophet muhammad in a row over the removal of the prophet muhammad",
+            "sale of the prophet muhammad in a row over the removal of the prophet muhammad"
+        ]
+    },
+    {
+        "prediction": [
+            "a 25-year-old man has appeared in court charged with the murder of karl haugh, who was stabbed to death in county limerick in the",
+            "",
+            ""
+        ],
+        "label": [
+            "county limerick ",
+            "25-year-old",
+            "county limerick"
+        ]
+    },
+    {
+        "prediction": [
+            "The body of India Chipchase, 20, a bar worker, was found in Northampton on Sunday.",
+            "Ms Chipchase was last seen by friends on Bridge Street at about 01:15 GMT on Saturday.",
+            "Her body"
+        ],
+        "label": [
+            "found dead in a flat",
+            "police officer has been charged",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "The report, published in the Journal of Transport Geography, said that 10% of journeys on the line, which was rebuilt and reopened in April 2014, could be affected by 2040.",
+            "The report said adverse weather disrupted the"
+        ],
+        "label": [
+            "climate change could disrupt up to a third of rail services travelling to and from the south west within the next 100 years",
+            "a third of rail services travelling to and from the south west within the next 100 years"
+        ]
+    },
+    {
+        "prediction": [
+            "in a nod to mr trudeau's fondness for statement socks, he wore canada - themed mountie and maple leaf print ones to welcome his first foreign visitor.",
+            "mr trudeau opted for a more subtle striped pair on his first official engagement"
+        ],
+        "label": [
+            "enda varadkar",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "the family of a millionaire businessman ``are sure''he was killed for his money by his ukrainian wife, an inquest has heard.",
+            "",
+            ""
+        ],
+        "label": [
+            "businessman",
+            "ukrainian wife",
+            "family"
+        ]
+    },
+    {
+        "prediction": [
+            "The former Reds captain, 36, is to return to his former club as a youth coach in February in what will be his first job since retiring as a player.",
+            "Gerrard made his Liverpool debut in 1998 and left An"
+        ],
+        "label": [
+            "former liverpool captain",
+            "liverpool"
+        ]
+    },
+    {
+        "prediction": [
+            "Craig Peacock fired the hosts into a ninth minute lead but Manchester hit back three minutes later courtesy of Vinny Scarsella's breakaway goal.",
+            "Storm moved in front six seconds before the end of the second period with Luke Salazar",
+            ""
+        ],
+        "label": [
+            "Cardiff",
+            "second",
+            "Manchester Storm"
+        ]
+    },
+    {
+        "prediction": [
+            "shopkeepers near the isle of wight's troubled new ``floating bridge''have asked councillors to consider compensating them for loss of business.",
+            ""
+        ],
+        "label": [
+            "isle of wight\\'s",
+            "floating bridge"
+        ]
+    },
+    {
+        "prediction": [
+            "Fijis population, which resides mostly on the two main islands of Viti Levu and Vanua Levu, is divided between indigenous Fijians and Indo-Fijians, the descendents of indentured labourers brought from India."
+        ],
+        "label": [
+            "country\\'s best-known economies since the 2011 coup"
+        ]
+    },
+    {
+        "prediction": [
+            "britain's olympic gold medallist jade chernova has been banned from the world anti-doping agency for failing to qualify for the rio olympics.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "failing to qualify",
+            "jade",
+            "world anti-doping agency for failing to qualify for the rio olympics",
+            "britain\\'s olympic",
+            "olympic gold medallist jade"
+        ]
+    },
+    {
+        "prediction": [
+            "Barcelona still have a little way to go before they catch Real Madrids 436 Champions League goals.",
+            "However, Barcelona still have a some way to go to match the 436 goals scored in the competition by their great rivals Real Madrid."
+        ],
+        "label": [
+            "reach",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Stephen Paul Copoc was born on 1 August 1968, and was aged 20 years when he died at Hillsborough.",
+            "Our Stephen was just 20 years of age, but had maturity and a caring attitude towards others and even"
+        ],
+        "label": [
+            "88",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "As Ron Jones, from Newport, prepares to mark Holocaust Memorial Day on Friday with a service at the city's cathedral, he says that amongst all the terrible memories, there will also be a few which will make him smile.",
+            "He was captured",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "remembered for his work",
+            "world war two, is to be remembered for his work",
+            "former football goalkeeper",
+            "during world war two",
+            "death camp during world war two, is to be remembered for his work"
+        ]
+    },
+    {
+        "prediction": [
+            "a gaelic footballer who won an all-ireland championship with derry will stand trial accused of stealing over # 500,000 from his employer.",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "500,000 from his employer",
+            "gaelic",
+            "with derry",
+            "a gaelic footballer",
+            "derry will stand trial",
+            "derry"
+        ]
+    },
+    {
+        "prediction": [
+            "Councils in England should consider selling off some of their social housing stock, David Cameron's spokesman has said.",
+            "Shadow housing minister Jack Dromey said: Councils and housing associations should make effective use of their housing stock but the government"
+        ],
+        "label": [
+            "mixed",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Parts of the Mariana Trench in the Pacific Ocean are up to 11 kilometres deep, so we know little about what sea life there is.",
+            "The three-month expedition is looking for things like fish, mud volcanoes and deep sea coral"
+        ],
+        "label": [
+            "in the US",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "hundreds of people have taken part in a charity in derry to wear welly trees in a bid to save their lives.",
+            "",
+            ""
+        ],
+        "label": [
+            "bid to save their lives",
+            "hundreds of people have taken part in a charity in derry to wear welly trees in a bid to save their lives",
+            "hundreds of people"
+        ]
+    },
+    {
+        "prediction": [
+            "ireland started the three-match t20 series against afghanistan with a six-wicket defeat in india on wednesday.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "three-match",
+            "india",
+            "six-wicket defeat",
+            "six-wicket"
+        ]
+    },
+    {
+        "prediction": [
+            "shale gas drilling in lancashire has been suspended after a magnitude-7. 5 earthquake struck."
+        ],
+        "label": [
+            "7. 5"
+        ]
+    },
+    {
+        "prediction": [
+            "plans for a new railway station in lancashire have been approved by councillors in lancashire.",
+            "also approved plans for the first time.",
+            ""
+        ],
+        "label": [
+            "first time",
+            "also approved plans for the first time",
+            "in lancashire"
+        ]
+    },
+    {
+        "prediction": [
+            "a hospital's accident and emergency unit in north wales is struggling to cope with demand, inspectors have said.",
+            "",
+            ""
+        ],
+        "label": [
+            "north",
+            "struggling to cope with demand",
+            "north wales"
+        ]
+    },
+    {
+        "prediction": [
+            "the tsarnaev says its a 1 out of 4 people in a world.",
+            ""
+        ],
+        "label": [
+            "the tsarnaev",
+            "people in a world"
+        ]
+    },
+    {
+        "prediction": [
+            "an edinburgh taxi driver who took thousands of people to a festival has revealed he has been given the chance to take up the art exhibition.",
+            "",
+            ""
+        ],
+        "label": [
+            "revealed he has been given the chance to take up the art",
+            "thousands",
+            "he has been given the chance to take up the art exhibition"
+        ]
+    },
+    {
+        "prediction": [
+            "it's not long since a top tennis player became the first woman to lose her hair in a match."
+        ],
+        "label": [
+            "it\\'s not long since a top tennis player became the first woman"
+        ]
+    },
+    {
+        "prediction": [
+            "international footballer alan pulido, who has been rescued after being abducted in mexico, fought one of his kidnappers and used his phone to call police, officials have revealed.",
+            "",
+            ""
+        ],
+        "label": [
+            "international footballer alan",
+            "police",
+            "mexico"
+        ]
+    },
+    {
+        "prediction": [
+            "children dangle mid-air on a makeshift swing hanging from a lamppost, a mother celebrates the silver jubilee cuddling her sons, and boys from the 1950s fish in the canal-just some of the rare pictures of childhood",
+            ""
+        ],
+        "label": [
+            "children dangle mid-air on a makeshift swing hanging from a lamppost, a mother celebrates the silver jubilee cuddling her sons, and boys from the 1950s fish in the canal",
+            "children dangle mid-air on a makeshift swing hanging from a lamppost, a mother celebrates the silver jubilee cuddling her sons, and boys from the 1950s fish in the canal-just"
+        ]
+    },
+    {
+        "prediction": [
+            "the families of two britons who were found dead on a beach in thailand have been named by police.",
+            "",
+            ""
+        ],
+        "label": [
+            "the families of two britons",
+            "named",
+            "families of two britons"
+        ]
+    },
+    {
+        "prediction": [
+            "a man has been airlifted to hospital after he was injured in a mourne mountains in county down.",
+            "",
+            ""
+        ],
+        "label": [
+            "county down",
+            "mourne mountains",
+            "mourne mountains in county down"
+        ]
+    },
+    {
+        "prediction": [
+            "It decided to reorganise the way patients were diagnosed by GPs and specialists by bringing in a new approach, especially to deal with those cancer cases which are not initially obvious.",
+            "The model of care introduced in Denmark has three routes."
+        ],
+        "label": [
+            "2000",
+            "similar to the nhs"
+        ]
+    },
+    {
+        "prediction": [
+            "Mr Ellis is the councils former interim director of corporate governance, and has also been acting as deputy chief executive for several months.",
+            "Mr Monaghan is head of the chief executives office, while Mr Sutherland is head of human resources and"
+        ],
+        "label": [
+            "aberdeen city",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "The US military says a strike targeting Taliban in the northern city of Kunduz may have caused \"collateral damage\".",
+            "The hospital, run by the medical charity MSF, was severely damaged by a series of strikes lasting more than an hour",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "international",
+            "11",
+            "afghan hospital",
+            "barack",
+            "taliban attack"
+        ]
+    },
+    {
+        "prediction": [
+            "staff at swansea's dvla offices will be redeployed rather than face redundancy after changes to the way motorists pay their car tax, a uk transport minister has confirmed."
+        ],
+        "label": [
+            "uk transport"
+        ]
+    },
+    {
+        "prediction": [
+            "people in the us state of california are taking part in a campaign to encourage people to live in the presidential election.",
+            "",
+            ""
+        ],
+        "label": [
+            "presidential",
+            "people",
+            "presidential "
+        ]
+    },
+    {
+        "prediction": [
+            "a sculpture stolen from a shiva temple in india has been sold at auction for $ [UNK] (\u00c3\u201a # [UNK]).",
+            "",
+            ""
+        ],
+        "label": [
+            "sold at auction for $ [UNK] (\u00c3\u201a # [UNK])",
+            "auction for $ [UNK] (\u00c3\u201a # [UNK])",
+            "auction"
+        ]
+    },
+    {
+        "prediction": [
+            "great britain's laura muir has won the scottish 1500m title at the european indoor championships in stockholm.",
+            ""
+        ],
+        "label": [
+            "european indoor championships in stockholm",
+            "european indoor championships"
+        ]
+    },
+    {
+        "prediction": [
+            "batsman michael smith has been named australia's captain for the final two matches of the ashes in august.",
+            ""
+        ],
+        "label": [
+            "two",
+            "michael"
+        ]
+    },
+    {
+        "prediction": [
+            "One of Scotlands largest farming supplies companies has reported a rise in profits despite",
+            "challenging times for the sector following the Brexit vote."
+        ],
+        "label": [
+            "farming supplies companies",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "The Briton faces the prospect of trying to overhaul a 36-point deficit in the remaining 18 races of the season.",
+            "Hamilton will express his confidence at being able to erode Rosberg's points lead and will expect his awful luck",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "third straight win of 2016",
+            "seventh in a hectic chinese grand prix",
+            "seventh in a hectic ",
+            "lewis",
+            "straight win of 2016",
+            "nico"
+        ]
+    },
+    {
+        "prediction": [
+            "On Equal Pay Day, Hillary Clinton should announce she'll take a 23% pay cut.",
+            "Peggy Drexler: Clinton is trying to portray herself as a populist fighter for the middle class."
+        ],
+        "label": [
+            "Peggy Drexler:",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Shanghai have signed the Argentina forward, 32, from Boca Juniors but no details were given over the contract.",
+            "Boca Juniors said: \"Good luck Carlitos. You will always be in our hearts.\""
+        ],
+        "label": [
+            "first premier league club to be named in the club\\'s history",
+            "boca juniors has become the first premier league club to be named in the club\\'s history of the premier league"
+        ]
+    },
+    {
+        "prediction": [
+            "a woman jailed for two years for stealing more than \u00c2\u00a3200, 000 from a dumfries and galloway pensioner has lodged an appeal against her",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "dumfries and galloway pensioner",
+            "two",
+            "\u00c2\u00a3200, 000",
+            "stealing more than \u00c2\u00a3200, 000 from a dumfries and galloway pensioner has lodged an appeal against her"
+        ]
+    },
+    {
+        "prediction": [
+            "a tow truck had to be called to remove the car, which was stuck on the track.",
+            "the 18 - year - old driver was arrested at the scene on suspicion of theft of a motor vehicle, driving without insurance and careless driving."
+        ],
+        "label": [
+            "wedged between railway line and fence",
+            "wedged"
+        ]
+    },
+    {
+        "prediction": [
+            "Alexis Sanchez salvaged a late equaliser for Hull City against 10-man Arsenal, who missed the chance to go top of the Premier League.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "hull city against 10-man",
+            "premier",
+            "10-man",
+            "10",
+            "go top of the premier ",
+            "missed the chance to go top",
+            "salvaged a late equaliser for hull city"
+        ]
+    },
+    {
+        "prediction": [
+            "Thirty-six whales were rescued and pushed back into the sea at Tuticorin on Tuesday, but 28 of them floated back to the shore and died on Wednesday.",
+            "Earlier, 45 whales died after 81 of the animals were stranded",
+            ""
+        ],
+        "label": [
+            "short-finned",
+            "indian state of tamil nadu",
+            "has risen to 73"
+        ]
+    },
+    {
+        "prediction": [
+            "england made it two wins from two in the world rankings with a hosts victory over australia at lord's."
+        ],
+        "label": [
+            "two wins from two in the world rankings with a hosts victory"
+        ]
+    },
+    {
+        "prediction": [
+            "Defending champion Jimmy Noppert beat Scott Waites 3 - 0 to reach the semi - finals of the BDO World Championships.",
+            ""
+        ],
+        "label": [
+            "Defending champion Jimmy",
+            "3 - 0"
+        ]
+    },
+    {
+        "prediction": [
+            "The Mackintosh building was badly damaged by fire on 23 May 2014.",
+            "Contractors who are restoring the iconic Grade A-listed art nouveau building hope to have completed their work by the end of February 2019."
+        ],
+        "label": [
+            "go-ahead by the scottish government",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "The Swiss 31-year-old will play third seed Kei Nishikori in the semi-finals.",
+            "Canadian top seed and defending champion Milos Raonic beat 14-time Grand Slam champion Rafael Nadal 4-6 6-",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "kyle edmund",
+            "stan",
+            "stan ",
+            "two",
+            "four",
+            "brisbane international"
+        ]
+    },
+    {
+        "prediction": [
+            "The body of India Chipchase, 20, a bar worker, was found in Northampton on Sunday.",
+            "Ms Chipchase was last seen by friends on Bridge Street at about 01:15 GMT on Saturday.",
+            "Her body"
+        ],
+        "label": [
+            "83-year-old",
+            "northampton",
+            "83"
+        ]
+    },
+    {
+        "prediction": [
+            "The fight, Adams' second as a professional and first in her home city for 20 years, will be over four three-minute rounds, rather than the usual two-minute rounds for women.",
+            "She said: \"I had two minutes to find",
+            ""
+        ],
+        "label": [
+            "britain\\'s double olympic champion nicola",
+            "leeds on saturday",
+            "mexico\\'s maryan"
+        ]
+    },
+    {
+        "prediction": [
+            "The Briton, 30, won 6-2 4-6 6-1 7-5 after two hours and 39 minutes, with match point clinched at 20:57 BST.",
+            "Murray will play",
+            "",
+            ""
+        ],
+        "label": [
+            "eight",
+            "fabio",
+            "andy",
+            "wimbledon"
+        ]
+    },
+    {
+        "prediction": [
+            "a kenyan woman who drank body lotion in the koran has said she was hiding in the room for her hiding daughter.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "kenyan woman",
+            "koran has said she was hiding in the room for her hiding daughter",
+            "for her hiding daughter",
+            "in the koran"
+        ]
+    },
+    {
+        "prediction": [
+            "it's one of the most popular song in japanese-but a song that has gone viral on social media has become an internet hit.",
+            ""
+        ],
+        "label": [
+            "most popular song",
+            "it\\'s one of the most popular song in japanese-but a song that has gone viral on social media has become an internet hit"
+        ]
+    },
+    {
+        "prediction": [
+            "Adrian Fatchett, 52, was injured at a house in Highfield Avenue, Athersley South, said South Yorkshire Police.",
+            "Mr Fatchett died on Saturday night despite being treated at the scene by paramedics, officers",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "man has been arrested",
+            "stabbed to death",
+            "stabbed",
+            "south yorkshire",
+            "man"
+        ]
+    },
+    {
+        "prediction": [
+            "When Aston Villas animated manager threw his gilet to the ground in celebration at the sight of Christian Bentekes first half equaliser, he probably rather hoped his players were man enough to remain in the Barclays Premier League after all.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "Clint Green put QPR ahead just after the half hour mark. Charlie Austin",
+            "Chint Hill",
+            "second",
+            "Bentece"
+        ]
+    },
+    {
+        "prediction": [
+            "former james bond star sir roger moore has revealed how he was helped to reach the top in hollywood, in a new 10-minute film celebrating the olympics.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "10-minute",
+            "moore",
+            "celebrating the olympics",
+            "10-minute film",
+            "former james bond star"
+        ]
+    },
+    {
+        "prediction": [
+            "Under the proposal, which had already passed a first round of voting, it would have been illegal to share information electronically that could destroy, alter or subvert state institutions or damage national integrity or independence.",
+            "This would have meant"
+        ],
+        "label": [
+            "abandoned its controversial controversial anti-government law, which would have banned anti-government protests",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "About 80,000 works of art, ceramics, manuscripts, letters and photographs faced being auctioned to help pay off the pottery firm's pension debt.",
+            "a collection of items worth up to # [UNK] has been put up for sale"
+        ],
+        "label": [
+            "worth up to",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "He spent 14 years as a player at Rangers, before returning as a coach in 2005.",
+            "He was first-team coach when Ally McCoist succeeded Smith in 2011, then returned to working with the youths again after Mc"
+        ],
+        "label": [
+            "ian",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "John Lahiff, 75, told local media that he disturbed the crocodile while looking for a ball in water at the course in Port Douglas, Queensland.",
+            "He told ABC News he would try not to hit balls into the water in future"
+        ],
+        "label": [
+            "has said he is lucky to be alive",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "The males, two aged 17 and one 19, from north-west London, were reported missing in March amid fears they were planning to travel to Syria.",
+            "They were stopped by Turkish officials and arrested on their return to the UK.",
+            ""
+        ],
+        "label": [
+            "four",
+            "suspicion of terrorism offences",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Plans have been unveiled for a \u00c2\u00a3 1bn glass tower on the banks of Southampton Water that would rise more than 200 m (656 ft) into the sky.",
+            ""
+        ],
+        "label": [
+            "glass tower",
+            "200 m"
+        ]
+    },
+    {
+        "prediction": [
+            "Fellow tenants Newport Gwent Dragons are subject to a takeover bid from the Welsh Rugby Union, who have said they see Rodney Parade \"as a rugby venue.\"",
+            "The WRU have signalled their intention to install an artificial surface which is against",
+            "",
+            ""
+        ],
+        "label": [
+            "newport county director",
+            "sign a new contract",
+            "newport county director of rugby steve foxall says he expects to sign a new contract at rodney parade",
+            "steve"
+        ]
+    },
+    {
+        "prediction": [
+            "the family of a seven-year-old boy who has his own special education say they are struggling to find a place for him.",
+            ""
+        ],
+        "label": [
+            "has his own special education",
+            "seven-year-old"
+        ]
+    },
+    {
+        "prediction": [
+            "The 39-year-old, from Ammanford in Carmarthenshire, revealed the news live on BBC One's The One Show on Thursday evening but has yet to reveal the name.",
+            "It is Miss Jones' first child with partner Charlie"
+        ],
+        "label": [
+            "welsh bbc tv presenter alex",
+            "boy"
+        ]
+    },
+    {
+        "prediction": [
+            "Four days after the launch of the anti-corruption move, long queues continue outside ATMs as people try to exchange the 500 ($7) and 1,000 notes.",
+            "It had to be done suddenly but I never thought I will"
+        ],
+        "label": [
+            "prime minister narendra",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "a motorcyclist has been arrested on suspicion of causing death by dangerous driving after a crash between a lorry and a lorry.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "a motorcyclist has been arrested on suspicion of causing death by dangerous driving after a crash between a lorry and a lorry",
+            "motorcyclist",
+            "after a crash between a lorry and a lorry",
+            "a motorcyclist",
+            "lorry and a lorry"
+        ]
+    },
+    {
+        "prediction": [
+            "Worcestershire have re - signed Australia all - rounder Mitch Santner as their overseas player for the 2017 T20 Blast campaign."
+        ],
+        "label": [
+            "Australia"
+        ]
+    },
+    {
+        "prediction": [
+            "How can such a rich man claim to speak up for the poor?",
+            "Now I'm rich and I complain about inequality they say I'm a hypocrite. I'm beginning to think they just don't want inequality on the agenda because it is",
+            ""
+        ],
+        "label": [
+            "newspaper",
+            "to sue",
+            "russell"
+        ]
+    },
+    {
+        "prediction": [
+            "Our view is quite clear - we've got a contract, Foxall said. That is something that we're expecting to be honoured. "
+        ],
+        "label": [
+            "chief executive Mark"
+        ]
+    },
+    {
+        "prediction": [
+            "britain's storey storey retained her olympic 100m title with victory at the track cycling world championships in london.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "100m",
+            "olympic 100m title with victory at the track cycling world championships in london",
+            "london",
+            "world championships"
+        ]
+    },
+    {
+        "prediction": [
+            "a virtual reality film about autism has been launched in a new film about the uk's national autistic society.",
+            ""
+        ],
+        "label": [
+            "new film about the uk\\'s national autistic society",
+            "about the uk\\'s national autistic society"
+        ]
+    },
+    {
+        "prediction": [
+            "Sweden's former foreign minister Carl Bildt said that Mr Gustafsson's kidnapping weighed heavily on his mind during his time in the role, which ended in 2014. He tweeted on Monday: Extremely gratifying that Johan Gustaf",
+            ""
+        ],
+        "label": [
+            "former foreign minister",
+            "2013"
+        ]
+    },
+    {
+        "prediction": [
+            "apprenticeships in england need to be overhauled to stop many young people being awarded practical qualifications that have little worth, a report says.",
+            "",
+            ""
+        ],
+        "label": [
+            "awarded",
+            "stop",
+            "overhauled"
+        ]
+    },
+    {
+        "prediction": [
+            "the family of a man who died after being hit by a van in the m1 say they are ``devastated''by the dangers of driving.",
+            "",
+            ""
+        ],
+        "label": [
+            "m1",
+            "hit by a van",
+            "dangers of driving"
+        ]
+    },
+    {
+        "prediction": [
+            "In the second half, we were the better side, but we didn't manage to get the second goal and they ended up equalising,",
+            "That said, we deserved to win. It is not the best result for us.",
+            "It"
+        ],
+        "label": [
+            "enrique",
+            "madrid",
+            "barcelona boss"
+        ]
+    },
+    {
+        "prediction": [
+            "religious education in england's schools should be reduced to anti-rethink, the archbishop of canterbury mark williams has warned.",
+            "",
+            ""
+        ],
+        "label": [
+            "anti-rethink",
+            "mark",
+            "mark "
+        ]
+    },
+    {
+        "prediction": [
+            "a controlled explosion has been carried out by police after an explosive device was found at a bomb disposal unit in cardiff.",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "police",
+            "device was found",
+            "cardiff",
+            "explosive device",
+            "carried out by police"
+        ]
+    },
+    {
+        "prediction": [
+            "home secretary theresa may has called for a \" change in government \" to change the way police officers deal with murder laws.",
+            ""
+        ],
+        "label": [
+            "change in government",
+            "police officers deal with murder laws"
+        ]
+    },
+    {
+        "prediction": [
+            "the leader of the saudi prince of saudi arabia has called for a dialogue between the government and the government.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "saudi",
+            "and the government",
+            "saudi arabia",
+            "leader of the saudi prince of saudi arabia"
+        ]
+    },
+    {
+        "prediction": [
+            "Sidwell, 34, has made 32 Championship appearances this season to help the Seagulls achieve promotion to the top flight for the first time in 34 years.",
+            "With his contract due to expire at the end of the campaign,",
+            "",
+            ""
+        ],
+        "label": [
+            "until the end of the season",
+            "end of the season",
+            "brighton",
+            "steven"
+        ]
+    },
+    {
+        "prediction": [
+            "a decision has been made to close a well-loved and historic historic barracks in pembrokeshire, the defence secretary has said.",
+            ""
+        ],
+        "label": [
+            "pembrokeshire",
+            "defence secretary"
+        ]
+    },
+    {
+        "prediction": [
+            "A post-mortem found the 34-year-old from Wath-Upon-Dearn in Rotherham died as a result of head injuries.",
+            "A man, 41, and a woman, 23, were arrested in Sheffield by South"
+        ],
+        "label": [
+            "south yorkshire",
+            "three"
+        ]
+    },
+    {
+        "prediction": [
+            "argos owner home retail group has reported a 23% rise in like-for-like sales to # eight-week m in the first half of the year.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "owner",
+            "m in the first half of the year",
+            "23% rise",
+            "m in the first half of the year."
+        ]
+    },
+    {
+        "prediction": [
+            "steve sidwell says he has done all he can to earn a new brighton contract and play in the premier league next season.",
+            ""
+        ],
+        "label": [
+            "has done all he can to earn a new brighton contract",
+            "steve"
+        ]
+    },
+    {
+        "prediction": [
+            "in a rare climbdown, the angolan government has withdrawn controversial legislation severely restricting how people use the internet."
+        ],
+        "label": [
+            "restricting"
+        ]
+    },
+    {
+        "prediction": [
+            "a 25-year-old man has appeared in court charged with attempted murder following an alleged attack at a car park in dumfries.",
+            ""
+        ],
+        "label": [
+            "with attempted murder",
+            "25-year-old"
+        ]
+    },
+    {
+        "prediction": [
+            "said he has died at the age of 72.",
+            "",
+            "",
+            ""
+        ],
+        "label": [
+            "age of 88, his family has said. said he has died at the age of 72",
+            "age of 88, his family has said",
+            "at the age of 88, his family has said. said he has died at the age of 72",
+            "age of 72"
+        ]
+    },
+    {
+        "prediction": [
+            "They started arriving at Poldhu Cove on the Lizard on Sunday, and National Trust volunteers have been clearing them away as they are said to pose a risk to wildlife.",
+            "Other nearby coves including Gunwalloe, Polurrian,"
+        ],
+        "label": [
+            "thousands of bright pink plastic",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "John Lahiff, 75, told local media that he disturbed the crocodile while looking for a ball in water at the course in Port Douglas, Queensland.",
+            "Crocodiles are a common sight on the golf course, Australian media reported,",
+            ""
+        ],
+        "label": [
+            "palmer",
+            "australian",
+            "rescued from the sea off the coast of australia"
+        ]
+    }
+]

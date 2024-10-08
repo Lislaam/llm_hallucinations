@@ -1,0 +1,490 @@
+[
+    {
+        "prediction": "0\n\n The summary adds the detail that a prison official has 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n ### ORIGINAL_TEXT: The 19",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary states that Microsoft has launched a version of 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary adds the detail that the party of the incoming president",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds the detail that Israel has decided to abst",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary mischaracterizes the [ORIGIN 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary mischaracterizes the [ORIGIN 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds the detail that Mark Carney will 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n ### ORIGINAL_TEXT: The 19",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n ### ORIGINAL_TEXT: The 19",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n 0 0 1 1 1 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary does not add any details not found in 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds the detail that Tesco will buy 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds the detail that Tony Pulis returned 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary does not add any details not found in 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary does not add any details not found in 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary does not add any details not found in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe [SUMMARY] does not add details not",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n The [SUMMARY] adds details not found in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds the detail that the baby was a 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary does not add any details not found in the original",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text. The",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary adds the detail that the detective was sent 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary mischaracterizes the information in the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The European 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary states that Inverness Caledonian Th",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary adds details not found in the original text 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds the detail that the house is a 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary does not add any details not found in 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add details not found in the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n ### ORIGINAL_TEXT: The university 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary adds the detail that the blood test can 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary adds the detail that the player Luis Su 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n The summary mischaracterizes the original text by suggesting that 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n ### ORIGINAL_TEXT: -L 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary adds details not found in the original text, specifically",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary mischaracterizes the incident as involving a 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary does not add details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n ### ORIGINAL_TEXT: The local 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n 1\n\n---\n\n### ORIGIN 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1",
+        "label": "extrinsic"
+    }
+]

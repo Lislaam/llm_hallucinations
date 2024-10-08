@@ -1,0 +1,490 @@
+[
+    {
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The UK's historical child sex abuse 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The service, held to mark the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n```python\ndef judge(text, summary, error_locations 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The magnitude of the earthquake is not specified 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Russian, who had been on 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The 2019 Rugby World Cup 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The All Progressives Congress (AP 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The US Federal Reserve has cut interest rates for",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The move apparently follows a request from 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The move was announced by Stormont 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The incident began on Tuesday morning when 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterises the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the original text information by stating 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-20 season 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The company has 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Scottish Government has announced plans to 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The former Manchester City man, James 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The UK's largest supermarket chain, 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The UK-based Chatham House says 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The crash happened at about 14 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Giants got a short-handed opener 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The IMF has been accused of being 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, so the",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 32-year-old joined the 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterises the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The family of four had been driving 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2017 Tour de France 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Labour leader has also said he 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019 Rugby World Cup 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The British supermarket 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-2020 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Media playback is not supported on this device",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The National Trust is using ground-p 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The fire service and police were called 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The 2011 census reported 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-20 season 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The 17-year-old boy, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nSolution:\n```\ndef judge(text, summary, error 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2016 US presidential election 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe error type is '1' because the [SUM 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: -LRB- CNN -RR 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The 2019 Rugby World Cup 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The move apparently follows a request from 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Fermanagh MLA Phil Fl 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The daily Yeni Safak said its 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary adds details not found in the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The Northern Irishman, twice a winner 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The boy identified as Che Labast 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2016 presidential election was 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Queen and Duke of Edinburgh have 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe error type is '1' because the [SUM 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The European Union has agreed to a 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: -LRB- CNN -RR 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Scottish Government has announced plans to 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not mention the school being 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 0 0 0 0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The United States has announced that it 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Giants got a short-handed opener 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The driver, who was not named 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The UK's largest supermarket chain, 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The company, which is based in 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The company's revenue increased by \u00c2 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The oil-fired Fawley Power 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The university said the move at Singleton 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: It works by looking for a combination 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Queen's Park Rangers player made 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: the 2015 wimbledon championships 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The newly-designed form, used to 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: -LRB- CNN -RR 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nSolution:\n\nThe summary adds details not found in the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the original text information. 0 if",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Duke of Cambridge has been appointed 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The National Trust is using ground-p 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: Town were rewarded for their greater control and threat",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Bank of England's governor, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: the 28 - year - old 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Tunisia had faced expulsion from the Africa 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The local authority said Richard Ellis was 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nSolution:\n```\ndef judge_summary(summary, original_text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nNote: The output should be a single integer, either 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nPlease output your answer as a single integer only. 0 if",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    }
+]

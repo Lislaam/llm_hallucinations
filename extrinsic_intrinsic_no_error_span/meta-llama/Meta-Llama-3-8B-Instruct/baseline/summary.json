@@ -1,0 +1,490 @@
+[
+    {
+        "prediction": "1\n\n 1. The summary does not add any new details 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The service, held to mark the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text information. The 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The UK's largest supermarket chain, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the original text information. The 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The move was announced by Stormont 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary does not add any details not found 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Queen's Park Rangers player made 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019 Rugby World Cup 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The company has been accused of making 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 12-year-old boy was 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The former Manchester City man, James 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The UK's largest supermarket chain, 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The UK's National Health Service ( 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The crash happened at about 14 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Giants got a short-handed opener 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nExplanation: The summary mischaracterizes the information in the 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The \u00c3\u201a 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary adds details not found in the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 0 1 0 0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The men are believed to have been 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-2020 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary does not add any details not found in the",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not mention the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary does not add any details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019 Rugby World Cup 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary does not add any details not found 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The 17-year-old boy arrested 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The United States has 50 states 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe error in the summary is that it does not mention 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: -LRB- CNN -RR 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The casualty, who was with a 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not mention the attack on 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1 1 0 0 0 0 0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary does not accurately represent the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The boy identified as Che Labast 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not mention the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2010 census found that 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary adds details not found in the original text, 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The country's DGSN security 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: -LRB- CNN -RR 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 1. The summary does not mention the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text. The",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Giants got a short-handed opener 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary does not add any details not 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary does not add any details not found 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Aberdeenshire-based Harbro 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The university said the move at Singleton 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe error in the summary is that it states the editor 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterizes the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The company has been struggling to recover 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterizes the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: -LRB- CNN -RR 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterises the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### ORIGINAL_TEXT: The National Trust is using ground-p 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The European Union has agreed to a 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text. The",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary does not add any details not found 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n### Explanation:\nThe summary mischaracterizes the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### ORIGINAL_TEXT: The local authority said Richard Ellis was 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n### Explanation:\nThe summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1 1 0 0 0 0 0 0",
+        "label": "extrinsic"
+    }
+]

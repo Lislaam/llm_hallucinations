@@ -44,7 +44,7 @@ def main(args):
         return output_texts
 
     # # Load the dataset
-    dataset = Dataset.from_file('correct_incorrect_data/data-00000-of-00001.arrow')
+    dataset = Dataset.from_file('extrinsic_intrinsic_with_spans_data/data-00000-of-00001.arrow')
     dataset = dataset.remove_columns([col for col in dataset.column_names if dataset.filter(lambda x: x[col] is None or x[col] == '').num_rows > 0])
     #dataset = dataset.select(range(10))
 
@@ -90,7 +90,7 @@ def main(args):
         output_dir=OUTPUT_DIR,
         do_train=True,
         num_train_epochs=args.num_train_epochs,
-        max_seq_length=2500,
+        max_seq_length=3000, # Change for including spans
         logging_steps=20,
         eval_strategy="steps",
         eval_steps=250,
@@ -200,14 +200,14 @@ def main(args):
         labels = dataset["error_type"]
         preds = [prediction.split("### Output:")[1].strip() for prediction in predictions]
         
-        score = get_score(preds, labels)
+        score = get_extrinsic_intrinsic_score(preds, labels) # CHANGE
         f1 = f1_score_binary(labels, preds)
         cross_entropy = log_loss(labels, logs)
 
         print(f"Total accuracy: {score['total']}")
         print(f"F1 Score: {f1}")
         print(f"Cross-entropy: {cross_entropy}")
-        for error_type in ['correct', 'incorrect']:
+        for error_type in ['extrinsic', 'intrinsic']: # CHANGE
             print(f"{error_type} class accuracy: {score[error_type]}")
 
         # Make sure the results directory exists

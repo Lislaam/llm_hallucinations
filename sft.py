@@ -10,19 +10,19 @@ OUTPUT_DIR = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning"
 OUTPUT_DIR2 = "/scratch/local/ssd/fpinto/llm_hallucinations/fine_tuning2"
 
 LABEL_CONVERSIONS2 = {
-                    '1' : '1',
-                    '2' : '2',
-                    '3' : '3',
-                    '4' : '4',
-                    #   'extrinsic': '0',
-                    #   'intrinsic': '1',
+                    # '1' : '1',
+                    # '2' : '2',
+                    # '3' : '3',
+                    # '4' : '4',
+                      'extrinsic': '0',
+                      'intrinsic': '1',
 }
 
 LABEL_CONVERSIONS = {
-                         'correct': '0',
-                     'incorrect': '1',
-                    #   'extrinsic': '0',
-                    #   'intrinsic': '1',
+                    #      'correct': '0',
+                    #  'incorrect': '1',
+                      'extrinsic': '0',
+                      'intrinsic': '1',
                     # 0:'0',
                     # 1:'1',
                     # 2:'2',

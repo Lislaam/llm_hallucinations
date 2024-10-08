@@ -21,14 +21,14 @@ from tqdm import tqdm
 def main(args):
 
     def formatting_prompts_func(example, training=True):
-        instruction = COUNT_ERRORS
+        instruction = SYSTEM_INSTRUCTION2
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### Output: " #  ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
+            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### Output: " #  \n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
             if training:
-                if instruction == COUNT_ERRORS or instruction == BINARY_INSTRUCTION:
+                if instruction == SYSTEM_INSTRUCTION2 or instruction == BINARY_INSTRUCTION:
                     text += (
-                        f"{LABEL_CONVERSIONS2[example['num_errors'][i]]}." + tokenizer.eos_token
+                        f"{LABEL_CONVERSIONS2[example['error_type'][i]]}." + tokenizer.eos_token
                     )
                 else:
                     label = ast.literal_eval(example["annotated_span"][i])
@@ -44,7 +44,7 @@ def main(args):
         return output_texts
 
     # # Load the dataset
-    dataset = Dataset.from_file('count_errors_data/data-00000-of-00001.arrow')
+    dataset = Dataset.from_file('extrinsic_intrinsic_with_spans_data/data-00000-of-00001.arrow')
     dataset = dataset.remove_columns([col for col in dataset.column_names if dataset.filter(lambda x: x[col] is None or x[col] == '').num_rows > 0])
     #dataset = dataset.select(range(10))
 
@@ -173,7 +173,7 @@ def main(args):
                 return_dict=True  # Ensure it returns a dict to access 'logits'
             )
 
-            tokens_of_interest = ["1", "2", "3", "4"]  # Replace with actual words or tokens
+            tokens_of_interest = ['0', '1']  # Replace with actual words or tokens
             token_ids_of_interest = tokenizer.convert_tokens_to_ids(tokens_of_interest)
             logits = logit_getter.logits
             filtered_logits = logits[:, 0, token_ids_of_interest] # ASSSSUMMMINGGGG 1st token is the one we want to predict
@@ -197,17 +197,18 @@ def main(args):
             i +=1
 
         # Use soft accuracy for evaluation
-        labels = dataset["num_errors"]
+        labels = dataset["error_type"]
         preds = [prediction.split("### Output:")[1].strip() for prediction in predictions]
+
         
-        score = get_score2(preds, labels)
+        score = get_extrinsic_intrinsic_score(preds, labels)
         f1 = f1_score2(labels, preds)
         cross_entropy = log_loss(labels, logs)
 
         print(f"Total accuracy: {score['total']}")
         print(f"F1 Score: {f1}")
         print(f"Cross-entropy: {cross_entropy}")
-        for error_type in ['1', '2', '3', '4']:
+        for error_type in ['extrinsic', 'intrinsic']:
             print(f"{error_type} class accuracy: {score[error_type]}")
 
         # Make sure the results directory exists

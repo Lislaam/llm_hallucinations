@@ -1,3 +1,12 @@
+GET_ERROR_SPAN = """
+You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
+You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the section(s) of the [SUMMARY] containing the error(s).
+
+[OUTPUT FORMAT]
+Return the section(s) of the [SUMMARY] containing the error(s) formatted as a Python list of strings.
+Every section should be taken directly from the [SUMMARY].
+"""
+
 COUNT_ERRORS = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors.
 You must refer to differences between a [SUMMARY] and [ORIGINAL TEXT] to count the number of errors in the [SUMMARY].
@@ -9,18 +18,20 @@ Please output the number of errors as a single integer in the range [1,2,3,4] on
 
 SYSTEM_INSTRUCTION = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
-Given the [ERROR LOCATIONS] you must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the error type.
-You are also given [ERROR CORRECTIONS] to help you identify the error type.
+You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the error type.
+
+Return '0' if a [SUMMARY] adds details not found in the [ORIGINAL TEXT].
+Else return '1' if the [SUMMARY] mischaracterises [ORIGINAL TEXT] information.
 
 [OUTPUT FORMAT]
-Return 0 if a [SUMMARY] adds details not found in the [ORIGINAL TEXT].
-Else return 1 if the [SUMMARY] mischaracterises [ORIGINAL TEXT] information.
+Please output your answer as a single integer only. Do not output more than one integer.
 """
 
 
 SYSTEM_INSTRUCTION2 = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
 You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the error type.
+Use the provided [ERROR LOCATIONS] to help you identify the error type. [ERROR LOCATIONS] are the section of a [SUMMARY] containing the error.
 
 Return '0' if a [SUMMARY] adds details not found in the [ORIGINAL TEXT].
 Else return '1' if the [SUMMARY] mischaracterises [ORIGINAL TEXT] information.
@@ -60,7 +71,7 @@ Example output: '2 INP EXPRED' if there are 2 errors in the summary, and they ar
 BINARY_INSTRUCTION = """
 You are a fair and impartial judge whose task is to carefully assess a [TEXT] and determine whether a given [SUMMARY] contains errors.
 
-You must evaluate the [SUMMARY] based on the [TEXT]. 
+You must evaluate the [SUMMARY] based on the [TEXT].
 If the [SUMMARY] is valid, respond with '0'.
 If the [SUMMARY] contains errors, respond with '1'.
 
