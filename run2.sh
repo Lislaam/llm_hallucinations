@@ -38,12 +38,14 @@ run_with_retries() {
 
 # List of commands to run
 commands=(
-    # "python3 sft_nli_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='n' --dir='error_span'"
-    # "python3 sft_nli_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='n' --dir='error_span'"
+    "python3 sft_nli_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='n' --dir='find_corrections'"
+    "python3 sft_nli_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='n' --dir='find_corrections'"
+    "python3 sft_nli_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='y' --dir='find_corrections'"
+    "python3 sft_nli_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='y' --dir='find_corrections'"
     # "python3 sft_nli_main.py --llm='google/gemma-1.1-7b-it' --do_fine_tune='n' --dir='error_span'"
 
-    "python3 sft_nli_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='y' --dir='error_span'"
-    "python3 sft_nli_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='y' --dir='error_span'"
+    # "python3 sft_nli_main.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='y' --dir='error_span'"
+    # "python3 sft_nli_main.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='y' --dir='error_span'"
     # "python3 sft_nli_main.py --llm='google/gemma-1.1-7b-it' --do_fine_tune='y' --dir='error_span'"
 )
 

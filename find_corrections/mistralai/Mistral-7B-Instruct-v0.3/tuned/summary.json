@@ -1,0 +1,642 @@
+[
+    {
+        "prediction": [
+            "Police said that someone opened fire from a passing car",
+            ". up to a dozen shots being fired close to the main police station",
+            ". Friedrich-Stoltze Square, a busy area of bars and cafes, as local people enjoyed the Ascension"
+        ],
+        "label": [
+            "shots were fired in Friedrich-Stoltze Square",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "West Sussex County Council (WSCC) said it already had an excellent model",
+            ". Katy Bourne",
+            ". East Sussexs fire authority said it would co-operate with the PCC but it believed collaboration could be achieved"
+        ],
+        "label": [
+            "Sussex PCC",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "staging the international at windsor park",
+            ". venue is scheduled to host the euro 2016 qualifier against romania on 13 june",
+            ". north stand at windsor park stadium in dublin",
+            ". windsor"
+        ],
+        "label": [
+            "damaged stand",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "PC Keith Palmers murder",
+            ". prompted greater emphasis on the need for a permanent memorial",
+            ". UK Police Memorial Trust appealed for \u00ac\u00a31.5m towards its construction at the National Memorial Arboretum"
+        ],
+        "label": [
+            "officers and staff who give their lives in the line of duty",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Myra Forde wishes me to make it clear that at no stage did she state that Ted Heath was a client and at no stage did she threaten to expose him as a client of hers if the prosecution was continued",
+            ".",
+            "."
+        ],
+        "label": [
+            "that Ted Heath was a client",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "\u00ac\u00a31bn by the end of this financial year",
+            "NHS Improvement said the progress being made was promising, but it still leaves the NHS short",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "so far saved \u00ac\u00a3600m",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "\u00ac\u00a31.5m towards its construction at the National Memorial Arboretum",
+            ". UK Police Memorial Trust",
+            ". PC Palmers death has put greater emphasis on the need to create a place where the nation can honour and commemor"
+        ],
+        "label": [
+            "UK Police Memorial Trust appealed for \u00ac\u00a31.5m",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "baines struck from the left of the box to seal a first league win in nine matches for the toffees",
+            ". evertons defensive frailties resurfaced within seconds when marc pugh equalised for the cherries",
+            "."
+        ],
+        "label": [
+            "baines",
+            "nine matches",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "36 counts of fraud relating to sums of allegedly stolen money lodged in his bank account",
+            "Mr McGurk, an accountant, was released on bail and will appear in court again on 19 November.",
+            ".",
+            "."
+        ],
+        "label": [
+            "former football player",
+            "stealing \u00ac\u00a3572,206",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "5-1 win",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "Fenerbahce went on to win the game 5-1 tomove to the top of the Turkish Super Lig",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "3-3 draw at Villa Park",
+            ". Christian Bentekes hat-trick earned a draw for Villa",
+            ". Fernandes, Rangers chairman, was watching the 3-3 draw at Villa Park from his iPhone away from the"
+        ],
+        "label": [
+            "QPR drew 3 - 3 with Aston Villa at Villa Park.",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Old Colwyn",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "the cows, aged 16 months, died",
+            "Dolwen, near Old Colwyn, on Friday",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "133 complaints between January 1 2014 and February 12 2015",
+            ". Brooklyn, the borough now associated with trendy hipsters and home to would-be president Hillary Clintons campaign"
+        ],
+        "label": [
+            "got the most complaints",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "788 homeless people since it was founded and 222 homeless people in the last 12 months, including re-housed tenants",
+            ". Fresh Start Housing",
+            ". Investing Solutions was set up in 20"
+        ],
+        "label": [
+            "paid by Wandsworth Council ",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "spratt, 25, joins on a one - year deal, and samson, 23, on a two - year - deal",
+            ". wales international spratt",
+            ". samson, who has played for scotland"
+        ],
+        "label": [
+            "samson",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "1.7bn people on the platform worldwide via Rooneys and the Manchester United Facebook pages",
+            "proceeds will be distributed to Rooneys four chosen charities",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "rooney",
+            "testimonial game at Old Trafford",
+            "streamed globally",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "had since been taken",
+            ". Wood Group said it was committed to employee safety.",
+            ". EnQuest has appropriate control measures in place which are designed to prevent exposure to NORM.",
+            ". following an investigation, additional precautionary steps have been"
+        ],
+        "label": [
+            "EnQuests",
+            "Thistle, 125 miles (201 km) north east of Shetland",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "39-year-old, from Ammanford in Carmarthenshire",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "BBC One's The One Show presenter",
+            "Miss Jones",
+            "first child was born",
+            "morning of Sunday, 22 January",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "25-year-old Freddie Gray because of still-unexplained spinal injuries that occurred while he was under police custody",
+            ". Baltimore Unrest Reveals Tensions Between African-Americans And Asians",
+            ". a key ingred"
+        ],
+        "label": [
+            "reports say",
+            "Jennifer Lee",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "had until 23 January to register an interest in the former Devonport-based ships",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "finalising their bids with viewings set to take place in late February and March",
+            "wants to award at least one of the frigates to a UK ship recycler",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "fire service raised concerns to the EA in February over the impact a fire could have on nearby residents, transport and the environment",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "Recovered Fuels Shipping Limited",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "The Queens Park Rangers player",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "washington",
+            "made his NI debut in March",
+            "game against Slovenia",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "live within hearing distance of one of Iraqi Kurdistan s frontlines with ISIS",
+            ". the vast majority of the camp s occupants are from the town of Sinjar and fled the ISIS assault there back in August",
+            "."
+        ],
+        "label": [
+            "lived",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "2017 Africa Cup of Nations",
+            "Tunisia had faced expulsion from the 2017 Africa Cup of Nations until apologising to Caf for complaints it lodged against the organisation during this years Nations Cup"
+        ],
+        "label": [
+            "FTF vice-president Maher Snoussi told BBC Sport",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Jordans education minister",
+            ". Mr Thneibat, who is also Jordans education minister, told the international conference in Dubai",
+            ". Mr Thneibat said Jordan already had Palestinian and Iraqi refugees and now had 1"
+        ],
+        "label": [
+            "Jordan's education minister",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "15",
+            ". Jak Trueman",
+            ". West Calder High School pupil",
+            ". was suffering from a rare form of blood cancer called gamma delta T-cell lymphoma",
+            ". had been documenting his life and treatment on social"
+        ],
+        "label": [
+            "West Calder",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "Timothy Geaney admitted taking or permitting the images to be taken between April 2004 and February 2014",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "Scotland",
+            "registered teacher",
+            "young boys",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "17 of the 35 goals that Rayo have scored this season have come from Bueno.",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+        ],
+        "label": [
+            "La Liga",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "27 - year fight hillsborough families had to endure showed how the odds were stacked against families seeking the truth",
+            ". the policing and crime bill gives police stronger powers and hands responsibility for fire and rescue services to elected police and crime commission"
+        ],
+        "label": [
+            "policing and crime bill",
+            ""
+        ]
+    },
+    {
+        "prediction": [
+            "15-year-old Jordan Edwards",
+            ". Dallas suburb of Balch Springs",
+            ". Dallas county",
+            ". Dallas county DAs office",
+            ". Dallas county",
+            ". Dallas county",
+            ". Dallas county",
+            ". Dallas county",
+            ". Dallas county"
+        ],
+        "label": [
+            "Dallas suburb of Balch Springs",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    }
+]

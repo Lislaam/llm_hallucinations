@@ -14,8 +14,13 @@ LABEL_CONVERSIONS2 = {
                     # '2' : '2',
                     # '3' : '3',
                     # '4' : '4',
-                      'extrinsic': '0',
-                      'intrinsic': '1',
+                    #   'extrinsic': '0',
+                    #   'intrinsic': '1',
+                    "correct": '0',
+                    "extrinsic-NP": '1',
+                    "extrinsic-predicate": '2',
+                    "intrinsic-NP": '3',
+                    "intrinsic-predicate": '4',
 }
 
 LABEL_CONVERSIONS = {
@@ -108,12 +113,13 @@ def get_score2(preds, refs):
     # Predictions are numbers corresponding to an error type.
     processed_refs = [LABEL_CONVERSIONS2[ref] for ref in refs] # Convert labels to numbers (same conversion as predictions)
 
-    class_errors = {'1': 0, '2': 0, '3': 0, '4': 0}
+    class_errors = {'correct': 0, 'extrinsic-NP': 0, 'extrinsic-predicate': 0, 'intrinsic-NP': 0, 'intrinsic-predicate': 0}
 
-    num_1 = sum([1 for ref in refs if ref == '1']) if '1' in refs else 1
-    num_2 = sum([1 for ref in refs if ref == '2']) if '2' in refs else 1
-    num_3 = sum([1 for ref in refs if ref == '3']) if '3' in refs else 1
-    num_4 = sum([1 for ref in refs if ref == '4']) if '4' in refs else 1
+    num_correct = sum([1 for ref in refs if ref == 'correct']) if 'correct' in refs else 1
+    num_extrinsic_NP = sum([1 for ref in refs if ref == 'extrinsic-NP']) if 'extrinsic-NP' in refs else 1
+    num_extrinsic_predicate = sum([1 for ref in refs if ref == 'extrinsic-predicate']) if 'extrinsic-predicate' in refs else 1
+    num_intrinsic_NP = sum([1 for ref in refs if ref == 'intrinsic-NP']) if 'intrinsic-NP' in refs else 1
+    num_intrinsic_predicate = sum([1 for ref in refs if ref == 'intrinsic-predicate']) if 'intrinsic-predicate' in refs else 1
 
     total = 0 # Overall accuracy
     for i in range(len(preds)):
@@ -122,10 +128,11 @@ def get_score2(preds, refs):
             class_errors[refs[i]] += 1
 
     scores = {'total': total / len(refs),
-            '1': class_errors["1"] / num_1 if '1' in refs else None,
-            '2': class_errors["2"] / num_2 if '2' in refs else None,
-            '3': class_errors["3"] / num_3 if '3' in refs else None,
-            '4': class_errors["4"] / num_4 if '4' in refs else None
+            'correct': class_errors["correct"] / num_correct if 'correct' in refs else None,
+            'extrinsic-NP': class_errors["extrinsic-NP"] / num_extrinsic_NP if 'extrinsic-NP' in refs else None,
+            'extrinsic-predicate': class_errors["extrinsic-predicate"] / num_extrinsic_predicate if 'extrinsic-predicate' in refs else None,
+            'intrinsic-NP': class_errors["intrinsic-NP"] / num_intrinsic_NP if 'intrinsic-NP' in refs else None,
+            'intrinsic-predicate': class_errors["intrinsic-predicate"] / num_intrinsic_predicate if 'intrinsic-predicate' in refs else None,
             }
     
     return scores

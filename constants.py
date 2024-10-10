@@ -1,10 +1,34 @@
+SINGLE_LABEL = """
+You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
+You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the type of error in the [SUMMARY].
+
+Return '0' if the [SUMMARY] is correct.
+Or return '1' where [SUMMARY] hallucinates a noun phrase absent from [ORIGINAL TEXT].
+Else return '2' on condition that [SUMMARY] includes a predicate not found in the [ORIGINAL TEXT].
+Otherwise return '3' if [SUMMARY] mischaracterises a noun phrase present in [ORIGINAL TEXT].
+Or return '4' if [SUMMARY] uses a predicate from [ORIGINAL TEXT] in the wrong context.
+
+[OUTPUT FORMAT]
+Please output your answer as a single integer only. Do not output more than one integer.
+"""
+
+GET_CORRECTIONS = """
+You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
+You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the section(s) of the [ORIGINAL TEXT] that corrects the error(s).
+
+[OUTPUT FORMAT]
+Return the section(s) of the [ORIGINAL TEXT] containing each correction separated by a newline.
+Every line should be quoted exactly from the [ORIGINAL]. Include one correction per error.
+"""
+
+
 GET_ERROR_SPAN = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
 You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the section(s) of the [SUMMARY] containing the error(s).
 
 [OUTPUT FORMAT]
-Return the section(s) of the [SUMMARY] containing the error(s) formatted as a Python list of strings.
-Every section should be taken directly from the [SUMMARY].
+Return the section(s) of the [SUMMARY] containing the error(s) separated by a newline.
+Every line should be quoted exactly from the [SUMMARY]. Do not include any additional information.
 """
 
 COUNT_ERRORS = """

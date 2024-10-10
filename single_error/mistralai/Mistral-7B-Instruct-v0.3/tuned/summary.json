@@ -1,0 +1,362 @@
+[
+    {
+        "prediction": "4. 0. 1. 2. 3.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 0. The summary is correct in 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 4. The summary is mostly correct, but",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1. 2 3 4. 0. The summary is",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. 3. 4. The summary hallucinates 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. The summary hallucinates a noun phrase absent from 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4 0 1 2. The summary correctly states that 3",
+        "label": "correct"
+    },
+    {
+        "prediction": "3. The summary mischaracterises a noun phrase present in the original",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4. The summary hallucinates 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4 0 1 0 0. The summary uses 3",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 4. The summary correctly states that Alexander Sou",
+        "label": "correct"
+    },
+    {
+        "prediction": "2. 3. 4 0. The summary includes 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 1 2 3 4. The summary is correct,",
+        "label": "correct"
+    },
+    {
+        "prediction": "4 0 1 3 2. The summary mischaracterizes",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2 3 4 0 1. The summary hallucinates",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3 4 0 0. The summary correctly states that 1",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "4. 0. 1. 3. 0. The",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 1 2 3 0. The summary is correct.",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4 0. The summary hallucinates",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3. 4. The summary correctly identifies the content of 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 1 2 3 4: 0. The [",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 1 3 4. The summary hallucinates a n",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3. 4. 0. 0. The summary 2",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 4. The summary hallucinates a n",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4. 0. The [SUMMARY] uses 3",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 4. The summary hallucinates a n",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0. The 3rd sentence is incorrect. Jordan Williams scored 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3. 0. The summary correctly states that \"American P 2",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. The summary mischaracterizes the [OR 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3. 4 0. The summary 1)",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0. The summary is correct. The noun phrase \"g 3",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4. 2. The summary",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0. The 3 noun phrases \"Starbucks\", 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 2 3 4. The summary hallucinates a n",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3. The summary mischaracterizes the law by stating that it 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0. The summary is correct. Bob Jungels won the G 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. The summary mentions that Pep Guard 3",
+        "label": "correct"
+    },
+    {
+        "prediction": "3. 4. 0 1. 2. The summary",
+        "label": "correct"
+    },
+    {
+        "prediction": "2 3 4 0 0. The summary 1)",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4. The summary hallucinates",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1. 3 4. The [SUMMARY 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0. 3. The summary correctly states that LPAC launched 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "4 0 1 2 3. The summary mischaracterizes",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 0. 1. 2. 0.",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4. The summary hallucinates 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4. The summary includes the n",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 0 1 2 3 4. The summary",
+        "label": "correct"
+    },
+    {
+        "prediction": "3 4 0 1 2. The summary mischaracterizes",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1. 2 4. The summary hallucinates a 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 1 3 0 0. The summary is 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "4. 0 1 2 3 4. In this",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3. 4 0 1 2. The summary mischaracter",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4: 0. The summary",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "2 3 4. 0 is not the correct answer 1",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 0. The",
+        "label": "correct"
+    },
+    {
+        "prediction": "3 4 0 1 2. The summary mischaracterizes",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 1 2 3 4. The summary is correct.",
+        "label": "correct"
+    },
+    {
+        "prediction": "4. The 2013 incident involved a vehicle revers 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 1 2 3 4. The summary is correct.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. The [SUMMARY] mischaracterises a noun",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1. 2 3 4. The summary halluc 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4. 0 1 2 and 3 are not applicable here",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. 4. The [SUMMARY] does 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 0. 1. 3. The summary mischaracter",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0. The 32-year-old believes his stunning 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 0 1 2 3. The summary correctly ident",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4 1. The [S",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0. 1. 3. 4. The summary is correct",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4 0. The summary includes 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 1 2 3 4: 2. The [",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2 3 4 0 0. The summary correctly 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. 2. 4. The summary hallucinates 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3 4. The summary mischaracterizes a 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1. 3. 4. 0. The summary halluc",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4 0 1 0 3. The summary mischaracterizes",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4. The summary hallucinates 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "3. 4. The summary mischaracterizes the statement made 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1. 3 4. The summary hallucinates the 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3. 4 0 1 2. The summary mischaracter",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4. 0 1 2 3 4. The summary",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2 3 4 are not applicable here. 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "2 3 4 0 0. The summary 1)",
+        "label": "correct"
+    },
+    {
+        "prediction": "3. 4. The summary mischaracterizes a noun 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1. 2. 3 4. 0. The summary",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2 3 4. The summary halluc 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2 3 4. The summary halluc 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0. The 32-year-old joined the black 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "1. 3 4. The town of Skeg 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. The [SUMMARY] uses the predicate 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4. 0. 1. 2. 3.",
+        "label": "intrinsic-predicate"
+    }
+]

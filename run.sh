@@ -48,7 +48,7 @@ commands=(
 
     "python3 sft_main2.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='n' --dir='extrinsic_intrinsic_with_error_span'"
     "python3 sft_main2.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='n' --dir='extrinsic_intrinsic_with_error_span'"
-    "python3 sft_main2.py --llm='google/gemma-1.1-7b-it' --do_fine_tune='n' --dir='extrinsic_intrinsic_with_error_span'"
+    # "python3 sft_main2.py --llm='google/gemma-1.1-7b-it' --do_fine_tune='n' --dir='extrinsic_intrinsic_with_error_span'"
 
     "python3 sft_main2.py --llm='meta-llama/Meta-Llama-3-8B-Instruct' --do_fine_tune='y' --dir='extrinsic_intrinsic_with_error_span'"
     "python3 sft_main2.py --llm='mistralai/Mistral-7B-Instruct-v0.3' --do_fine_tune='y' --dir='extrinsic_intrinsic_with_error_span'"

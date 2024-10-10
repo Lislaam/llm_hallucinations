@@ -1,0 +1,174 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "csv",
+  "dataset_size": 1036885,
+  "description": "",
+  "download_checksums": {
+    "/homes/53/fpinto/llm_hallucinations-1/dataset_with_corrections.csv": {
+      "num_bytes": 836640,
+      "checksum": null
+    }
+  },
+  "download_size": 836640,
+  "features": {
+    "dataset": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "origin": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "doc": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "summ": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "model_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "cut": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "error_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "full_error": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "annotated_span": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "annotated_corrections": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Unnamed: 11": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 12": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 13": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 14": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 15": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 16": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "301": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 18": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 19": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 20": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 21": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 22": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 23": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 24": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 25": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 26": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 27": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 28": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 29": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 30": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 31": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 32": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 33": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Unnamed: 34": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1873525,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1036885,
+      "num_examples": 999,
+      "dataset_name": "csv"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

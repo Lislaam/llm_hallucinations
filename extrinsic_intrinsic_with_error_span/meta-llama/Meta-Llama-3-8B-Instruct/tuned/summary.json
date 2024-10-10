@@ -1,14 +1,10 @@
 [
     {
-        "prediction": "0. The summary adds details not found in the original text. 1",
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I'm a diligent and impartial judge, and I can 1",
+        "prediction": "1. 0. 1. 1. 0.",
         "label": "extrinsic"
     },
     {
@@ -16,99 +12,15 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0. Explanation: The summary adds details not found in the original text.",
+        "prediction": "0.0. The summary adds details not found in the original 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. 1. 0. 1. 0.",
+        "prediction": "0.0.0.0.0.0.0.0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1.0. The summary mischaracterises the original text information 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 1. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. Explanation: The summary adds details not found in the original text.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I was expecting the output to be 1. Can you please",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. The summary does not mention the exact cause of death, 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. The summary adds details not found in the original text. 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. It mischaracterises information about Mr Ashley, the company 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. The summary adds details not found in the original text. 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I'm a diligent and impartial judge, and I can 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. ###### 1. 0. ###### 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I'd like to know why this is the case. 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. The summary adds details not found in the original text. The original",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the original text information. The 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. The summary adds details not found in the original text. 1",
+        "prediction": "0.0.0. 1.0.0. 1",
         "label": "extrinsic"
     },
     {
@@ -116,175 +28,47 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. 0. 1. 1. 1.",
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. The summary mischaracterises the information in the 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0.0",
         "label": "intrinsic"
     },
     {
-        "prediction": "1. It mischaracterises the information in the original text. 0",
+        "prediction": "0. Explanation: The summary adds details not found in the original text,",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. 0. ###### 1. 0. 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I'm a diligent and impartial judge, and I can 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 1. 1. 1.",
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "0.0. I'm a judge, and I have to 1",
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "intrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I was expecting 1. The error is that the summary adds",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I did not find any information in the ORIGINAL_TEXT that 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. It adds details not found in the original text. 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I did not find the word \"confirmed\" in the 1",
+        "prediction": "0.0.0. 1.0.0. 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "0. I did not find these details in the original text. Manchester United",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. Explanation: The summary adds details not found in the original 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0.0. The summary adds details not found in the original 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. It adds details not found in the original text. 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. Explanation: The summary adds details not found in the original text.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. It adds details not found in the ORIGINAL TEXT. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. #### Explanation: The summary adds details not found in the original text",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. ###### 1. ###### 1. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 1. 0. 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 1. 0.",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1. ###### 1. ###### 0. ######",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. The summary adds details not found in the original text. The original",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. ###### 1. 0. ###### 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. I was able to identify the error type. The summary 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary adds details not found in the original text. 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. #### Explanation: The summary adds details not found in the 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0.0. I'm a judge, and I have to 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. I did not find any information in the original text that 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 0. 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1.0. ###### 1.0. ###### 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0.0. I'm a judge, and I must refer 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 1. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. I did not find this information in the original text. 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I'm a diligent and impartial judge, and I must 1",
+        "prediction": "1.0. The summary mischaracterises the original text information 0",
         "label": "intrinsic"
     },
     {
@@ -292,43 +76,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 1. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1.0. #### Explanation: The summary contains errors that are 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1.0. ###### 0.0. ###### 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 1. 1. 1.",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. Explanation: The summary adds details not found in the original 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. Explanation: The summary adds details not found in the original 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0.0. The summary adds details not found in the original 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 0. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 1. 0.",
+        "prediction": "1. 0. 1. 0. 0.",
         "label": "extrinsic"
     },
     {
@@ -336,43 +84,31 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0. The summary adds details not found in the original text. 1",
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0.0. I'm a judge, and I must refer 1",
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original text.",
         "label": "intrinsic"
     },
     {
-        "prediction": "0. I did not find any information in the ORIGINAL_TEXT that 1",
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. It mischaracterises the information in the ORIGINAL TEXT. 0",
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "intrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. It adds details not found in the original text. 1.",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1.0. The summary adds details not found in the original 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. 1. 0. 0. 1.",
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
         "label": "extrinsic"
     },
     {
@@ -380,23 +116,243 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0. I can't find 'anthony fury' in the 1",
+        "prediction": "1.0. Explanation: The summary mischaracterizes the information 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. #### Explanation: The summary adds details not found in the original text",
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. The summary adds details not found in the original text. 1",
+        "prediction": "1.0. The summary mischaracterises the original text information 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. I cannot find any information in the original text that supports 1",
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the original text information. 0.",
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original text,",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0. I'd say 1.0. The",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. Explanation: The summary mischaracterises the information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original text.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0. 1.0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0. The summary adds details not found in the original text.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. The summary mischaracterises the information in the 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. 0.0. 1.0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0. 1.0.0.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. The summary mischaracterises the original text information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0. Explanation: The summary mischaracterizes the original 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0.0.1. 1. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. Explanation: The summary adds details not found in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1. 1. 1.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. I'd say 1.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0. 0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0. Ashya's parents were not treated for cancer 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "extrinsic"
     },
     {
@@ -404,87 +360,131 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "0. I'm a bot. #### 1. I'm a bot",
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "prediction": "1.0. 0.0. 0.0.",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0.0. The summary adds details not found in the original 1",
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. It mischaracterises the information in the ORIGINAL TEXT. 0",
+        "prediction": "0.0.0.0.0.0.0.0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. The summary adds details not found in the original text. 1",
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 0. 1. 0.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "intrinsic"
     },
     {
-        "prediction": "1. The [SUMMARY] mischaracterises [ORIGINAL TEXT] information",
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "0. The summary adds details not found in the original text. 1",
+        "prediction": "1.0. Explanation: The summary mischaracterizes the information 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. The summary adds details not found in the original text. 1",
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. 1. 0. 1. 0.",
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. 1. 0. 1. 0.",
+        "prediction": "1. 0. 1. 0. 0.",
         "label": "extrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. It adds details not found in the original text. 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0. I did not find 'aberdeen city' in the 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. It mischaracterises information. The original text does not 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0.0.0.1. 1. 1.",
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "0. It adds details not found in the original text. Pulido was",
+        "prediction": "1. 0. 1. 0. 1.",
         "label": "intrinsic"
     },
     {
-        "prediction": "1. The summary mischaracterises the information in the original text 0",
+        "prediction": "0. Explanation: The summary adds details not found in the original 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0. I did not find any information about a 2- 1",
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. ```python\ndef judge_summary(summary 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0.0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0. 1.0.0. 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1. 0. 1. 0. 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0. The summary adds details not found in the original text.",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0.0.0.0.0.0 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0.0.0.0.0.0 1",
         "label": "extrinsic"
     }
 ]

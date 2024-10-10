@@ -1,0 +1,362 @@
+[
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\n 4 0 1 2\n\n The [",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 0 0 0 0 4",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 2 3 4 0 1 0 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 3 4 0 0 0 1 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\nThe summary hallucinates a noun phrase absent 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4 0\n\n The summary halluc",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 4\n\n The summary is mostly correct,",
+        "label": "correct"
+    },
+    {
+        "prediction": "2 3 4\n\n 0 1 2 3",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 1 2 3 4\n 0\n 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4\n0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2 3 4\n\n 0 means the summary is 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3 4 0 0 0\n\n The summary 1",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 0 1 3 0 0 4 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0\n\n 1 2 3 4\n 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 2 3 4 0 0 1 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3\n\n 4\n 0\n 1\n 2",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n 1 2 3 4\n 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 1 3 0 0 0 0 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3 4 0 2",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 4 0 0 0 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4\n\n 0\n 1\n 2\n 3",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 3 4\n\nThe [SUMMARY",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0\n\n 3\n\n The summary states that Jordan Williams 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3\n\n 0\n 1\n 2\n 3",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\n 4\n 0\n 1\n 2",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2\n\n 3 4 0 1 2",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0\n\nThe [SUMMARY] is correct as 3",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0\n\n 1 2 3 4\n 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0\n\n 3\n\n The [SUMMARY 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 2 3 4\n The summary hallucinates a n",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3\n\nThe summary mischaracterizes the Religious Freedom Rest 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0\n\nThe summary is correct as it accurately states that Bob 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\n 1. The summary mentions that Pep 3",
+        "label": "correct"
+    },
+    {
+        "prediction": "3 4 0 0 2 1\n\nExplan",
+        "label": "correct"
+    },
+    {
+        "prediction": "2 3 4 0 1",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4\n 0\n 1",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1\n\n 3 4 0 1 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0\n\n 3\n\n The [SUMMARY 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "4\n 0\n 1\n 2\n 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4 0\n\n The summary halluc",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4\n ### Explanation:",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "3 4 0 1 2",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 2 4 0 0 1 0 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 1 3 0 0 0 0 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3 4 0 1 2\n\n The summary mischaracter",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4\n\n 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "2 3 4\n\n 0 1 2 3",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 2 3 0 0 0 0 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "3\n 4 0 1 2\n\n The [S",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0\n 1 2 3 4\n 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "4\n\n 2022-09-2 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 1 2 3 4 0 0 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\nThe noun phrase \"the sister of a woman who died",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1\n\n 2 3 4 0\n\n 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4\n 0 1 2 3 4\n 0",
+        "label": "correct"
+    },
+    {
+        "prediction": "0 4 0 0 0 0 1 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n 0 1 2 3 4\n 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0\n\n 32-year-old Jermain 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 0 1 2 3 4 0 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 1 2 3 4\n ### Explanation:",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0 1 3 4\n\nExplanation:",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2 3 4\n\n 0 1 2 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0\n\n 1 2 3 4\n 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "0 3 4 0 1 0 0 2",
+        "label": "correct"
+    },
+    {
+        "prediction": "1 2 4\n\n The summary hallucinates a 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2 3 4\n\n The summary hallucinates a 0",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 3 4 0 0 0 0 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4 0\n\nThe summary halluc",
+        "label": "correct"
+    },
+    {
+        "prediction": "3\n\n 431,000 in pay 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1 3 4 0\n\n The summary hallucinates a",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3\n 4 0 1 2\n The summary mischaracter",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4\n\n 0 1 2 3 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1 2 3 4 0\n\n The summary halluc",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "2 3 4 0 0\n\nExplan 1",
+        "label": "correct"
+    },
+    {
+        "prediction": "3 4 0 0 0\n\n The summary halluc",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 0 0\n\nThe summary 4",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "0 2 3 4 0\n\n 0 1",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "0 2 3 4 0 1 0 0",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "0\n\n 32-year-old striker J 4",
+        "label": "correct"
+    },
+    {
+        "prediction": "1\n\n 3 4 1 0\n\n The summary",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\n The [SUMMARY] uses the pred 0",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4\n 0\n 1\n 2\n 3",
+        "label": "intrinsic-predicate"
+    }
+]

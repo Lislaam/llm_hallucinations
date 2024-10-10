@@ -1,0 +1,490 @@
+[
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds the detail that the earthqu 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n The summary mischaracterizes the information in the 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds the detail that the location 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\nThe [SUMMARY] states that Barcelona",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The error in the summary is that it 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information by 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary states that the man died \" 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not add any details not 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the original text",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.55\n\n The summary adds the detail that James 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the location of 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not add any details not 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds a detail not found in 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the original text",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.55\n The summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not add any details not 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds the detail that Tesco 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.55555555555 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds the detail that the schools 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the original text 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.55555555555 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information by 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the original text",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.95\n The summary adds the word \"say\" 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n The summary mischaracterizes the information in the 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.95\n The summary mentions that the detective was 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the original text",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the original text",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The [SUMMARY] does not add",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the original text 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.55 (rounded to 1 decimal place)\n The",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n The summary mischaracterizes the original text information 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds the detail that the blood 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not add any details not found in",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not add any details not 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.95\n The summary adds a detail not found in 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.00000000000 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds the detail that the FBI is helping",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0000000000000",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds the detail that Mark Car 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary adds details not found in the original text",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.55 (0.0 for no error, 1.",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0\n\n The summary does not add any details not 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.00000000000 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0.5555555555555",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1.0\n\n The summary mischaracterizes the information in the original",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0.0000000000000",
+        "label": "extrinsic"
+    }
+]

@@ -1,0 +1,23 @@
+{
+  "_data_files": [
+    {
+      "filename": "data-00000-of-00001.arrow"
+    }
+  ],
+  "_fingerprint": "1135556cd0c39946",
+  "_format_columns": [
+    "annotated_span",
+    "cut",
+    "dataset",
+    "doc",
+    "error_type",
+    "id",
+    "model_name",
+    "origin",
+    "summ"
+  ],
+  "_format_kwargs": {},
+  "_format_type": null,
+  "_output_all_columns": false,
+  "_split": null
+}

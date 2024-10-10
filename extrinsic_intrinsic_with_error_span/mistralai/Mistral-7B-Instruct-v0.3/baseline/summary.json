@@ -8,7 +8,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n 1\n\n\n ### ORIGINAL_TEXT",
+        "prediction": "0\n\n 1\n\n\n### ORIGINAL_TEXT",
         "label": "extrinsic"
     },
     {
@@ -16,19 +16,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n 1\n\n In the summary, it is stated 0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1\n\n 0\n\n The summary states that Microsoft has launched a",
+        "prediction": "0\n\n 0\n\n### SUMMARY: 1",
         "label": "extrinsic"
     },
     {
@@ -36,11 +28,19 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n The summary mischaracterizes the information in the original 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
         "label": "intrinsic"
     },
     {
@@ -48,7 +48,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n 0\n\n The summary mischaracterizes the original text",
         "label": "intrinsic"
     },
     {
@@ -56,7 +56,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1",
+        "prediction": "1\n\n 0\n\n ### ORIGINAL_TEXT:",
         "label": "intrinsic"
     },
     {
@@ -76,7 +76,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n The summary mischaracterizes the original text by imp 0",
+        "prediction": "1\n\n The summary mischaracterizes the information in the original 0",
         "label": "extrinsic"
     },
     {
@@ -84,15 +84,15 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n 1",
+        "prediction": "0\n\n 1\n\n### ORIGINAL_TEXT:",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the original text information. 0",
+        "prediction": "1\n\n 0\n\n\n ### ORIGINAL_TEXT",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n ### ORIGINAL_TEXT: The 19",
+        "prediction": "0\n\n 1\n\n ### ORIGINAL_TEXT:",
         "label": "extrinsic"
     },
     {
@@ -100,7 +100,7 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 0",
+        "prediction": "1\n\n 0\n 1",
         "label": "extrinsic"
     },
     {
@@ -116,15 +116,15 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
+        "prediction": "1\n\n 0\n\n The summary states that the main opposition party",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n\n ### ORIGINAL_TEXT:",
+        "prediction": "1\n\n 0\n\n The error in the summary is that it",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "prediction": "1\n\nThe summary mischaracterizes the information in the original 0",
         "label": "extrinsic"
     },
     {
@@ -136,39 +136,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds the detail that Abdelkrim 1",
+        "prediction": "0\n\n 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\n The summary adds the statement \"supporters say it 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1\n\n 0\n\n ### ORIGINAL_TEXT:",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0\n\n The summary adds details not found in the original text 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0\n\n The summary adds the detail that Jeremy Corbyn 1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "1 1 0",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
+        "prediction": "0\n\nThe summary adds the detail that supporters say the law 1",
         "label": "intrinsic"
     },
     {
@@ -176,15 +148,43 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds the detail that Tony Pulis returned 1",
-        "label": "intrinsic"
-    },
-    {
-        "prediction": "0\n\n The summary adds the detail that the schools are at 1",
+        "prediction": "0\n\n The summary adds details not found in the original text 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1\n 1\n 0",
+        "prediction": "1\n\nThe summary mischaracterizes the original text information. 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n 1\n\n The summary mischaracterizes the information 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n 1\n 0\n 0",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "1\n\n 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "0\n\n 0\n\n 0\n\n 1",
+        "label": "intrinsic"
+    },
+    {
+        "prediction": "0\n\n The summary adds the detail that the two schools are 1",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0\n\n 1\n\n 1",
         "label": "extrinsic"
     },
     {
@@ -192,19 +192,19 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n The summary mischaracterizes the information in the original 0",
+        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n The summary mischaracterizes the [ORIGIN 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n\n ### ORIGINAL_TEXT:",
+        "prediction": "1\n\nThe summary mischaracterizes the original text information. 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0 1 1 1\n\nThe summary adds the detail that",
+        "prediction": "0\n\n 0\n\n 1. The summary adds the phrase",
         "label": "extrinsic"
     },
     {
@@ -212,7 +212,7 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1",
+        "prediction": "1\n\n 0",
         "label": "extrinsic"
     },
     {
@@ -224,7 +224,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1\n 0\n 0",
+        "prediction": "1\n\n 0\n 1",
         "label": "extrinsic"
     },
     {
@@ -236,23 +236,23 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds the detail that Jill's 1",
+        "prediction": "0\n\n 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1\n 0\n 1",
+        "prediction": "1\n\n 0\n\n ### ORIGINAL_TEXT:",
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n 0\n\n The summary mischaracterizes the [OR",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 0\n\nThe summary mischaracterizes the original text",
+        "prediction": "1\n\n 0\n\n The [SUMMARY] mis",
         "label": "extrinsic"
     },
     {
@@ -260,11 +260,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1",
+        "prediction": "1\n\n 0\n\n 0\n\n 0",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 0\n\n The summary mischaracterizes the original text",
+        "prediction": "1\n\n 0",
         "label": "extrinsic"
     },
     {
@@ -280,7 +280,7 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text 1",
+        "prediction": "1\n 1\n\n---\n\n### ORIGIN 0",
         "label": "extrinsic"
     },
     {
@@ -296,19 +296,19 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n\n\n### ORIGINAL_TEXT",
-        "label": "extrinsic"
-    },
-    {
         "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1\n 0\n 1",
+        "prediction": "1\n\nThe summary mischaracterizes the information by stating that 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n\n### ORIGINAL_TEXT:",
+        "prediction": "1\n\n[OUTPUT FORMAT]\n1\n\n[ 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\n 0",
         "label": "intrinsic"
     },
     {
@@ -324,7 +324,7 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1\n 0\n 0",
+        "prediction": "1\n\n 0\n\n 1\n\n 0",
         "label": "extrinsic"
     },
     {
@@ -332,7 +332,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n 0\n\n 1. The summary incorrectly states",
+        "prediction": "0\n\n 1",
         "label": "extrinsic"
     },
     {
@@ -344,7 +344,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "prediction": "1\n\nThe error in the summary is that it mischaracter 0",
         "label": "intrinsic"
     },
     {
@@ -352,11 +352,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n 1",
+        "prediction": "0\n\n 0\n\n### SUMMARY: 1",
         "label": "intrinsic"
     },
     {
@@ -368,7 +368,7 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "0\n\n The summary adds details not found in the original text. The",
         "label": "extrinsic"
     },
     {
@@ -376,7 +376,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0",
+        "prediction": "1\n\n 0\n\n The [SUMMARY] mis",
         "label": "extrinsic"
     },
     {
@@ -384,7 +384,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n 0\n 1",
         "label": "extrinsic"
     },
     {
@@ -392,31 +392,31 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n The summary adds the detail that the player Luis Su 1",
+        "prediction": "0\n\n The summary adds details not found in the original text 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1",
+        "prediction": "1\n\n The summary mischaracterizes the original text by suggesting 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1",
+        "prediction": "1\n\n The summary mischaracterizes the [ORIGINAL TEXT",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n 1\n\n---\n\n 0\n\n ### OR",
+        "prediction": "1\n 1\n\n---\n\n### ORIGIN 0",
         "label": "intrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1",
+        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n The error in the summary is that it mischaracterizes 0",
         "label": "extrinsic"
     },
     {
@@ -424,11 +424,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1\n 0\n 1",
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 0\n 1",
+        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
         "label": "intrinsic"
     },
     {
@@ -440,19 +440,19 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n The summary adds the detail that Mark Carney has 1",
+        "prediction": "1\n 1\n\n The summary states that Mark Carney 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n The summary mischaracterizes the original text by stating 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n 1\n\n### ORIGINAL_TEXT 0",
+        "prediction": "1\n 1\n\n\n### ORIGINAL_ 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n The summary mischaracterizes the situation by stating that 0",
+        "prediction": "1\n\n 0\n 1",
         "label": "extrinsic"
     },
     {
@@ -464,11 +464,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the original text by stating 0",
+        "prediction": "1\n\n 0\n\n\n### ORIGINAL_TEXT",
         "label": "extrinsic"
     },
     {
-        "prediction": "0",
+        "prediction": "1\n\n 0\n\n The summary mischaracterizes the original text",
         "label": "extrinsic"
     },
     {

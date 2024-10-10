@@ -12,11 +12,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The new 0.",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n```python\ndef judge(text, summary, error_locations 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Indian government has announced plans to 0",
         "label": "extrinsic"
     },
     {
@@ -28,7 +28,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The product will offer teachers new ways 0",
         "label": "extrinsic"
     },
     {
@@ -48,7 +48,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The move apparently follows a request from 1",
+        "prediction": "1\n\n 1. 0\n 2. 1",
         "label": "intrinsic"
     },
     {
@@ -60,27 +60,27 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 1. The summary mischaracterises the information in 0",
+        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The 201 0",
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Bank of England's governor, 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterises the information in the original text 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The study, commissioned by education technology 0",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterises the original text information by stating 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Queen's Park Rangers player made 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-20 season 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The UK's largest supermarket chain, 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "prediction": "1 1 0 0\n\n### ORIGINAL_TEXT: \n### SUMMARY",
         "label": "extrinsic"
     },
     {
@@ -88,11 +88,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The Scottish Government has announced plans to 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Scottish Government has announced a new 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The former Manchester City man, James 1",
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
         "label": "extrinsic"
     },
     {
@@ -112,15 +112,15 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The IMF has been accused of being 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The IMF has been a major player 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The All Progressives Congress (AP 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, so the",
+        "prediction": "1\n\n### ORIGINAL_TEXT: the england and wales cricket 0",
         "label": "intrinsic"
     },
     {
@@ -132,7 +132,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The summary mischaracterises the information in 0",
+        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The \u00c3\u201a 0",
         "label": "extrinsic"
     },
     {
@@ -148,11 +148,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Springboks have won the 1",
         "label": "extrinsic"
     },
     {
@@ -160,11 +160,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019 Rugby World Cup 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-2020 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The British supermarket 0",
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
         "label": "intrinsic"
     },
     {
@@ -176,11 +176,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\nPlease output your answer as a single integer only. 1 if",
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: Birmingham academies Park View and N 1",
         "label": "extrinsic"
     },
     {
@@ -188,7 +188,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
+        "label": "extrinsic"
+    },
+    {
+        "prediction": "1\n\nNote: The output should be a single integer 0 or",
         "label": "extrinsic"
     },
     {
@@ -196,19 +200,15 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, specifically the",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Welsh Government has announced a new 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The fire service and police were called 0",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The US has announced plans to withdraw 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The 2011 census reported 1.",
-        "label": "extrinsic"
-    },
-    {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\nPlease output your answer as a single integer only. 1 if",
         "label": "intrinsic"
     },
     {
@@ -224,19 +224,19 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nSolution:\n```\ndef judge(text, summary, error 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The views were expressed following a meeting 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The 2016 US presidential election 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2016 United States presidential 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe error type is '1' because the [SUM 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The event on 27 May offers 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\nThe summary adds details not found in the original text. 1",
         "label": "intrinsic"
     },
     {
@@ -244,7 +244,7 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The 2019 Rugby World Cup 1",
+        "prediction": "1\n\n 1.  ### ORIGINAL_TEXT: The company's 0",
         "label": "extrinsic"
     },
     {
@@ -260,11 +260,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### Explanation:\nThe summary adds details not found in the 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: He was seriously injured in a bomb 1",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\n 1. The Northern Irishman, twice a winner 0",
+        "prediction": "0\n\n### Explanation:\nThe [SUMMARY] contains details not 1",
         "label": "extrinsic"
     },
     {
@@ -272,7 +272,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### Explanation:\nThe [SUMMARY] mischaracterises 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The United States has announced that it 0",
         "label": "extrinsic"
     },
     {
@@ -284,7 +284,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: the court heard that the two men 1",
         "label": "intrinsic"
     },
     {
@@ -292,19 +292,19 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The Queen and Duke of Edinburgh have 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: Younger people take religion seriously \" 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe error type is '1' because the [SUM 0",
+        "prediction": "1\n\nThe output should be 1. The summary mischaracter 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The European Union has agreed to a 0",
+        "prediction": "0 0 0 0 0 0 0 1",
         "label": "extrinsic"
     },
     {
@@ -312,7 +312,7 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The Scottish Government has announced plans to 1",
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
         "label": "extrinsic"
     },
     {
@@ -320,15 +320,15 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The summary does not mention the school being 0",
+        "prediction": "1\n\n 1. The head teacher of a Birmingham school has 0",
         "label": "intrinsic"
     },
     {
-        "prediction": "1 1 0 0 0 0 0 0",
+        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The United States has announced that it 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: Washington blamed Russia and the Syrian government 1",
         "label": "extrinsic"
     },
     {
@@ -336,7 +336,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\n### Explanation:\nThe summary adds details not found in the 1",
         "label": "extrinsic"
     },
     {
@@ -348,11 +348,11 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: The company, which is based in 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Environment Agency (EA) suspended 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The company's revenue increased by \u00c2 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: Aberdeenshire-based Harbro 0",
         "label": "extrinsic"
     },
     {
@@ -364,7 +364,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: It works by looking for a combination 1",
+        "prediction": "1\n\n 1. Write a Python function that takes the original 0",
         "label": "intrinsic"
     },
     {
@@ -372,7 +372,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "prediction": "1 1 0 0\n\nThe output should be 1110",
         "label": "extrinsic"
     },
     {
@@ -380,19 +380,19 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: the 2015 wimbledon championships 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: fury, 27, is the 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, such as",
+        "prediction": "0\n\nThe error in the summary is that it adds details not found in",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The company has been struggling to recover 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "prediction": "1\n\n 1. What is the output of the given problem 0",
         "label": "extrinsic"
     },
     {
@@ -400,7 +400,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: the government said any decision should await 0",
         "label": "intrinsic"
     },
     {
@@ -408,19 +408,19 @@
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nSolution:\n\nThe summary adds details not found in the original 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: Media playback is not supported on this 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterises the original text information. 0 if",
+        "prediction": "1\n\nThe error in the summary is that it mischaracterises 0",
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\nThe error in the summary is that it incorrectly states that 1",
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n### ORIGINAL_TEXT: The Duke of Cambridge has been appointed 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The Duke and Duchess of Cambridge have 0",
         "label": "extrinsic"
     },
     {
@@ -428,15 +428,15 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\n### ORIGINAL_TEXT: Town were rewarded for their greater control and threat",
+        "prediction": "1\n\nPlease output your answer as a single integer only. Do not output",
         "label": "intrinsic"
     },
     {
-        "prediction": "0\n\nExplanation: The summary adds details not found in the original 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: The Welsh Rugby Union has announced a 1",
         "label": "extrinsic"
     },
     {
@@ -448,7 +448,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
         "label": "extrinsic"
     },
     {
@@ -456,7 +456,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "0\n\nThe summary adds details not found in the original text, 1",
+        "prediction": "0\n\n### ORIGINAL_TEXT: Muir, 23, broke 1",
         "label": "extrinsic"
     },
     {
@@ -464,7 +464,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\nThe summary mischaracterizes the information in the original text 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The United States is a federal republic 0",
         "label": "extrinsic"
     },
     {
@@ -472,11 +472,11 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The [SUMMARY] mischaracterises 0",
+        "prediction": "1\n\n 1. 0\n2. 1\n3.",
         "label": "intrinsic"
     },
     {
-        "prediction": "1\n\nNote: The output should be a single integer, either 0",
+        "prediction": "1\n\n### ORIGINAL_TEXT: The 2019-20 UEFA 0",
         "label": "intrinsic"
     },
     {
@@ -484,7 +484,7 @@
         "label": "extrinsic"
     },
     {
-        "prediction": "1\n\n 1. The summary mischaracterizes the information in 0",
+        "prediction": "0\n\n### ORIGINAL_TEXT: London 2012 Olympian Andrew 1",
         "label": "extrinsic"
     }
 ]

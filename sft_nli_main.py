@@ -1,5 +1,5 @@
 from sft import *
-from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, SYSTEM_INSTRUCTION2, GET_ERROR_SPAN
+from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, SYSTEM_INSTRUCTION2, GET_ERROR_SPAN, GET_CORRECTIONS
 from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict, Dataset
 from utils import error_type_map, reformat_data_split_labels, oversampling, undersampling, make_binary_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
@@ -22,7 +22,7 @@ from tqdm import tqdm
 def main(args):
 
     def formatting_prompts_func(example, training=True):
-        instruction = GET_ERROR_SPAN
+        instruction = GET_CORRECTIONS
         output_texts = []
         for i in range(len(example["error_type"])):
             text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### Output: " #{example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
@@ -34,13 +34,13 @@ def main(args):
                     )
                 else:
                     try:
-                        error_locations = ast.literal_eval(example["annotated_span"][i])
+                        error_locations = ast.literal_eval(example["annotated_corrections"][i])
                     except:
                         import pdb; pdb.set_trace()
                     for loc in error_locations:
-                        text += f"{loc}, "
+                        text += f"{loc}\n"
 
-                    text.removesuffix(', ')
+                    text.removesuffix('\n')
                     text += '.'
                     text += tokenizer.eos_token
 
@@ -49,7 +49,7 @@ def main(args):
         return output_texts
 
     # # Load the dataset
-    dataset = Dataset.from_file('error_span_data/data-00000-of-00001.arrow')
+    dataset = Dataset.from_file('with_corrections_data/train/data-00000-of-00001.arrow')
     dataset = dataset.remove_columns([col for col in dataset.column_names if dataset.filter(lambda x: x[col] is None or x[col] == '').num_rows > 0])
     #dataset = dataset.select(range(10))
 
@@ -98,8 +98,8 @@ def main(args):
 
     trainer = SFTTrainer( 
         model=model,
-        train_dataset= train_dataset, #dataset['train'],
-        eval_dataset= val_dataset, #dataset['validation'],
+        train_dataset= train_dataset,
+        eval_dataset= val_dataset, 
         args=sft_config,
         formatting_func=formatting_prompts_func,
         data_collator=collator,
@@ -157,7 +157,7 @@ def main(args):
         predictions = []
         i=0
         for batch in tqdm(dataloader):
-            #if i <=5 :
+            # if i <=5 :
             inputs = tokenizer(batch["formatted_text"], return_tensors="pt", padding=True)
 
             outputs = model.generate(
@@ -175,35 +175,36 @@ def main(args):
             i +=1
 
         # Use soft accuracy for evaluation
-        labels = dataset["annotated_span"]
-        preds = [prediction.split("### Output:")[1].strip().split('\n')[0] for prediction in predictions]
+        labels = dataset["annotated_corrections"]
+        preds = [prediction.split("### Output:")[1].split('\n\n')[0].strip().replace("'", '').replace('"', '').split('\n') for prediction in predictions]
 
-        # Cleaning the prediction lists
-        i = 0
-        for pred in preds:
-            if "'" in pred[:2]:
-                if pred[-2:] != "']":
-                    preds[i] = pred + "']"
-            elif '"' in pred[:2]:
-                if pred[-2:] != '"]':
-                    preds[i] = pred + '"]'
+        # # Cleaning the prediction lists
+        # i = 0
+        # for pred in preds:
+        #     if "'" in pred[:2]:
+        #         if pred[-2:] != "']":
+        #             preds[i] = pred + "']"
+        #     elif '"' in pred[:2]:
+        #         if pred[-2:] != '"]':
+        #             preds[i] = pred + '"]'
         
-            try:
-                ast.literal_eval(preds[i])
-            except:
-                import pdb; pdb.set_trace()
+        #     try:
+        #         ast.literal_eval(preds[i])
+        #     except:
+        #         import pdb; pdb.set_trace()
 
-            i += 1
-
+        #     i += 1
 
         labels = [ast.literal_eval(label) for label in labels]
-        preds = [ast.literal_eval(pred) for pred in preds]
+        #preds = [ast.literal_eval(pred) for pred in preds]
         
         for label, pred in zip(labels, preds):
             while len(pred) < len(label):
                 pred.append('')
             while len(label) < len(pred):
                 label.append('')
+
+        # import pdb; pdb.set_trace()
         
         flat_labels = [item for sublist in labels for item in sublist] 
         flat_preds = [item for sublist in preds for item in sublist] 
