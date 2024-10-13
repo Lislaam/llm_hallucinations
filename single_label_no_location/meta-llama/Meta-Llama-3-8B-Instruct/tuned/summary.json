@@ -1,0 +1,162 @@
+[
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 1.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3. 4. 3. 4. 1.",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 5.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 5.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. #### Explanation: The summary mischaracterises a noun phrase 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 1.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 5.",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1. 3. 4. 4. 3.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1. The summary hallucinates a noun phrase absent from the 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2. 4.",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 5.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4. 1. 2. 3. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 1. Explanation",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3. 4. 1. 4.",
+        "label": "intrinsic-predicate"
+    }
+]

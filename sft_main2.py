@@ -1,7 +1,6 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, SYSTEM_INSTRUCTION2, COUNT_ERRORS, SINGLE_LABEL
-from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict, Dataset
-from utils import error_type_map, reformat_data_split_labels, oversampling, undersampling, make_binary_dataset
+from datasets import Dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 from trl import DataCollatorForCompletionOnlyLM, SFTTrainer, SFTConfig
 from peft import LoraConfig
@@ -24,7 +23,19 @@ def main(args):
         instruction = SINGLE_LABEL
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### Output: " # ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n \n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
+            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### Output: " #\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
+            
+            # try:
+            #     error_locations = ast.literal_eval(example["annotated_span"][i])
+            # except:
+            #     import pdb; pdb.set_trace()
+            # for loc in error_locations:
+            #     text += f"{loc}\n" 
+            # text.removesuffix('\n')
+            # text += '.'
+
+            text += "### Output: "
+
             if training:
                 if instruction == SYSTEM_INSTRUCTION2 or instruction == SINGLE_LABEL:
                     text += (
@@ -44,7 +55,7 @@ def main(args):
         return output_texts
 
     # # Load the dataset
-    dataset = Dataset.from_file('single_labels_data/data-00000-of-00001.arrow')
+    dataset = Dataset.from_file('single_labels_with_error_location_data/data-00000-of-00001.arrow')
     dataset = dataset.remove_columns([col for col in dataset.column_names if dataset.filter(lambda x: x[col] is None or x[col] == '').num_rows > 0])
     #dataset = dataset.select(range(10))
 
@@ -90,7 +101,7 @@ def main(args):
         output_dir=OUTPUT_DIR2,
         do_train=True,
         num_train_epochs=args.num_train_epochs,
-        max_seq_length=2500,
+        max_seq_length=3000,
         logging_steps=20,
         eval_strategy="steps",
         eval_steps=250,
@@ -173,7 +184,7 @@ def main(args):
                 return_dict=True  # Ensure it returns a dict to access 'logits'
             )
 
-            tokens_of_interest = ['0', '1', '2', '3', '4']  # Replace with actual words or tokens
+            tokens_of_interest = ['1', '2', '3', '4']  # Replace with actual words or tokens
             token_ids_of_interest = tokenizer.convert_tokens_to_ids(tokens_of_interest)
             logits = logit_getter.logits
             filtered_logits = logits[:, 0, token_ids_of_interest] # ASSSSUMMMINGGGG 1st token is the one we want to predict
@@ -207,7 +218,7 @@ def main(args):
         print(f"Total accuracy: {score['total']}")
         print(f"F1 Score: {f1}")
         print(f"Cross-entropy: {cross_entropy}")
-        for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
+        for error_type in ['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
             print(f"{error_type} class accuracy: {score[error_type]}")
 
         # Make sure the results directory exists

@@ -1,0 +1,162 @@
+[
+    {
+        "prediction": "1 2 4\n\nExplanation:\n\n1.",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1\n 1 2 3 4 5 6",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\n 4 1 2 3\n\n The summary",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3 4 1 2\n\nThe summary hallucinates a",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1\n\nThe summary hallucinates a noun phrase absent 2",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1\n\nThe summary hallucinates a noun phrase \" 4",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1 4 1 2 1\n\nExplanation:",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3\n\n 492 new homes in the settlements 2",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4\n\nThe summary hallucinates a",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1 3 4 1\n\nExplanation: 2",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4\n\n 2022-09-2 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3 4 1 2\n\nThe summary hallucinates a",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\n 4\n 1\n 2\n 3",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1 2 3 4\n\nThe summary hallucinates a",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3 4 1 2\n\nExplanation:",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1 2 3 4\nThe summary hallucinates a n",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3\n\n 4\n 1\n 2\n 3",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "2 3 4\n\nExplanation:\n\n1.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1 2 3 4\n\n1: The phrase \"she",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3 3 4 1\n\nThe [SUM 2",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\nThe summary mischaracterises Taunton as a League Two side",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\nThe summary states that NPR reported tension between African-Amer",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3 4 1\n\nThe summary mischaracterizes 2 n",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\nThe summary mischaracterizes Gorka Izag 4",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3 4 1 2\n\nThe summary hallucinates a",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1\n\nThe error in the summary is that it hallucinates a",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\nThe summary mischaracterizes a noun phrase present 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4\n\nThe summary mentions Manchester City, which is not 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1 3 4\n 1: The [SUM 2",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4\n\n 1 2 3 4\n 0",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1 2 3 4\n\nThe summary hallucinates a",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\n### ORIGINAL_TEXT: Media play 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4 1 2\n\nExplanation:\n\n 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2 3 4\n\nThe summary includes a predicate 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2\n\n 4\n 1\n 2\n 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3\nThe [SUMMARY] mischaracterises a noun",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\nThe [SUMMARY] mischaracterises 4",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3\n\nThe summary mischaracterizes a noun phrase present in the",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1 3 4\n\nThe summary hallucinates 2 n",
+        "label": "intrinsic-predicate"
+    }
+]

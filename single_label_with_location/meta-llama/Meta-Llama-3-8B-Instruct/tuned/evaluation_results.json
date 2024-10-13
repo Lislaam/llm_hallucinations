@@ -1,0 +1,10 @@
+{
+    "total": 0.0,
+    "correct": null,
+    "extrinsic-NP": 0.0,
+    "extrinsic-predicate": 0.0,
+    "intrinsic-NP": 0.0,
+    "intrinsic-predicate": 0.0,
+    "f1": 0.0,
+    "cross_entropy": 1.6167744365909755
+}

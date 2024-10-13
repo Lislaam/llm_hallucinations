@@ -16,7 +16,7 @@ LABEL_CONVERSIONS2 = {
                     # '4' : '4',
                     #   'extrinsic': '0',
                     #   'intrinsic': '1',
-                    "correct": '0',
+                    # "correct": '0',
                     "extrinsic-NP": '1',
                     "extrinsic-predicate": '2',
                     "intrinsic-NP": '3',
@@ -24,10 +24,15 @@ LABEL_CONVERSIONS2 = {
 }
 
 LABEL_CONVERSIONS = {
+                    # "correct": '0',
+                    "extrinsic-NP": '1',
+                    "extrinsic-predicate": '2',
+                    "intrinsic-NP": '3',
+                    "intrinsic-predicate": '4',
                     #      'correct': '0',
                     #  'incorrect': '1',
-                      'extrinsic': '0',
-                      'intrinsic': '1',
+                    #   'extrinsic': '0',
+                    #   'intrinsic': '1',
                     # 0:'0',
                     # 1:'1',
                     # 2:'2',

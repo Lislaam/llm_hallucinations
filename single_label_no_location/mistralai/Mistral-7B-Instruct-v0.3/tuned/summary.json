@@ -1,0 +1,162 @@
+[
+    {
+        "prediction": "2 3 4 4. The summary includes the incorrect 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. 1. 2. 3 are not applicable in this",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. The summary includes a predicate (is deeply concerned) 3",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2.\n The summary mis",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. The summary mischaracterizes 2",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. The summary includes a predicate (wrote the hit album)",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1. The summary hallucinates a noun phrase absent from 4",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "2. The 4th person singular verb \"has signed\" 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3. 492 new homes are mentioned in the summary 2",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 0. The",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "4 1 2 3. The summary uses the predicate \"",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4. 2. The summary uses a predicate from the 3",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3. 4. 1. 2. The summary mischaracter",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. The summary mischaracterizes the situation by 1",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. None of the above",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4. 1. 2. The summary mischaracter",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. The summary does not",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3 4. The summary includes the predicate 1",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "2. 3. The summary includes the predicate \"has 4",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "1. 2. 3. 4. 0.",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. 3. 4. The summary includes the pred 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. The summary mischaracterises a noun phrase present in the original",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4. The summary uses the predicate \"reported tension\" which is",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "3. 4 1. The summary mischaracterizes the 2",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. Mischaracterises a noun phrase present in ORIG 4",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. 4 1. The summary mischaracterises the 2",
+        "label": "intrinsic-NP"
+    },
+    {
+        "prediction": "4. The summary uses a predicate from the original text in the wrong",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. The summary mischaracterizes Johnny McGurk as having 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "4. The summary uses the predicate \"will be his old 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3 4. The summary includes the predicate 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2 1 2 3. The summary hallucinates 4",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "1. 2. 3. 4. None of the above",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. The summary mischaracterizes Norway as the \"world' 4",
+        "label": "extrinsic-predicate"
+    },
+    {
+        "prediction": "3 4 1 2. The summary mischaracterizes Hog",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. 3 4. The summary includes the predicate 1",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "2. The 4th paragraph of the original text mentions 1",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "2. The summary includes the predicate \"makes it difficult for them",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. The summary mischaracterises a noun phrase present in 4",
+        "label": "intrinsic-predicate"
+    },
+    {
+        "prediction": "3. The summary mischaracterizes a noun phrase present in the original",
+        "label": "extrinsic-NP"
+    },
+    {
+        "prediction": "4 1 2 3. The summary uses the predicate \"",
+        "label": "intrinsic-predicate"
+    }
+]

@@ -1,7 +1,6 @@
 from sft import *
 from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, SYSTEM_INSTRUCTION2, GET_ERROR_SPAN, GET_CORRECTIONS
-from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict, Dataset
-from utils import error_type_map, reformat_data_split_labels, oversampling, undersampling, make_binary_dataset
+from datasets import Dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 from trl import DataCollatorForCompletionOnlyLM, SFTTrainer, SFTConfig
 from peft import LoraConfig
@@ -16,16 +15,23 @@ from tqdm import tqdm
 # from huggingface_hub import login
 # login()
 
-# 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
-# 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
-
 def main(args):
 
     def formatting_prompts_func(example, training=True):
         instruction = GET_CORRECTIONS
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### Output: " #{example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
+            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ERROR_LOCATIONS: "
+            
+            try:
+                error_locations = ast.literal_eval(example["annotated_span"][i])
+            except:
+                import pdb; pdb.set_trace()
+            for loc in error_locations:
+                text += f"{loc}\n" 
+            text.removesuffix('\n')
+            
+            text += "\n### Output: " #{example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
        
             if training:
                 if instruction == SYSTEM_INSTRUCTION or instruction == BINARY_INSTRUCTION:
@@ -66,7 +72,7 @@ def main(args):
 
     quantization_config = BitsAndBytesConfig(load_in_8bit=True)
     model = AutoModelForCausalLM.from_pretrained(args.llm, torch_dtype=torch.bfloat16, device_map='auto', quantization_config=quantization_config)
-    tokenizer = AutoTokenizer.from_pretrained(args.llm)
+    tokenizer = AutoTokenizer.from_pretrained("v2ray/Llama-3-70B-Instruct")
 
     tokenizer.padding_side = "right"
     tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -85,7 +91,7 @@ def main(args):
         output_dir=OUTPUT_DIR,
         do_train=True,
         num_train_epochs=args.num_train_epochs,
-        max_seq_length=3000,
+        max_seq_length=4000,
         logging_steps=20,
         eval_strategy="steps",
         eval_steps=250,
@@ -167,7 +173,7 @@ def main(args):
                 do_sample=False,
                 num_beams=3,
                 num_return_sequences=1,
-                max_new_tokens=50,
+                max_new_tokens=30,
             )
 
             prediction = tokenizer.batch_decode(outputs, skip_special_tokens=True)
@@ -178,22 +184,6 @@ def main(args):
         labels = dataset["annotated_corrections"]
         preds = [prediction.split("### Output:")[1].split('\n\n')[0].strip().replace("'", '').replace('"', '').split('\n') for prediction in predictions]
 
-        # # Cleaning the prediction lists
-        # i = 0
-        # for pred in preds:
-        #     if "'" in pred[:2]:
-        #         if pred[-2:] != "']":
-        #             preds[i] = pred + "']"
-        #     elif '"' in pred[:2]:
-        #         if pred[-2:] != '"]':
-        #             preds[i] = pred + '"]'
-        
-        #     try:
-        #         ast.literal_eval(preds[i])
-        #     except:
-        #         import pdb; pdb.set_trace()
-
-        #     i += 1
 
         labels = [ast.literal_eval(label) for label in labels]
         #preds = [ast.literal_eval(pred) for pred in preds]
@@ -203,8 +193,6 @@ def main(args):
                 pred.append('')
             while len(label) < len(pred):
                 label.append('')
-
-        # import pdb; pdb.set_trace()
         
         flat_labels = [item for sublist in labels for item in sublist] 
         flat_preds = [item for sublist in preds for item in sublist] 

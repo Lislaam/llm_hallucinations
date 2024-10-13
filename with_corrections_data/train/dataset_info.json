@@ -3,15 +3,15 @@
   "citation": "",
   "config_name": "default",
   "dataset_name": "csv",
-  "dataset_size": 1036885,
+  "dataset_size": 1036854,
   "description": "",
   "download_checksums": {
     "/homes/53/fpinto/llm_hallucinations-1/dataset_with_corrections.csv": {
-      "num_bytes": 836640,
+      "num_bytes": 836605,
       "checksum": null
     }
   },
-  "download_size": 836640,
+  "download_size": 836605,
   "features": {
     "dataset": {
       "dtype": "string",
@@ -156,11 +156,11 @@
   },
   "homepage": "",
   "license": "",
-  "size_in_bytes": 1873525,
+  "size_in_bytes": 1873459,
   "splits": {
     "train": {
       "name": "train",
-      "num_bytes": 1036885,
+      "num_bytes": 1036854,
       "num_examples": 999,
       "dataset_name": "csv"
     }
