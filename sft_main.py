@@ -1,5 +1,5 @@
-from sft import *
-from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, SYSTEM_INSTRUCTION2, SINGLE_LABEL
+from sft_utils import *
+from constants import *
 from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict, Dataset
 from utils import error_type_map, reformat_data_split_labels, oversampling, undersampling, make_binary_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
@@ -41,7 +41,7 @@ def main(args):
         return output_texts
 
     # # Load the dataset
-    dataset = Dataset.from_file('single_labels_with_error_location_data/data-00000-of-00001.arrow')
+    dataset = Dataset.from_file(TASK_DATASETS[args.task])
     dataset = dataset.remove_columns([col for col in dataset.column_names if dataset.filter(lambda x: x[col] is None or x[col] == '').num_rows > 0])
     #dataset = dataset.select(range(10))
 
@@ -170,7 +170,7 @@ def main(args):
                 return_dict=True  # Ensure it returns a dict to access 'logits'
             )
 
-            tokens_of_interest = ['1', '2', '3', '4']  # Replace with actual words or tokens
+            tokens_of_interest = list(LABEL_CONVERSIONS.values())  # Replace with actual words or tokens
             token_ids_of_interest = tokenizer.convert_tokens_to_ids(tokens_of_interest)
             logits = logit_getter.logits
             filtered_logits = logits[:, 0, token_ids_of_interest] # ASSSSUMMMINGGGG 1st token is the one we want to predict
@@ -205,7 +205,7 @@ def main(args):
         print(f"Total accuracy: {score['total']}")
         print(f"F1 Score: {f1}")
         print(f"Cross-entropy: {cross_entropy}")
-        for error_type in ['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
+        for error_type in list(LABEL_CONVERSIONS.keys()):
             print(f"{error_type} class accuracy: {score[error_type]}")
 
         # Make sure the results directory exists
@@ -220,8 +220,8 @@ def main(args):
             
             results = {
             **score,  # Unpack the score dictionary into the results
-            "f1": f1,  # Add f1 scalar
-            "cross_entropy": cross_entropy  # Add cross-entropy scalar
+            "f1": f1,
+            "cross_entropy": cross_entropy
         }
         # Save results to a file
         with open(os.path.join(dir, str(args.llm), base_tuned, "evaluation_results.json"), "w",) as f:

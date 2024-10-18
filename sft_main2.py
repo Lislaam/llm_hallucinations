@@ -1,4 +1,4 @@
-from sft import *
+from sft_utils import *
 from constants import SYSTEM_INSTRUCTION, BINARY_INSTRUCTION, SYSTEM_INSTRUCTION2, COUNT_ERRORS, SINGLE_LABEL
 from datasets import Dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
@@ -13,9 +13,6 @@ from tqdm import tqdm
 
 # from huggingface_hub import login
 # login()
-
-# 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
-# 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
 
 def main(args):
 

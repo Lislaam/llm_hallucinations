@@ -24,7 +24,6 @@ LABEL_CONVERSIONS2 = {
 }
 
 LABEL_CONVERSIONS = {
-                    # "correct": '0',
                     "extrinsic-NP": '1',
                     "extrinsic-predicate": '2',
                     "intrinsic-NP": '3',
@@ -33,34 +32,6 @@ LABEL_CONVERSIONS = {
                     #  'incorrect': '1',
                     #   'extrinsic': '0',
                     #   'intrinsic': '1',
-                    # 0:'0',
-                    # 1:'1',
-                    # 2:'2',
-                    # 3:'3',
-                    # 4:'4',
-                    # "correct": 'C',
-                    # "intrinsic-NP": 'IN',
-                    # "intrinsic-predicate": 'IP',
-                    # "extrinsic-NP": 'EN',
-                    # "extrinsic-predicate": 'EP',
-#                     "correct": '0',
-#                     #"incorrect": '1',
-#                     "intrinsic-NP": '1',
-#                     "intrinsic-predicate": '2',
-#                     "extrinsic-NP": '3',
-#                     "extrinsic-predicate": '4',
-#                     # ==========================================
-#                     # 5: "['extrinsic-NP', 'intrinsic-NP']",
-#                     # 6: "['extrinsic-NP', 'extrinsic-predicate']",
-#                     # 7: "['intrinsic-predicate', 'extrinsic-NP']",
-#                     # 8: "['extrinsic-predicate', 'intrinsic-NP']",
-#                     # 9: "['extrinsic-predicate', 'intrinsic-predicate']",
-#                     # 10: "['intrinsic-NP', 'intrinsic-predicate']",
-#                     # 11: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP']",
-#                     # 13: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-predicate']",
-#                     # 14: "['extrinsic-NP', 'intrinsic-NP', 'intrinsic-predicate']",
-#                     # 15: "['extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']",
-                    # 16: "['extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']"
 }
 
 REVERSE_LABEL_CONVERSIONS = {v: k for k, v in LABEL_CONVERSIONS.items()}
@@ -254,10 +225,10 @@ def parse_args():
         help="Whether to fine-tune or not",
     )
     parser.add_argument(
-        "--dir",
+        "--task",
         type=str,
         default='',
-        help="Output directory",
+        help="Which task to fine-tune on. Choose from 'correct_incorrect', 'count_errors', 'extrinsic_intrinsic', 'single_label'",
     )
     return parser.parse_args()
 

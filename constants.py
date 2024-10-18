@@ -15,6 +15,16 @@ GET_CORRECTIONS = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
 You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the section(s) of the [ORIGINAL TEXT] that corrects the error(s).
 
+[OUTPUT FORMAT]
+Return the section(s) of the [ORIGINAL TEXT] containing each correction separated by a newline.
+Every line should be quoted exactly from the [ORIGINAL]. Include one correction per error.
+"""
+
+
+GET_CORRECTIONS_WITH_SPAN = """
+You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
+You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the section(s) of the [ORIGINAL TEXT] that corrects the error(s).
+
 [ERROR LOCATIONS] are the section(s) of a [SUMMARY] that contain an error.
 Use the given [ERROR_LOCATIONS] to help you identify the correction(s) from the [ORIGINAL_TEXT].
 
@@ -42,7 +52,7 @@ Each [SUMMARY] contains 1-4 errors in total.
 Please output the number of errors as a single integer in the range [1,2,3,4] only. Do not output more than one integer.
 """
 
-SYSTEM_INSTRUCTION = """
+EXTRINSIC_INTRINSIC = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
 You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the error type.
 
@@ -54,7 +64,7 @@ Please output your answer as a single integer only. Do not output more than one 
 """
 
 
-SYSTEM_INSTRUCTION2 = """
+EXTRINSIC_INTRINSIC_WITH_SPAN = """
 You are a diligent and impartial judge whose task is to carefully assess a [SUMMARY] which contains errors. 
 You must refer to differences between the [SUMMARY] and [ORIGINAL TEXT] to determine the error type.
 Use the provided [ERROR LOCATIONS] to help you identify the error type. [ERROR LOCATIONS] are the section of a [SUMMARY] containing the error.
@@ -94,7 +104,7 @@ Example output: '2 INP EXPRED' if there are 2 errors in the summary, and they ar
 """
 
 
-BINARY_INSTRUCTION = """
+CORRECT_INCORRECT = """
 You are a fair and impartial judge whose task is to carefully assess a [TEXT] and determine whether a given [SUMMARY] contains errors.
 
 You must evaluate the [SUMMARY] based on the [TEXT].
@@ -135,9 +145,24 @@ d. **Predicate**: The [SUMMARY] contains incorrect use of predicates, altering t
 Please output your answer as an integer corresponding to the error categories in [RULES].
 """
 
-PROMPT_INSTRUCTIONS = {"Lislaam/AggreFact": OLD_SYSTEM_INSTRUCTION }
 
-DATASET_PROMPTS = {"Lislaam/AggreFact": {"input": ["doc", "summ"], "output": "error_type"}}
+TASK_PROMPTS = {"correct_incorrect": CORRECT_INCORRECT,
+                   "count_errors": COUNT_ERRORS,
+                    "extrinsic_intrinsic": EXTRINSIC_INTRINSIC,
+                    "extrinsic_intrinsic_with_span": EXTRINSIC_INTRINSIC_WITH_SPAN,
+                    "single_label": SINGLE_LABEL,
+                    "get_corrections": GET_CORRECTIONS,
+                   # "get_corrections_with_span": GET_CORRECTIONS_WITH_SPAN,
+                   }
+
+TASK_DATASETS = {"correct_incorrect": "datasets/correct_incorrect_data/data-00000-of-00001.arrow",
+                 "count_errors": "datasets/count_errors_data/data-00000-of-00001.arrow",
+                    "extrinsic_intrinsic": "datasets/extrinsic_intrinsic_data/data-00000-of-00001.arrow",
+                    "extrinsic_intrinsic_with_span": "datasets/extrinsic_intrinsic_with_error_location_data/data-00000-of-00001.arrow",
+                    "single_label": "datasets/single_label_data/data-00000-of-00001.arrow",
+                    "get_corrections": "datasets/with_corrections_data/data-00000-of-00001.arrow",
+                }
+
 
 DATASET_LABELS = {"Lislaam/AggreFact": {
                     0: "['correct']",
