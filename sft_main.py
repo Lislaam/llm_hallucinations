@@ -1,7 +1,6 @@
 from sft_utils import *
 from constants import *
-from datasets import concatenate_datasets, load_dataset, dataset_dict, DatasetDict, Dataset
-from utils import error_type_map, reformat_data_split_labels, oversampling, undersampling, make_binary_dataset
+from datasets import Dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, EarlyStoppingCallback, BitsAndBytesConfig
 from trl import DataCollatorForCompletionOnlyLM, SFTTrainer, SFTConfig
 from peft import LoraConfig
@@ -18,23 +17,39 @@ from tqdm import tqdm
 def main(args):
 
     def formatting_prompts_func(example, training=True):
-        instruction = SINGLE_LABEL
+        instruction = TASK_PROMPTS[args.task]
         output_texts = []
         for i in range(len(example["error_type"])):
-            text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### Output: " #  ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### ERROR_CORRECTIONS: {example['annotated_corrections'][i]}\n
+
+            if args.task == "extrinsic_intrinsic_with_span":
+                text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### ERROR_LOCATIONS: {example['annotated_span'][i]}\n ### Output: "
+            else:
+                text = f"{instruction}\n ### ORIGINAL_TEXT: {example['doc'][i]}\n ### SUMMARY: {example['summ'][i]}\n ### Output: " 
+
             if training:
-                if instruction == SINGLE_LABEL or instruction == BINARY_INSTRUCTION:
-                    text += (
-                        f"{LABEL_CONVERSIONS[example['error_type'][i]]}." + tokenizer.eos_token
-                    )
-                else:
-                    label = ast.literal_eval(example["error_type"][i])
+                if args.task == 'get_corrections':
+                    label = ast.literal_eval(example["corrected_span"][i])
                     text += f"{str(len(label))}, "
                     for l in label:
                         text += f"{LABEL_CONVERSIONS[l]}, "
                     text.removesuffix(', ')
                     text += '.'
                     text += tokenizer.eos_token
+
+                elif args.task == 'error_span':
+                    label = ast.literal_eval(example["annotated_span"][i])
+                    text += f"{str(len(label))}, "
+                    for l in label:
+                        text += f"{LABEL_CONVERSIONS[l]}, "
+                    text.removesuffix(', ')
+                    text += '.'
+                    text += tokenizer.eos_token
+
+                else:
+                    text += (
+                        f"{LABEL_CONVERSIONS[example['error_type'][i]]}." + tokenizer.eos_token
+                    )
+                    
 
             output_texts.append(text)
         
@@ -234,52 +249,3 @@ if __name__ == "__main__":
     args = parse_args()
 
     main(args)
-
-
-
-
-    # dataset = load_dataset(args.dataset, split=['validation[:20]', 'test[:20]'])
-    # dataset = concatenate_datasets([dataset[0], dataset[1]]) # Turn into one dataset to make new split
-    # dataset = dataset.filter(lambda x: error_type_map(x) is not None) # reformat_data_split_labels(dataset, args.dataset) # Get rid of non-standard error_type examples and split data
-    # dataset = dataset.map(error_type_map)
-    # # dataset = dataset.filter(lambda x: x is not None and None not in x.values())
-
-    # if args.sampling == None:
-    #     dir = "whole_dataset"
-    # elif args.sampling == 'oversampling':
-    #     dataset = oversampling(dataset)
-    #     dir = "naive_oversampling"
-    # elif args.sampling == 'undersampling':
-    #     dataset = undersampling(dataset)
-    #     dir = "naive_undersampling"
-    # elif args.sampling == 'binary':
-    #     dataset = make_binary_dataset(dataset)
-    #     dir = "binary"
-    # else:
-    #     print("Sampling not supported. Choose oversampling, undersampling or binary")
-    #     exit
-
-    # # Split the dataset into train and test sets (80% train, 20% test)
-    # train_test = dataset.train_test_split(test_size=0.2)
-
-    # # Further split the train set into train and validation sets (75% train, 25% validation of the original 80%)
-    # train_valid = train_test['train'].train_test_split(test_size=0.25)
-
-    # # Combine the splits into a DatasetDict
-    # dataset = DatasetDict({
-    #     'train': train_valid['train'],
-    #     'validation': train_valid['test'],
-    #     'test': train_test['test']
-    # })
-
-            # if args.sampling == 'binary':
-        #     score = get_single_label_score(preds, labels, binary=True)
-        #     print(f"Total accuracy: {score['total']}")
-        #     for error_type in ['correct', 'incorrect']:
-        #         print(f"{error_type} class accuracy: {score[error_type]}")
-        # else:
-        #     score = get_score(preds, labels, reverse_labels=LABEL_CONVERSIONS)
-        #     print(f"Detecting # errors accuracy: {score['accuracy detecting # errors']}")
-        #     print(f"Total accuracy: {score['total class accuracy']}")
-        #     for error_type in ['correct', 'extrinsic-NP', 'extrinsic-predicate', 'intrinsic-NP', 'intrinsic-predicate']:
-        #         print(f"{error_type} class accuracy: {score[error_type]}")
